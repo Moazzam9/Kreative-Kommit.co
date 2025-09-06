@@ -236,7 +236,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-600 dark:bg-slate-800">
+      <section className="py-20 bg-primary-700 dark:bg-primary-700">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Transform Your Web Presence?
@@ -245,15 +245,16 @@ export default function HomePage() {
             Let's create something extraordinary together. Get a free consultation today.
           </p>
           <Button
-            asChild
-            size="lg"
-            className="bg-primary-800 text-white hover:bg-primary-900 dark:bg-primary-600 dark:hover:bg-primary-900"
-          >
-            <Link href="/contact">
-              Get Free Consultation
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+  asChild
+  size="lg"
+  className="bg-white text-purple-700 hover:bg-purple-50 dark:bg-white dark:text-purple-700 dark:hover:bg-purple-50"
+>
+  <Link href="/contact">
+    Get Free Consultation
+    <ArrowRight className="ml-2 h-4 w-4" />
+  </Link>
+</Button>
+
         </div>
       </section>
     </>
