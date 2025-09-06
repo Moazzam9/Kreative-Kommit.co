@@ -28,7 +28,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  
+
   .dark {
     --background: 15 23 42;
     --foreground: 248 250 252;
@@ -59,8 +59,25 @@
   * {
     @apply border-border;
   }
+
+  html,
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    /* Remove any yellow colors */
+    background-color: hsl(var(--background)) !important;
+  }
+
+  /* Ensure no yellow colors on root elements */
+  #__next {
+    background-color: hsl(var(--background)) !important;
+  }
+
+  /* Remove yellow from any overflow areas */
+  html,
+  body,
+  #__next {
+    background-color: hsl(var(--background)) !important;
+    overflow-x: hidden;
   }
 }
 
@@ -68,17 +85,79 @@
   .animate-fade-up {
     animation: fade-up 0.6s ease-out;
   }
-  
+
   .animate-fade-in {
     animation: fade-in 0.4s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 10px rgba(147, 51, 234, 0.4);
   }
 }
 
 html {
   scroll-behavior: smooth;
+  /* Remove any yellow background colors */
+  background-color: #ffffff;
 }
 
-/* Custom scrollbar for webkit browsers */
+body {
+  /* Ensure body has proper background */
+  background-color: #ffffff;
+  /* Remove any yellow overflow colors */
+  overflow-x: hidden;
+}
+
+/* Dark mode body background */
+.dark body {
+  background-color: #0f172a;
+}
+
+/* Remove all yellow colors and customize focus/selection */
+* {
+  /* Remove yellow focus outline */
+  outline: none !important;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom selection colors - remove yellow */
+::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: inherit;
+}
+
+/* Remove yellow highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Custom scrollbar for webkit browsers - remove any yellow */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -93,4 +172,84 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-slate-400 dark:bg-slate-500;
+}
+
+/* Remove any yellow from form elements */
+input,
+textarea,
+select {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Remove yellow from links */
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove yellow from buttons */
+button {
+  outline: none !important;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Remove any yellow colors that might appear during scrolling */
+* {
+  /* Remove any yellow background colors */
+  background-color: transparent !important;
+}
+
+/* Ensure proper background colors for main elements */
+html,
+body,
+#__next,
+main {
+  background-color: hsl(var(--background)) !important;
+}
+
+/* Remove yellow from scroll areas */
+::-webkit-scrollbar-corner {
+  background-color: hsl(var(--background)) !important;
+}
+
+/* Remove any yellow from browser UI elements */
+::selection {
+  background-color: rgba(139, 92, 246, 0.3) !important;
+  color: inherit !important;
+}
+
+/* Remove yellow from any overflow areas */
+html,
+body {
+  background-color: hsl(var(--background)) !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure no yellow appears in any container */
+.container,
+.container-fluid {
+  background-color: transparent !important;
+}
+
+/* Remove yellow from any wrapper elements */
+.wrapper,
+.main-wrapper,
+.page-wrapper {
+  background-color: transparent !important;
 }

@@ -54,15 +54,31 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
+      // Validate form data before sending
+      if (!formData.name || !formData.email || !formData.projectType || !formData.message) {
+        throw new Error('Please fill in all required fields');
+      }
+
+      // Create a clean form data object
+      const cleanFormData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        company: formData.company.trim(),
+        projectType: formData.projectType,
+        budget: formData.budget,
+        message: formData.message.trim(),
+      };
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(cleanFormData),
       });
 
       if (response.ok) {
+        const result = await response.json();
         setIsSubmitted(true);
         setFormData({
           name: '',
@@ -72,6 +88,9 @@ export default function ContactPage() {
           budget: '',
           message: '',
         });
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit form');
       }
     } catch (error) {
       console.error('Error submitting form:', error);

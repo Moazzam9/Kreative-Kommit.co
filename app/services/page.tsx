@@ -118,7 +118,7 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
+          __html: JSON.stringify(jsonLd, null, 0),
         }}
       />
 
@@ -151,7 +151,6 @@ export default function ServicesPage() {
                   </CardDescription>
                 </CardHeader>
 
-
                 <CardContent>
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature) => (
@@ -175,7 +174,6 @@ export default function ServicesPage() {
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-
                 </CardContent>
               </Card>
             ))}
@@ -195,8 +193,20 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((step, index) => (
                 <div key={step.step} className="text-center animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                    {step.step}
+                  <div className="relative w-16 h-16 mx-auto mb-4">
+                    {/* Glowing background circle */}
+                    <div
+                      className="absolute inset-0 rounded-full bg-purple-500 opacity-0 animate-pulse-glow"
+                      style={{
+                        animationDelay: `${index * 0.5}s`,
+                        animationDuration: '2s',
+                        animationIterationCount: 'infinite'
+                      }}
+                    />
+                    {/* Main circle */}
+                    <div className="relative w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold z-10">
+                      {step.step}
+                    </div>
                   </div>
 
                   <h3 className="text-lg font-semibold text-primary-600 dark:text-primary-600 mb-2">
@@ -234,7 +244,6 @@ export default function ServicesPage() {
               >
                 <Link href="/portfolio">View Our Work</Link>
               </Button>
-
             </div>
           </div>
         </div>

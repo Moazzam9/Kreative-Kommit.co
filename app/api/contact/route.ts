@@ -2,7 +2,26 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // Check if request has body
+    if (!request.body) {
+      return NextResponse.json(
+        { error: 'No request body provided' },
+        { status: 400 }
+      );
+    }
+
+    // Parse JSON with error handling
+    let body;
+    try {
+      body = await request.json();
+    } catch (jsonError) {
+      console.error('JSON parsing error:', jsonError);
+      return NextResponse.json(
+        { error: 'Invalid JSON in request body' },
+        { status: 400 }
+      );
+    }
+
     const { name, email, company, projectType, budget, message } = body;
 
     // Basic validation
@@ -27,7 +46,7 @@ export async function POST(request: NextRequest) {
     // 2. Save to database
     // 3. Send confirmation email to client
     // 4. Integrate with CRM
-    
+
     // For now, we'll just log and return success
     console.log('New contact form submission:', {
       name,
@@ -43,7 +62,7 @@ export async function POST(request: NextRequest) {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     return NextResponse.json(
-      { 
+      {
         message: 'Contact form submitted successfully',
         submittedAt: new Date().toISOString(),
       },
