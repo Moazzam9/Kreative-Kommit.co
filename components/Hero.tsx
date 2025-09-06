@@ -16,7 +16,10 @@ const containerVariants = {
 
 const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: {
+        y: 0,
+        opacity: 1
+    }
 };
 
 export default function Hero() {
@@ -66,7 +69,10 @@ export default function Hero() {
             >
                 <div className="mx-auto max-w-4xl text-center">
                     {/* Subtitle badge */}
-                    <motion.div variants={itemVariants} className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary-200/60 bg-white/70 px-4 py-1 text-sm text-primary-700 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-primary-300">
+                    <motion.div
+                        variants={itemVariants}
+                        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary-200/60 bg-white/70 px-4 py-1 text-sm text-primary-700 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-primary-300">
                         Premium Web Agency
                     </motion.div>
 
@@ -76,25 +82,25 @@ export default function Hero() {
                             className="block"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
                         >
-                        KreativeKommit builds
+                            KreativeKommit builds
                         </motion.span>
                         <motion.span
                             className="block text-primary-600"
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 }}
+                            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.35 }}
                         >
-                          fast, SEO-optimized
+                            fast, SEO-optimized
                         </motion.span>
                         <motion.span
                             className="block"
                             initial={{ y: -20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
+                            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.55 }}
                         >
-                           web experiences that drive real results.
+                            web experiences that drive real results.
                         </motion.span>
                     </h1>
 
@@ -112,7 +118,7 @@ export default function Hero() {
                                     <motion.span
                                         className="inline-flex"
                                         animate={{ x: [0, 5, 0] }}
-                                        transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                                        transition={{ duration: 1.2, repeat: Infinity, ease: [0.4, 0, 0.6, 1] }}
                                     >
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </motion.span>
@@ -121,16 +127,16 @@ export default function Hero() {
                         </motion.div>
 
                         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                        <Button
-  asChild
-  size="lg"
-  variant="outline"
-  className="backdrop-blur-md bg-purple-500/20 text-white border-purple-500/30 hover:bg-purple-500/30 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/30 transition-colors"
->
-  <Link href="#how-it-works" onClick={handleLearnMore}>
-    Learn More
-  </Link>
-</Button>
+                            <Button
+                                asChild
+                                size="lg"
+                                variant="outline"
+                                className="backdrop-blur-md bg-purple-500/20 text-white border-purple-500/30 hover:bg-purple-500/30 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/30 transition-colors"
+                            >
+                                <Link href="#how-it-works" onClick={handleLearnMore}>
+                                    Learn More
+                                </Link>
+                            </Button>
 
                         </motion.div>
                     </motion.div>
@@ -142,12 +148,12 @@ export default function Hero() {
                 <motion.div
                     className="flex h-10 w-6 items-start justify-center rounded-full border border-slate-400/50 p-1 dark:border-slate-200/20"
                     animate={{ y: [0, -6, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{ duration: 2, repeat: Infinity, ease: [0.4, 0, 0.6, 1] }}
                 >
                     <motion.div
                         className="h-2 w-1 rounded-full bg-slate-500 dark:bg-slate-300"
                         animate={{ y: [0, -6, 0] }}
-                        transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 1.6, repeat: Infinity, ease: [0.4, 0, 0.6, 1] }}
                     />
                 </motion.div>
             </div>
