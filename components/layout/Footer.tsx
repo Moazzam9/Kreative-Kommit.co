@@ -10,15 +10,27 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <Palette className="h-6 w-6 text-primary-600 dark:text-primary-400" />
-              <span className="text-lg font-bold text-slate-800 dark:text-white">
-                KreativeKommit
-              </span>
-            </Link>
-            <p className="text-sm text-slate-600 dark:text-slate-400">
-              Building fast, SEO-optimized web experiences that drive real results.
-            </p>
+          <Link href="/" className="flex items-center space-x-2">
+  {/* Light mode logo */}
+  <img
+    src="/ico.png"
+    alt="KreativeKommit Logo Light"
+    className="h-6 w-6 block dark:hidden"
+  />
+  {/* Dark mode logo */}
+  <img
+    src="/ico2.png"
+    alt="KreativeKommit Logo Dark"
+    className="h-6 w-6 hidden dark:block"
+  />
+  <span className="text-lg font-bold text-slate-800 dark:text-white">
+    KreativeKommit
+  </span>
+</Link>
+<p className="text-sm text-slate-600 dark:text-slate-400">
+  Building fast, SEO-optimized web experiences that drive real results.
+</p>
+
             <div className="flex space-x-4 mt-4">
               <a
                 href="https://twitter.com/kreativekommit"
