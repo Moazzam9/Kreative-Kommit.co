@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'KreativeKommit Team' }],
   creator: 'KreativeKommit',
   publisher: 'KreativeKommit',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: 'cover'
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -95,6 +102,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Prevent yellowish flash on load
+              document.documentElement.style.backgroundColor = '#f8fafc';
+              document.body.classList.add('loaded');
+              if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.style.backgroundColor = '#0f172a';
+              }
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

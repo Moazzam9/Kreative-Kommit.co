@@ -63,6 +63,24 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
+  /* Prevent flash of unstyled content */
+  html {
+    background-color: #f8fafc;
+  }
+
+  .dark html {
+    background-color: #0f172a;
+  }
+
+  /* Loading state to prevent yellowish flash */
+  body:not(.loaded) {
+    background-color: #f8fafc;
+  }
+
+  .dark body:not(.loaded) {
+    background-color: #0f172a;
+  }
 }
 
 @layer components {
@@ -97,6 +115,44 @@
 
 html {
   scroll-behavior: smooth;
+  /* Remove yellow browser UI elements */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide browser UI elements on mobile */
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+
+  body {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+}
+
+/* Remove yellow highlights and browser chrome */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure full viewport coverage */
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
 }
 
 /* Remove all yellow colors and customize focus/selection */
