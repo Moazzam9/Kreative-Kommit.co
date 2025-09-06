@@ -48,7 +48,8 @@ export default function Hero() {
             {/* Decorative background blobs */}
             <motion.div
                 aria-hidden
-                className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-primary-400/40 blur-3xl dark:bg-primary-500/30"
+                className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-purple-300/30 blur-3xl dark:bg-purple-400/20"
+
                 style={{ y: blobY, opacity: blobOpacity }}
                 animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }}
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
