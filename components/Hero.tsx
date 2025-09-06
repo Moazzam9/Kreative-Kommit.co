@@ -56,7 +56,8 @@ export default function Hero() {
             />
             <motion.div
                 aria-hidden
-                className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-fuchsia-400/40 blur-3xl dark:bg-fuchsia-500/30"
+                className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-fuchsia-200/30 blur-3xl dark:bg-fuchsia-300/20"
+
                 style={{ y: blobY, opacity: blobOpacity }}
                 animate={{ scale: [1, 1.3, 1], rotate: [0, -45, 0] }}
                 transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
@@ -128,16 +129,16 @@ export default function Hero() {
                         </motion.div>
 
                         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                            <Button
-                                asChild
-                                size="lg"
-                                variant="outline"
-                                className="backdrop-blur-md bg-purple-500/20 text-white border-purple-500/30 hover:bg-purple-500/30 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/30 transition-colors"
-                            >
-                                <Link href="#how-it-works" onClick={handleLearnMore}>
-                                    Learn More
-                                </Link>
-                            </Button>
+                        <Button
+  asChild
+  size="lg"
+  variant="outline"
+  className="backdrop-blur-md bg-white/10 hover:bg-white/20 text-black border-gray-400/40 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:border-white/30 transition-colors"
+>
+  <Link href="#how-it-works" onClick={handleLearnMore}>
+    Learn More
+  </Link>
+</Button>
 
                         </motion.div>
                     </motion.div>
