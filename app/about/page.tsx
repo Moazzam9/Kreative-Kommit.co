@@ -105,15 +105,15 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="bg-primary-50 dark:bg-primary-950 rounded-2xl p-8 lg:p-12 mb-16">
+          <div className="bg-primary-700 dark:bg-primary-700 rounded-2xl p-8 lg:p-12 mb-16">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-2xl font-bold text-black dark:text-white mb-6">
+              <h2 className="text-2xl font-bold text-white dark:text-white mb-6">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 dark:text-gray-300 leading-relaxed">
                 At KreativeKommit, we believe that exceptional web experiences should be accessible to businesses of all sizes.
-                We combine <span className="font-semibold text-primary-800 dark:text-primary-300">cutting-edge technology</span> with
-                <span className="font-semibold text-primary-800 dark:text-primary-300"> creative design</span> to build websites
+                We combine <span className="font-semibold text-white dark:text-white">cutting-edge technology</span> with
+                <span className="font-semibold text-white dark:text-white"> creative design</span> to build websites
                 that not only look stunning but also deliver measurable business results.
               </p>
             </div>
