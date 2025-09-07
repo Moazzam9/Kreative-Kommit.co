@@ -188,7 +188,7 @@ export default function ContactPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center text-lg">
-                    <CheckCircle className="h-5 w-5 text-primary-600 dark:text-primary-400 mr-2" />
+                    <CheckCircle className="h-5 w-5 text-primary-600 dark:text-primary-600 mr-2" />
                     Quick Response
                   </CardTitle>
                   <CardDescription className="text-gray-600 dark:text-gray-400">
@@ -284,7 +284,8 @@ export default function ContactPage() {
                             required
                             value={formData.projectType}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-primary-700 dark:text-white transition-colors"
+                           className="w-full px-4 py-3 border border-primary-200 rounded-lg text-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-primary-700 transition-colors"
+
                           >
                             <option value="">Select project type</option>
                             {projectTypes.map((type) => (
@@ -305,7 +306,8 @@ export default function ContactPage() {
                           name="budget"
                           value={formData.budget}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-primary-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-primary-700 dark:text-white transition-colors"
+                        className="w-full px-4 py-3 border border-primary-200 rounded-lg text-gray-800 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:border-primary-700 transition-colors"
+
                         >
                           <option value="">Select budget range</option>
                           <option value="under-5k">Under $5,000</option>
