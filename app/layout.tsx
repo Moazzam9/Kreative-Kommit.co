@@ -102,18 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Prevent yellowish flash on load
-              document.documentElement.style.backgroundColor = '#f8fafc';
-              document.body.classList.add('loaded');
-              if (localStorage.getItem('theme') === 'dark') {
-                document.documentElement.style.backgroundColor = '#0f172a';
-              }
-            `,
-          }}
-        />
+        {/* JSON-LD for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -124,8 +113,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
+          defaultTheme="dark"           // ✅ Sets dark mode as default
+          enableSystem={false}         // ✅ Disables system preference
           disableTransitionOnChange={false}
         >
           <div className="flex min-h-screen flex-col">
