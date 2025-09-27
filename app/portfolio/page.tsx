@@ -6,10 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/Button';
 import { ExternalLink, Zap, Clock, Users } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Portfolio - Our Best Work | KreativeKommit',
-  description: 'Discover high-performance websites and applications we\'ve built for clients worldwide. Case studies showcasing our expertise in web development and design.',
-};
+// ...existing code...
 
 const projects = [
   {

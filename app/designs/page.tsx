@@ -5,10 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/Button';
 import { Eye, Download } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Design Library - KreativeKommit',
-  description: 'Explore our collection of modern, conversion-focused design templates and UI components for web applications.',
-};
+// ...existing code...
 
 const designs = [
   {

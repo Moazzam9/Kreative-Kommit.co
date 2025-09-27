@@ -6,10 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/badge';
 import { Users, Award, Globe, Heart } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'About Us - Meet the KreativeKommit Team',
-  description: 'Learn about KreativeKommit\'s mission, values, and the passionate team behind our award-winning web design and development services.',
-};
+// ...existing code...
 
 const team = [
   {

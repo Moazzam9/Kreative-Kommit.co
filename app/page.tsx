@@ -7,16 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import Hero from '@/components/Hero';
 
-export const metadata: Metadata = {
-  title: 'KreativeKommit - Inteligent Web Agency & Design Studio',
-  description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results. Expert web design, development, and digital marketing services.',
-  openGraph: {
-    title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
-    description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results.',
-    type: 'website',
-    url: 'https://kreativekommit.com',
-  },
-};
+// ...existing code...
 
 const services = [
   {
