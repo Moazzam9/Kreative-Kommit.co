@@ -8,10 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import Hero from '@/components/Hero';
 
 export const metadata: Metadata = {
-  title: 'KreativeKommit - Premium Web Agency & Design Studio',
+  title: 'KreativeKommit - Inteligent Web Agency & Design Studio',
   description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results. Expert web design, development, and digital marketing services.',
   openGraph: {
-    title: 'KreativeKommit - Premium Web Agency & Design Studio',
+    title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
     description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results.',
     type: 'website',
     url: 'https://kreativekommit.com',
@@ -64,13 +64,13 @@ export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'KreativeKommit - Premium Web Agency',
+    name: 'KreativeKommit - Intelligent Web Agency',
     description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results.',
     url: 'https://kreativekommit.com',
     mainEntity: {
       '@type': 'Organization',
       name: 'KreativeKommit',
-      description: 'Premium web agency and design studio',
+      description: 'Inteligent web agency and design studio',
       url: 'https://kreativekommit.com',
     },
   };

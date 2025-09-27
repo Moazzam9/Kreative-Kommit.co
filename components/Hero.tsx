@@ -75,7 +75,7 @@ export default function Hero() {
                         variants={itemVariants}
                         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                         className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary-200/60 bg-white/70 px-4 py-1 text-sm text-primary-700 backdrop-blur dark:border-white/10 dark:bg-white/5 dark:text-primary-300">
-                        Premium Web Agency
+                        Intelligent Web Agency
                     </motion.div>
 
                     {/* Headline with word-by-word animation */}
@@ -94,7 +94,7 @@ export default function Hero() {
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.35 }}
                         >
-                            fast, SEO-optimized
+                            fast, intelligently optimised
                         </motion.span>
                         <motion.span
                             className="block"
@@ -108,7 +108,7 @@ export default function Hero() {
 
                     {/* Description */}
                     <motion.p variants={itemVariants} className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                        We build high-performance, SEO-optimized experiences that drive real results.
+                        We build high-performance, SEO, SSR and SSG optimised experiences that drive real results.
                     </motion.p>
 
                     {/* Buttons */}

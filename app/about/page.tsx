@@ -80,7 +80,7 @@ export default function AboutPage() {
         name: 'Alex Rivera',
       },
       numberOfEmployees: 15,
-      description: 'Premium web agency specializing in high-performance websites and digital experiences.',
+      description: 'Intelligent web agency specialising in high-performance websites and digital experiences.',
     },
   };
 
