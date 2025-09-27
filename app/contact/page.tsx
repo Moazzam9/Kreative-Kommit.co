@@ -52,33 +52,24 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      // Validate form data before sending
       if (!formData.name || !formData.email || !formData.projectType || !formData.message) {
         throw new Error('Please fill in all required fields');
       }
+      const form = new FormData();
+      form.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '');
+      form.append('name', formData.name.trim());
+      form.append('email', formData.email.trim());
+      form.append('company', formData.company.trim());
+      form.append('projectType', formData.projectType);
+      form.append('budget', formData.budget);
+      form.append('message', formData.message.trim());
 
-      // Create a clean form data object
-      const cleanFormData = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        company: formData.company.trim(),
-        projectType: formData.projectType,
-        budget: formData.budget,
-        message: formData.message.trim(),
-      };
-
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cleanFormData),
+        body: form,
       });
-
       if (response.ok) {
-        const result = await response.json();
         setIsSubmitted(true);
         setFormData({
           name: '',
@@ -89,8 +80,7 @@ export default function ContactPage() {
           message: '',
         });
       } else {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit form');
+        throw new Error('Failed to submit form');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -224,6 +214,8 @@ export default function ContactPage() {
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {/* Hidden input for Web3Forms access key (for fallback/manual use) */}
+                      <input type="hidden" name="access_key" value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY || ''} />
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="name" className="block text-sm font-medium text-black dark:text-primary-300 mb-2">
