@@ -5,8 +5,3 @@ export const metadata: Metadata = {
   description: "Discover high-performance websites and applications we've built for clients worldwide. Case studies showcasing our expertise in web development and design.",
 };
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-};

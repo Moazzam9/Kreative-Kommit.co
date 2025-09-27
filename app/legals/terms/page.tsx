@@ -1,3 +1,4 @@
+export { viewport } from './viewport';
 export default function Terms() {
   return (
     <div className="bg-background text-foreground min-h-screen">

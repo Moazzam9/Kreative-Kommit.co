@@ -1,3 +1,7 @@
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 export default function Accessibility() {
   return (
     <div className="bg-background text-foreground min-h-screen">

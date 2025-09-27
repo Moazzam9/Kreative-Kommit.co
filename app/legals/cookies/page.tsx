@@ -1,3 +1,7 @@
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 export default function Cookies() {
   return (
     <div className="bg-background text-foreground min-h-screen">

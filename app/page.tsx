@@ -216,7 +216,7 @@ export default function HomePage() {
             <div className="text-center animate-fade-up" style={{ animationDelay: '0.2s' }}>
               <Zap className="h-12 w-12 text-primary-600 dark:text-primary-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
-                SEO Optimized
+                SEO Optimised
               </h3>
               <p className="text-slate-600 dark:text-slate-200">
                 Built-in technical SEO, structured data, and search engine best practices.

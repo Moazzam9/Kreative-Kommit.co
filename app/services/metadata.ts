@@ -5,8 +5,3 @@ export const metadata: Metadata = {
   description: 'Complete web design, development, and digital marketing services. From UI/UX design to SEO, SSR and SSG optimisation and performance audits.',
 };
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-};

@@ -5,8 +5,3 @@ export const metadata: Metadata = {
   description: 'Explore our collection of modern, conversion-focused design templates and UI components for web applications.',
 };
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-};
