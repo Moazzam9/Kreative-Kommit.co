@@ -17,7 +17,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Services - Web Design & Development | KreativeKommit',
-  description: 'Complete web design, development, and digital marketing services. From UI/UX design to SEO optimization and performance audits.',
+  description: 'Complete web design, development, and digital marketing services. From UI/UX design to SEO, SSR and SSG optimisation and performance audits.',
 };
 
 const services = [
@@ -26,7 +26,7 @@ const services = [
     title: 'UI/UX Design',
     description: 'Beautiful, conversion-focused designs that captivate your audience and drive engagement.',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems', 'Accessibility'],
-    price: 'From $2,500',
+    price: 'From £2,500',
     duration: '2-4 weeks',
   },
   {
@@ -39,25 +39,25 @@ const services = [
   },
   {
     icon: Search,
-    title: 'SEO Optimization',
+    title: 'SEO Optimisation',
     description: 'Technical SEO and content strategies that boost search rankings and organic traffic.',
     features: ['Technical SEO', 'Content Strategy', 'Local SEO', 'Analytics', 'Reporting'],
-    price: 'From $1,500',
+    price: 'From £1,500',
     duration: '2-3 weeks',
   },
   {
     icon: Zap,
     title: 'Performance Audit',
-    description: 'Comprehensive analysis and optimization of your website\'s speed and performance.',
-    features: ['Core Web Vitals', 'Speed Optimization', 'Image Optimization', 'Code Splitting', 'CDN Setup'],
-    price: 'From $800',
+    description: 'Comprehensive analysis and optimisation of your website\'s speed and performance.',
+    features: ['Core Web Vitals', 'Speed Optimisation', 'Image Optimisation', 'Code Splitting', 'CDN Setup'],
+    price: 'From £800',
     duration: '1 week',
   },
   {
     icon: Smartphone,
-    title: 'Mobile Optimization',
+    title: 'Mobile Optimisation',
     description: 'Ensure your website works perfectly across all devices and screen sizes.',
-    features: ['Responsive Design', 'Mobile-First', 'Touch Optimization', 'App-like Experience', 'PWA'],
+    features: ['Responsive Design', 'Mobile-First', 'Touch Optimisation', 'App-like Experience', 'PWA'],
     price: 'From $1,200',
     duration: '1-2 weeks',
   },
@@ -66,7 +66,7 @@ const services = [
     title: 'Security & Maintenance',
     description: 'Keep your website secure, updated, and running smoothly with our maintenance plans.',
     features: ['Security Updates', 'Backup Solutions', 'Monitoring', 'SSL Certificates', '24/7 Support'],
-    price: 'From $300/month',
+    price: 'From £300/month',
     duration: 'Ongoing',
   },
 ];

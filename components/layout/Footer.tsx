@@ -28,7 +28,7 @@ export function Footer() {
   </span>
 </Link>
 <p className="text-sm text-slate-600 dark:text-slate-400">
-  Building fast, SEO-optimized web experiences that drive real results.
+  Building fast, SEO, SSR and SSG optimised web experiences that drive real results.
 </p>
 
             <div className="flex space-x-4 mt-4">
@@ -81,7 +81,7 @@ export function Footer() {
               Services
             </h3>
             <ul className="space-y-2">
-              {['Web Design', 'Development', 'SEO Optimization', 'Performance Audit'].map((service) => (
+              {['Web Design', 'Development', 'SEO Optimisation', 'Performance Audit'].map((service) => (
                 <li key={service}>
                   <span className="text-sm text-slate-600 dark:text-slate-300">
                     {service}
