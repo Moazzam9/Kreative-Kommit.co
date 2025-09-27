@@ -1,7 +1,7 @@
 import { services } from '@/app/data/services/services';
 import { cityFacts } from '@/app/data/cities/facts';
 import type { Metadata } from 'next';
-
+// Removed stray return statement causing syntax errors
 export async function generateStaticParams() {
   // Generate all service/city combinations
   const params: { service: string; city: string }[] = [];
@@ -40,6 +40,12 @@ export async function generateMetadata({ params }: { params: { service: string; 
     metadataBase: new URL('https://kreativekommit.com'),
   };
 }
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export default async function ServiceCityPage({ params }: { params: Promise<{ service: string; city: string }> }) {
   const awaitedParams = await params;

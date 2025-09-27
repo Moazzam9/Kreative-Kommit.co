@@ -5,7 +5,8 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kreativekommit.com';
 
-  return [
+  // Static URLs
+  const staticUrls: Array<{ url: string; lastModified: Date; changeFrequency: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority: number }> = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -43,4 +44,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
   ];
+
+  // Dynamic service/city URLs
+  // Import data
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const services: Array<{ slug: string }> = require('./data/services/services').services;
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const cityFacts: Array<{ slug: string }> = require('./data/cities/facts').cityFacts;
+
+  const serviceCityUrls: Array<{ url: string; lastModified: Date; changeFrequency: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority: number }> = [];
+  services.forEach((service: { slug: string }) => {
+    cityFacts.forEach((city: { slug: string }) => {
+      serviceCityUrls.push({
+        url: `${baseUrl}/services/${service.slug}/${city.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    });
+  });
+
+  return [...staticUrls, ...serviceCityUrls];
 }
