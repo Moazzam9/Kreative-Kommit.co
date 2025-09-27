@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: 'KreativeKommit - Premium Web Agency & Design Studio',
     template: '%s | KreativeKommit'
   },
-  description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results. Expert web design, development, and digital marketing services.',
+  description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results. Expert web design, development, and digital marketing services.',
   keywords: ['web design', 'web development', 'SEO', 'digital marketing', 'agency', 'kreative', 'kommit'],
   authors: [{ name: 'KreativeKommit Team' }],
   creator: 'KreativeKommit',
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://kreativekommit.com',
-    title: 'KreativeKommit - Premium Web Agency & Design Studio',
-    description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results.',
+    title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
+    description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results.',
     siteName: 'KreativeKommit',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KreativeKommit - Premium Web Agency & Design Studio',
-    description: 'KreativeKommit builds fast, SEO-optimized web experiences that drive real results.',
+    title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
+    description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results.',
     creator: '@kreativekommit',
   },
   robots: {
@@ -74,9 +74,9 @@ const jsonLd = {
   },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'San Francisco',
-    addressRegion: 'CA',
-    addressCountry: 'US',
+    addressLocality: 'Lancashire',
+    addressRegion: 'UK',
+    addressCountry: 'GB',
   },
   sameAs: [
     'https://twitter.com/kreativekommit',
