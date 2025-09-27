@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import { GuideMeta, getGuides } from '../../lib/getGuides';
-
-
-
 export { metadata } from './metadata';
-export { viewport } from './viewport';
 
 export default function GuideLandingPage() {
   const guides: GuideMeta[] = getGuides();

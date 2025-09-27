@@ -1,7 +1,4 @@
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-};
+// viewport is now exported from viewport.ts
 export default function Cookies() {
   return (
     <div className="bg-background text-foreground min-h-screen">
