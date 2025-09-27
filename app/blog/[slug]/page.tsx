@@ -1,4 +1,3 @@
-export { viewport } from './viewport';
 import { getBlogPosts } from '../../../lib/getBlogPosts';
 import { notFound } from 'next/navigation';
 import { getBlogPostContent } from '../../../lib/getBlogPostContent';

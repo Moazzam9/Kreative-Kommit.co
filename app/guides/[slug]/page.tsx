@@ -1,4 +1,3 @@
-export { viewport } from './viewport';
 import { notFound } from 'next/navigation';
 import { getGuideContent } from '../../../lib/getGuideContent';
 

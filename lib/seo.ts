@@ -17,7 +17,7 @@ export interface SEOConfig {
 }
 
 export function generatePageMetadata(config: SEOConfig) {
-  const baseUrl = 'https://kreativekommit.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com';
   
   return {
     title: config.title,
