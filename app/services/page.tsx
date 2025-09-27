@@ -16,7 +16,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-// ...existing code...
+import { cityFacts, CityFact } from '@/app/data/cities/facts';
 
 const services = [
   {
@@ -244,6 +244,23 @@ export default function ServicesPage() {
               </Button>
             </div>
           </div>
+
+          {/* Internal links to city landing pages */}
+          <section className="container mx-auto px-4 py-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Serving These UK Cities</h2>
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              {cityFacts.map((city: CityFact) => (
+                <Link
+                  key={city.slug}
+                  href={`/cities/${city.slug}`}
+                  className="block bg-white dark:bg-gray-900 rounded-lg border border-primary-200 dark:border-primary-700 shadow hover:shadow-lg p-4 text-center transition-all"
+                >
+                  <span className="font-semibold text-primary-700 dark:text-primary-400">{city.name}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
         </div>
       </div>
     </>
