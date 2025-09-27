@@ -17,13 +17,13 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    value: '+1 (555) KREATIV',
-    href: 'tel:+15557373284',
+    value: '+44 7490 006357',
+    href: 'tel:+447490006357',
   },
   {
     icon: MapPin,
     title: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Lancashire, UK',
     href: '#',
   },
 ];
@@ -32,7 +32,7 @@ const projectTypes = [
   'Website Redesign',
   'E-commerce Platform',
   'Mobile App',
-  'SEO Optimization',
+  'SEO Optimisation',
   'Performance Audit',
   'Ongoing Maintenance',
 ];
@@ -114,12 +114,12 @@ export default function ContactPage() {
       '@type': 'Organization',
       name: 'KreativeKommit',
       email: 'hello@kreativekommit.com',
-      telephone: '+1-555-KREATIV',
+      telephone: '+447490006357',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'San Francisco',
-        addressRegion: 'CA',
-        addressCountry: 'US',
+        addressLocality: 'Lancashire',
+        addressRegion: 'UK',
+        addressCountry: 'GB',
       },
     },
   };
