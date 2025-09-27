@@ -9,12 +9,14 @@ import { cn } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
 
 const navigation = [
-  { name: 'Home', href: '/' },
+
   { name: 'Designs', href: '/designs' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Services', href: '/services' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Guides', href: '/guides' }
 ];
 
 export function Header() {
