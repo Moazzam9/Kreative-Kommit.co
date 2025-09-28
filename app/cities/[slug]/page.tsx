@@ -1,6 +1,8 @@
 import { cityFacts } from '@/app/data/cities/facts';
+
 import type { Metadata } from 'next';
 import type { CityFact } from '@/app/data/cities/facts';
+
 
 export async function generateStaticParams() {
   return cityFacts.map(city => ({ slug: city.slug }));

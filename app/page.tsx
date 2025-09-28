@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import Hero from '@/components/Hero';
 
-// ...existing code...
+
 
 const services = [
   {
