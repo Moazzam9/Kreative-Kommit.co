@@ -1,4 +1,4 @@
 // Central export for all services
-import { services, getTargetedServices } from './services';
+import { services } from './services'; // Change './services' to the correct file name if it is './service'
 import { serviceFacts } from './facts';
-export { services, getTargetedServices, serviceFacts };
+export { services, serviceFacts };
