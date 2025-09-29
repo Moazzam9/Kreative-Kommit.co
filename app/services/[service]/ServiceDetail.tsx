@@ -1,4 +1,3 @@
-import React from 'react';
 import { services } from '@/app/data/services/services';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';

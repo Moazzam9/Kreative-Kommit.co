@@ -11,7 +11,6 @@ import {
   brand
 } from '@/app/data/templates/cities';
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 
 export async function generateStaticParams() {
   return services.map((service: typeof services[number]) => ({ service: service.slug }));
