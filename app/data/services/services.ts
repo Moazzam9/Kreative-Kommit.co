@@ -1,10 +1,18 @@
+import type { Industry } from '../industries/index';
+
+export interface IndustryData {
+  industry: Industry['slug'];
+  description?: string;
+  facts?: string[];
+}
+
 export interface Service {
   name: string;
   slug: string;
   description: string;
   cityDescriptions?: { [citySlug: string]: string[] };
   industries?: string[];
-  industryData?: any[];
+  industryData?: IndustryData[];
   cities?: string[];
   keywords?: string[];
   facts?: string[];
