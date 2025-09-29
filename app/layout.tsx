@@ -106,8 +106,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"           // ✅ Sets dark mode as default
-          enableSystem={false}         // ✅ Disables system preference
+          defaultTheme="dark"           // Sets dark mode as default
+          enableSystem={false}         // Disables system preference
           disableTransitionOnChange={false}
         >
           <div className="flex min-h-screen flex-col">
