@@ -1,45 +1,65 @@
+"use client";
+import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/badge';
-import { Users, Award, Globe, Heart } from 'lucide-react';
+import { Users, Award, Globe, Coffee, PartyPopper } from 'lucide-react';
 
 // ...existing code...
 
 const team = [
   {
-    name: 'Alex Rivera',
-    role: 'Founder & Creative Director',
+    name: 'Alex B',
+    role: 'Founder, SEO and SSG Specialist',
     image: 'https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=300',
-    bio: 'Passionate about creating digital experiences that make a difference.',
+  bio: 'Digital Visionary. Has led projects from websites to apps, branding, and digital strategy. SEO & SSG secret: Always add a dash of fun and innovation to every client solution.',
+    funFact: 'Can code and dance at the same time.'
   },
   {
-    name: 'Sarah Chen',
+    name: 'Dave S',
     role: 'Lead Developer',
     image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=300',
-    bio: 'Full-stack developer with expertise in modern web technologies.',
+    bio: 'Chief Meme Officer. Writes code that even robots envy. Loves debugging and cat memes.',
+    funFact: 'Once fixed a bug with a meme.'
   },
   {
-    name: 'Marcus Johnson',
-    role: 'SEO Specialist',
+    name: 'Moazzam A',
+    role: 'Frontend and UX Specialist',
     image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
-    bio: 'Data-driven SEO strategist focused on organic growth.',
+    bio: 'Frontend Maestro. Designs pixel-perfect interfaces and smooth user journeys that boost SEO and conversions. Can turn any wireframe into a wow moment.',
+    funFact: 'Knows 101 ways to use keywords.'
   },
   {
-    name: 'Elena Rodriguez',
-    role: 'UX Designer',
+    name: 'Various Freelancers',
+    role: 'Designers & Graphics Experts',
     image: 'https://images.pexels.com/photos/3756966/pexels-photo-3756966.jpeg?auto=compress&cs=tinysrgb&w=300',
-    bio: 'User experience designer creating intuitive digital solutions.',
+    bio: 'Our freelance designers and graphics pros create stunning visuals, engaging user journeys, and brand assets that pop. From logos to layouts, they blend creativity with SEO-friendly design.',
+    funFact: 'Can spot bad UX from 100 meters.'
   },
+];
+const testimonials = [
+  {
+    name: 'Jamie, Manchester',
+    quote: 'KreativeKommit built us a site so good, even our competitors asked for their number! Best web design agency in Manchester.'
+  },
+  {
+    name: 'Priya, Liverpool',
+    quote: 'Our SEO rankings shot up and we got more leads in a month than the whole last year. Highly recommended!'
+  },
+  {
+    name: 'Tom, Leeds',
+    quote: 'The team made the process fun and easy. We love our new site and our customers do too.'
+  }
 ];
 
 const stats = [
-  { icon: Users, label: 'Happy Clients', value: '150+' },
-  { icon: Globe, label: 'Projects Completed', value: '200+' },
-  { icon: Award, label: 'Awards Won', value: '25+' },
-  { icon: Heart, label: 'Years Experience', value: '5+' },
+  { icon: Users, label: 'Clients Who Sent Memes', value: '150+' },
+  { icon: Globe, label: 'Websites Launched Worldwide', value: '200+' },
+  { icon: PartyPopper, label: 'Celebratory GIFs Sent', value: '1000+' },
+  { icon: Coffee, label: 'Cups of Coffee Drank', value: '8,000+' },
 ];
 
 const values = [
@@ -62,6 +82,18 @@ const values = [
 ];
 
 export default function AboutPage() {
+  // Fun facts for interactive button
+  const funFacts = [
+    'We’ve launched sites in 12 countries!',
+    'Our team has sent over 1,000 celebratory GIFs.',
+    'We once built a site in under 24 hours (with lots of coffee).',
+    'We love memes almost as much as SEO.',
+    'Our code is 99% bug-free (the other 1% keeps us humble).'
+  ];
+  const [randomFact, setRandomFact] = React.useState(funFacts[0]);
+  function showRandomFact() {
+    setRandomFact(funFacts[Math.floor(Math.random() * funFacts.length)]);
+  }
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
@@ -136,7 +168,7 @@ export default function AboutPage() {
                 Meet Our Team
               </h2>
               <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-                Talented professionals dedicated to your success
+                Talented professionals dedicated to your success. We’re not just web designers—we’re meme lovers, coffee drinkers, and SEO fanatics.
               </p>
             </div>
 
@@ -163,10 +195,75 @@ export default function AboutPage() {
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       {member.bio}
                     </p>
+                    <p className="text-xs text-primary-600 dark:text-primary-400 mt-2 italic">
+                      Fun Fact: {member.funFact}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
             </div>
+          </div>
+          <div className="mb-16">
+            <div className="mx-auto max-w-2xl text-center mb-12">
+              <h2 className="text-3xl font-bold text-black dark:text-white">
+                Why Choose Us?
+              </h2>
+              <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                Award-winning web agency trusted by UK businesses. Creative digital experts, SEO fanatics, and meme connoisseurs. We make websites fun, fast, and Google-friendly.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="text-center animate-fade-up">
+                <CardHeader>
+                  <CardTitle className="text-lg text-black dark:text-white">Fast Results</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Our sites load faster than you can say “SEO.”</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center animate-fade-up">
+                <CardHeader>
+                  <CardTitle className="text-lg text-black dark:text-white">Creative Design</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">We blend creativity and conversion for maximum impact.</p>
+                </CardContent>
+              </Card>
+              <Card className="text-center animate-fade-up">
+                <CardHeader>
+                  <CardTitle className="text-lg text-black dark:text-white">SEO Obsessed</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">We live and breathe Google rankings. Your success is our mission.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          <div className="mb-16">
+            <div className="mx-auto max-w-2xl text-center mb-12">
+              <h2 className="text-3xl font-bold text-black dark:text-white">
+                What Our Clients Say
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((t, idx) => (
+                <Card key={t.name} className="text-center animate-fade-up" style={{ animationDelay: `${idx * 0.1}s` }}>
+                  <CardHeader>
+                    <CardTitle className="text-lg text-black dark:text-white">{t.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">“{t.quote}”</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+          <div className="mb-16 text-center">
+            <h2 className="text-2xl font-bold text-black dark:text-white mb-4">Random Fun Fact</h2>
+            <p className="text-lg text-primary-600 dark:text-primary-400 mb-4">{randomFact}</p>
+            <Button size="sm" className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700" onClick={showRandomFact}>
+              Show Another Fun Fact
+            </Button>
           </div>
 
           <div className="mb-16">
@@ -197,10 +294,10 @@ export default function AboutPage() {
 
           <div className="text-center">
             <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
-              Want to Work With Us?
+              Ready to Join Our Happy Clients?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              We'd love to hear about your project and discuss how we can help
+              Get a free website audit or just say hi. We promise to reply with a meme.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -208,7 +305,7 @@ export default function AboutPage() {
                 size="lg"
                 className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
               >
-                <Link href="/contact">Get In Touch</Link>
+                <Link href="/contact">Get Free Website Audit</Link>
               </Button>
 
               <Button
