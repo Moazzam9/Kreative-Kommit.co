@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
 
 const navigation = [
-
   { name: 'Designs', href: '/designs' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Services', href: '/services' },
@@ -19,13 +18,12 @@ const navigation = [
   { name: 'Guides', href: '/guides' }
 ];
 
-export function Header() {
+export const Header: React.FC = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-[#F8F8F9] backdrop-blur-sm transition-colors dark:border-slate-700 dark:bg-[#0F172A]">
-
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2 transition-opacity hover:opacity-80">
           {/* Light mode logo */}
@@ -68,7 +66,6 @@ export function Header() {
 
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-
           <button
             className="md:hidden rounded-lg p-2 text-slate-700 hover:bg-primary-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-600"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -103,4 +100,4 @@ export function Header() {
       )}
     </header>
   );
-}
+};

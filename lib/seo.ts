@@ -48,12 +48,11 @@ export function generatePageMetadata(config: SEOConfig) {
   };
 }
 
-export function generateStructuredData(type: string, data: any) {
+export function generateStructuredData<T extends object>(type: string, data: T): string {
   const baseStructure = {
     '@context': 'https://schema.org',
     '@type': type,
     ...data,
   };
-
   return JSON.stringify(baseStructure);
 }

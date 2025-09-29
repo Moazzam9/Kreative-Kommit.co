@@ -5,8 +5,12 @@ import { remark } from 'remark';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
+export interface BlogPostContent {
+  [key: string]: unknown;
+  contentHtml: string;
+}
 
-export async function getBlogPostContent(slug: string) {
+export async function getBlogPostContent(slug: string): Promise<BlogPostContent> {
   const postsDir = path.join(process.cwd(), 'content/blog');
   function getAllMarkdownFiles(dir: string): string[] {
     let results: string[] = [];

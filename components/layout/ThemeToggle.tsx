@@ -4,7 +4,7 @@ import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
-export function ThemeToggle() {
+export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -31,4 +31,4 @@ export function ThemeToggle() {
       )}
     </button>
   );
-}
+};
