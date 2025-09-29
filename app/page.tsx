@@ -97,12 +97,12 @@ export default function HomePage() {
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={project.name}
+                    alt={`${project.name} website screenshot`}
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge variant="secondary">
+                    <Badge variant="secondary" aria-label={`Performance score: ${project.performance}`}>
                       <Zap className="h-3 w-3 mr-1" />
                       {project.performance}
                     </Badge>
