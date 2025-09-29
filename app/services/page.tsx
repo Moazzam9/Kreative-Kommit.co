@@ -24,7 +24,7 @@ const services = [
     title: 'UI/UX Design',
     description: 'Beautiful, conversion-focused designs that captivate your audience and drive engagement.',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems', 'Accessibility'],
-    price: 'From £2,500',
+    price: 'From £1,000',
     duration: '2-4 weeks',
   },
   {
@@ -32,7 +32,7 @@ const services = [
     title: 'Web Development',
     description: 'Fast, scalable web applications built with modern technologies and best practices.',
     features: ['Frontend Development', 'Backend APIs', 'Database Design', 'Testing', 'Deployment'],
-    price: 'From $5,000',
+    price: 'From £1,500',
     duration: '4-8 weeks',
   },
   {
@@ -40,7 +40,7 @@ const services = [
     title: 'SEO Optimisation',
     description: 'Technical SEO and content strategies that boost search rankings and organic traffic.',
     features: ['Technical SEO', 'Content Strategy', 'Local SEO', 'Analytics', 'Reporting'],
-    price: 'From £1,500',
+    price: 'From £500',
     duration: '2-3 weeks',
   },
   {
@@ -48,7 +48,7 @@ const services = [
     title: 'Performance Audit',
     description: 'Comprehensive analysis and optimisation of your website\'s speed and performance.',
     features: ['Core Web Vitals', 'Speed Optimisation', 'Image Optimisation', 'Code Splitting', 'CDN Setup'],
-    price: 'From £800',
+    price: 'From £300',
     duration: '1 week',
   },
   {
@@ -56,7 +56,7 @@ const services = [
     title: 'Mobile Optimisation',
     description: 'Ensure your website works perfectly across all devices and screen sizes.',
     features: ['Responsive Design', 'Mobile-First', 'Touch Optimisation', 'App-like Experience', 'PWA'],
-    price: 'From $1,200',
+    price: 'From £500',
     duration: '1-2 weeks',
   },
   {
@@ -64,7 +64,7 @@ const services = [
     title: 'Security & Maintenance',
     description: 'Keep your website secure, updated, and running smoothly with our maintenance plans.',
     features: ['Security Updates', 'Backup Solutions', 'Monitoring', 'SSL Certificates', '24/7 Support'],
-    price: 'From £300/month',
+    price: 'From £50/month',
     duration: 'Ongoing',
   },
 ];
