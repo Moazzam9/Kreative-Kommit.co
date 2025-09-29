@@ -24,14 +24,23 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
   const service = services.find((s: typeof services[number]) => s.slug === awaitedParams.service);
   if (!service) return <div>Service not found.</div>;
 
-  // Use Manchester as default city for demo; can be dynamic
-  const city = 'Manchester';
-  const title = getTitle(service.slug, city);
-  const metaDescription = getMetaDescription(service.slug, city);
-  const intro = getIntroParagraph(service.slug, city);
-  const cta = getCTA(service.slug, city);
-  const faq = getFAQ(service.slug, city);
-  const schemaMarkup = getSchemaMarkup(service.slug, city);
+  // Use generic (non-city) content for service landing page
+  const title = service.name + ' | ' + brand;
+  const metaDescription = service.description;
+  const intro = `Discover our ${service.name} services.`;
+  const cta = `Ready to get started with ${service.name}? Contact us today!`;
+  const faq: { q: string; a: string }[] = [
+    { q: `What is ${service.name}?`, a: service.description },
+    { q: `How can ${brand} help with ${service.name}?`, a: `We offer expert ${service.name} tailored to your business needs.` }
+  ];
+  const schemaMarkup = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    description: service.description,
+    provider: { '@type': 'Organization', name: brand },
+    url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/services/${service.slug}`
+  };
   const facts: string[] = serviceFacts.find(f => f.slug === service.slug)?.facts || service.facts || [];
 
   return (
