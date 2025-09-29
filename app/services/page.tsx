@@ -189,7 +189,7 @@ export default function ServicesPage() {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              Let's discuss your project and how we can help bring your vision to life
+              Let&#39;s discuss your project and how we can help bring your vision to life
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

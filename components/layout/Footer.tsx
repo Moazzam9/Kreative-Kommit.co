@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Palette, Twitter, Linkedin, Github } from 'lucide-react';
 
@@ -12,15 +13,20 @@ export function Footer() {
           <div className="space-y-4">
           <Link href="/" className="flex items-center space-x-2">
   {/* Light mode logo */}
-  <img
+  {/* Light mode logo */}
+  <Image
     src="/ico.png"
     alt="KreativeKommit Logo Light"
+    width={24}
+    height={24}
     className="h-6 w-6 block dark:hidden"
   />
   {/* Dark mode logo */}
-  <img
+  <Image
     src="/ico2.png"
     alt="KreativeKommit Logo Dark"
+    width={24}
+    height={24}
     className="h-6 w-6 hidden dark:block"
   />
   <span className="text-lg font-bold text-slate-800 dark:text-white">

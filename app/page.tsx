@@ -232,9 +232,9 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Transform Your Web Presence?
           </h2>
-          <p className="text-xl text-slate-100 mb-8 max-w-2xl mx-auto">
-            Let's create something extraordinary together. Get a free consultation today.
-          </p>
+            <p className="text-xl text-slate-100 mb-8 max-w-2xl mx-auto">
+              Let&#39;s create something extraordinary together. Get a free consultation today.
+            </p>
           <Button
   asChild
   size="lg"

@@ -66,7 +66,7 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About KreativeKommit',
-    description: 'Learn about KreativeKommit\'s mission, values, and team',
+  description: 'Learn about KreativeKommit&#39;s mission, values, and team',
     url: 'https://kreativekommit.com/about',
     mainEntity: {
       '@type': 'Organization',
@@ -98,7 +98,7 @@ export default function AboutPage() {
               About KreativeKommit
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              We're passionate creators building the future of web experiences
+              We&#39;re passionate creators building the future of web experiences
             </p>
           </div>
 

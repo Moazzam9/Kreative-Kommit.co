@@ -131,7 +131,7 @@ export default function ContactPage() {
               Get In Touch
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              Ready to start your next project? We'd love to hear from you.
+              Ready to start your next project? We&#39;d love to hear from you.
             </p>
           </div>
 
@@ -143,8 +143,8 @@ export default function ContactPage() {
                   Let's Talk
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-8">
-                  Whether you're starting from scratch or need to revamp your existing website,
-                  we're here to help bring your vision to life.
+                  Whether you&#39;re starting from scratch or need to revamp your existing website,
+                  we&#39;re here to help bring your vision to life.
                 </p>
               </div>
 

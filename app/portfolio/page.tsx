@@ -256,7 +256,7 @@ export default function PortfolioPage() {
               Ready to Join Our Success Stories?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              Let's build something amazing together
+              Let&#39;s build something amazing together
             </p>
             <Button
               asChild

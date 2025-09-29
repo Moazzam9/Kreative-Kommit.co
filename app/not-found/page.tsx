@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export default function NotFoundPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white font-sans flex flex-col items-center justify-center">
@@ -9,9 +10,9 @@ export default function NotFoundPage() {
           Maybe the page took a coffee break, or it’s hiding from the SEO robots.<br />
           Don’t worry, we’ll help you get back on track!
         </p>
-        <a href="/" className="inline-block bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 px-6 py-3 rounded-full text-base font-medium transition-colors">
+        <Link href="/" className="inline-block bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 px-6 py-3 rounded-full text-base font-medium transition-colors">
           Go Home
-        </a>
+        </Link>
       </div>
     </main>
   );
