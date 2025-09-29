@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   return cityFacts.map(city => ({ slug: city.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<'/cities/[slug]'>): Promise<Metadata> {
   const awaitedParams = await params;
   const city = cityFacts.find(c => c.slug === awaitedParams.slug);
   if (!city) return {};
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function CityPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) {
   const awaitedParams = await params;
   const city = cityFacts.find(c => c.slug === awaitedParams.slug);
   if (!city) return <div>City not found.</div>;

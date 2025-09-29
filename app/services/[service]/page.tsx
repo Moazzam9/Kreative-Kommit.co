@@ -5,7 +5,7 @@ export async function generateStaticParams() {
   return services.map(service => ({ service: service.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { service: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<'/services/[service]'>): Promise<Metadata> {
   const awaitedParams = await params;
   const service = services.find(s => s.slug === awaitedParams.service);
   if (!service) return {};
@@ -37,7 +37,7 @@ export const viewport = {
   maximumScale: 1,
 };
 
-export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
+export default async function ServicePage({ params }: PageProps<'/services/[service]'>) {
   const awaitedParams = await params;
   const service = services.find(s => s.slug === awaitedParams.service);
   if (!service) return <div>Service not found.</div>;
