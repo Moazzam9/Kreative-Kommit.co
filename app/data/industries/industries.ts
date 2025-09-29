@@ -9,35 +9,63 @@ export interface Industry {
 }
 
 export const industries: Industry[] = [
-  {
-    name: "Electricians",
-    slug: "electricians",
-    keywords: [
-      "electrician web design",
-      "electrician SEO",
-      "best electrician website design",
-      "affordable electrician SEO services",
-      "emergency electrician web design",
-      "local electrician SEO expert",
-      "electrician marketing for small business",
-      "electrician website designer near me"
-    ],
-  description: "We light up your business—literally and digitally! Shockingly good web design, SEO, and marketing for electricians who want to spark more leads and shine online.",
-    facts: [
-      "Electricians benefit from local SEO and service area pages.",
-      "Online reviews and trust signals are crucial for winning new jobs.",
-      "Mobile-friendly websites help attract emergency and residential clients."
-    ],
-    schema: {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      name: 'Kreative Kommit',
-      areaServed: 'UK',
-      industry: 'Electricians',
-      url: 'https://kreativekommit.com/industries/electricians',
-      description: 'Digital marketing and web solutions for electricians.'
-    }
-  },
+    {
+      name: "Construction",
+      slug: "construction",
+      keywords: [
+        "construction web design",
+        "construction SEO",
+        "best construction website design",
+        "affordable construction SEO services",
+        "local construction SEO expert",
+        "construction marketing for small business",
+        "construction website designer near me"
+      ],
+      description: "Expert digital solutions for construction companies, contractors, and trades. We build high-performance websites, local SEO, and marketing campaigns to help you win more projects and grow your reputation.",
+      facts: [
+        "Construction businesses benefit from local SEO and project showcase pages.",
+        "Online reviews and reputation management are crucial for winning new contracts.",
+        "Mobile-friendly websites help attract homeowners and commercial clients."
+      ],
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'Kreative Kommit',
+        areaServed: 'UK',
+        industry: 'Construction',
+        url: 'https://kreativekommit.com/industries/construction',
+        description: 'Digital marketing and web solutions for the construction industry.'
+      }
+    },
+    {
+      name: "Electricians",
+      slug: "electricians",
+      keywords: [
+        "electrician web design",
+        "electrician SEO",
+        "best electrician website design",
+        "affordable electrician SEO services",
+        "emergency electrician web design",
+        "local electrician SEO expert",
+        "electrician marketing for small business",
+        "electrician website designer near me"
+      ],
+    description: "We light up your business—literally and digitally! Shockingly good web design, SEO, and marketing for electricians who want to spark more leads and shine online.",
+      facts: [
+        "Electricians benefit from local SEO and service area pages.",
+        "Online reviews and trust signals are crucial for winning new jobs.",
+        "Mobile-friendly websites help attract emergency and residential clients."
+      ],
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'Kreative Kommit',
+        areaServed: 'UK',
+        industry: 'Electricians',
+        url: 'https://kreativekommit.com/industries/electricians',
+        description: 'Digital marketing and web solutions for electricians.'
+      }
+    },
   {
     name: "Plumbers",
     slug: "plumbers",
