@@ -14,14 +14,14 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export async function generateStaticParams() {
-  return services.map(service => ({ service: service.slug }));
+  return services.map((service: typeof services[number]) => ({ service: service.slug }));
 }
 
 
 
 export default async function ServicePage({ params }: PageProps<'/services/[service]'>) {
   const awaitedParams = await params;
-  const service = services.find(s => s.slug === awaitedParams.service);
+  const service = services.find((s: typeof services[number]) => s.slug === awaitedParams.service);
   if (!service) return <div>Service not found.</div>;
 
   // Use Manchester as default city for demo; can be dynamic
@@ -32,7 +32,7 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
   const cta = getCTA(service.slug, city);
   const faq = getFAQ(service.slug, city);
   const schemaMarkup = getSchemaMarkup(service.slug, city);
-  const facts = serviceFacts.find(f => f.slug === service.slug)?.facts || service.facts || [];
+  const facts: string[] = serviceFacts.find(f => f.slug === service.slug)?.facts || service.facts || [];
 
   return (
     <>
