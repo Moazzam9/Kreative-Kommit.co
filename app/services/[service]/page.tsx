@@ -5,37 +5,6 @@ export async function generateStaticParams() {
   return services.map(service => ({ service: service.slug }));
 }
 
-export async function generateMetadata({ params }: PageProps<'/services/[service]'>): Promise<Metadata> {
-  const awaitedParams = await params;
-  const service = services.find(s => s.slug === awaitedParams.service);
-  if (!service) return {};
-  return {
-    title: `${service.name} Services | KreativeKommit`,
-    description: service.description,
-    keywords: [service.name, 'web design', 'SEO', 'digital marketing', 'KreativeKommit'],
-    alternates: {
-      canonical: `https://kreativekommit.com/services/${service.slug}`
-    },
-    openGraph: {
-      title: `${service.name} Services | KreativeKommit`,
-      description: service.description,
-      url: `https://kreativekommit.com/services/${service.slug}`,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${service.name} Services | KreativeKommit`,
-      description: service.description,
-    },
-    metadataBase: new URL('https://kreativekommit.com'),
-  };
-}
-
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-};
 
 export default async function ServicePage({ params }: PageProps<'/services/[service]'>) {
   const awaitedParams = await params;
