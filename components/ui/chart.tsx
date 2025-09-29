@@ -24,15 +24,13 @@ type ChartContextProps = {
 
 const ChartContext = React.createContext<ChartContextProps | null>(null);
 
-function useChart() {
+const useChart = () => {
   const context = React.useContext(ChartContext);
-
   if (!context) {
     throw new Error('useChart must be used within a <ChartContainer />');
   }
-
   return context;
-}
+};
 
 const ChartContainer = React.forwardRef<
   HTMLDivElement,
@@ -339,11 +337,11 @@ const ChartLegendContent = React.forwardRef<
 ChartLegendContent.displayName = 'ChartLegend';
 
 // Helper to extract item config from a payload.
-function getPayloadConfigFromPayload(
+const getPayloadConfigFromPayload = (
   config: ChartConfig,
   payload: unknown,
   key: string
-) {
+) => {
   if (typeof payload !== 'object' || payload === null) {
     return undefined;
   }
@@ -375,7 +373,7 @@ function getPayloadConfigFromPayload(
   return configLabelKey in config
     ? config[configLabelKey]
     : config[key as keyof typeof config];
-}
+};
 
 export {
   ChartContainer,

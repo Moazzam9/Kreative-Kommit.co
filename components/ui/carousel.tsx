@@ -32,15 +32,13 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
-function useCarousel() {
+const useCarousel = () => {
   const context = React.useContext(CarouselContext);
-
   if (!context) {
     throw new Error('useCarousel must be used within a <Carousel />');
   }
-
   return context;
-}
+};
 
 const Carousel = React.forwardRef<
   HTMLDivElement,
