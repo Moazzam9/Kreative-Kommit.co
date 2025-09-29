@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_GB',
     url: 'https://kreativekommit.com',
     title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
     description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results.',
