@@ -122,7 +122,7 @@ export default function ServicesPage() {
                     {service.keywords?.map((keyword) => (
                       <li key={keyword} className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
                         <div className="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-3" />
-                        {keyword}
+                        {keyword.replace(/'/g, "&apos;").replace(/"/g, "&quot;")}
                       </li>
                     ))}
                   </ul>

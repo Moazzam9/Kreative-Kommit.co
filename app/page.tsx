@@ -111,10 +111,10 @@ export default function HomePage() {
 
                 <CardHeader>
                   <CardTitle className="text-black dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                    {project.name}
+                    {project.name.replace(/'/g, "&apos;").replace(/"/g, "&quot;")}
                   </CardTitle>
                   <CardDescription className="text-slate-600 dark:text-slate-300">
-                    {project.description}
+                    {project.description.replace(/'/g, "&apos;").replace(/"/g, "&quot;")}
                   </CardDescription>
                 </CardHeader>
 
