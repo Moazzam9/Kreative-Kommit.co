@@ -1,3 +1,4 @@
+import { getServiceCityContent } from '@/app/data/services/getServiceCityContent';
 import { services } from '@/app/data/services';
 import { cityFacts } from '@/app/data/cities/facts';
 import type { Metadata } from 'next';
@@ -15,27 +16,26 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<'/services/[service]/[city]'>): Promise<Metadata> {
   const awaitedParams = await params;
-  const service = services.find(s => s.slug === awaitedParams.service);
-  const city = cityFacts.find(c => c.slug === awaitedParams.city);
-  if (!service || !city) return {};
-  const cityDesc = service.cityDescriptions?.[city.slug]?.[0] || service.description;
+  const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
+  if (!content) return {};
+  const { service, city, description, schemaMarkup } = content;
   return {
     title: `${service.name} in ${city.name} | KreativeKommit`,
-    description: cityDesc,
+    description,
     keywords: [service.name, city.name, 'web design', 'SEO', 'digital marketing', 'KreativeKommit'],
     alternates: {
-      canonical: `https://kreativekommit.com/services/${service.slug}/${city.slug}`
+      canonical: schemaMarkup.url
     },
     openGraph: {
       title: `${service.name} in ${city.name} | KreativeKommit`,
-      description: cityDesc,
-      url: `https://kreativekommit.com/services/${service.slug}/${city.slug}`,
+      description,
+      url: schemaMarkup.url,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title: `${service.name} in ${city.name} | KreativeKommit`,
-      description: cityDesc,
+      description,
     },
     metadataBase: new URL('https://kreativekommit.com'),
   };
@@ -49,10 +49,9 @@ export const viewport = {
 
 export default async function ServiceCityPage({ params }: PageProps<'/services/[service]/[city]'>) {
   const awaitedParams = await params;
-  const service = services.find(s => s.slug === awaitedParams.service);
-  const city = cityFacts.find(c => c.slug === awaitedParams.city);
-  if (!service || !city) return <div>Service or city not found.</div>;
-  const cityDesc = service.cityDescriptions?.[city.slug]?.[0] || service.description;
+  const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
+  if (!content) return <div>Service or city not found.</div>;
+  const { service, city, description, facts } = content;
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
       <div className="py-20 bg-white dark:bg-gray-900">
@@ -62,7 +61,7 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
               {service.name} in {city.name}
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              {cityDesc}
+              {description}
             </p>
           </div>
         </div>
@@ -70,11 +69,8 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
       <section className="container mx-auto px-4 pb-16">
         <h2 className="text-2xl font-bold mb-6">Why Choose KreativeKommit for {service.name} in {city.name}?</h2>
         <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
-          {service.facts?.map((fact, idx) => (
+          {facts.map((fact, idx) => (
             <li key={idx}>{fact}</li>
-          ))}
-          {city.facts.map((fact, idx) => (
-            <li key={`city-${idx}`}>{fact}</li>
           ))}
         </ul>
       </section>
