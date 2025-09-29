@@ -145,15 +145,25 @@ export default function ServicesPage() {
               </Card>
             ))}
           </div>
-          {!showAll && services.length > 6 && (
+          {services.length > 6 && (
             <div className="text-center mb-12">
-              <Button
-                size="lg"
-                className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
-                onClick={() => setShowAll(true)}
-              >
-                Show More
-              </Button>
+              {!showAll ? (
+                <Button
+                  size="lg"
+                  className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
+                  onClick={() => setShowAll(true)}
+                >
+                  Show More
+                </Button>
+              ) : (
+                <Button
+                  size="lg"
+                  className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
+                  onClick={() => setShowAll(false)}
+                >
+                  Show Less
+                </Button>
+              )}
             </div>
           )}
 
