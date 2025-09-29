@@ -44,6 +44,9 @@ export default function HomePage() {
 
       {/* Services Overview */}
       <section id="how-it-works" className="py-20 bg-white dark:bg-slate-900">
+        <nav role="navigation" aria-label="Main site navigation">
+          {/* ...existing code... */}
+        </nav>
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -62,7 +65,7 @@ export default function HomePage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="text-center">
-                  <service.icon className="h-12 w-12 text-primary-600 dark:text-primary-600 mx-auto mb-4" />
+                  <service.icon className="h-12 w-12 text-primary-600 dark:text-primary-600 mx-auto mb-4" aria-label={`${service.title} icon`} />
                   <CardTitle>{service.title}</CardTitle>
                   <CardDescription className="text-primary-400 dark:text-primary-400">
                     {service.description}
@@ -75,8 +78,8 @@ export default function HomePage() {
       </section>
 
 
-      {/* Portfolio Preview */}
-      <section className="py-20 bg-primary-50 dark:bg-slate-800">
+  {/* Portfolio Preview */}
+  <section className="py-20 bg-primary-50 dark:bg-slate-800" role="region" aria-label="Portfolio preview">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -121,7 +124,7 @@ export default function HomePage() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
+                      <Badge key={tag} variant="outline" className="text-xs" aria-label={`Technology tag: ${tag}`}>
                         {tag}
                       </Badge>
                     ))}
@@ -136,6 +139,7 @@ export default function HomePage() {
               asChild
               size="lg"
               className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
+              aria-label="View all portfolio projects"
             >
               <Link href="/portfolio">
                 View All Projects
@@ -146,8 +150,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+  {/* Why Choose Us */}
+  <section className="py-20 bg-white dark:bg-slate-900" role="region" aria-label="Why choose KreativeKommit">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -189,8 +193,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary-700 dark:bg-primary-700">
+  {/* CTA Section */}
+  <section className="py-20 bg-primary-700 dark:bg-primary-700" role="region" aria-label="Call to action">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Transform Your Web Presence?
@@ -199,15 +203,16 @@ export default function HomePage() {
               Let&#39;s create something extraordinary together. Get a free consultation today.
             </p>
           <Button
-  asChild
-  size="lg"
-  className="bg-white text-purple-700 hover:bg-purple-50 dark:bg-white dark:text-purple-700 dark:hover:bg-purple-50"
->
-  <Link href="/contact">
-    Get Free Consultation
-    <ArrowRight className="ml-2 h-4 w-4" />
-  </Link>
-</Button>
+            asChild
+            size="lg"
+            className="bg-white text-purple-700 hover:bg-purple-50 dark:bg-white dark:text-purple-700 dark:hover:bg-purple-50"
+            aria-label="Get free web consultation"
+          >
+            <Link href="/contact">
+              Get Free Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
 
         </div>
       </section>
