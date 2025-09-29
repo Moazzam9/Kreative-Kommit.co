@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: { service: string; 
   };
 }
 
-export default async function ServiceIndustryPage({ params }: { params: { service: string; industry: string } }) {
+export default async function ServiceIndustryPage({ params }: any) {
   const service = services.find(s => s.slug === params.service);
   const industry = industries.find(i => i.slug === params.industry);
   if (!service || !industry) return <div>Service or Industry not found.</div>;
