@@ -95,18 +95,6 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@types/node':
-        specifier: 24.5.2
-        version: 24.5.2
-      '@types/react':
-        specifier: 19.1.15
-        version: 19.1.15
-      '@types/react-dom':
-        specifier: 19.1.9
-        version: 19.1.9(@types/react@19.1.15)
-      autoprefixer:
-        specifier: 10.4.21
-        version: 10.4.21(postcss@8.5.6)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -122,12 +110,6 @@ importers:
       embla-carousel-react:
         specifier: ^8.6.0
         version: 8.6.0(react@19.1.1)
-      eslint:
-        specifier: 9.36.0
-        version: 9.36.0(jiti@1.21.7)
-      eslint-config-next:
-        specifier: 15.5.4
-        version: 15.5.4(eslint@9.36.0(jiti@1.21.7))(typescript@5.9.2)
       framer-motion:
         specifier: ^12.23.22
         version: 12.23.22(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -146,9 +128,6 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      postcss:
-        specifier: ^8.5.6
-        version: 8.5.6
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -185,21 +164,43 @@ importers:
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
-      tailwindcss:
-        specifier: 3.3.3
-        version: 3.3.3
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.3.3)
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       zod:
         specifier: ^4.1.11
         version: 4.1.11
+    devDependencies:
+      '@types/node':
+        specifier: 24.5.2
+        version: 24.5.2
+      '@types/react':
+        specifier: 19.1.15
+        version: 19.1.15
+      '@types/react-dom':
+        specifier: 19.1.9
+        version: 19.1.9(@types/react@19.1.15)
+      autoprefixer:
+        specifier: 10.4.21
+        version: 10.4.21(postcss@8.5.6)
+      eslint:
+        specifier: 9.36.0
+        version: 9.36.0(jiti@1.21.7)
+      eslint-config-next:
+        specifier: 15.5.4
+        version: 15.5.4(eslint@9.36.0(jiti@1.21.7))(typescript@5.9.2)
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
+      tailwindcss:
+        specifier: 3.3.3
+        version: 3.3.3
+      typescript:
+        specifier: 5.9.2
+        version: 5.9.2
 
 packages:
 
