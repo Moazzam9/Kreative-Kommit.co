@@ -177,7 +177,7 @@ export default function AboutPage() {
                     <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
                       <Image
                         src={member.image}
-                        alt={member.name}
+                        alt={`${member.name} profile photo`}
                         fill
                         className="object-cover"
                       />
@@ -185,7 +185,7 @@ export default function AboutPage() {
                     <CardTitle className="text-lg text-black dark:text-white">
                       {member.name}
                     </CardTitle>
-                    <Badge variant="secondary" className="mx-auto">
+                    <Badge variant="secondary" className="mx-auto" aria-label={`Role: ${member.role}`}>
                       {member.role}
                     </Badge>
                   </CardHeader>

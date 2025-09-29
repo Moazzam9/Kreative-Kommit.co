@@ -23,15 +23,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: guide.title,
     description: guide.description,
+    keywords: guide.keywords || [],
     alternates: {
-  canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/guides/${awaitedParams.slug}`
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/guides/${awaitedParams.slug}`
     },
-    keywords: guide.keywords,
     authors: guide.author ? [{ name: guide.author }] : undefined,
     openGraph: {
       title: guide.title,
       description: guide.description,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/guides/${awaitedParams.slug}`,
       images: guide.image ? [guide.image] : undefined,
+      type: 'article',
     },
     twitter: {
       card: 'summary_large_image',

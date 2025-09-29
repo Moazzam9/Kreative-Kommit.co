@@ -134,6 +134,7 @@ export default function ServicesPage() {
                     <Button
                       className="w-full bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
                       size="sm"
+                      aria-label={`Learn more about ${service.name}`}
                     >
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -150,6 +151,7 @@ export default function ServicesPage() {
                   size="lg"
                   className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
                   onClick={() => setShowAll(true)}
+                  aria-label="Show more services"
                 >
                   Show More
                 </Button>
@@ -158,6 +160,7 @@ export default function ServicesPage() {
                   size="lg"
                   className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
                   onClick={() => setShowAll(false)}
+                  aria-label="Show fewer services"
                 >
                   Show Less
                 </Button>

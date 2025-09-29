@@ -65,18 +65,18 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
         </div>
       </div>
       <section className="container mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Why Choose KreativeKommit in {city.name}?</h2>
+  <h2 className="text-2xl font-bold mb-6" aria-label={`Why Choose KreativeKommit in ${city.name}`}>Why Choose KreativeKommit in {city.name}?</h2>
         <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
           {city.facts.map((fact, idx) => (
-            <li key={idx}>{fact}</li>
+            <li key={idx} aria-label={`City fact: ${fact}`}>{fact}</li>
           ))}
         </ul>
       </section>
       <section className="container mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+  <h2 className="text-2xl font-bold mb-6" aria-label="Frequently Asked Questions">Frequently Asked Questions</h2>
         <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
           {faqs.map((faq, idx) => (
-            <li key={idx}><strong>{faq.q}</strong><br />{faq.a}</li>
+            <li key={idx} aria-label={`FAQ: ${faq.q}`}><strong>{faq.q}</strong><br />{faq.a}</li>
           ))}
         </ul>
       </section>

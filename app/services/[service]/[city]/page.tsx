@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps<'/services/[service
   return {
     title: `${service.name} in ${city.name} | KreativeKommit`,
     description,
-    keywords: [service.name, city.name, 'web design', 'SEO', 'digital marketing', 'KreativeKommit'],
+    keywords: [service.name, city.name, ...(service.keywords || []), 'web design', 'SEO', 'digital marketing', 'KreativeKommit'],
     alternates: {
       canonical: schemaMarkup.url
     },

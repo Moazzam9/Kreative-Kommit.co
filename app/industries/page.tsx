@@ -15,7 +15,7 @@ export default function IndustriesPage() {
           {industries.map((industry, idx) => (
             <Card key={industry.slug} className="group hover:shadow-lg transition-shadow animate-fade-up" style={{ animationDelay: `${idx * 0.1}s` }}>
               <CardHeader>
-                <CardTitle className="text-black dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                <CardTitle className="text-black dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" aria-label={`Industry: ${industry.name}`}>
                   {industry.name}
                 </CardTitle>
                 <CardDescription className="text-gray-600 dark:text-gray-400">
@@ -23,7 +23,7 @@ export default function IndustriesPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Link href={`/industries/${industry.slug}`} className="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition w-full text-center font-semibold">
+                <Link href={`/industries/${industry.slug}`} className="inline-block px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition w-full text-center font-semibold" aria-label={`Learn more about ${industry.name}`}>
                   Learn More
                 </Link>
               </CardContent>

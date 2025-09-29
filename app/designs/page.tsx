@@ -140,7 +140,7 @@ export default function DesignsPage() {
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src={design.image}
-                    alt={design.name}
+                    alt={`${design.name} design preview`}
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
                   />

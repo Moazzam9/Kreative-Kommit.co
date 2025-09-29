@@ -43,7 +43,7 @@ export default async function BlogLandingPage() {
                 </div>
                 <div className="flex items-center justify-between mt-4">
                   <span className="text-xs text-gray-500 dark:text-gray-400">{post.date}</span>
-                  <span className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 px-4 py-1 rounded-full text-sm font-medium transition-colors">Read More</span>
+                  <span className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 px-4 py-1 rounded-full text-sm font-medium transition-colors" aria-label="Read more about this post">Read More</span>
                 </div>
               </Link>
             ))
@@ -61,7 +61,7 @@ export default async function BlogLandingPage() {
               href={`/cities/${city.slug}`}
               className="block bg-white dark:bg-gray-900 rounded-lg border border-primary-200 dark:border-primary-700 shadow hover:shadow-lg p-4 text-center transition-all"
             >
-              <span className="font-semibold text-primary-700 dark:text-primary-400">{city.name}</span>
+              <span className="font-semibold text-primary-700 dark:text-primary-400" aria-label={`City: ${city.name}`}>{city.name}</span>
             </Link>
           ))}
         </div>

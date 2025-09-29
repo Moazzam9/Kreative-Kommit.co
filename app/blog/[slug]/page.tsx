@@ -10,12 +10,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description?: string;
     canonical?: string;
     contentHtml: string;
+    keywords?: string[];
   };
   return {
     title: post.title,
     description: post.excerpt || post.description,
+    keywords: post.keywords || [],
     alternates: {
       canonical: post.canonical || `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/blog/${awaitedParams.slug}`
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || post.description,
+      url: post.canonical || `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/blog/${awaitedParams.slug}`,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || post.description,
     },
     metadataBase: new URL('https://kreativekommit.com'),
   };

@@ -31,10 +31,10 @@ export default async function GuideLandingPage() {
                 style={{ textDecoration: 'none' }}
               >
                 <div>
-                  <h2 className="text-2xl font-bold mb-2 text-black dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  <h2 className="text-2xl font-bold mb-2 text-black dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" aria-label={`Guide title: ${guide.title}`}>
                     {guide.title}
                   </h2>
-                  <p className="text-base text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{guide.excerpt}</p>
+                  <p className="text-base text-gray-600 dark:text-gray-400 mb-4 line-clamp-3" aria-label={`Guide excerpt: ${guide.excerpt}`}>{guide.excerpt}</p>
                 </div>
                 <div className="flex items-center justify-between mt-4">
                   <span className="text-xs text-gray-500 dark:text-gray-400">{guide.date}</span>

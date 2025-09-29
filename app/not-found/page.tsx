@@ -10,7 +10,7 @@ export default function NotFoundPage() {
           Maybe the page took a coffee break, or it’s hiding from the SEO robots.<br />
           Don’t worry, we’ll help you get back on track!
         </p>
-        <Link href="/" className="inline-block bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 px-6 py-3 rounded-full text-base font-medium transition-colors">
+        <Link href="/" className="inline-block bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 px-6 py-3 rounded-full text-base font-medium transition-colors" aria-label="Return to homepage">
           Go Home
         </Link>
       </div>
