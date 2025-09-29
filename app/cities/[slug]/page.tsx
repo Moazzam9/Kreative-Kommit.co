@@ -1,4 +1,5 @@
 import { cityFacts } from '@/app/data/cities/facts';
+import { getTitle, getMetaDescription, getIntroParagraph, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
 
 import type { Metadata } from 'next';
 import type { CityFact } from '@/app/data/cities/facts';
@@ -12,23 +13,25 @@ export async function generateMetadata({ params }: PageProps<'/cities/[slug]'>):
   const awaitedParams = await params;
   const city = cityFacts.find(c => c.slug === awaitedParams.slug);
   if (!city) return {};
+  // For demo, use 'web design' as the main service. You can make this dynamic.
+  const service = 'web design';
   return {
-    title: `${city.name} Web Design, SEO & Digital Services | KreativeKommit`,
-    description: `Discover web design, SEO, and digital marketing services in ${city.name}. ${city.facts[0]}`,
-    keywords: [city.name, 'web design', 'SEO', 'digital marketing', 'agency', 'KreativeKommit'],
+    title: getTitle(service, city.name),
+    description: getMetaDescription(service, city.name),
+    keywords: [city.name, service, 'SEO', 'digital marketing', 'agency', 'KreativeKommit'],
     alternates: {
       canonical: `https://kreativekommit.com/cities/${city.slug}`
     },
     openGraph: {
-      title: `${city.name} Web Design, SEO & Digital Services | KreativeKommit`,
-      description: `Discover web design, SEO, and digital marketing services in ${city.name}. ${city.facts[0]}`,
+      title: getTitle(service, city.name),
+      description: getMetaDescription(service, city.name),
       url: `https://kreativekommit.com/cities/${city.slug}`,
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${city.name} Web Design, SEO & Digital Services | KreativeKommit`,
-      description: `Discover web design, SEO, and digital marketing services in ${city.name}. ${city.facts[0]}`,
+      title: getTitle(service, city.name),
+      description: getMetaDescription(service, city.name),
     },
     metadataBase: new URL('https://kreativekommit.com'),
   };
@@ -38,30 +41,11 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
   const awaitedParams = await params;
   const city = cityFacts.find(c => c.slug === awaitedParams.slug);
   if (!city) return <div>City not found.</div>;
-
-  // Schema Markup for LocalBusiness and City
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'KreativeKommit',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: city.name,
-      addressRegion: 'UK',
-      addressCountry: 'GB',
-    },
-    description: `${city.name} Web Design, SEO & Digital Services. ${city.facts[0]}`,
-    url: `https://kreativekommit.com/cities/${city.slug}`,
-    telephone: '+44 1234 567890',
-    areaServed: city.name,
-    sameAs: [
-      'https://twitter.com/kreativekommit',
-      'https://linkedin.com/company/kreativekommit',
-      'https://github.com/kreativekommit',
-    ],
-    additionalType: 'City',
-    cityFacts: city.facts,
-  };
+  const service = 'web design'; // You can make this dynamic based on route or user selection
+  const intro = getIntroParagraph(service, city.name);
+  const cta = getCTA(service, city.name);
+  const faqs = getFAQ(service, city.name);
+  const schema = getSchemaMarkup(service, city.name);
 
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
@@ -69,11 +53,14 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
-              {city.name} Web Design, SEO & Digital Services
+              {getTitle(service, city.name)}
             </h1>
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              {city.facts[0]}
+              {intro}
             </p>
+            <div className="mt-8 text-primary-700 font-semibold">
+              {cta}
+            </div>
           </div>
         </div>
       </div>
@@ -82,6 +69,14 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
         <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
           {city.facts.map((fact, idx) => (
             <li key={idx}>{fact}</li>
+          ))}
+        </ul>
+      </section>
+      <section className="container mx-auto px-4 pb-16">
+        <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+        <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
+          {faqs.map((faq, idx) => (
+            <li key={idx}><strong>{faq.q}</strong><br />{faq.a}</li>
           ))}
         </ul>
       </section>
