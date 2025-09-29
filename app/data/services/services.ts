@@ -89,11 +89,11 @@ export const services: Service[] = [
     templateSlug: "ppc-advertising"
   },
   {
-    name: "Security & Maintenance",
-    slug: "security-maintenance",
-    description: "Keep your website secure, updated, and running smoothly with our maintenance plans. Security updates, backups, monitoring, and 24/7 support—so you can sleep easy while we handle the tech!",
-    industries: industries.map(i => i.slug),
-    keywords: ["security", "website maintenance", "SSL certificates", "backup solutions", "24/7 support"],
-    templateSlug: "security-maintenance"
+  name: "Security & Maintenance",
+  slug: "security-maintenance",
+  description: "Keep your website secure, updated, and running smoothly with our maintenance plans. Security updates, backups, monitoring, and 24/7 support—so you can sleep easy while we handle the tech! All work is carried out to the highest UK standards.",
+  industries: industries.map(i => i.slug),
+  keywords: ["security", "website maintenance", "SSL certificates", "backup solutions", "24/7 support", "optimisation", "organisation", "favourite", "colour"],
+  templateSlug: "security-maintenance"
   },
 ];
