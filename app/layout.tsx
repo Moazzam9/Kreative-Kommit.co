@@ -18,13 +18,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'KreativeKommit Team' }],
   creator: 'KreativeKommit',
   publisher: 'KreativeKommit',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover'
-  },
   formatDetection: {
     email: false,
     address: false,
