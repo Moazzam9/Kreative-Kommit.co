@@ -35,10 +35,19 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
   const facts: string[] = serviceFacts.find(f => f.slug === service.slug)?.facts || service.facts || [];
 
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans">
-      <div className="py-20 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-2xl text-center mb-16">
+    <>
+      <head>
+        <title>{title}</title>
+        <meta name="description" content={metaDescription} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
+      </head>
+      <main className="min-h-screen bg-background text-foreground font-sans">
+        <div className="py-20 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-2xl text-center mb-16">
               <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
                 {title}
               </h1>
@@ -76,6 +85,6 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
           </div>
         </section>
       </main>
-  // ...existing code...
+    </>
   );
 }
