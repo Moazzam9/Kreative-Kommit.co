@@ -1,4 +1,4 @@
-export { viewport } from './viewport';
+"use client";
 import type { Metadata } from 'next';
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -73,6 +73,10 @@ export default function ServicesPage() {
     },
   };
 
+
+  const [showAll, setShowAll] = React.useState(false);
+  const visibleServices = showAll ? services : services.slice(0, 6);
+
   return (
     <>
       <script
@@ -95,8 +99,8 @@ export default function ServicesPage() {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {visibleServices.map((service, index) => (
               <Card key={service.slug} className="group hover:shadow-lg transition-shadow animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
                   {serviceIcons[service.slug as keyof typeof serviceIcons] && (
@@ -141,6 +145,17 @@ export default function ServicesPage() {
               </Card>
             ))}
           </div>
+          {!showAll && services.length > 6 && (
+            <div className="text-center mb-12">
+              <Button
+                size="lg"
+                className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
+                onClick={() => setShowAll(true)}
+              >
+                Show More
+              </Button>
+            </div>
+          )}
 
           {/* Process Section */}
           <div className="bg-primary-50 dark:bg-primary-950 rounded-2xl p-8 lg:p-12">

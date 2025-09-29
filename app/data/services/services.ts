@@ -93,7 +93,47 @@ export const services: Service[] = [
   slug: "security-maintenance",
   description: "Keep your website secure, updated, and running smoothly with our maintenance plans. Security updates, backups, monitoring, and 24/7 support—so you can sleep easy while we handle the tech! All work is carried out to the highest UK standards.",
   industries: industries.map(i => i.slug),
-  keywords: ["security", "website maintenance", "SSL certificates", "backup solutions", "24/7 support", "optimisation", "organisation", "favourite", "colour"],
+  keywords: ["security", "website maintenance", "backup solutions", "optimisation", "organisation"],
   templateSlug: "security-maintenance"
   },
+    {
+      name: "Branding & Identity",
+      slug: "branding-identity",
+      description: "Stand out from the crowd! We create memorable logos, brand guidelines, and visual identities that make your business instantly recognisable and trusted.",
+      industries: industries.map(i => i.slug),
+      keywords: ["branding", "logo design", "brand identity", "visual identity", "brand guidelines"],
+      templateSlug: "branding-identity"
+    },
+    {
+      name: "Email Marketing",
+      slug: "email-marketing",
+      description: "Turn subscribers into superfans! We design and manage email campaigns that nurture leads, drive sales, and keep your audience engaged.",
+      industries: industries.map(i => i.slug),
+      keywords: ["email marketing", "newsletter", "email campaigns", "lead nurturing", "email automation"],
+      templateSlug: "email-marketing"
+    },
+    {
+      name: "Conversion Rate Optimisation (CRO)",
+      slug: "conversion-rate-optimisation",
+      description: "Get more from your traffic! We analyse user behaviour and optimise your site to turn visitors into customers with A/B testing, UX tweaks, and smart CTAs.",
+      industries: industries.map(i => i.slug),
+      keywords: ["CRO", "conversion rate optimisation", "A/B testing", "call to action", "user experience"],
+      templateSlug: "conversion-rate-optimisation"
+    },
+    {
+      name: "Analytics & Reporting",
+      slug: "analytics-reporting",
+      description: "Know what works! We set up tracking, dashboards, and custom reports so you can measure success and make data-driven decisions.",
+      industries: industries.map(i => i.slug),
+      keywords: ["analytics", "reporting", "Google Analytics", "data dashboard", "performance tracking"],
+      templateSlug: "analytics-reporting"
+    },
+    {
+      name: "Website Audits",
+      slug: "website-audits",
+      description: "Is your site underperforming? We run deep audits to uncover technical issues, SEO gaps, and UX problems—then give you a clear action plan to fix them.",
+      industries: industries.map(i => i.slug),
+      keywords: ["website audit", "SEO audit", "technical audit", "usability audit", "site review"],
+      templateSlug: "website-audits"
+    },
 ];
