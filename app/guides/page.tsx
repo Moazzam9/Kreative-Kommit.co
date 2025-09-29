@@ -26,7 +26,7 @@ export default function GuideLandingPage() {
             guides.map((guide: GuideMeta) => (
               <Link
                 key={guide.slug}
-                href={`/guide/${guide.slug}`}
+                href={`/guides/${guide.slug}`}
                 className="group flex bg-white dark:bg-gray-900 rounded-2xl border-2 border-primary-600 dark:border-primary-400 shadow-lg hover:shadow-xl hover:border-purple-500 transition-all p-8 flex-col justify-between animate-fade-up focus:outline-none focus:ring-4 focus:ring-primary-300"
                 style={{ textDecoration: 'none' }}
               >

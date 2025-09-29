@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: guide.title,
     description: guide.description,
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/guide/${awaitedParams.slug}`
+  canonical: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/guides/${awaitedParams.slug}`
     },
     keywords: guide.keywords,
     authors: guide.author ? [{ name: guide.author }] : undefined,
