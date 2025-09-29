@@ -62,7 +62,7 @@ export function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              {['Home', 'Designs', 'Portfolio', 'Services'].map((item) => (
+              {['Home', 'Designs', 'Portfolio', 'Services', 'Industries'].map((item) => (
                 <li key={item}>
                   <Link
                     href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}

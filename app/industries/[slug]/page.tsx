@@ -45,16 +45,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   if (awaitedParams.slug === 'construction') {
     return (
       <>
-        <head>
-          <title>Construction Industry Services | Kreative Kommit</title>
-          <meta name="description" content={constructionSEO.description} />
-          <meta name="keywords" content={constructionSEO.keywords.join(', ')} />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(constructionSEO.schema) }}
-          />
-        </head>
-        <main style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+        <main className="px-4 py-8 max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-4">Construction Industry Services</h1>
           <p className="mt-2 text-lg text-gray-700 dark:text-gray-300 mb-8">{constructionSEO.description}</p>
 
@@ -109,18 +100,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <head>
-        <title>{industry.name} Industry Services | Kreative Kommit</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={industry.keywords ? industry.keywords.join(', ') : ''} />
-        {schemaMarkup && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-          />
-        )}
-      </head>
-      <main style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+      <main className="px-4 py-8 max-w-3xl mx-auto">
         <h1>{industry.name} Industry Services</h1>
         <p>{description}</p>
         <section style={{ marginTop: '2rem' }}>
