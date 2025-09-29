@@ -1,4 +1,4 @@
-import { services } from '@/app/data/services/services';
+import { services } from '@/app/data/services';
 import { cityFacts } from '@/app/data/cities/facts';
 import type { Metadata } from 'next';
 // Removed stray return statement causing syntax errors

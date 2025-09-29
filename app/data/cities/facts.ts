@@ -68,4 +68,95 @@ export const cityFacts: CityFact[] = [
       "Local SEO in London is essential for businesses to compete in a crowded marketplace."
     ]
   },
+  // --- AUTO-GENERATED CITY FACTS FOR MISSING CITIES ---
+  {
+    slug: "saddleworth",
+    name: "Saddleworth",
+    facts: [
+      "Saddleworth is famous for its rolling hills, brass band contests, and legendary pie shops.",
+      "Local businesses thrive on community spirit and creative marketing.",
+      "Web design in Saddleworth is as fresh as the moorland air!"
+    ]
+  },
+  {
+    slug: "droylsden",
+    name: "Droylsden",
+    facts: [
+      "Droylsden is known for its canals, football pride, and friendly locals.",
+      "SEO in Droylsden helps small businesses get noticed beyond the Daisy Nook!",
+      "Digital marketing here is as lively as a Saturday at the market."
+    ]
+  },
+  {
+    slug: "audenshaw",
+    name: "Audenshaw",
+    facts: [
+      "Audenshaw’s history is woven with cotton mills and community events.",
+      "Web development in Audenshaw is all about supporting local legends.",
+      "Fun fact: Audenshaw’s digital scene is growing faster than its famous allotments!"
+    ]
+  },
+  {
+    slug: "denton",
+    name: "Denton",
+    facts: [
+      "Denton is the hat capital of the UK, and its businesses wear their creativity with pride.",
+      "SEO in Denton is tailored for quirky shops and local heroes.",
+      "Web design here is as unique as a Denton flat cap!"
+    ]
+  },
+  {
+    slug: "hyde",
+    name: "Hyde",
+    facts: [
+      "Hyde is home to beautiful parks, bustling markets, and a growing tech scene.",
+      "Digital marketing in Hyde helps local businesses bloom year-round.",
+      "Web development here is as friendly as a Hyde welcome!"
+    ]
+  },
+  {
+    slug: "stalybridge",
+    name: "Stalybridge",
+    facts: [
+      "Stalybridge is famous for its pubs, music festivals, and creative community.",
+      "SEO in Stalybridge puts local businesses on the map—literally!",
+      "Web design here is as vibrant as the town’s nightlife."
+    ]
+  },
+  {
+    slug: "mossley",
+    name: "Mossley",
+    facts: [
+      "Mossley’s hills inspire artists, musicians, and web designers alike.",
+      "Digital marketing in Mossley is as creative as its annual festivals.",
+      "Fun fact: Mossley’s online businesses are as friendly as its famous chip shops!"
+    ]
+  },
+  {
+    slug: "dukinfield",
+    name: "Dukinfield",
+    facts: [
+      "Dukinfield is known for its parks, heritage, and entrepreneurial spirit.",
+      "SEO in Dukinfield helps local businesses shine brighter than the town’s clock tower.",
+      "Web development here is as reliable as a Dukinfield handshake!"
+    ]
+  },
+  {
+    slug: "longdendale",
+    name: "Longdendale",
+    facts: [
+      "Longdendale is a haven for walkers, cyclists, and creative thinkers.",
+      "Digital marketing in Longdendale is as refreshing as its reservoirs.",
+      "Web design here is inspired by nature and local stories."
+    ]
+  },
+  {
+    slug: "hattersley",
+    name: "Hattersley",
+    facts: [
+      "Hattersley is famous for its community spirit and local events.",
+      "SEO in Hattersley helps businesses connect with neighbours and newcomers alike.",
+      "Web development here is as welcoming as a Hattersley smile!"
+    ]
+  },
 ];
