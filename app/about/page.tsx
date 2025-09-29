@@ -1,14 +1,12 @@
 "use client";
 import React from 'react';
-import type { Metadata } from 'next';
+import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/badge';
-import { Users, Award, Globe, Coffee, PartyPopper } from 'lucide-react';
+import { Users, Globe, Coffee, PartyPopper } from 'lucide-react';
 
-// ...existing code...
 
 const team = [
   {

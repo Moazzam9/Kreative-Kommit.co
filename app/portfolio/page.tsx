@@ -1,5 +1,5 @@
 export { viewport } from './viewport';
-import type { Metadata } from 'next';
+// ...existing code...
 import Image from 'next/image';
 import Link from 'next/link';
 import { cityFacts, CityFact } from '@/app/data/cities/facts';

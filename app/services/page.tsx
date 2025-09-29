@@ -1,9 +1,7 @@
 "use client";
-import type { Metadata } from 'next';
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/badge';
 import {
   Palette,
   Code,
@@ -17,11 +15,11 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-import { cityFacts, CityFact } from '@/app/data/cities/facts';
+import { cityFacts } from '@/app/data/cities/facts';
+import type { CityFact } from '@/app/data/cities/facts';
 
 import { services } from '@/app/data/services';
 
-// Map icons to service slugs for display
 const serviceIcons = {
   'web-design': Palette,
   'seo-optimisation': Search,

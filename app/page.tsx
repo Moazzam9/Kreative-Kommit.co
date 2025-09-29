@@ -1,55 +1,18 @@
-import type { Metadata } from 'next';
+// ...existing code...
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Zap, Target, Rocket, Palette, Code, Search } from 'lucide-react';
+import { ArrowRight, Zap, Target, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+// ...existing code...
 import Hero from '@/components/Hero';
 
 
 
-const services = [
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Beautiful, conversion-focused designs that captivate your audience',
-  },
-  {
-    icon: Code,
-    title: 'Development',
-    description: 'Fast, scalable web applications built with modern technologies',
-  },
-  {
-    icon: Search,
-    title: 'SEO Optimization',
-    description: 'Technical SEO and content strategies that boost search rankings',
-  },
-];
+import { homeServices } from './data/services/homeServices';
 
-const portfolioPreview = [
-  {
-    name: 'TechFlow Solutions',
-    description: 'B2B SaaS platform redesign',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-    performance: 98,
-    tags: ['Next.js', 'TypeScript', 'SEO'],
-  },
-  {
-    name: 'EcoGreen Marketplace',
-    description: 'Sustainable e-commerce platform',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
-    performance: 96,
-    tags: ['React', 'Node.js', 'Performance'],
-  },
-  {
-    name: 'FinanceFlow App',
-    description: 'Personal finance dashboard',
-    image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
-    performance: 94,
-    tags: ['Vue.js', 'PWA', 'Mobile'],
-  },
-];
+import { portfolioPreview } from './data/portfolio/preview';
 
 export default function HomePage() {
   const jsonLd = {
@@ -92,7 +55,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {homeServices.map((service: { icon: React.ElementType; title: string; description: string }, index: number) => (
               <Card
                 key={service.title}
                 className="animate-fade-up"
@@ -125,7 +88,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {portfolioPreview.map((project, index) => (
+            {portfolioPreview.map((project: { name: string; description: string; image: string; performance: number; tags: string[] }, index: number) => (
               <Card
                 key={project.name}
                 className="group overflow-hidden animate-fade-up"
