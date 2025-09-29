@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kreativekommit.com';
 
   // Static URLs
-  const staticUrls: Array<{ url: string; lastModified: Date; changeFrequency: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority: number }> = [
+  const staticUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -51,8 +51,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const services: Array<{ slug: string }> = require('./data/services/services').services;
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const cityFacts: Array<{ slug: string }> = require('./data/cities/facts').cityFacts;
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const industries: Array<{ slug: string }> = require('./data/industries/industries').industries;
 
-  const serviceCityUrls: Array<{ url: string; lastModified: Date; changeFrequency: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority: number }> = [];
+  const serviceCityUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [];
   services.forEach((service: { slug: string }) => {
     cityFacts.forEach((city: { slug: string }) => {
       serviceCityUrls.push({
@@ -64,5 +66,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  return [...staticUrls, ...serviceCityUrls];
+  // Industry listing page
+  const industryListingUrl = {
+    url: `${baseUrl}/industries`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  };
+
+  // Industry detail pages
+  const industryDetailUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = industries.map((industry: { slug: string }) => ({
+    url: `${baseUrl}/industries/${industry.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticUrls, ...serviceCityUrls, industryListingUrl, ...industryDetailUrls];
 }
