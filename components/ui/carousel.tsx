@@ -35,7 +35,7 @@ const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 const useCarousel = () => {
   const context = React.useContext(CarouselContext);
   if (!context) {
-    throw new Error('useCarousel must be used within a <Carousel />');
+  throw new Error('useCarousel must be used within a &lt;Carousel /&gt;');
   }
   return context;
 };
@@ -215,7 +215,7 @@ const CarouselPrevious = React.forwardRef<
       {...props}
     >
       <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+  <span className="sr-only">Previous slide</span>
     </Button>
   );
 });
@@ -244,7 +244,7 @@ const CarouselNext = React.forwardRef<
       {...props}
     >
       <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+  <span className="sr-only">Next slide</span>
     </Button>
   );
 });
