@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
@@ -12,29 +12,30 @@ export interface BlogPostContent {
 
 export async function getBlogPostContent(slug: string): Promise<BlogPostContent> {
   const postsDir = path.join(process.cwd(), 'content/blog');
-  function getAllMarkdownFiles(dir: string): string[] {
+  async function getAllMarkdownFiles(dir: string): Promise<string[]> {
     let results: string[] = [];
-    const list = fs.readdirSync(dir);
-    list.forEach(file => {
+    const list = await fs.readdir(dir);
+    for (const file of list) {
       const filePath = path.join(dir, file);
-      const stat = fs.statSync(filePath);
+      const stat = await fs.stat(filePath);
       if (stat && stat.isDirectory()) {
-        results = results.concat(getAllMarkdownFiles(filePath));
+        const nested = await getAllMarkdownFiles(filePath);
+        results = results.concat(nested);
       } else if (file.endsWith('.md')) {
         results.push(filePath);
       }
-    });
+    }
     return results;
   }
 
-  const files = getAllMarkdownFiles(postsDir);
+  const files = await getAllMarkdownFiles(postsDir);
   // Slug format: 2025-08-first-post
   const match = files.find(filePath => {
     const rel = filePath.replace(postsDir + path.sep, '').replace(/\\/g, '/').replace(/\.md$/, '').replace(/\//g, '-');
     return rel === slug;
   });
   if (!match) throw new Error('Blog post not found');
-  const file = fs.readFileSync(match, 'utf8');
+  const file = await fs.readFile(match, 'utf8');
   const { data, content } = matter(file);
   // Remove first markdown heading (e.g. '# Title')
   const contentWithoutH1 = content.replace(/^# .+\n+/, '');

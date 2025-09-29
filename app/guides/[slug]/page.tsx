@@ -43,8 +43,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+
 export async function generateStaticParams() {
-  const guides = getGuides();
+  const guides = await getGuides();
   return guides.map((guide) => ({ slug: guide.slug }));
 }
 

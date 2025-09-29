@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { GuideMeta, getGuides } from '../../lib/getGuides';
 export { metadata } from './metadata';
 
-export default function GuideLandingPage() {
-  const guides: GuideMeta[] = getGuides();
+export default async function GuideLandingPage() {
+  const guides: GuideMeta[] = await getGuides();
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
       <div className="py-20 bg-white dark:bg-gray-900">

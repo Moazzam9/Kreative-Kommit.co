@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 
@@ -24,33 +24,34 @@ export interface BlogPostMeta {
 
 const BLOG_DIR = path.join(process.cwd(), 'content', 'blog');
 
-function getAllMarkdownFiles(dir: string): string[] {
+async function getAllMarkdownFiles(dir: string): Promise<string[]> {
 	let results: string[] = [];
-	const list = fs.readdirSync(dir);
-	list.forEach((file) => {
+	const list = await fs.readdir(dir);
+	for (const file of list) {
 		const filePath = path.join(dir, file);
-		const stat = fs.statSync(filePath);
+		const stat = await fs.stat(filePath);
 		if (stat && stat.isDirectory()) {
-			results = results.concat(getAllMarkdownFiles(filePath));
+			const nested = await getAllMarkdownFiles(filePath);
+			results = results.concat(nested);
 		} else if (file.endsWith('.md')) {
 			results.push(filePath);
 		}
-	});
+	}
 	return results;
 }
 
-export function getBlogPosts(): BlogPostMeta[] {
-	const files = getAllMarkdownFiles(BLOG_DIR);
-	const posts: BlogPostMeta[] = files.map((filePath) => {
-		const fileContents = fs.readFileSync(filePath, 'utf8');
+export async function getBlogPosts(): Promise<BlogPostMeta[]> {
+	const files = await getAllMarkdownFiles(BLOG_DIR);
+	const posts: BlogPostMeta[] = [];
+	for (const filePath of files) {
+		const fileContents = await fs.readFile(filePath, 'utf8');
 		const { data } = matter(fileContents);
-		// Slug: remove BLOG_DIR and .md extension, replace backslashes
-			const slug = filePath
-				.replace(BLOG_DIR + path.sep, '')
-				.replace(/\\/g, '/')
-				.replace(/\.md$/, '')
-				.replace(/\//g, '-');
-		return {
+		const slug = filePath
+			.replace(BLOG_DIR + path.sep, '')
+			.replace(/\\/g, '/')
+			.replace(/\.md$/, '')
+			.replace(/\//g, '-');
+		posts.push({
 			slug,
 			title: data.title || slug,
 			date: data.date || '',
@@ -68,8 +69,8 @@ export function getBlogPosts(): BlogPostMeta[] {
 			twitterDescription: data.twitterDescription,
 			twitterImage: data.twitterImage,
 			pinned: !!data.pinned,
-		};
-	});
+		});
+	}
 	// Sort: pinned first, then by date descending
 	return posts.sort((a, b) => {
 		if (a.pinned && !b.pinned) return -1;

@@ -7,8 +7,8 @@ import { getBlogPosts, BlogPostMeta } from '../../lib/getBlogPosts';
 export { metadata } from './metadata';
 export { viewport } from './viewport';
 
-export default function BlogLandingPage() {
-  const posts: BlogPostMeta[] = getBlogPosts();
+export default async function BlogLandingPage() {
+  const posts: BlogPostMeta[] = await getBlogPosts();
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
       <div className="py-20 bg-white dark:bg-gray-900">
