@@ -32,22 +32,22 @@ const serviceIcons = {
 const processSteps = [
   {
     step: '01',
-    title: 'Discovery & Strategy',
+    title: 'Discovery &amp; Strategy',
     description: 'We start by understanding your business goals, target audience, and project requirements.',
   },
   {
     step: '02',
-    title: 'Design & Prototype',
+    title: 'Design &amp; Prototype',
     description: 'Create wireframes, mockups, and interactive prototypes to visualize the solution.',
   },
   {
     step: '03',
-    title: 'Development & Testing',
+    title: 'Development &amp; Testing',
     description: 'Build your website with clean code, thorough testing, and performance optimization.',
   },
   {
     step: '04',
-    title: 'Launch & Optimize',
+    title: 'Launch &amp; Optimize',
     description: 'Deploy your site and continuously optimize based on real user data and feedback.',
   },
 ];
