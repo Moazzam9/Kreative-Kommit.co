@@ -1,5 +1,6 @@
 export { viewport } from './viewport';
 import type { Metadata } from 'next';
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/badge';
@@ -18,56 +19,17 @@ import Link from 'next/link';
 
 import { cityFacts, CityFact } from '@/app/data/cities/facts';
 
-const services = [
-  {
-    icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Beautiful, conversion-focused designs that captivate your audience and drive engagement.',
-    features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems', 'Accessibility'],
-    price: 'From £1,000',
-    duration: '2-4 weeks',
-  },
-  {
-    icon: Code,
-    title: 'Web Development',
-    description: 'Fast, scalable web applications built with modern technologies and best practices.',
-    features: ['Frontend Development', 'Backend APIs', 'Database Design', 'Testing', 'Deployment'],
-    price: 'From £1,500',
-    duration: '4-8 weeks',
-  },
-  {
-    icon: Search,
-    title: 'SEO Optimisation',
-    description: 'Technical SEO and content strategies that boost search rankings and organic traffic.',
-    features: ['Technical SEO', 'Content Strategy', 'Local SEO', 'Analytics', 'Reporting'],
-    price: 'From £500',
-    duration: '2-3 weeks',
-  },
-  {
-    icon: Zap,
-    title: 'Performance Audit',
-    description: 'Comprehensive analysis and optimisation of your website\'s speed and performance.',
-    features: ['Core Web Vitals', 'Speed Optimisation', 'Image Optimisation', 'Code Splitting', 'CDN Setup'],
-    price: 'From £300',
-    duration: '1 week',
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Optimisation',
-    description: 'Ensure your website works perfectly across all devices and screen sizes.',
-    features: ['Responsive Design', 'Mobile-First', 'Touch Optimisation', 'App-like Experience', 'PWA'],
-    price: 'From £500',
-    duration: '1-2 weeks',
-  },
-  {
-    icon: Shield,
-    title: 'Security & Maintenance',
-    description: 'Keep your website secure, updated, and running smoothly with our maintenance plans.',
-    features: ['Security Updates', 'Backup Solutions', 'Monitoring', 'SSL Certificates', '24/7 Support'],
-    price: 'From £50/month',
-    duration: 'Ongoing',
-  },
-];
+import { services } from '@/app/data/services';
+
+// Map icons to service slugs for display
+const serviceIcons = {
+  'web-design': Palette,
+  'seo-optimisation': Search,
+  'content-marketing': Code,
+  'social-media-management': Smartphone,
+  'ppc-advertising': Zap,
+  'security-maintenance': Shield,
+};
 
 const processSteps = [
   {
@@ -135,14 +97,18 @@ export default function ServicesPage() {
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {services.map((service, index) => (
-              <Card key={service.title} className="group hover:shadow-lg transition-shadow animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={service.slug} className="group hover:shadow-lg transition-shadow animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-primary-600 dark:text-primary-600 mb-4" />
+                  {serviceIcons[service.slug as keyof typeof serviceIcons] && (
+                    React.createElement(
+                      serviceIcons[service.slug as keyof typeof serviceIcons],
+                      { className: "h-12 w-12 text-primary-600 dark:text-primary-600 mb-4" }
+                    )
+                  )}
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-black dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                      {service.title}
+                      {service.name}
                     </CardTitle>
-                    <Badge variant="outline">{service.duration}</Badge>
                   </div>
                   <CardDescription className="text-gray-600 dark:text-gray-400">
                     {service.description}
@@ -151,27 +117,26 @@ export default function ServicesPage() {
 
                 <CardContent>
                   <ul className="space-y-2 mb-6">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                    {service.keywords?.map((keyword) => (
+                      <li key={keyword} className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
                         <div className="w-1.5 h-1.5 bg-primary-600 dark:bg-primary-400 rounded-full mr-3" />
-                        {feature}
+                        {keyword}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-lg font-semibold text-primary-800 dark:text-primary-300">
-                      {service.price}
-                    </span>
-                  </div>
-
-                  <Button
-                    className="w-full bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
-                    size="sm"
+                  <Link
+                    href={`/services/${service.slug}`}
+                    passHref
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                    <Button
+                      className="w-full bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700"
+                      size="sm"
+                    >
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
