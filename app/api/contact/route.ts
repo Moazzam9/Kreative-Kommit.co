@@ -1,4 +1,16 @@
+
+
 import { NextRequest, NextResponse } from 'next/server';
+
+// Simple in-memory rate limiter (per IP)
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const ipRequestLog = new Map<string, number[]>();
+
+// Basic input sanitization
+function sanitize(str: unknown): string {
+  return String(str ?? '').replace(/[<>"'`]/g, '');
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,8 +22,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+    const now = Date.now();
+    const log = ipRequestLog.get(ip) || [];
+    const recentLog = log.filter((ts: number) => now - ts < RATE_LIMIT_WINDOW_MS);
+    if (recentLog.length >= RATE_LIMIT_MAX_REQUESTS) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+    recentLog.push(now);
+    ipRequestLog.set(ip, recentLog);
+
     // Parse JSON with error handling
-    let body;
+    let body: any;
     try {
       body = await request.json();
     } catch (jsonError) {
@@ -22,7 +48,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { name, email, company, projectType, budget, message } = body;
+    // Destructure with fallback for missing fields
+    const name = body?.name ?? '';
+    const email = body?.email ?? '';
+    const company = body?.company ?? '';
+    const projectType = body?.projectType ?? '';
+    const budget = body?.budget ?? '';
+    const message = body?.message ?? '';
+    const honeypot = body?.honeypot ?? '';
+
+    // Honeypot field check (should be empty)
+    if (honeypot) {
+      return NextResponse.json(
+        { error: 'Bot detected.' },
+        { status: 400 }
+      );
+    }
 
     // Basic validation
     if (!name || !email || !projectType || !message) {
@@ -41,20 +82,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Here you would typically:
-    // 1. Send email notification to your team
-    // 2. Save to database
-    // 3. Send confirmation email to client
-    // 4. Integrate with CRM
+    // Sanitize inputs
+    const safeName = sanitize(name);
+    const safeEmail = sanitize(email);
+    const safeCompany = sanitize(company);
+    const safeProjectType = sanitize(projectType);
+    const safeBudget = sanitize(budget);
+    const safeMessage = sanitize(message);
 
     // For now, we'll just log and return success
     console.log('New contact form submission:', {
-      name,
-      email,
-      company,
-      projectType,
-      budget,
-      message,
+      name: safeName,
+      email: safeEmail,
+      company: safeCompany,
+      projectType: safeProjectType,
+      budget: safeBudget,
+      message: safeMessage,
       timestamp: new Date().toISOString(),
     });
 
@@ -82,6 +125,7 @@ export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
     headers: {
+      // In production, restrict this to your domain, e.g. 'https://yourdomain.com'
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
