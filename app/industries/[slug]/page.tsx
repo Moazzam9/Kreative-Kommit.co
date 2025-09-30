@@ -7,6 +7,8 @@ export async function generateStaticParams() {
 import { industries, Industry } from '@/app/data/industries/industries';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { services as allServices, Service } from '@/app/data/services/services';
+import { cityFacts } from '@/app/data/cities/facts';
 
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -81,6 +83,35 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
     <main className="px-4 py-8 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-4">{industry.name} Industry Services</h1>
       <p className="mt-2 text-lg text-gray-700 dark:text-gray-300 mb-8">{seo?.description || ''}</p>
+
+      {/* Relevant Services Section */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold text-primary mb-3">Relevant Services</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {allServices.filter((service: Service) => service.industries?.includes(industry.slug)).map((service: Service) => (
+            <li key={service.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
+              <a href={`/services/${service.slug}`} className="hover:underline text-primary font-medium">{service.name}</a>
+              <div className="text-xs text-gray-600 dark:text-gray-400">{service.description}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Active Cities Section */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold text-primary mb-3">Active Cities</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {cityFacts.filter(city =>
+            allServices.some(service =>
+              service.industries?.includes(industry.slug) && service.cityDescriptions && Object.keys(service.cityDescriptions).includes(city.slug)
+            )
+          ).map(city => (
+            <li key={city.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
+              <a href={`/cities/${city.slug}`} className="hover:underline text-primary font-medium">{city.name}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {services && (
         <section className="mb-10">
