@@ -19,7 +19,7 @@ export default function IndustriesPage() {
                   {industry.name}
                 </CardTitle>
                 <CardDescription className="text-gray-600 dark:text-gray-400">
-                  {industry.description || 'Digital solutions for this industry.'}
+                  Digital solutions for this industry.
                 </CardDescription>
               </CardHeader>
               <CardContent>
