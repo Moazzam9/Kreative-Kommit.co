@@ -1,5 +1,7 @@
 import { cityFacts } from '@/app/data/cities/facts';
 import { getTitle, getMetaDescription, getIntroParagraph, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
+import { services } from '@/app/data/services/services';
+import { industries } from '@/app/data/industries/industries';
 
 import type { Metadata } from 'next';
 import type { CityFact } from '@/app/data/cities/facts';
@@ -61,6 +63,32 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
             <div className="mt-8 text-primary-700 font-semibold">
               {cta}
             </div>
+
+            {/* Top Industries in this City */}
+            <section className="mt-10">
+              <h2 className="text-2xl font-semibold text-primary mb-3">Top Industries in {city.name}</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {industries.filter(ind =>
+                  services.some(s => s.industries?.includes(ind.slug) && s.cityDescriptions && Object.keys(s.cityDescriptions).includes(city.slug))
+                ).map(ind => (
+                  <li key={ind.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
+                    <a href={`/industries/${ind.slug}`} className="hover:underline text-primary font-medium">{ind.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Top Services in this City */}
+            <section className="mt-10">
+              <h2 className="text-2xl font-semibold text-primary mb-3">Top Services in {city.name}</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {services.filter(s => s.cityDescriptions && Object.keys(s.cityDescriptions).includes(city.slug)).map(s => (
+                  <li key={s.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
+                    <a href={`/services/${s.slug}`} className="hover:underline text-primary font-medium">{s.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
         </div>
       </div>
