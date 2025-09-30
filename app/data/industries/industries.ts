@@ -29,5 +29,22 @@ export const industries: Industry[] = [
   { name: "Transportation & Logistics", slug: "transport", description: "Move your business forward! We help logistics and transport firms get found with professional sites and targeted search strategies." },
   { name: "Nonprofits & Charities", slug: "nonprofit", description: "Make an impact! We help charities and nonprofits inspire support with engaging sites and SEO that grows your cause." },
   { name: "Food & Beverage", slug: "food", description: "Serve up more orders! Restaurants, caterers, and bakeries get delicious sites and local SEO that fills tables and order books." },
-  { name: "Beauty & Spa", slug: "beauty", description: "Look good online! Salons, spas, and therapists get stylish sites and SEO that brings in new clients and repeat bookings." }
+  { name: "Beauty & Spa", slug: "beauty", description: "Look good online! Salons, spas, and therapists get stylish sites and SEO that brings in new clients and repeat bookings." },
+  {
+    name: "Green Energy & Sustainability",
+    slug: "green-energy",
+    description: "Digital marketing and web solutions for UK-based solar, wind, EV charging, and eco-friendly businesses. We help green energy companies stand out in a competitive, fast-growing market.",
+    keywords: [
+      "green energy",
+      "sustainability",
+      "solar installers UK",
+      "eco-friendly business",
+      "EV charging",
+      "wind energy",
+      "local SEO",
+      "digital marketing",
+      "UK",
+      "Kreative Kommit"
+    ]
+  }
 ];
