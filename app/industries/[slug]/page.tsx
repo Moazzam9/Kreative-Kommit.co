@@ -21,23 +21,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const seo = seoModule[Object.keys(seoModule)[0]];
     return {
       title: `${industry.name} Industry Services | Kreative Kommit`,
-      description: seo.description || industry.description,
+      description: seo.description || '',
       alternates: {
         canonical: `https://kreativekommit.com/industries/${industry.slug}`
       },
       metadataBase: new URL('https://kreativekommit.com'),
-      keywords: seo.keywords || industry.keywords,
+      keywords: seo.keywords || [],
     };
   } catch {
-    // fallback to industry data
+    // fallback to empty description/keywords
     return {
       title: `${industry.name} Industry Services | Kreative Kommit`,
-      description: industry.description,
+      description: '',
       alternates: {
         canonical: `https://kreativekommit.com/industries/${industry.slug}`
       },
       metadataBase: new URL('https://kreativekommit.com'),
-      keywords: industry.keywords,
+      keywords: [],
     };
   }
 }
@@ -80,7 +80,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   return (
     <main className="px-4 py-8 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-4">{industry.name} Industry Services</h1>
-      <p className="mt-2 text-lg text-gray-700 dark:text-gray-300 mb-8">{seo?.description || industry.description}</p>
+      <p className="mt-2 text-lg text-gray-700 dark:text-gray-300 mb-8">{seo?.description || ''}</p>
 
       {services && (
         <section className="mb-10">
