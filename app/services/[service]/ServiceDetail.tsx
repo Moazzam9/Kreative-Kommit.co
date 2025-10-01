@@ -36,23 +36,33 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
           </div>
         </div>
       )}
-      {service.cityDescriptions && (
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold mb-2">City Descriptions</h2>
-          <ul className="list-disc ml-6">
-            {Object.entries(service.cityDescriptions).map(([city, descs]) => (
-              <li key={city}>
-                <span className="font-medium text-primary">{city.charAt(0).toUpperCase() + city.slice(1)}:</span>
-                <ul className="list-disc ml-4">
-                  {(descs as string[]).map((desc: string, i: number) => (
-                    <li key={i} className="text-muted-foreground">{desc}</li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* City Descriptions (using cityServiceDescriptions) */}
+      {(() => {
+        try {
+          // Dynamically import to avoid SSR issues if needed
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          const { cityServiceDescriptions } = require('@/app/data/cities/serviceDescriptions');
+          const cityDescs = Object.entries(cityServiceDescriptions)
+            .filter(([city, descs]) => (descs as Record<string, string>)[service.slug])
+            .map(([city, descs]) => [city, (descs as Record<string, string>)[service.slug]]);
+          if (cityDescs.length === 0) return null;
+          return (
+            <div className="mb-4">
+              <h2 className="text-lg font-semibold mb-2">City Descriptions</h2>
+              <ul className="list-disc ml-6">
+                {cityDescs.map(([city, desc]) => (
+                  <li key={city}>
+                    <span className="font-medium text-primary">{city.charAt(0).toUpperCase() + city.slice(1)}:</span>
+                    <span className="text-muted-foreground ml-2">{desc as string}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        } catch {
+          return null;
+        }
+      })()}
     </Card>
   );
 }

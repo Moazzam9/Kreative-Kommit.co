@@ -935,7 +935,6 @@ export const allCities: City[] = [
   { name: "Anlaby", slug: "anlaby", county: "East Riding of Yorkshire" },
   { name: "Hedon", slug: "hedon", county: "East Riding of Yorkshire" },
   { name: "Snaith", slug: "snaith", county: "East Riding of Yorkshire" },
-
 ];
 
 export const cities: City[] = (() => {
@@ -957,3 +956,9 @@ export const allRegionsCities: City[] = [
   ...scotlandCities,
   ...irelandCities
 ];
+
+// TEMP: Export allCities as JSON for script
+if (require.main === module) {
+  const fs = require('fs');
+  fs.writeFileSync('allCities.json', JSON.stringify(allCities, null, 2));
+}

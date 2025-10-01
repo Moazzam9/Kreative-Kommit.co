@@ -8,6 +8,7 @@ import { industries, Industry } from '@/app/data/industries/industries';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { services as allServices, Service } from '@/app/data/services/services';
+import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { cityFacts } from '@/app/data/cities/facts';
 
 
@@ -103,7 +104,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {cityFacts.filter(city =>
             allServices.some(service =>
-              service.industries?.includes(industry.slug) && service.cityDescriptions && Object.keys(service.cityDescriptions).includes(city.slug)
+              service.industries?.includes(industry.slug) && (cityServiceDescriptions[city.slug]?.[service.slug] || genericServiceDescriptions[service.slug])
             )
           ).map(city => (
             <li key={city.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">

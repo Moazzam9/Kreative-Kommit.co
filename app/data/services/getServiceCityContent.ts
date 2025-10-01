@@ -1,6 +1,8 @@
+
 import { services } from '@/app/data/services';
 import { cityFacts } from '@/app/data/cities/facts';
 import { getCityDescription } from '@/app/data/cities/targets';
+import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 
 export function getServiceCityContent(serviceSlug: string, citySlug: string) {
   const service = services.find(s => s.slug === serviceSlug);
@@ -8,7 +10,10 @@ export function getServiceCityContent(serviceSlug: string, citySlug: string) {
   if (!service || !city) return null;
 
   // City-specific description or fallback
-  const description = service.cityDescriptions?.[city.slug]?.[0] || getCityDescription(city.name);
+  const description =
+    cityServiceDescriptions[city.slug]?.[service.slug] ||
+    genericServiceDescriptions[service.slug] ||
+    getCityDescription(city.name);
 
   // Combine service and city facts
   const facts = [

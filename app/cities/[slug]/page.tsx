@@ -1,6 +1,7 @@
 import { cityFacts } from '@/app/data/cities/facts';
 import { getTitle, getMetaDescription, getIntroParagraph, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
 import { services } from '@/app/data/services/services';
+import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';
 import type { Metadata } from 'next';
 import type { CityFact } from '@/app/data/cities/facts';
@@ -42,8 +43,11 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
   const awaitedParams = await params;
   const city = cityFacts.find(c => c.slug === awaitedParams.slug);
   if (!city) return <div>City not found.</div>;
-  const service = 'web design'; // You can make this dynamic based on route or user selection
-  const intro = getIntroParagraph(service, city.name);
+
+  const service = 'web-design'; // You can make this dynamic based on route or user selection
+  // Get city-specific or fallback service description
+  const cityServiceDesc = cityServiceDescriptions[city.slug]?.[service] || genericServiceDescriptions[service] || '';
+  const intro = cityServiceDesc;
   const cta = getCTA(service, city.name);
   const faqs = getFAQ(service, city.name);
   const schema = getSchemaMarkup(service, city.name);
@@ -67,7 +71,7 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
               <h2 className="text-2xl font-semibold text-primary mb-3">Top Industries in {city.name}</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {industries.filter(ind =>
-                  services.some(s => s.industries?.includes(ind.slug) && s.cityDescriptions && Object.keys(s.cityDescriptions).includes(city.slug))
+                  services.some(s => s.industries?.includes(ind.slug) && (cityServiceDescriptions[city.slug]?.[s.slug] || genericServiceDescriptions[s.slug]))
                 ).map(ind => (
                   <li key={ind.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
                     <a href={`/industries/${ind.slug}`} className="hover:underline text-primary font-medium">{ind.name}</a>
@@ -79,7 +83,7 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
             <section className="mt-10">
               <h2 className="text-2xl font-semibold text-primary mb-3">Top Services in {city.name}</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {services.filter(s => s.cityDescriptions && Object.keys(s.cityDescriptions).includes(city.slug)).map(s => (
+                {services.filter(s => cityServiceDescriptions[city.slug]?.[s.slug] || genericServiceDescriptions[s.slug]).map(s => (
                   <li key={s.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
                     <a href={`/services/${s.slug}`} className="hover:underline text-primary font-medium">{s.name}</a>
                   </li>
@@ -91,10 +95,10 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
               <h2 className="text-2xl font-semibold text-primary mb-3">Explore Services by Industry</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {industries.filter(ind =>
-                  services.some(s => s.industries?.includes(ind.slug) && s.cityDescriptions && Object.keys(s.cityDescriptions).includes(city.slug))
+                  services.some(s => s.industries?.includes(ind.slug) && (cityServiceDescriptions[city.slug]?.[s.slug] || genericServiceDescriptions[s.slug]))
                 ).flatMap(ind =>
                   services.filter(s =>
-                    s.industries?.includes(ind.slug) && s.cityDescriptions && Object.keys(s.cityDescriptions).includes(city.slug)
+                    s.industries?.includes(ind.slug) && (cityServiceDescriptions[city.slug]?.[s.slug] || genericServiceDescriptions[s.slug])
                   ).map(s => (
                     <li key={`${s.slug}-${ind.slug}`} className="bg-gray-50 dark:bg-gray-900 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
                       <a href={`/services/${s.slug}/${city.slug}`} className="hover:underline text-primary font-medium">

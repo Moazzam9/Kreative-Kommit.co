@@ -1,5 +1,6 @@
 
 import { services } from '@/app/data/services/services';
+import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';
 import { cityFacts } from '@/app/data/cities/facts';
 import { serviceFacts } from '@/app/data/services/facts';
@@ -97,22 +98,16 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
         </section>
 
         {/* Cities with custom content for this service */}
-        {service.cityDescriptions && (
-          <section className="container mx-auto px-4 pb-8">
-            <h2 className="text-2xl font-semibold text-primary mb-3">Cities with Custom Content</h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {Object.keys(service.cityDescriptions).map(citySlug => {
-                const city = cityFacts.find(c => c.slug === citySlug);
-                if (!city) return null;
-                return (
-                  <li key={city.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
-                    <a href={`/cities/${city.slug}`} className="hover:underline text-primary font-medium">{city.name}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        )}
+        <section className="container mx-auto px-4 pb-8">
+          <h2 className="text-2xl font-semibold text-primary mb-3">Cities with Custom Content</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {cityFacts.filter(city => cityServiceDescriptions[city.slug]?.[service.slug]).map(city => (
+              <li key={city.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
+                <a href={`/cities/${city.slug}`} className="hover:underline text-primary font-medium">{city.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
         <section className="container mx-auto px-4 pb-8">
           <h2 className="text-2xl font-bold mb-6">Why Choose {brand} for {service.name}?</h2>
           <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300 mb-8">
