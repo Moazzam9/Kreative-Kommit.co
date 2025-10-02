@@ -26,6 +26,113 @@ export const influencerSEO = {
   // Canonical URL pattern
   canonical: "/industries/influencer",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my personal brand?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website centralizes your content and helps you monetize your influence across platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for content creators?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in personal brand SEO for UK influencers and content creators."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Person", "name": "Personal brand websites" },
+      { "@type": "Person", "name": "Influencer portfolio design" },
+      { "@type": "Person", "name": "SEO for content creators" },
+      { "@type": "Person", "name": "Monetization platforms" },
+      { "@type": "Person", "name": "Social media integration" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Digital Creator" },
+        "reviewBody": "My new personal brand website helped me attract better sponsorship deals and grow my audience."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Person",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Influencer Web Design",
+    "description": "Professional websites for influencers, YouTubers, and content creators",
+    "url": "https://kreativekommit.com/industries/influencer",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Influencer",
+        "item": "https://kreativekommit.com/industries/influencer"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Influencer & Content Creator Web Design Services",
+    "description": "Professional websites for influencers, YouTubers, and content creators. Build your personal brand with influencer-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/influencer-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#ec4899"
+  },
+  
   keywords: [
     // Core influencer terms
     "influencer web design", "personal brand websites", "influencer SEO", "content creator marketing", "social media websites",

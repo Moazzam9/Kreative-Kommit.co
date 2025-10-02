@@ -26,6 +26,113 @@ export const franchiseSEO = {
   // Canonical URL pattern
   canonical: "/industries/franchise",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my franchise business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website attracts potential franchisees and provides consistent branding across locations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for franchise businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in multi-location SEO and franchise marketing websites."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Organization", "name": "Franchise websites" },
+      { "@type": "Organization", "name": "Multi-location SEO" },
+      { "@type": "Organization", "name": "Franchisee recruitment" },
+      { "@type": "Organization", "name": "Brand consistency tools" },
+      { "@type": "Organization", "name": "Location management" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "National Franchise Group" },
+        "reviewBody": "Our franchise website helped us recruit quality franchisees and maintain brand consistency across locations."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Organization",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Franchise Web Design",
+    "description": "Professional websites for franchise businesses and multi-location companies",
+    "url": "https://kreativekommit.com/industries/franchise",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Franchise",
+        "item": "https://kreativekommit.com/industries/franchise"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Franchise Business Web Design Services",
+    "description": "Professional websites for franchise businesses and multi-location companies. Attract franchisees and maintain brand consistency with franchise-focused SEO.",
+    "image": "https://kreativekommit.com/images/industries/franchise-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#0ea5e9"
+  },
+  
   keywords: [
     // Core franchise terms
     "franchise web design", "franchising websites", "franchise SEO", "franchise marketing", "business opportunity websites",

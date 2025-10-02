@@ -26,6 +26,113 @@ export const marineSEO = {
   // Canonical URL pattern
   canonical: "/industries/marine",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my marine business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your marine services and helps boat owners find and book your expertise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for marine businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK marine, boating, and yachting businesses."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Organization", "name": "Marine service websites" },
+      { "@type": "Organization", "name": "Yacht broker platforms" },
+      { "@type": "Organization", "name": "SEO for marine businesses" },
+      { "@type": "Organization", "name": "Boat sales websites" },
+      { "@type": "Organization", "name": "Marina management systems" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Coastal Marine" },
+        "reviewBody": "Our new website helped us attract more yacht owners and grow our marine services business."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Organization",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Marine Web Design",
+    "description": "Professional websites for marine, boating, and yachting businesses",
+    "url": "https://kreativekommit.com/industries/marine",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Marine",
+        "item": "https://kreativekommit.com/industries/marine"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Marine & Boating Web Design Services",
+    "description": "Professional websites for marine businesses, yacht brokers, and boat services. Attract maritime clients with marine-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/marine-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#0ea5e9"
+  },
+  
   keywords: [
     // Core marine terms
     "marine web design", "boating websites", "marine SEO", "maritime marketing", "boat service websites",

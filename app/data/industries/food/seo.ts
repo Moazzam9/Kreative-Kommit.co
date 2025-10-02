@@ -26,6 +26,113 @@ export const foodSEO = {
   // Canonical URL pattern
   canonical: "/industries/food",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my restaurant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your menu and enables online reservations and food delivery orders."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for restaurants?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in local SEO for UK restaurants, cafes, and food businesses."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Restaurant", "name": "Restaurant websites" },
+      { "@type": "Restaurant", "name": "Online ordering systems" },
+      { "@type": "Restaurant", "name": "SEO for restaurants" },
+      { "@type": "Restaurant", "name": "Menu management" },
+      { "@type": "Restaurant", "name": "Reservation systems" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Bella Vista Restaurant" },
+        "reviewBody": "Our new restaurant website helped us increase bookings and showcase our authentic Italian cuisine."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Restaurant",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Restaurant Web Design",
+    "description": "Professional websites for restaurants, cafes, and food businesses",
+    "url": "https://kreativekommit.com/industries/food",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Food",
+        "item": "https://kreativekommit.com/industries/food"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Restaurant & Food Business Web Design Services",
+    "description": "Professional websites for restaurants, cafes, and food businesses. Increase bookings and orders with restaurant-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/food-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#f97316"
+  },
+  
   keywords: [
     // Core food & beverage terms
     "food web design", "restaurant websites", "catering SEO", "food business marketing", "hospitality websites",

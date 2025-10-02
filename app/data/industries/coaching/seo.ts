@@ -26,6 +26,113 @@ export const coachingSEO = {
   // Canonical URL pattern
   canonical: "/industries/coaching",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my coaching business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website builds credibility and helps you attract coaching clients who need your expertise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for coaches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK life coaches, business coaches, and personal trainers."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Person", "name": "Coach websites" },
+      { "@type": "Person", "name": "Personal trainer sites" },
+      { "@type": "Person", "name": "SEO for coaches" },
+      { "@type": "Person", "name": "Booking systems" },
+      { "@type": "Person", "name": "Client portals" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah Life Coach" },
+        "reviewBody": "My new coaching website helped me attract more clients and showcase my transformation programs."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Person",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Coach Web Design",
+    "description": "Professional websites for coaches, trainers, and personal development professionals",
+    "url": "https://kreativekommit.com/industries/coaching",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Coaching",
+        "item": "https://kreativekommit.com/industries/coaching"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Coach & Personal Trainer Web Design Services",
+    "description": "Professional websites for coaches, trainers, and personal development professionals. Build your coaching practice with coach-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/coaching-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#16a34a"
+  },
+  
   keywords: [
     // Core coaching terms
     "coaching web design", "consultant websites", "coaching SEO", "personal development marketing", "business coach websites",

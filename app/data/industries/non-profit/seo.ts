@@ -26,6 +26,113 @@ export const nonProfitSEO = {
   // Canonical URL pattern
   canonical: "/industries/non-profit",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my charity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website helps you reach more supporters and streamline donations for your cause."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for charities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK charities and non-profit organisations."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "NGO", "name": "Charity websites" },
+      { "@type": "NGO", "name": "Donation platforms" },
+      { "@type": "NGO", "name": "SEO for non-profits" },
+      { "@type": "NGO", "name": "Fundraising tools" },
+      { "@type": "NGO", "name": "Volunteer portals" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Hope Foundation" },
+        "reviewBody": "Our new website helped us reach more supporters and increase donations for our charitable work."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "NGO",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Charity Web Design",
+    "description": "Professional websites for charities, non-profits, and community organisations",
+    "url": "https://kreativekommit.com/industries/non-profit",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Non-Profit",
+        "item": "https://kreativekommit.com/industries/non-profit"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Charity & Non-Profit Web Design Services",
+    "description": "Professional websites for charities and non-profit organisations. Increase donations and support with charity-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/non-profit-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#16a34a"
+  },
+  
   keywords: [
     // Core nonprofit terms
     "nonprofit web design", "charity websites", "nonprofit SEO", "charity marketing", "fundraising websites",

@@ -26,6 +26,113 @@ export const craftSEO = {
   // Canonical URL pattern
   canonical: "/industries/craft",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my craft business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional e-commerce website helps you sell handmade products online and reach customers nationwide."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for craft makers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK craft makers and artisan businesses to increase online sales."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Store", "name": "Craft e-commerce websites" },
+      { "@type": "Store", "name": "Handmade product photography" },
+      { "@type": "Store", "name": "SEO for craft makers" },
+      { "@type": "Store", "name": "Online craft workshops" },
+      { "@type": "Store", "name": "Artisan brand development" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Handmade Haven" },
+        "reviewBody": "Our new e-commerce site helped us sell our handmade crafts to customers across the UK."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Store",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Craft Web Design",
+    "description": "Professional e-commerce websites for craft makers and artisan businesses",
+    "url": "https://kreativekommit.com/industries/craft",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Craft",
+        "item": "https://kreativekommit.com/industries/craft"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Craft & Handmade Business Web Design Services",
+    "description": "Professional websites for craft makers and artisan businesses. Showcase your handmade products with craft-focused SEO and e-commerce.",
+    "image": "https://kreativekommit.com/images/industries/craft-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#f59e0b"
+  },
+  
   keywords: [
     // Core craft terms
     "craft web design", "handmade websites", "artisan SEO", "craft business marketing", "creative websites",

@@ -26,6 +26,119 @@ export const landscapingSEO = {
   // Canonical URL pattern
   canonical: "/industries/landscaping",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you show before-and-after photos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we create interactive galleries for landscaping projects."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Do you help with local SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We specialize in local SEO for gardening and landscaping businesses."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Service", "name": "Custom landscaping websites" },
+      { "@type": "Service", "name": "Project gallery integration" },
+      { "@type": "Service", "name": "SEO for local landscapers" },
+      { "@type": "Service", "name": "Online quote forms" },
+      { "@type": "Service", "name": "Branding & logo design" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Garden Makeover" },
+        "reviewBody": "The new website brought in more landscaping projects!"
+      },
+      {
+        "@type": "Review", 
+        "author": { "@type": "Organization", "name": "Lawn Care Leads" },
+        "reviewBody": "SEO helped us reach more local clients."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "LocalBusiness",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Landscaping Web Design",
+    "description": "Professional web design and digital marketing services for landscaping businesses",
+    "url": "https://kreativekommit.com/industries/landscaping",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££",
+    "telephone": "+44-XXX-XXX-XXXX"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem", 
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3, 
+        "name": "Landscaping",
+        "item": "https://kreativekommit.com/industries/landscaping"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit", 
+    "title": "Landscaping & Garden Design Web Services",
+    "description": "Professional websites for landscapers and garden designers. Showcase your outdoor projects with landscaping-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/landscaping-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#10b981"
+  },
+  
   keywords: [
     // Core landscaping terms
     "landscaping web design", "garden design websites", "landscaping SEO", "groundworks marketing", "outdoor services websites",

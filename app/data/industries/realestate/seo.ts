@@ -27,6 +27,113 @@ export const realEstateSEO = {
   // Canonical URL pattern
   canonical: "/industries/real-estate",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my estate agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A modern website attracts more buyers and sellers, and builds trust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for property listings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for estate agents and property professionals."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "RealEstateAgent", "name": "Property listing websites" },
+      { "@type": "RealEstateAgent", "name": "SEO for estate agents" },
+      { "@type": "RealEstateAgent", "name": "Lead generation for realtors" },
+      { "@type": "RealEstateAgent", "name": "Virtual tours and galleries" },
+      { "@type": "RealEstateAgent", "name": "Content marketing for property" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Prime Estates" },
+        "reviewBody": "Our new website brought in more buyers and sellers than ever before."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "RealEstateAgent",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Real Estate Web Design",
+    "description": "Professional web design and digital marketing services for estate agents and property professionals",
+    "url": "https://kreativekommit.com/industries/real-estate",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Real Estate",
+        "item": "https://kreativekommit.com/industries/real-estate"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Real Estate Web Design & Property Marketing Services",
+    "description": "Professional websites for estate agents and property professionals. Generate more leads with real estate SEO and digital marketing.",
+    "image": "https://kreativekommit.com/images/industries/real-estate-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#f59e0b"
+  },
+  
   keywords: [
     // Core real estate terms
     'real estate web design', 'estate agent websites', 'property website design', 'real estate SEO', 'estate agent marketing',

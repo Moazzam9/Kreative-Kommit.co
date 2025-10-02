@@ -27,6 +27,113 @@ export const hospitalitySEO = {
   // Canonical URL pattern
   canonical: "/industries/hospitality",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my hotel?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A modern website with booking integration increases direct bookings and trust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for hotels?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in local SEO for UK hotels and B&Bs."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "LodgingBusiness", "name": "Hotel website design" },
+      { "@type": "LodgingBusiness", "name": "Online booking integration" },
+      { "@type": "LodgingBusiness", "name": "SEO for hotels and B&Bs" },
+      { "@type": "LodgingBusiness", "name": "Photo galleries and reviews" },
+      { "@type": "LodgingBusiness", "name": "Content marketing for hospitality" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Seaside B&B" },
+        "reviewBody": "Our new website and booking system filled more rooms than ever."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "LodgingBusiness",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Hospitality Web Design",
+    "description": "Professional web design and digital marketing services for hotels, B&Bs, and hospitality businesses",
+    "url": "https://kreativekommit.com/industries/hospitality",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Hospitality",
+        "item": "https://kreativekommit.com/industries/hospitality"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Hotel & B&B Web Design Services",
+    "description": "Professional websites for hotels, B&Bs, and hospitality businesses. Increase bookings with hospitality-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/hospitality-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#dc2626"
+  },
+  
   keywords: [
     // Core hospitality terms
     'hospitality web design', 'hotel websites', 'B&B marketing', 'hospitality SEO', 'tourism website design',

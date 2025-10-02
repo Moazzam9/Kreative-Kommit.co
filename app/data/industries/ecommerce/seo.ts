@@ -27,6 +27,113 @@ export const ecommerceSEO = {
   // Canonical URL pattern
   canonical: "/industries/e-commerce",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a new website help my online store?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A modern, fast website increases sales and builds trust."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for e-commerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK online retailers."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Store", "name": "E-commerce website design" },
+      { "@type": "Store", "name": "SEO for online stores" },
+      { "@type": "Store", "name": "Conversion optimization" },
+      { "@type": "Store", "name": "Product photography" },
+      { "@type": "Store", "name": "Content marketing for retail" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "ShopSmart" },
+        "reviewBody": "Our new site and SEO strategy brought in more customers than ever."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Store",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - E-commerce Web Design",
+    "description": "Professional e-commerce development and digital marketing services for online retailers",
+    "url": "https://kreativekommit.com/industries/e-commerce",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "E-commerce",
+        "item": "https://kreativekommit.com/industries/e-commerce"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "E-commerce Web Design & Online Store Development",
+    "description": "Professional e-commerce websites that convert. Shopify, WooCommerce & custom online stores with SEO that drives sales.",
+    "image": "https://kreativekommit.com/images/industries/ecommerce-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#ec4899"
+  },
+  
   keywords: [
     // Core e-commerce terms
     'e-commerce web design', 'online store development', 'e-commerce SEO', 'online retail marketing', 'e-commerce websites',

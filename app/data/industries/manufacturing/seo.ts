@@ -26,6 +26,113 @@ export const manufacturingSEO = {
   // Canonical URL pattern
   canonical: "/industries/manufacturing",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my manufacturing business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your manufacturing capabilities and helps you win B2B contracts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for manufacturing companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in B2B SEO for UK manufacturing and industrial companies."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Organization", "name": "Manufacturing websites" },
+      { "@type": "Organization", "name": "Industrial B2B platforms" },
+      { "@type": "Organization", "name": "SEO for manufacturers" },
+      { "@type": "Organization", "name": "Product catalog systems" },
+      { "@type": "Organization", "name": "Quote request portals" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Precision Manufacturing Ltd" },
+        "reviewBody": "Our new website helped us showcase our capabilities and win larger manufacturing contracts."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Organization",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Manufacturing Web Design",
+    "description": "Professional websites for manufacturing, industrial, and engineering companies",
+    "url": "https://kreativekommit.com/industries/manufacturing",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Manufacturing",
+        "item": "https://kreativekommit.com/industries/manufacturing"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Manufacturing & Industrial Web Design Services",
+    "description": "Professional websites for manufacturing and industrial companies. Win B2B contracts with manufacturing-focused SEO and digital marketing.",
+    "image": "https://kreativekommit.com/images/industries/manufacturing-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#0ea5e9"
+  },
+  
   keywords: [
     // Core manufacturing terms
     "manufacturing web design", "industrial websites", "manufacturing SEO", "production marketing", "factory websites",

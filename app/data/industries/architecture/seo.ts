@@ -26,6 +26,113 @@ export const architectureSEO = {
   // Canonical URL pattern
   canonical: "/industries/architecture",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my architecture practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your architectural portfolio and helps you win more design projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for architects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK architects and architectural firms."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Organization", "name": "Architecture firm websites" },
+      { "@type": "Organization", "name": "Portfolio showcase sites" },
+      { "@type": "Organization", "name": "SEO for architects" },
+      { "@type": "Organization", "name": "Project management portals" },
+      { "@type": "Organization", "name": "Client collaboration tools" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Modern Design Architects" },
+        "reviewBody": "Our new portfolio website helped us showcase our work and attract higher-value architectural projects."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Organization",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Architecture Web Design",
+    "description": "Professional websites for architects and architectural firms",
+    "url": "https://kreativekommit.com/industries/architecture",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Architecture",
+        "item": "https://kreativekommit.com/industries/architecture"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Architecture Firm Web Design Services",
+    "description": "Professional websites for architects and architectural firms. Showcase your portfolio and win projects with architecture-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/architecture-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#0ea5e9"
+  },
+  
   keywords: [
     // Core architecture terms
     "architecture web design", "architect websites", "architecture SEO", "design firm marketing", "architectural services websites",

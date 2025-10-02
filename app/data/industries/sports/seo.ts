@@ -26,6 +26,113 @@ export const sportsSEO = {
   // Canonical URL pattern
   canonical: "/industries/sports",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my sports business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website helps you attract members, promote events, and manage bookings for your sports club or facility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for sports clubs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK sports clubs, gyms, and fitness facilities."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "SportsClub", "name": "Sports club websites" },
+      { "@type": "SportsClub", "name": "Team management systems" },
+      { "@type": "SportsClub", "name": "SEO for sports businesses" },
+      { "@type": "SportsClub", "name": "Event booking platforms" },
+      { "@type": "SportsClub", "name": "Membership portals" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "City Sports Club" },
+        "reviewBody": "Our new website helped us attract more members and streamlined our booking process for courts and facilities."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "SportsClub",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Sports Web Design",
+    "description": "Professional websites for sports clubs, gyms, and fitness facilities",
+    "url": "https://kreativekommit.com/industries/sports",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Sports",
+        "item": "https://kreativekommit.com/industries/sports"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Sports Club & Fitness Web Design Services",
+    "description": "Professional websites for sports clubs, gyms, and fitness facilities. Attract members and manage bookings with sports-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/sports-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#16a34a"
+  },
+  
   keywords: [
     // Core sports terms
     "sports web design", "sports club websites", "sports SEO", "athletic marketing", "sports facility websites",

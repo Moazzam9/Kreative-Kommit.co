@@ -27,6 +27,113 @@ export const eventsSEO = {
   // Canonical URL pattern
   canonical: "/industries/events",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my event planning business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your events and helps couples and businesses find and book your services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for event planners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in local SEO for UK wedding planners and event management companies."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "EventPlanning", "name": "Wedding planner websites" },
+      { "@type": "EventPlanning", "name": "Event portfolio galleries" },
+      { "@type": "EventPlanning", "name": "SEO for event planners" },
+      { "@type": "EventPlanning", "name": "Online booking systems" },
+      { "@type": "EventPlanning", "name": "Venue marketing" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Perfect Weddings" },
+        "reviewBody": "Our new website helps couples discover our services and book their dream wedding."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "EventPlanning",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Events Web Design",
+    "description": "Professional web design and digital marketing services for event planners and wedding professionals",
+    "url": "https://kreativekommit.com/industries/events",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Events",
+        "item": "https://kreativekommit.com/industries/events"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Events & Wedding Planning Web Design Services",
+    "description": "Professional websites for event planners and wedding professionals. Showcase your events and attract bookings with events-focused SEO.",
+    "image": "https://kreativekommit.com/images/industries/events-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#ec4899"
+  },
+  
   keywords: [
     // Core events terms
     'events web design', 'wedding planner websites', 'event management SEO', 'events marketing', 'party planning websites',

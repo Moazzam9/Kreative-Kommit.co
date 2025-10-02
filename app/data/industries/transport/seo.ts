@@ -26,6 +26,113 @@ export const transportSEO = {
   // Canonical URL pattern
   canonical: "/industries/transport",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my transport business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website helps you attract more clients and manage bookings for your transport services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for logistics companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK transport, logistics, and delivery companies."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Organization", "name": "Transport company websites" },
+      { "@type": "Organization", "name": "Fleet management systems" },
+      { "@type": "Organization", "name": "SEO for logistics" },
+      { "@type": "Organization", "name": "Online booking platforms" },
+      { "@type": "Organization", "name": "Delivery tracking systems" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Swift Logistics" },
+        "reviewBody": "Our new website helped us win more contracts and streamline our booking process."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Organization",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Transport Web Design",
+    "description": "Professional websites for transport, logistics, and delivery companies",
+    "url": "https://kreativekommit.com/industries/transport",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Transport",
+        "item": "https://kreativekommit.com/industries/transport"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Transport & Logistics Web Design Services",
+    "description": "Professional websites for transport and logistics companies. Win more contracts with transport-focused SEO and digital marketing.",
+    "image": "https://kreativekommit.com/images/industries/transport-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#0ea5e9"
+  },
+  
   keywords: [
     // Core transport terms
     "transport web design", "logistics websites", "delivery service SEO", "transportation marketing", "haulage websites",

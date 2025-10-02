@@ -27,6 +27,113 @@ export const fitnessSEO = {
   // Canonical URL pattern
   canonical: "/industries/fitness",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my fitness business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A modern website helps you attract new members, manage bookings, and build your fitness community."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for gyms and fitness studios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in local SEO for UK gyms, personal trainers, and fitness studios."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "SportsActivityLocation", "name": "Gym website design" },
+      { "@type": "SportsActivityLocation", "name": "Online class booking" },
+      { "@type": "SportsActivityLocation", "name": "SEO for fitness" },
+      { "@type": "SportsActivityLocation", "name": "Membership management" },
+      { "@type": "SportsActivityLocation", "name": "Personal trainer marketing" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "FitLife Gym" },
+        "reviewBody": "Our new website increased member signups and made class booking much easier."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "SportsActivityLocation",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Fitness Web Design",
+    "description": "Professional web design and digital marketing services for gyms, personal trainers, and fitness businesses",
+    "url": "https://kreativekommit.com/industries/fitness",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fitness",
+        "item": "https://kreativekommit.com/industries/fitness"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Fitness & Wellness Web Design Services",
+    "description": "Professional websites for gyms, personal trainers, and fitness studios. Increase memberships with fitness-focused SEO and online booking.",
+    "image": "https://kreativekommit.com/images/industries/fitness-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#dc2626"
+  },
+  
   keywords: [
     // Core fitness terms
     'fitness web design', 'gym websites', 'personal trainer SEO', 'fitness marketing', 'wellness websites',

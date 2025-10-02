@@ -26,6 +26,113 @@ export const fashionSEO = {
   // Canonical URL pattern
   canonical: "/industries/fashion",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my fashion business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your fashion brand and enables online sales to reach more customers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for fashion brands?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK fashion brands, boutiques, and clothing retailers."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Store", "name": "Fashion brand websites" },
+      { "@type": "Store", "name": "E-commerce platforms" },
+      { "@type": "Store", "name": "SEO for fashion" },
+      { "@type": "Store", "name": "Boutique marketing" },
+      { "@type": "Store", "name": "Fashion photography" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Chic Boutique" },
+        "reviewBody": "Our new fashion website helped us reach customers nationwide and increased our online sales significantly."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Store",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Fashion Web Design",
+    "description": "Professional websites for fashion brands, boutiques, and clothing retailers",
+    "url": "https://kreativekommit.com/industries/fashion",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fashion",
+        "item": "https://kreativekommit.com/industries/fashion"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Fashion Brand Web Design Services",
+    "description": "Professional websites for fashion brands, boutiques, and clothing retailers. Showcase your style with fashion-focused SEO and e-commerce solutions.",
+    "image": "https://kreativekommit.com/images/industries/fashion-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#ec4899"
+  },
+  
   keywords: [
     // Core fashion terms
     "fashion web design", "clothing brand websites", "fashion SEO", "apparel marketing", "style websites",

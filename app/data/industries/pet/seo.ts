@@ -23,8 +23,115 @@ export const petSEO = {
     "serviceType": "Pet Care"
   },
   
-  // Canonical URL pattern
-  canonical: "/industries/pet-services",
+    // Canonical URL pattern
+  canonical: "/industries/pet",
+  
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my pet business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website helps pet owners find your services and builds trust for their beloved companions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for pet businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK pet shops, vets, and pet care services."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Store", "name": "Pet shop websites" },
+      { "@type": "Store", "name": "Veterinary clinic sites" },
+      { "@type": "Store", "name": "SEO for pet businesses" },
+      { "@type": "Store", "name": "Pet grooming booking" },
+      { "@type": "Store", "name": "Animal care platforms" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Happy Paws Pet Shop" },
+        "reviewBody": "Our new website helped us connect with more pet owners and grow our local customer base."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "Store",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Pet Business Web Design",
+    "description": "Professional websites for pet shops, veterinary clinics, and pet care services",
+    "url": "https://kreativekommit.com/industries/pet",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Pet",
+        "item": "https://kreativekommit.com/industries/pet"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Pet Business Web Design Services",
+    "description": "Professional websites for pet shops, veterinary clinics, and pet care services. Connect with pet owners through pet-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/pet-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#f97316"
+  },
   
   keywords: [
     // Core pet services terms

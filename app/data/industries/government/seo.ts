@@ -26,6 +26,113 @@ export const governmentSEO = {
   // Canonical URL pattern
   canonical: "/industries/government",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help our council?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A modern website improves public engagement and makes council services more accessible to residents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you ensure WCAG compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all our government websites meet WCAG accessibility standards and public sector requirements."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "GovernmentOrganization", "name": "Council websites" },
+      { "@type": "GovernmentOrganization", "name": "WCAG compliant design" },
+      { "@type": "GovernmentOrganization", "name": "Public sector SEO" },
+      { "@type": "GovernmentOrganization", "name": "Citizen engagement platforms" },
+      { "@type": "GovernmentOrganization", "name": "Digital transformation" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "City Council" },
+        "reviewBody": "Our new website improved citizen engagement and made our services much more accessible."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "GovernmentOrganization",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Government Web Design",
+    "description": "WCAG compliant websites for local councils and government agencies",
+    "url": "https://kreativekommit.com/industries/government",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Government",
+        "item": "https://kreativekommit.com/industries/government"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Government & Public Sector Web Design Services",
+    "description": "WCAG compliant websites for local councils and government agencies. Improve public engagement with accessible, secure digital solutions.",
+    "image": "https://kreativekommit.com/images/industries/government-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#1f2937"
+  },
+  
   keywords: [
     // Core government terms
     "government web design", "council websites", "public sector SEO", "government marketing", "civic websites",

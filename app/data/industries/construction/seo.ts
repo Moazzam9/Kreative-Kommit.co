@@ -27,6 +27,121 @@ export const constructionSEO = {
   // Canonical URL pattern
   canonical: "/industries/construction",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my construction business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website builds trust and helps you win more local projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for contractors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in local SEO for UK construction companies."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Service", "name": "Residential Construction" },
+      { "@type": "Service", "name": "Commercial Construction" },
+      { "@type": "Service", "name": "Renovations & Extensions" },
+      { "@type": "Service", "name": "Project Management" },
+      { "@type": "Service", "name": "Site Surveys" },
+      { "@type": "Service", "name": "Sustainable Building Solutions" },
+      { "@type": "Service", "name": "Design & Build Packages" },
+      { "@type": "Service", "name": "Restoration & Heritage Work" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Smith & Sons Ltd." },
+        "reviewBody": "Kreative Kommit delivered a stunning website and helped us double our project leads in six months!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "GreenBuild Homes" },
+        "reviewBody": "Our new site is fast, modern, and brings in more local enquiries than ever. Highly recommended."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "HomeAndConstructionBusiness",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Construction Web Design",
+    "description": "Professional web design and digital marketing services for construction companies and building contractors",
+    "url": "https://kreativekommit.com/industries/construction",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Construction",
+        "item": "https://kreativekommit.com/industries/construction"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Construction Web Design & Digital Marketing Services",
+    "description": "Specialized web design and SEO for construction companies, builders, and contractors. Professional websites that generate quality leads.",
+    "image": "https://kreativekommit.com/images/industries/construction-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#f97316"
+  },
+  
   keywords: [
     // Core construction terms
     "construction web design", "construction SEO", "construction website design", "construction digital marketing",

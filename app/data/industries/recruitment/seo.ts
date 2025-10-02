@@ -26,6 +26,113 @@ export const recruitmentSEO = {
   // Canonical URL pattern
   canonical: "/industries/recruitment",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my recruitment business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website attracts both candidates and employers, streamlining your recruitment process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for recruitment agencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK recruitment agencies and job boards."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "Organization", "name": "Recruitment agency websites" },
+      { "@type": "Organization", "name": "Job board platforms" },
+      { "@type": "Organization", "name": "SEO for recruiters" },
+      { "@type": "Organization", "name": "Candidate management systems" },
+      { "@type": "Organization", "name": "Employer portals" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Elite Recruitment" },
+        "reviewBody": "Our new website helped us attract better candidates and win more clients in competitive sectors."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "LocalBusiness",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Recruitment Web Design",
+    "description": "Professional websites for recruitment agencies, job boards, and HR consultancies",
+    "url": "https://kreativekommit.com/industries/recruitment",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Recruitment",
+        "item": "https://kreativekommit.com/industries/recruitment"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Recruitment Agency Web Design Services",
+    "description": "Professional websites for recruitment agencies and job boards. Attract top talent and clients with recruitment-focused SEO and marketing.",
+    "image": "https://kreativekommit.com/images/industries/recruitment-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#0ea5e9"
+  },
+  
   keywords: [
     // Core recruitment terms
     "recruitment web design", "staffing agency websites", "recruitment SEO", "HR consultancy marketing", "employment agency websites",

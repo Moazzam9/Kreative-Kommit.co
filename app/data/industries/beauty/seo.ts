@@ -26,6 +26,113 @@ export const beautySEO = {
   // Canonical URL pattern
   canonical: "/industries/beauty",
   
+  // Advanced SEO Phase 3 enhancements
+  
+  // FAQ Schema for rich snippets
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can a website help my beauty business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A professional website showcases your beauty services and allows clients to book appointments online."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer SEO for beauty salons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we specialise in SEO for UK beauty salons, spas, and cosmetic businesses."
+        }
+      }
+    ]
+  },
+  
+  // Service offerings schema
+  serviceSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      { "@type": "BeautySalon", "name": "Beauty salon websites" },
+      { "@type": "BeautySalon", "name": "Spa booking systems" },
+      { "@type": "BeautySalon", "name": "SEO for beauty businesses" },
+      { "@type": "BeautySalon", "name": "Cosmetic e-commerce" },
+      { "@type": "BeautySalon", "name": "Beauty portfolio sites" }
+    ]
+  },
+  
+  // Review/testimonial schema
+  reviewSchema: {
+    "@type": "ItemList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Luxe Beauty Spa" },
+        "reviewBody": "Our new beauty website helped us attract more clients and streamlined our appointment booking process."
+      }
+    ]
+  },
+  
+  // Local Business schema enhancement
+  localBusinessSchema: {
+    "@type": "BeautySalon",
+    "@context": "https://schema.org",
+    "name": "Kreative Kommit - Beauty Web Design",
+    "description": "Professional websites for beauty salons, spas, and cosmetic businesses",
+    "url": "https://kreativekommit.com/industries/beauty",
+    "areaServed": ["Manchester", "Liverpool", "Birmingham", "London", "Chester", "Preston", "Lancashire", "Yorkshire"],
+    "serviceArea": "United Kingdom",
+    "priceRange": "£££"
+  },
+  
+  // Breadcrumb schema
+  breadcrumbSchema: {
+    "@type": "BreadcrumbList",
+    "@context": "https://schema.org",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://kreativekommit.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://kreativekommit.com/industries"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Beauty",
+        "item": "https://kreativekommit.com/industries/beauty"
+      }
+    ]
+  },
+  
+  // Twitter Card metadata
+  twitterCard: {
+    "card": "summary_large_image",
+    "site": "@kreativekommit",
+    "title": "Beauty Salon & Spa Web Design Services",
+    "description": "Professional websites for beauty salons, spas, and cosmetic businesses. Attract clients with beauty-focused SEO and online booking systems.",
+    "image": "https://kreativekommit.com/images/industries/beauty-og.jpg"
+  },
+  
+  // Advanced meta tags
+  metaTags: {
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "googlebot": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "theme-color": "#ec4899"
+  },
+  
   keywords: [
     // Core beauty & spa terms
     "beauty web design", "salon websites", "spa SEO", "beauty marketing", "wellness websites",
