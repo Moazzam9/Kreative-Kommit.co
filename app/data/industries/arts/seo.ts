@@ -1,4 +1,57 @@
 export const artsSEO = {
   description: "Web and digital marketing for artists, galleries, and creative agencies to showcase portfolios and attract clients.",
-  keywords: ["arts website", "gallery SEO", "creative agency marketing", "artist portfolio"]
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Arts & Creative Web Design Services",
+    description: "Professional websites for artists, galleries, and creative agencies. Showcase your portfolio with arts-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "CreativeWork",
+    "@context": "https://schema.org",
+    "name": "Arts Web Design Services",
+    "description": "Professional web design and digital marketing services for artists, galleries, and creative agencies",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "genre": "Visual Arts"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/arts",
+  
+  keywords: [
+    // Core arts terms
+    "arts web design", "creative agency websites", "gallery SEO", "artist marketing", "creative websites",
+    
+    // Service-specific keywords
+    "art gallery websites", "artist portfolio marketing", "creative studio SEO", "design agency websites",
+    "museum websites", "exhibition marketing", "arts centre SEO", "cultural venue websites",
+    
+    // Local arts keywords
+    "art galleries Manchester", "creative agencies Liverpool", "artists London", "arts Birmingham",
+    "galleries Chester", "creative Preston", "arts Lancashire", "cultural Yorkshire",
+    
+    // Specialist arts services
+    "contemporary art websites", "sculpture gallery marketing", "digital art SEO", "fine art websites",
+    "street art marketing", "performance art SEO", "art education websites", "art therapy marketing",
+    
+    // Intent-based keywords
+    "best arts website designers UK", "professional creative websites", "artist online presence",
+    "how to market art business", "creative agency lead generation", "art portfolio platforms", "arts SEO experts",
+    
+    // Voice search & local
+    "art galleries near me", "creative agencies in my area", "artists Manchester", "galleries Liverpool",
+    "best art galleries nearby", "local creative services", "UK art galleries", "art exhibitions near me",
+    
+    // Technology & features
+    "artist portfolio systems", "gallery exhibition platforms", "art e-commerce websites", "virtual gallery tours",
+    "art collection management", "exhibition booking systems", "creative project portfolios", "art community platforms"
+  ]
 };

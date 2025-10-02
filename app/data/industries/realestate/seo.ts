@@ -1,6 +1,32 @@
 export const realEstateSEO = {
   title: 'Real Estate & Estate Agents | Kreative Kommit',
   description: 'Unlock property potential! We help estate agents and real estate pros showcase listings, attract buyers, and close deals with stunning websites and targeted SEO.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Real Estate Web Design & Property Marketing Services",
+    description: "Professional websites for estate agents and property professionals. Generate more leads with real estate SEO and digital marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "RealEstateAgent",
+    "@context": "https://schema.org",
+    "name": "Real Estate Web Design Services",
+    "description": "Professional web design and digital marketing services for estate agents and property professionals",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Web Design"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/real-estate",
+  
   keywords: [
     // Core real estate terms
     'real estate web design', 'estate agent websites', 'property website design', 'real estate SEO', 'estate agent marketing',

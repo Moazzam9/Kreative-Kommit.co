@@ -1,6 +1,32 @@
 export const tradesSEO = {
   title: 'Trades | Kreative Kommit',
   description: 'Get found for your skills! Plumbers, electricians, carpenters, and more—our sites and SEO help you win more local jobs.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Trades Web Design & Tradesman Marketing Services",
+    description: "Professional websites for plumbers, electricians, and tradespeople. Win more local jobs with trades-focused SEO and digital marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "HomeAndConstructionBusiness",
+    "@context": "https://schema.org",
+    "name": "Trades Web Design Services",
+    "description": "Professional web design and digital marketing services for tradespeople and skilled contractors",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Trade Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/trades",
+  
   keywords: [
     // Core trades terms
     'trades web design', 'tradesman websites', 'trades SEO', 'tradesperson marketing', 'trade services websites',

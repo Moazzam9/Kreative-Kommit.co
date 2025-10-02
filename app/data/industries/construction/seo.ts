@@ -1,4 +1,32 @@
 export const constructionSEO = {
+  title: "Construction & Building Services | Kreative Kommit",
+  description: "Build your online presence! Professional websites for builders, contractors, and construction companies. Generate leads with construction-focused SEO and digital marketing.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Construction Web Design & Digital Marketing Services",
+    description: "Specialized web design and SEO for construction companies, builders, and contractors. Professional websites that generate quality leads.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Service",
+    "@context": "https://schema.org",
+    "name": "Construction Web Design Services",
+    "description": "Professional web design and digital marketing services for construction companies and building contractors",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Web Design"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/construction",
+  
   keywords: [
     // Core construction terms
     "construction web design", "construction SEO", "construction website design", "construction digital marketing",
@@ -26,16 +54,5 @@ export const constructionSEO = {
     // Technology & trends 2025
     "mobile construction websites", "construction CRM integration", "building project tracking websites", "sustainable construction marketing",
     "eco-friendly builder websites", "construction safety compliance websites", "construction industry digital transformation"
-  ],
-  description:
-    "Expert digital solutions for construction companies, contractors, and trades. We build high-performance websites, local SEO, and marketing campaigns to help you win more projects and grow your reputation.",
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Kreative Kommit',
-    areaServed: 'UK',
-    industry: 'Construction',
-    url: 'https://kreativekommit.com/industries/construction',
-    description: 'Digital marketing and web solutions for the construction industry.'
-  }
+  ]
 };

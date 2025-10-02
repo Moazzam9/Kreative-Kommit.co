@@ -1,6 +1,32 @@
 export const greenEnergySEO = {
   title: 'Green Energy & Sustainability | Kreative Kommit',
   description: 'Digital marketing and web solutions for UK-based solar, wind, EV charging, and eco-friendly businesses. Stand out in the UK green energy market.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Green Energy & Sustainability Web Design Services",
+    description: "Professional websites for renewable energy companies, solar installers, and eco-friendly businesses. Generate green leads with sustainability-focused SEO.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Service",
+    "@context": "https://schema.org",
+    "name": "Green Energy Web Design Services",
+    "description": "Professional web design and digital marketing services for renewable energy and sustainability businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Renewable Energy Marketing"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/green-energy",
+  
   keywords: [
     // Core green energy terms
     'green energy web design', 'renewable energy websites', 'sustainability SEO', 'eco-friendly marketing', 'solar power websites',

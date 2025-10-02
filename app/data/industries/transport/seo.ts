@@ -1,5 +1,31 @@
 export const transportSEO = {
   description: "Websites and marketing for transportation and logistics companies to attract clients and manage operations online.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Transport & Logistics Web Design Services",
+    description: "Professional websites for transport companies, couriers, and logistics providers. Generate more business with transport-focused SEO.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Service",
+    "@context": "https://schema.org",
+    "name": "Transport Web Design Services",
+    "description": "Professional web design and digital marketing services for transportation and logistics companies",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Web Design"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/transport",
+  
   keywords: [
     // Core transport terms
     "transport web design", "logistics websites", "delivery service SEO", "transportation marketing", "haulage websites",

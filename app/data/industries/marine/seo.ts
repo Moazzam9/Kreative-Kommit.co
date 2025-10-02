@@ -1,5 +1,31 @@
 export const marineSEO = {
   description: "Websites and marketing for marine, boating, and yachting businesses to attract clients and showcase services.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Marine & Boating Web Design Services",
+    description: "Professional websites for marine businesses, yacht brokers, and boat services. Attract maritime clients with marine-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Service",
+    "@context": "https://schema.org",
+    "name": "Marine Web Design Services",
+    "description": "Professional web design and digital marketing services for marine and boating businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Marine Marketing"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/marine",
+  
   keywords: [
     // Core marine terms
     "marine web design", "boating websites", "marine SEO", "maritime marketing", "boat service websites",

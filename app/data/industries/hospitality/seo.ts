@@ -1,6 +1,32 @@
 export const hospitalitySEO = {
   title: 'Hospitality (Hotels, B&Bs) | Kreative Kommit',
   description: 'Fill more rooms! We help hotels and B&Bs get booked with beautiful sites, online booking, and local SEO that attracts travelers.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Hotel & B&B Web Design Services",
+    description: "Professional websites for hotels, B&Bs, and hospitality businesses. Increase bookings with hospitality-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "LodgingBusiness",
+    "@context": "https://schema.org",
+    "name": "Hospitality Web Design Services",
+    "description": "Professional web design and digital marketing services for hotels, B&Bs, and hospitality businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "amenityFeature": "Online Booking"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/hospitality",
+  
   keywords: [
     // Core hospitality terms
     'hospitality web design', 'hotel websites', 'B&B marketing', 'hospitality SEO', 'tourism website design',

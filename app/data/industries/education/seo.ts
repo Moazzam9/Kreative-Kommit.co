@@ -1,6 +1,32 @@
 export const educationSEO = {
   title: 'Education & Tutoring | Kreative Kommit',
   description: 'Make learning visible! We help schools, tutors, and educators connect with students and parents through engaging websites and smart search strategies.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Education Web Design & School Marketing Services",
+    description: "Professional websites for schools, tutors, and educational institutions. Increase enrollment with education-focused SEO and digital marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "EducationalOrganization",
+    "@context": "https://schema.org",
+    "name": "Education Web Design Services",
+    "description": "Professional web design and digital marketing services for schools, tutors, and educational institutions",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "educationalCredentialAwarded": "Various"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/education",
+  
   keywords: [
     // Core education terms
     'education web design', 'school websites', 'tutoring SEO', 'education marketing', 'tutor website design',

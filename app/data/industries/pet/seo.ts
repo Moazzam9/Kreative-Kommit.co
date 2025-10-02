@@ -1,5 +1,31 @@
 export const petSEO = {
   description: "Web and marketing solutions for pet care, grooming, and veterinary businesses to reach more pet owners.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Pet Services & Veterinary Web Design",
+    description: "Professional websites for pet groomers, veterinarians, and pet care businesses. Attract pet owners with pet-focused SEO and online booking.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "VeterinaryCare",
+    "@context": "https://schema.org",
+    "name": "Pet Services Web Design",
+    "description": "Professional web design and digital marketing services for pet care and veterinary businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Pet Care"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/pet-services",
+  
   keywords: [
     // Core pet services terms
     "pet services web design", "veterinary websites", "pet grooming SEO", "pet care marketing", "animal services websites",

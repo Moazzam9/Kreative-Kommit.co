@@ -1,5 +1,31 @@
 export const landscapingSEO = {
   description: "Websites and marketing for landscapers and gardening businesses to grow their client base and showcase projects.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Landscaping & Garden Design Web Services",
+    description: "Professional websites for landscapers and garden designers. Showcase your outdoor projects with landscaping-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "HomeAndConstructionBusiness",
+    "@context": "https://schema.org",
+    "name": "Landscaping Web Design Services",
+    "description": "Professional web design and digital marketing services for landscapers and garden design businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Landscaping Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/landscaping",
+  
   keywords: [
     // Core landscaping terms
     "landscaping web design", "garden design websites", "landscaping SEO", "groundworks marketing", "outdoor services websites",

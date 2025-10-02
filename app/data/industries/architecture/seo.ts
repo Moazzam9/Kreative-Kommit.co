@@ -1,5 +1,31 @@
 export const architectureSEO = {
   description: "Web and branding solutions for architects and interior designers to showcase portfolios and attract new clients.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Architecture & Interior Design Web Design Services",
+    description: "Professional portfolio websites for architects and interior designers. Showcase your projects with architecture-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "ProfessionalService",
+    "@context": "https://schema.org",
+    "name": "Architecture Web Design Services",
+    "description": "Professional web design and digital marketing services for architects and interior designers",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Architectural Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/architecture",
+  
   keywords: [
     // Core architecture terms
     "architecture web design", "architect websites", "architecture SEO", "design firm marketing", "architectural services websites",

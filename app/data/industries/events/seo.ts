@@ -1,6 +1,32 @@
 export const eventsSEO = {
   title: 'Events & Wedding Planners | Kreative Kommit',
   description: 'Make every event unforgettable! We help planners showcase services, galleries, and reviews to attract more bookings.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Events & Wedding Planning Web Design Services",
+    description: "Professional websites for event planners and wedding professionals. Showcase your events and attract bookings with events-focused SEO.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "EventPlanning",
+    "@context": "https://schema.org",
+    "name": "Events Web Design Services",
+    "description": "Professional web design and digital marketing services for event planners and wedding professionals",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Event Planning"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/events",
+  
   keywords: [
     // Core events terms
     'events web design', 'wedding planner websites', 'event management SEO', 'events marketing', 'party planning websites',

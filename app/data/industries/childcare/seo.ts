@@ -1,6 +1,32 @@
 export const childcareSEO = {
   title: 'Childcare & Nurseries | Kreative Kommit',
   description: 'Care that shows! We help nurseries and childcare providers connect with parents through friendly, informative websites and local SEO.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Childcare & Nursery Web Design Services",
+    description: "Ofsted compliant websites for nurseries and childcare providers. Connect with parents and showcase your care with childcare-focused SEO.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "ChildCare",
+    "@context": "https://schema.org",
+    "name": "Childcare Web Design Services",
+    "description": "Professional web design and digital marketing services for nurseries and childcare providers",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Childcare Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/childcare",
+  
   keywords: [
     // Core childcare terms
     'childcare web design', 'nursery websites', 'childcare SEO', 'nursery marketing', 'daycare websites',

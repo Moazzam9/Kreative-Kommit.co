@@ -1,5 +1,31 @@
 export const manufacturingSEO = {
   description: "Web and digital solutions for manufacturing and industrial companies to showcase capabilities and attract B2B clients.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Manufacturing & Industrial Web Design Services",
+    description: "Professional B2B websites for manufacturing and industrial companies. Generate business leads with manufacturing-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Corporation",
+    "@context": "https://schema.org",
+    "name": "Manufacturing Web Design Services",
+    "description": "Professional web design and digital marketing services for manufacturing and industrial companies",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Manufacturing Marketing"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/manufacturing",
+  
   keywords: [
     // Core manufacturing terms
     "manufacturing web design", "industrial websites", "manufacturing SEO", "production marketing", "factory websites",

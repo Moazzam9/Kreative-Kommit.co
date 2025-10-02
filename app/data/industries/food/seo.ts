@@ -1,5 +1,31 @@
 export const foodSEO = {
   description: "Web and marketing solutions for restaurants, cafes, and food brands to attract more customers online.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Restaurant & Food Business Web Design Services",
+    description: "Professional websites for restaurants, cafes, and food businesses. Increase bookings and orders with food-focused SEO and online ordering.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Restaurant",
+    "@context": "https://schema.org",
+    "name": "Food Business Web Design Services",
+    "description": "Professional web design and digital marketing services for restaurants, cafes, and food businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Food Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/food",
+  
   keywords: [
     // Core food & beverage terms
     "food web design", "restaurant websites", "catering SEO", "food business marketing", "hospitality websites",

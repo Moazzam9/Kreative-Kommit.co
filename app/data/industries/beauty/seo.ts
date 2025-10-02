@@ -1,5 +1,31 @@
 export const beautySEO = {
   description: "Expert digital solutions for the beauty industry, helping salons, spas, and brands grow their online presence.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Beauty & Wellness Web Design Services",
+    description: "Professional websites for salons, spas, and beauty businesses. Attract more clients with beauty-focused SEO and online booking systems.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "BeautySalon",
+    "@context": "https://schema.org",
+    "name": "Beauty Web Design Services",
+    "description": "Professional web design and digital marketing services for beauty salons, spas, and wellness businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Beauty Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/beauty",
+  
   keywords: [
     // Core beauty & spa terms
     "beauty web design", "salon websites", "spa SEO", "beauty marketing", "wellness websites",

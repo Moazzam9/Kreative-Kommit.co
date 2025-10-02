@@ -1,6 +1,32 @@
 export const technologySEO = {
   title: 'Technology & IT Services | Kreative Kommit',
   description: 'Showcase your tech! We help IT firms and tech startups stand out with modern sites and SEO that attracts business clients.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Technology & IT Services Web Design",
+    description: "Professional websites for tech companies, IT services, and software startups. Generate B2B leads with technology-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "TechArticle",
+    "@context": "https://schema.org",
+    "name": "Technology Web Design Services",
+    "description": "Professional web design and digital marketing services for IT companies and technology startups",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "about": "Information Technology"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/technology",
+  
   keywords: [
     // Core technology terms
     'technology web design', 'IT services websites', 'tech company SEO', 'software development marketing', 'IT support websites',

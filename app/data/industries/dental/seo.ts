@@ -1,5 +1,31 @@
 export const dentalSEO = {
   description: "Websites and digital marketing for dental practices to attract new patients and build trust online.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Dental Practice Web Design & Marketing Services",
+    description: "GDC compliant websites for dentists and dental practices. Attract new patients and build trust with dental-focused SEO and online booking.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "DentistClinic",
+    "@context": "https://schema.org",
+    "name": "Dental Web Design Services",
+    "description": "Professional web design and digital marketing services for dental practices and dentists",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Dental Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/dental",
+  
   keywords: [
     // Core dental terms
     "dental web design", "dentist websites", "dental practice SEO", "dental marketing", "oral health websites",

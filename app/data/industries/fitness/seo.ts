@@ -1,6 +1,32 @@
 export const fitnessSEO = {
   title: 'Fitness & Wellness | Kreative Kommit',
   description: 'Grow your gym or studio! We build sites for fitness pros, yoga studios, and trainers that motivate signups and boost local visibility.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Fitness & Wellness Web Design Services",
+    description: "Professional websites for gyms, personal trainers, and fitness studios. Increase memberships with fitness-focused SEO and online booking.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "SportsActivityLocation",
+    "@context": "https://schema.org",
+    "name": "Fitness Web Design Services",
+    "description": "Professional web design and digital marketing services for gyms, personal trainers, and fitness businesses",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Fitness Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/fitness",
+  
   keywords: [
     // Core fitness terms
     'fitness web design', 'gym websites', 'personal trainer SEO', 'fitness marketing', 'wellness websites',

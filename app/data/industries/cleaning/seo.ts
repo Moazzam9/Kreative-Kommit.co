@@ -1,5 +1,31 @@
 export const cleaningSEO = {
   description: "Digital marketing and web solutions for cleaning companies, janitorial services, and home care businesses.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Cleaning Services Web Design & Marketing",
+    description: "Professional websites for cleaning companies and janitorial services. Win more contracts with cleaning-focused SEO and digital marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "LocalBusiness",
+    "@context": "https://schema.org",
+    "name": "Cleaning Services Web Design",
+    "description": "Professional web design and digital marketing services for cleaning companies and janitorial services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Cleaning Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/cleaning",
+  
   keywords: [
     // Core cleaning terms
     "cleaning services web design", "cleaning company websites", "cleaning business SEO", "cleaning service marketing", "cleaner websites",

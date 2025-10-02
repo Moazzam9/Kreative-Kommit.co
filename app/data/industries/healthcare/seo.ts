@@ -1,6 +1,32 @@
 export const healthcareSEO = {
   title: 'Healthcare & Medical Clinics | Kreative Kommit',
   description: 'Healthy online presence! We support clinics and healthcare providers with accessible, trustworthy websites and local SEO that brings in new patients.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Healthcare Web Design & Medical Marketing Services",
+    description: "GDPR-compliant websites for medical clinics, GP practices, and healthcare providers. Boost patient acquisition with medical SEO.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "MedicalBusiness",
+    "@context": "https://schema.org",
+    "name": "Healthcare Web Design Services",
+    "description": "Professional web design and digital marketing services for medical clinics and healthcare providers",
+    "provider": {
+      "@type": "Organization", 
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "medicalSpecialty": "General Practice"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/healthcare",
+  
   keywords: [
     // Core healthcare terms
     'healthcare web design', 'medical clinic websites', 'healthcare SEO', 'medical practice marketing', 'clinic website design',

@@ -1,6 +1,32 @@
 export const legalSEO = {
   title: 'Legal | Kreative Kommit',
   description: 'Win your case online! Solicitors, barristers, and legal pros get trust-building sites and SEO that brings in new clients.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Legal Services Web Design & Law Firm Marketing",
+    description: "SRA compliant websites for solicitors, barristers, and law firms. Build trust and attract clients with legal-focused SEO and marketing.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "LegalService",
+    "@context": "https://schema.org",
+    "name": "Legal Web Design Services",
+    "description": "Professional web design and digital marketing services for solicitors, barristers, and law firms",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Legal Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/legal",
+  
   keywords: [
     // Core legal terms
     'legal web design', 'solicitor websites', 'law firm SEO', 'legal marketing', 'barrister websites',

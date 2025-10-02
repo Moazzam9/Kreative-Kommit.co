@@ -1,6 +1,32 @@
 export const ecommerceSEO = {
   title: 'E-commerce & Online Retail | Kreative Kommit',
   description: 'Sell more online! We build fast, secure, and conversion-focused e-commerce sites with SEO that brings shoppers straight to your store.',
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "E-commerce Web Design & Online Store Development",
+    description: "Professional e-commerce websites that convert. Shopify, WooCommerce & custom online stores with SEO that drives sales.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "Store",
+    "@context": "https://schema.org",
+    "name": "E-commerce Web Design Services",
+    "description": "Professional e-commerce development and digital marketing services for online retailers",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "E-commerce Development"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/e-commerce",
+  
   keywords: [
     // Core e-commerce terms
     'e-commerce web design', 'online store development', 'e-commerce SEO', 'online retail marketing', 'e-commerce websites',

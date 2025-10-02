@@ -1,5 +1,31 @@
 export const nonProfitSEO = {
   description: "Digital solutions for non-profits and charities to increase awareness, donations, and volunteer engagement.",
+  
+  // OpenGraph metadata for social sharing
+  openGraph: {
+    title: "Non-profit & Charity Web Design Services",
+    description: "Professional websites for charities and non-profit organizations. Increase donations and volunteer engagement with non-profit focused SEO.",
+    type: "website",
+    locale: "en_GB"
+  },
+  
+  // Structured data for rich snippets
+  schema: {
+    "@type": "NGO",
+    "@context": "https://schema.org",
+    "name": "Non-profit Web Design Services",
+    "description": "Professional web design and digital marketing services for charities and non-profit organizations",
+    "provider": {
+      "@type": "Organization",
+      "name": "Kreative Kommit"
+    },
+    "areaServed": "United Kingdom",
+    "serviceType": "Non-profit Services"
+  },
+  
+  // Canonical URL pattern
+  canonical: "/industries/non-profit",
+  
   keywords: [
     // Core nonprofit terms
     "nonprofit web design", "charity websites", "nonprofit SEO", "charity marketing", "fundraising websites",
