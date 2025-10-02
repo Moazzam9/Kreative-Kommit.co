@@ -1,4 +1,13 @@
 export const artsFAQs = [
-  { q: "Can you integrate an online store?", a: "Yes, we build e-commerce for art sales and print shops." },
-  { q: "Do you help with event promotion?", a: "We offer digital marketing for gallery openings and art events." }
+  { q: "How can a website help my creative business?", a: "A professional website showcases your work and attracts new clients and collaborators by displaying your portfolio, artistic process, and creative services in an engaging format." },
+  { q: "Do you offer SEO for artists?", a: "Yes, we specialise in SEO for UK artists, galleries, creative agencies, and arts organizations to help you reach art collectors, commissioners, and creative clients." },
+  { q: "What makes a good artist portfolio website?", a: "Effective art portfolios feature high-resolution images, detailed artwork descriptions, artist statements, exhibition history, commission processes, and easy contact methods for potential buyers." },
+  { q: "Can you integrate an online store?", a: "Yes, we build e-commerce for art sales and print shops with secure payment processing, artwork cataloguing, commission tracking, and digital certificate systems." },
+  { q: "How much does an artist website cost?", a: "Artist websites typically range from £1,500-£8,000 depending on portfolio size, e-commerce functionality, gallery features, and custom design requirements." },
+  { q: "How do artists get discovered online?", a: "We optimize for art-related keywords, showcase work on social media, list in online galleries, target local art searches, and create content about your artistic process and inspiration." },
+  { q: "What about copyright protection for online art?", a: "We implement watermarking systems, right-click protection, low-resolution previews for portfolios, and clear copyright notices to protect your creative work." },
+  { q: "Do you help with event promotion?", a: "We offer digital marketing for gallery openings and art events, including exhibition calendars, virtual gallery tours, and event booking systems." },
+  { q: "Can you integrate with art marketplace platforms?", a: "We connect with platforms like Saatchi Art, Artsy, Etsy, and social media to expand your reach while maintaining your independent website as your primary presence." },
+  { q: "How do you showcase different art mediums?", a: "We create specialized galleries for paintings, sculptures, digital art, photography, installations, and mixed media with appropriate presentation formats for each medium." },
+  { q: "What about artist booking and commission systems?", a: "We develop commission inquiry forms, project timelines, deposit collection systems, and client communication portals for custom artwork and creative service bookings." }
 ];

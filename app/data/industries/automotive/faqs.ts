@@ -1,4 +1,13 @@
 export const automotiveFAQs = [
-  { q: 'How can a website help my garage?', a: 'A professional website builds trust and makes it easy for customers to book services.' },
-  { q: 'Do you offer SEO for dealerships?', a: 'Yes, we specialise in local SEO for UK automotive businesses.' }
+  { q: 'How can a website help my garage?', a: 'A professional website builds trust and makes it easy for customers to book services by displaying certifications, service offerings, customer reviews, and easy booking systems.' },
+  { q: 'Do you offer SEO for dealerships?', a: 'Yes, we specialise in local SEO for UK automotive businesses including garages, MOT centres, car dealerships, and specialist automotive services.' },
+  { q: 'What automotive certifications should be displayed?', a: 'Prominently show MOT testing authorization, manufacturer certifications (Ford, BMW, etc.), trade memberships (IMI, RMI), and specialist qualifications like air conditioning or hybrid vehicle training.' },
+  { q: 'How much does an automotive website cost?', a: 'Automotive websites typically range from £2,000-£10,000 depending on features like online booking, service history tracking, parts catalogues, and dealership integration.' },
+  { q: 'Can you integrate MOT and service booking systems?', a: 'Yes, we create online booking systems for MOT tests, services, repairs, and specialist work with calendar integration, reminder systems, and customer communication tools.' },
+  { q: 'How do garages attract more local customers?', a: 'We optimize for local searches like "MOT near me", "car service [location]", showcase competitive pricing, customer reviews, and ensure Google My Business optimization for maximum visibility.' },
+  { q: 'What about used car dealership websites?', a: 'Dealership sites include vehicle inventory management, finance calculators, part-exchange valuations, detailed vehicle histories, and integration with automotive platforms like AutoTrader.' },
+  { q: 'Can you create customer vehicle history portals?', a: 'We develop secure customer areas showing service history, MOT records, upcoming maintenance, warranty information, and personalized service recommendations.' },
+  { q: 'How do you handle automotive emergency services?', a: 'We implement prominent breakdown recovery numbers, emergency contact forms, location tracking for mobile services, and 24/7 availability indicators for urgent automotive needs.' },
+  { q: 'What about specialist automotive services?', a: 'We create focused sections for services like performance tuning, classic car restoration, commercial vehicle maintenance, motorcycle servicing, and electric vehicle specialists.' },
+  { q: 'Do you integrate with automotive software systems?', a: 'Yes, we connect with garage management systems like Garage Hive, MAM Software, and Click Dealer for seamless workflow integration and customer management.' }
 ];

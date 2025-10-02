@@ -1,4 +1,13 @@
 export const architectureFAQs = [
-  { q: "Can you showcase 3D renderings?", a: "Yes, we support interactive galleries and 3D project showcases." },
-  { q: "Do you help with branding?", a: "We offer full branding and logo design for architecture and design firms." }
+  { q: "How can a website help my architecture practice?", a: "A professional website showcases your portfolio and helps you win more projects by displaying your design expertise, qualifications, and client testimonials to potential clients." },
+  { q: "Do you offer SEO for architects?", a: "Yes, we specialise in SEO for UK architects, design firms, and architectural consultancies to help you rank for local and specialist searches." },
+  { q: "What should an architectural portfolio website include?", a: "Your portfolio should feature high-quality project images, detailed case studies, architectural drawings, 3D visualizations, client testimonials, and professional qualifications including RIBA membership." },
+  { q: "Can you showcase 3D renderings?", a: "Yes, we support interactive galleries and 3D project showcases with virtual tours, before/after comparisons, and project timeline visualizations." },
+  { q: "How much does an architect website cost?", a: "Architectural websites typically range from £3,500-£12,000 depending on portfolio complexity, project showcase features, client area functionality, and integration requirements." },
+  { q: "Can you integrate CAD software with websites?", a: "We can integrate with popular architectural software including AutoCAD, Revit, SketchUp, and ArchiCAD for project management and client collaboration features." },
+  { q: "Do you help with branding?", a: "We offer full branding and logo design for architecture and design firms, creating cohesive visual identities that reflect your design philosophy." },
+  { q: "How do architects get more residential clients?", a: "We use targeted local SEO, showcase residential projects prominently, create planning guides, and optimize for searches like 'architect near me' and 'house extension architect'." },
+  { q: "What about commercial architecture websites?", a: "Commercial architecture sites focus on B2B content, showcase large-scale projects, highlight sustainability credentials, and target property developers and commercial clients." },
+  { q: "Can you create planning permission guidance?", a: "Yes, we create informative content about planning applications, building regulations, and the architectural design process from concept to completion." },
+  { q: "How do you handle architectural project confidentiality?", a: "We implement secure client areas, password-protected project galleries, and confidential document sharing systems while respecting client privacy requirements." }
 ];
