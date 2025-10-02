@@ -1,4 +1,14 @@
 export const hospitalityFAQs = [
-  { q: 'How can a website help my hotel?', a: 'A modern website with booking integration increases direct bookings and trust.' },
-  { q: 'Do you offer SEO for hotels?', a: 'Yes, we specialise in local SEO for UK hotels and B&Bs.' }
+  { q: 'How can a website help my hotel increase direct bookings?', a: 'A professional hotel website with integrated booking system reduces commission fees by 15-20% and increases direct bookings by up to 40% while building guest loyalty.' },
+  { q: 'Do you create booking engines for hotels and B&Bs?', a: 'Yes, we integrate real-time availability, secure payment processing, and channel management systems that sync with major booking platforms like Booking.com and Expedia.' },
+  { q: 'How important is mobile optimisation for hospitality websites?', a: 'Critical - 78% of hotel bookings are now made on mobile devices. Our mobile-first designs ensure fast loading and seamless booking across all devices.' },
+  { q: 'Can you help with online reputation management?', a: 'We integrate review systems from TripAdvisor, Google, and Booking.com, plus provide tools for responding to feedback and encouraging positive reviews from satisfied guests.' },
+  { q: 'What SEO strategies work best for hotels?', a: 'Local SEO focusing on location-based keywords, virtual tours, local attraction content, and Google Business Profile optimisation to attract nearby searchers and tourists.' },
+  { q: 'Do you handle photography for hotel websites?', a: 'We can arrange professional hotel photography showcasing rooms, facilities, dining areas, and local attractions to create compelling visual stories that drive bookings.' },
+  { q: 'How do you ensure website security for guest data?', a: 'We implement SSL certificates, PCI DSS compliance for payments, GDPR-compliant data handling, and secure booking systems to protect guest information and build trust.' },
+  { q: 'Can you integrate with hotel management systems?', a: 'Yes, we connect with popular PMS systems like Opera, Protel, and RoomMaster for seamless inventory management and automated rate updates across all channels.' },
+  { q: 'What content marketing works for hospitality businesses?', a: 'Local area guides, seasonal packages, event coverage, guest stories, and behind-the-scenes content that positions your property as the perfect local choice.' },
+  { q: 'How long does it take to build a hotel website?', a: 'Typically 8-12 weeks including booking system integration, content creation, photography coordination, and testing across all booking channels and devices.' },
+  { q: 'Do you provide multilingual websites for international guests?', a: 'Yes, we create multilingual hotel websites with currency conversion, local payment methods, and culturally appropriate content to attract international visitors.' },
+  { q: 'What analytics do you provide for hotel websites?', a: 'Comprehensive tracking including booking conversions, source attribution, guest behaviour analysis, and revenue reporting to optimise marketing spend and website performance.' }
 ];

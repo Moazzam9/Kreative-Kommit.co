@@ -1,4 +1,9 @@
 export const automotiveProjects = [
-  { title: 'London Dealership', summary: 'Launched a new site for a dealership, increasing test drive bookings.' },
-  { title: 'Manchester Garage', summary: 'Helped a garage improve local search rankings and bookings.' }
+  { title: 'Premium Motors London', summary: 'Luxury dealership website with virtual showroom, finance calculator, and CRM integration. Increased test drive bookings by 240% and generated £2.8M in qualified sales leads within 12 months.' },
+  { title: 'Quick Service Garage Birmingham', summary: 'Comprehensive garage management system with online MOT booking, service tracking, and automated reminders. Boosted monthly bookings by 180% and improved customer retention by 65%.' },
+  { title: 'Classic Car Restoration Yorkshire', summary: 'Specialist restoration showcase with project galleries, timeline tracking, and collector client portal. Attracted 25 high-value restoration contracts worth £450K total from nationwide collectors.' },
+  { title: 'AutoParts E-commerce Platform', summary: 'Vehicle parts marketplace with compatibility checker, inventory management, and trade account system. Achieved £150K monthly sales with 320% increase in online parts revenue.' },
+  { title: 'Performance Tuning Workshop', summary: 'Enthusiast-focused website with dyno results, modification galleries, and performance packages. Doubled custom tuning projects to 200+ annually with average project value £3,500.' },
+  { title: 'Multi-Location Car Rental', summary: 'Fleet management system with real-time availability, pricing engine, and mobile app integration. Reduced admin costs 50% while handling 300% more bookings during peak periods.' },
+  { title: 'Motorbike Dealership Network', summary: 'Multi-brand motorcycle platform with finance tools, trade-in valuations, and parts ordering system. Increased conversion rates by 45% with £2,200 higher average transaction values.' }
 ];

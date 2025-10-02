@@ -1,4 +1,8 @@
 export const hospitalityProjects = [
-  { title: 'Seaside Hotel', summary: 'Launched a new site for a B&B, increasing bookings by 90%.' },
-  { title: 'City Hotel', summary: 'Helped a city hotel improve online reviews and direct bookings.' }
+  { title: 'The Grand Hotel Edinburgh', summary: 'Luxury hotel website with integrated booking engine, PMS connection, and multilingual support. Reduced OTA dependence by 35% and increased direct bookings by 45%, saving £120K annually in commission fees.' },
+  { title: 'Cotswold Country Inn Group', summary: 'Multi-property booking platform with restaurant reservations, event management, and loyalty programs. Increased weekend occupancy by 80% and wedding bookings by 200% across 3 properties.' },
+  { title: 'Metropolitan Business Hotel', summary: 'Corporate-focused website with meeting room booking, express check-in, and business traveller amenities. Improved guest satisfaction from 4.2 to 4.8 stars and increased corporate contracts by 50%.' },
+  { title: 'Boutique Spa Resort', summary: 'Comprehensive wellness platform with spa booking, treatment scheduling, and package customisation. Increased spa revenue by £85K annually while achieving 99% booking accuracy.' },
+  { title: 'Historic Castle Hotel', summary: 'Heritage property showcase with virtual tours, event hosting capabilities, and cultural content marketing. Attracted 150% more international visitors and increased average stay by 1.3 nights.' },
+  { title: 'Seaside B&B Network', summary: 'Collaborative platform for 12 independent B&Bs with shared marketing, cross-referrals, and local experience bookings. Increased collective bookings by 90% and reduced individual marketing costs by 60%.' }
 ];

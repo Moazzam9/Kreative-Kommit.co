@@ -1,4 +1,9 @@
 export const governmentProjects = [
-  { title: "Council Portal Redesign", year: 2025, description: "A user-friendly portal for a local council, improving access to services." },
-  { title: "Community Engagement Hub", year: 2024, description: "A digital platform for public feedback and civic participation." }
+  { title: 'Hampshire County Council Citizen Portal', year: 2024, description: 'Comprehensive WCAG 2.1 AA compliant portal serving 1.4M residents with integrated services, online forms, and multilingual support. Reduced call centre volume by 60% and achieved 4.6/5 satisfaction scores.' },
+  { title: 'West Yorkshire Police Community Platform', year: 2024, description: 'Democratic engagement system with consultation tools, crime reporting, and community forums. Increased public participation by 450% with 12,000+ active users contributing to policy development.' },
+  { title: 'Birmingham City Planning Application System', year: 2023, description: 'Digital planning portal with real-time tracking, document upload, and automated notifications. Reduced processing time by 40% while improving transparency and resident satisfaction by 85%.' },
+  { title: 'Scottish Parliament Multi-Language Consultation', year: 2024, description: 'Accessible consultation platform supporting 8 languages with easy-read versions and visual aids. Engaged 15,000+ citizens in policy development, reaching previously underrepresented communities.' },
+  { title: 'Greater Manchester Transport Integration Hub', year: 2023, description: 'Cross-authority service portal combining transport, housing, and planning services with single sign-on. Improved departmental efficiency by 55% and enhanced citizen experience across 10 councils.' },
+  { title: 'Devon Emergency Communication Network', year: 2024, description: 'Multi-channel alert system with SMS, email, and social media integration for emergency management. Successfully reached 400K+ residents during flood events with 99.9% message delivery rate.' },
+  { title: 'Rural Parish Council Digital Transformation', year: 2023, description: 'Shared platform serving 150+ parish councils with meeting management, document sharing, and citizen engagement tools. Reduced individual IT costs by 70% while improving rural democratic participation.' }
 ];

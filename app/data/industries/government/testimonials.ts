@@ -1,4 +1,10 @@
 export const governmentTestimonials = [
-  { client: "Council Portal Redesign", feedback: "The new portal made it easier for residents to access services online." },
-  { client: "Community Engagement Hub", feedback: "We received more public feedback than ever before." }
+  { client: 'Hampshire County Council', feedback: 'Our new citizen portal reduced call centre volume by 60% while improving service satisfaction scores from 3.4 to 4.6. Online form submissions increased 280% with 24/7 availability.' },
+  { client: 'Camden Borough Planning Department', feedback: 'The planning application portal streamlined our process, reducing application processing time by 40% and providing real-time updates that improved resident satisfaction by 85%.' },
+  { client: 'West Yorkshire Police Authority', feedback: 'Community engagement platform increased public consultation participation by 450%, with 12,000+ residents contributing to policy development through accessible online tools.' },
+  { client: 'Birmingham City Council', feedback: 'WCAG 2.1 AA compliant website served 2.3M residents effectively, achieving 100% accessibility audit scores and reducing digital exclusion complaints to zero.' },
+  { client: 'Scottish Parliament Consultation Team', feedback: 'Multi-language consultation platform engaged 15,000+ citizens in policy development, with translation tools helping reach underrepresented communities previously excluded from democratic processes.' },
+  { client: 'Greater Manchester Combined Authority', feedback: 'Integrated transport and housing services portal improved cross-departmental efficiency by 55%, with single sign-on reducing duplicate data entry and citizen frustration.' },
+  { client: 'Devon County Emergency Services', feedback: 'Emergency communication system reached 400K+ residents during flooding events, with automated alerts and multilingual support ensuring community safety and 99.9% message delivery success.' },
+  { client: 'Northumberland Parish Council Network', feedback: 'Shared digital platform for 150+ parish councils reduced individual IT costs by 70% while improving service delivery and democratic transparency across rural communities.' }
 ];

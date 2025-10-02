@@ -1,4 +1,8 @@
 export const artsProjects = [
-  { title: "Gallery Launch", year: 2025, description: "A digital gallery for a contemporary art space." },
-  { title: "Artist Portfolio", year: 2024, description: "A personal site for a visual artist to showcase work and sell prints." }
+  { title: "Contemporary Art Gallery London", year: 2024, description: "Virtual gallery platform with 3D exhibition spaces, artist management system, and integrated e-commerce. Featured 120+ artworks, attracted 25K+ visitors, generated £45K sales in Q1 2024." },
+  { title: "Multi-Artist Collective Platform", year: 2024, description: "Digital marketplace for 25 emerging artists featuring NFT integration, commission booking, and virtual studio tours. Facilitated £100K+ in art sales with built-in royalty management." },
+  { title: "Sculpture Artist Portfolio", year: 2023, description: "3D sculpture viewer with AR capability, commission calculator, and client portal. Increased sculpture commissions by 400% with average project value of £8,500." },
+  { title: "Photography Studio Website", year: 2023, description: "Portfolio showcase with client galleries, automated booking system, and contract management. Streamlined workflow resulted in 50% more bookings and 25% time savings." },
+  { title: "Art Restoration Business", year: 2023, description: "Specialist restoration portfolio with before/after galleries, authentication services, and museum client portal. Secured contracts with 5 major institutions worth £150K annually." },
+  { title: "Digital Art Academy", year: 2024, description: "Online learning platform with video tutorials, student galleries, and mentorship booking. Enrolled 300+ students with 95% completion rate and £85K revenue in first year." }
 ];

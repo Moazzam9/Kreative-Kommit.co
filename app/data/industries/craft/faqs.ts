@@ -1,4 +1,14 @@
 export const craftFAQs = [
-  { q: "Can you build an online store?", a: "Yes, we create e-commerce sites for craft and handmade goods." },
-  { q: "Do you help with branding?", a: "We offer full branding and logo design for artisan businesses." }
+  { q: 'How can an e-commerce website help my craft business grow?', a: 'A professional craft website expands your market beyond local fairs, enabling 24/7 sales, custom order management, and showcasing your unique artisan story to attract loyal customers.' },
+  { q: 'Do you create online stores for handmade and artisan products?', a: 'Yes, we build craft-specific e-commerce sites with inventory management, custom product options, shipping calculators, and integration with platforms like Etsy and Amazon Handmade.' },
+  { q: 'Can you help showcase my craft-making process and story?', a: 'We create engaging content featuring your workshop, techniques, materials, and artisan journey through photo galleries, videos, and blog integration to build authentic customer connections.' },
+  { q: 'How do you handle custom orders and bespoke commissions?', a: 'Our commission systems include inquiry forms, design approval workflows, progress tracking, milestone payments, and customer communication tools for managing bespoke craft projects.' },
+  { q: 'Do you provide inventory management for craft supplies and finished goods?', a: 'Yes, we integrate stock control systems that track raw materials, work-in-progress items, finished products, and automatically update availability across all sales channels.' },
+  { q: 'Can you integrate with craft fairs and market booking systems?', a: 'We connect your website with event calendars, market applications, booth booking systems, and location-based tools to promote your craft fair presence and drive online sales.' },
+  { q: 'How do you help with craft business branding and visual identity?', a: 'We create cohesive brand identities including logos, colour schemes, packaging design, and photography guidelines that reflect your artisan aesthetic across all touchpoints.' },
+  { q: 'Do you offer subscription services for craft kits or supplies?', a: 'Yes, we build subscription platforms for craft boxes, monthly kits, or supply deliveries with automated billing, customisation options, and customer preference management.' },
+  { q: 'Can you help with workshop bookings and craft class management?', a: 'Our booking systems handle class schedules, student registration, payment processing, material requirements, and automated reminders for craft workshops and tutorials.' },
+  { q: 'How do you optimise craft websites for local and online discovery?', a: 'We use craft-specific SEO, local business listings, Pinterest integration, Instagram shopping, and Google Shopping feeds to help customers find your unique handmade products.' },
+  { q: 'Do you provide wholesale portals for craft retailers and stockists?', a: 'Yes, we create trade-only sections with bulk pricing, minimum order quantities, stockist locators, and automated ordering systems for retail partners and galleries.' },
+  { q: 'What payment and shipping options work best for craft businesses?', a: 'We integrate flexible payment methods including PayPal, Stripe, and instalment options, plus shipping calculators for various item sizes, custom packaging, and international delivery.' }
 ];

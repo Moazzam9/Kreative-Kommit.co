@@ -1,4 +1,14 @@
 export const governmentFAQs = [
-  { q: "Can you make our site accessible?", a: "Yes, we build government websites to meet all accessibility standards." },
-  { q: "Do you offer online forms?", a: "We create secure, user-friendly online forms for public services." }
+  { q: 'Do you meet WCAG 2.1 AA accessibility requirements for government websites?', a: 'Yes, we ensure full WCAG 2.1 AA compliance with screen reader compatibility, keyboard navigation, colour contrast standards, and alt text for all government digital services.' },
+  { q: 'Can you create secure online forms for public services?', a: 'We build encrypted, GDPR-compliant online forms with multi-step verification, document upload capabilities, and integration with existing government systems and databases.' },
+  { q: 'Do you understand government security requirements?', a: 'Our team has experience with Cyber Essentials, ISO 27001, and government security protocols including data protection, user authentication, and secure hosting requirements.' },
+  { q: 'How do you handle Freedom of Information compliance?', a: 'We implement transparent content management systems, automated publication schedules, and searchable document databases to support FOI obligations and proactive disclosure.' },
+  { q: 'Can you integrate with existing government systems?', a: 'Yes, we connect with council management systems, electoral databases, planning applications, and other legacy systems using secure APIs and established government data standards.' },
+  { q: 'Do you provide multilingual support for diverse communities?', a: 'We create multilingual government websites with translation management, cultural adaptation, and easy language options to serve diverse local populations effectively.' },
+  { q: 'How do you ensure website uptime for critical services?', a: 'We provide 99.9% uptime guarantees with redundant hosting, automated backups, 24/7 monitoring, and rapid incident response for essential public services.' },
+  { q: 'What citizen engagement tools do you offer?', a: 'Interactive consultation platforms, online polling, community forums, petition systems, and feedback collection tools that encourage democratic participation and transparency.' },
+  { q: 'Do you help with digital transformation strategies?', a: 'We provide comprehensive digital strategy including service digitisation roadmaps, staff training programs, and phased implementation plans for modernising public services.' },
+  { q: 'How do you make complex information accessible to citizens?', a: 'We use plain English principles, visual infographics, step-by-step guides, video content, and interactive tools to make government information clear and actionable.' },
+  { q: 'Can you handle high-traffic periods during elections or emergencies?', a: 'Our scalable infrastructure automatically handles traffic spikes during elections, emergency announcements, or major public consultations without service disruption.' },
+  { q: 'What ongoing support do you provide for government websites?', a: 'Comprehensive maintenance including security updates, content management training, accessibility audits, performance monitoring, and technical support for government staff.' }
 ];
