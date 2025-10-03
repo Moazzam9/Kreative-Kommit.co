@@ -83,18 +83,6 @@ export const legalSEO = {
       {
         "@type": "ListItem",
         "position": 2,
-      faqSchema: {
-        "@type": "FAQPage",
-        "@context": "https://schema.org",
-        "mainEntity": legalFAQs.map(faq => ({
-          "@type": "Question",
-          "name": faq.q,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.a
-          }
-        }))
-      },
         "name": "Industries",
         "item": "https://kreativekommit.com/industries"
       },
