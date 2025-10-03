@@ -35,7 +35,7 @@ export const eventsSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": eventsFAQs.map(faq => ({
+    "mainEntity": eventsFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

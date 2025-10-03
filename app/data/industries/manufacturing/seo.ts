@@ -34,7 +34,7 @@ export const manufacturingSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": manufacturingFAQs.map(faq => ({
+    "mainEntity": manufacturingFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

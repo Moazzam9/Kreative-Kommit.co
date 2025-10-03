@@ -34,7 +34,7 @@ export const franchiseSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": franchiseFAQs.map(faq => ({
+    "mainEntity": franchiseFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

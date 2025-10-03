@@ -34,7 +34,7 @@ export const petSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": petFAQs.map(faq => ({
+    "mainEntity": petFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

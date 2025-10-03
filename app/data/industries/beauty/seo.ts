@@ -34,7 +34,7 @@ export const beautySEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": beautyFAQs.map(faq => ({
+    "mainEntity": beautyFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

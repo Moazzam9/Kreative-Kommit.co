@@ -34,7 +34,7 @@ export const foodSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": foodFAQs.map(faq => ({
+    "mainEntity": foodFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

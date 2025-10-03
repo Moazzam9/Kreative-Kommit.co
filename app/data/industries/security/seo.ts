@@ -1,3 +1,5 @@
+import { securityFAQs } from "./faqs";
+
 export const securitySEO = {
   description: "Web and marketing solutions for security firms and law enforcement to build trust and attract contracts.",
   
@@ -32,24 +34,14 @@ export const securitySEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my security business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust with clients and showcases your security expertise and certifications."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for security companies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK security firms, CCTV installers, and alarm companies."
-        }
+    "mainEntity": securityFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

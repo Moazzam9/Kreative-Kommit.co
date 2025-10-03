@@ -32,18 +32,18 @@ export const automotiveSEO = {
   // Advanced SEO Phase 3 enhancements
   
     // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
-    faqSchema: {
-      "@type": "FAQPage",
-      "@context": "https://schema.org",
-      "mainEntity": automotiveFAQs.map(faq => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a
-        }
-      }))
-    },
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": automotiveFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  },
   // Review/testimonial schema
   reviewSchema: {
     "@type": "ItemList",

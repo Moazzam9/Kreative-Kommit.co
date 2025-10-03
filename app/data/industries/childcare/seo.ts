@@ -32,18 +32,18 @@ export const childcareSEO = {
   
   // FAQ Schema for rich snippets
     // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
-    faqSchema: {
-      "@type": "FAQPage",
-      "@context": "https://schema.org",
-      "mainEntity": childcareFAQs.map(faq => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a
-        }
-      }))
-    },
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": childcareFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  },
   
   // Service offerings schema
   serviceSchema: {

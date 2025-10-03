@@ -1,3 +1,5 @@
+import { technologyFAQs } from "./faqs";
+
 export const technologySEO = {
   title: 'Technology & IT Services | Kreative Kommit',
   description: 'Showcase your tech! We help IT firms and tech startups stand out with modern sites and SEO that attracts business clients.',
@@ -33,24 +35,14 @@ export const technologySEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my tech business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust and helps you win more clients."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for IT firms?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK tech companies."
-        }
+    "mainEntity": technologyFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

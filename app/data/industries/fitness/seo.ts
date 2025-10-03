@@ -35,7 +35,7 @@ export const fitnessSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": fitnessFAQs.map(faq => ({
+    "mainEntity": fitnessFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

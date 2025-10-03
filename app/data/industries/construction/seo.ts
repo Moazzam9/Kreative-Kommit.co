@@ -36,7 +36,7 @@ export const constructionSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": constructionFAQs.map(faq => ({
+    "mainEntity": constructionFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

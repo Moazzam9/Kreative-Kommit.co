@@ -31,19 +31,17 @@ export const seniorCareSEO = {
   // Advanced SEO Phase 3 enhancements
 
   // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
-  get faqSchema() {
-    return {
-      "@type": "FAQPage",
-      "@context": "https://schema.org",
-      "mainEntity": seniorCareFAQs.map(faq => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a
-        }
-      }))
-    };
+  faqSchema: {
+    "@type": "FAQPage",
+    "@context": "https://schema.org",
+    "mainEntity": seniorCareFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
   },
   
   // Service offerings schema
