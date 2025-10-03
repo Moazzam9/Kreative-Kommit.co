@@ -18,7 +18,7 @@ export const industryFacts: IndustryFact[] = [
     facts: [
       "Builders benefit from a modern website that showcases completed projects and customer reviews, helping win new contracts.",
       "SEO for builders targets local homeowners searching for renovation, extension, or construction services.",
-      "A well-optimized builder website can feature galleries, service areas, and contact forms to drive leads."
+      "A well-optimised builder website can feature galleries, service areas, and contact forms to drive leads."
     ]
   },
   {
