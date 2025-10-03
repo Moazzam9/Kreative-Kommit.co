@@ -1,4 +1,7 @@
 import { MetadataRoute } from 'next';
+import { services } from './data/services/services';
+import { cityFacts } from './data/cities/facts';
+import { industries } from './data/industries/industries';
 
 export const dynamic = 'force-static';
 
@@ -46,13 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Dynamic service/city URLs
-  // Import data
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const services: Array<{ slug: string }> = require('./data/services/services').services;
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const cityFacts: Array<{ slug: string }> = require('./data/cities/facts').cityFacts;
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const industries: Array<{ slug: string }> = require('./data/industries/industries').industries;
 
   const serviceCityUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [];
   services.forEach((service: { slug: string }) => {
