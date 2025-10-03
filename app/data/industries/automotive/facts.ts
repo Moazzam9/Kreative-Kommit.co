@@ -4,7 +4,7 @@ export const automotiveFacts = [
   'Local SEO drives 76% of automotive service bookings, with "near me" searches for garages increasing 230% in the past 3 years.',
   'UK automotive e-commerce reached £12.8 billion in 2023, with parts and accessories representing the fastest-growing online segment at 28% annually.',
   'Dealerships with virtual showrooms and 360° vehicle tours achieve 45% higher conversion rates and 60% longer website engagement times.',
-  'Mobile-optimized automotive websites generate 85% of service bookings, as 89% of customers search for mechanics and MOT centres on smartphones.',
+  'Mobile-optimised automotive websites generate 85% of service bookings, as 89% of customers search for mechanics and MOT centres on smartphones.',
   'Online vehicle valuations and trade-in tools increase dealership enquiries by 180%, with customers spending 40% more when digital tools are available.',
   'Automotive businesses using customer review management see 23% higher conversion rates and 31% better local search rankings than competitors.',
   'Digital service reminders and maintenance tracking reduce customer churn by 55% and increase repeat business value by £890 per customer annually.',
