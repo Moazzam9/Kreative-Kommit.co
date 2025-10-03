@@ -1,6 +1,6 @@
 ---
 title: "Google SGE (Search Generative Experience): October 2025 UK Impact"
-date: "2025-10-03"
+date: "2025-10-18"
 draft: true
 excerpt: "How Google’s SGE is changing search results and what UK businesses should do in October 2025."
 description: "A trending look at Google’s Search Generative Experience (SGE), its rollout in the UK, and SEO strategies for October 2025."

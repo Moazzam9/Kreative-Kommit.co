@@ -1,6 +1,6 @@
 ---
 title: "TikTok Shop SEO: How UK Brands Are Winning in October 2025"
-date: "2025-10-03"
+date: "2025-10-07"
 draft: true
 excerpt: "Discover the latest TikTok Shop SEO strategies and how UK brands are driving sales in October 2025."
 description: "A trending guide to TikTok Shop SEO, viral product launches, and influencer marketing for UK businesses."

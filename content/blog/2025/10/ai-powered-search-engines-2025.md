@@ -1,6 +1,6 @@
 ---
 title: "The Rise of AI-Powered Search Engines: What Businesses Need to Know in October 2025"
-date: "2025-10-03"
+date: "2025-10-01"
 draft: false
 excerpt: "Explore how new AI-driven search engines are shaking up SEO and what UK businesses should do to stay ahead."
 description: "A trending look at the impact of AI-powered search engines like Perplexity and You.com, and how to adapt your SEO strategy for October 2025."

@@ -1,7 +1,7 @@
 ---
 title: "Google’s October 2025 Core Update: What Changed and How to Respond"
 date: "2025-10-03"
-draft: true
+draft: false
 excerpt: "A breakdown of Google’s latest core update, its impact on rankings, and actionable steps for UK businesses."
 description: "Stay ahead of the curve with insights on Google’s October 2025 core update, including winners, losers, and recovery tips."
 keywords: ["Google core update", "October 2025", "SEO", "ranking changes", "UK business"]

@@ -1,6 +1,6 @@
 ---
 title: "Threads vs. X (Twitter): Social Media SEO Showdown October 2025"
-date: "2025-10-03"
+date: "2025-10-12"
 draft: true
 excerpt: "Which platform is better for SEO and brand visibility in October 2025: Threads or X (Twitter)?"
 description: "A trending comparison of Threads and X (Twitter) for social media SEO, engagement, and reach in the UK."

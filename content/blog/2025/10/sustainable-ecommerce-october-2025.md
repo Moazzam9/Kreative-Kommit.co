@@ -1,6 +1,6 @@
 ---
 title: "Sustainable Ecommerce: Green Shopping Trends for October 2025"
-date: "2025-10-03"
+date: "2025-10-25"
 draft: true
 excerpt: "Explore the latest sustainable ecommerce trends and how UK brands are going green this October."
 description: "A trending guide to eco-friendly ecommerce, green logistics, and sustainable shopping for UK businesses in October 2025."
