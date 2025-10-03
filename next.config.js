@@ -1,9 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'kreativekommit.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+    formats: ['image/webp', 'image/avif'],
   },
-  images: { unoptimized: true },
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
 };
 
 module.exports = nextConfig;

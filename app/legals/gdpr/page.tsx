@@ -4,7 +4,7 @@ export default function GDPR() {
     <div className="bg-background text-foreground min-h-screen">
       <div className="container mx-auto px-4 py-12 max-w-3xl">
         <h1 className="text-3xl font-bold mb-6">GDPR Compliance</h1>
-        <p className="mb-4">Kreative Kommit is committed to protecting your personal data in accordance with the UK GDPR and EU General Data Protection Regulation.</p>
+        <p className="mb-4">Kreative Kommit is committed to protecting your         personal data of &quot;data subjects&quot; who are located in the EU</p>
         <h2 className="text-xl font-semibold mt-8 mb-2">What is GDPR?</h2>
         <p className="mb-4">GDPR is a regulation that gives you rights over your personal data and sets out obligations for organisations that process it.</p>
         <h2 className="text-xl font-semibold mt-8 mb-2">Your Rights</h2>

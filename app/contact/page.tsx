@@ -209,7 +209,7 @@ export default function ContactPage() {
                         Thank You!
                       </h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        We've received your message and will get back to you within 24 hours.
+                        We&apos;ve received your message and will get back to you within 24 hours.
                       </p>
                     </div>
                   ) : (

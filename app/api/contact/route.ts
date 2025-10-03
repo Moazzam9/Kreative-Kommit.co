@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     ipRequestLog.set(ip, recentLog);
 
     // Parse JSON with error handling
-    let body: any;
+    let body: Record<string, unknown>;
     try {
       body = await request.json();
     } catch (jsonError) {
@@ -49,13 +49,13 @@ export async function POST(request: NextRequest) {
     }
 
     // Destructure with fallback for missing fields
-    const name = body?.name ?? '';
-    const email = body?.email ?? '';
-    const company = body?.company ?? '';
-    const projectType = body?.projectType ?? '';
-    const budget = body?.budget ?? '';
-    const message = body?.message ?? '';
-    const honeypot = body?.honeypot ?? '';
+    const name = String(body?.name ?? '');
+    const email = String(body?.email ?? '');
+    const company = String(body?.company ?? '');
+    const projectType = String(body?.projectType ?? '');
+    const budget = String(body?.budget ?? '');
+    const message = String(body?.message ?? '');
+    const honeypot = String(body?.honeypot ?? '');
 
     // Honeypot field check (should be empty)
     if (honeypot) {

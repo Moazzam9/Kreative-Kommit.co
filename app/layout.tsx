@@ -30,12 +30,21 @@ export const metadata: Metadata = {
     title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
     description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results.',
     siteName: 'KreativeKommit',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'KreativeKommit - Web Agency & Design Studio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'KreativeKommit - Intelligent Web Agency & Design Studio',
     description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results.',
     creator: '@kreativekommit',
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -49,7 +58,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'google-site-verification-token',
+    google: process.env.GOOGLE_VERIFICATION_TOKEN || '',
   },
 };
 

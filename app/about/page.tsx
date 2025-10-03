@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
@@ -6,6 +5,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/Button';
 import { Users, Globe, Coffee, PartyPopper } from 'lucide-react';
+import RandomFactGenerator from '@/components/RandomFactGenerator';
 
 
 const team = [
@@ -81,17 +81,7 @@ const values = [
 
 export default function AboutPage() {
   // Fun facts for interactive button
-  const funFacts = [
-    'We’ve launched sites in 12 countries!',
-    'Our team has sent over 1,000 celebratory GIFs.',
-    'We once built a site in under 24 hours (with lots of coffee).',
-    'We love memes almost as much as SEO.',
-    'Our code is 99% bug-free (the other 1% keeps us humble).'
-  ];
-  const [randomFact, setRandomFact] = React.useState(funFacts[0]);
-  function showRandomFact() {
-    setRandomFact(funFacts[Math.floor(Math.random() * funFacts.length)]);
-  }
+  
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
@@ -256,12 +246,8 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <div className="mb-16 text-center">
-            <h2 className="text-2xl font-bold text-black dark:text-white mb-4">Random Fun Fact</h2>
-            <p className="text-lg text-primary-600 dark:text-primary-400 mb-4">{randomFact}</p>
-            <Button size="sm" className="bg-primary-600 text-white hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700" onClick={showRandomFact}>
-              Show Another Fun Fact
-            </Button>
+          <div className="mb-16">
+            <RandomFactGenerator />
           </div>
 
           <div className="mb-16">
