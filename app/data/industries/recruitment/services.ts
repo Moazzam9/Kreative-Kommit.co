@@ -1,7 +1,22 @@
 export const recruitmentServices = [
-  "Recruitment agency websites",
-  "Job board integration",
-  "SEO for staffing firms",
-  "Employer & candidate portals",
-  "Branding & design"
+  "Recruitment agency website design",
+  "Custom job board and listing integration",
+  "SEO for staffing firms and recruiters",
+  "Employer and candidate portal development",
+  "Branding, logo, and visual identity design",
+  "Applicant tracking system (ATS) integration",
+  "Custom application forms and resume uploads",
+  "Blog and hiring tips content setup",
+  "Mobile-friendly and responsive design",
+  "Analytics and reporting dashboard setup",
+  "Multi-language and internationalization support",
+  "Video interview and candidate introduction tools",
+  "Ongoing website maintenance and support",
+  "Content management system setup",
+  "Secure hosting and GDPR compliance",
+  "Employer branding and career page design",
+  "Newsletter signup and email marketing integration",
+  "Social media and LinkedIn integration",
+  "Featured jobs and employer showcase sections",
+  "Lead generation landing pages for employers"
 ];

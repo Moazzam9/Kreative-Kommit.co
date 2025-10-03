@@ -1,7 +1,22 @@
 export const petServices = [
-  "Pet care & grooming websites",
-  "Appointment booking integration",
-  "Veterinary marketing",
-  "Social media for pet businesses",
-  "Branding & pet photography"
+  "Pet care and grooming website design",
+  "Online appointment booking integration",
+  "Veterinary clinic marketing and web solutions",
+  "Social media integration for pet businesses",
+  "Branding, logo, and pet photography services",
+  "Photo gallery and client showcase setup",
+  "E-commerce for pet products and accessories",
+  "Blog and pet care tips content setup",
+  "Mobile-friendly and responsive design",
+  "Review and testimonial integration",
+  "Adoption and rescue listing features",
+  "Pet management and scheduling software integration",
+  "Newsletter signup and email marketing integration",
+  "Ongoing website maintenance and support",
+  "Content management system setup",
+  "Secure hosting and privacy compliance",
+  "Custom landing pages for promotions",
+  "Online payment and invoicing integration",
+  "Event calendar and pet class scheduling",
+  "Live chat and customer support tools"
 ];

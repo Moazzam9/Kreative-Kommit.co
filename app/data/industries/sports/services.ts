@@ -1,7 +1,22 @@
 export const sportsServices = [
-  "Sports club websites",
-  "Team roster & schedule integration",
-  "SEO for sports organizations",
-  "Membership management tools",
-  "Event promotion"
+  "Sports club and team website design",
+  "Team roster, schedule, and results integration",
+  "SEO for sports organizations and events",
+  "Membership management and registration tools",
+  "Event promotion and ticketing integration",
+  "Live score and real-time update widgets",
+  "Photo and video gallery setup",
+  "E-commerce for team merchandise and tickets",
+  "Social media feed and sharing integration",
+  "Mobile-friendly and responsive design",
+  "Analytics and fan engagement tracking",
+  "Blog and news section setup",
+  "Sponsorship and partner showcase sections",
+  "Ongoing website maintenance and support",
+  "Content management system setup",
+  "Secure hosting and data protection",
+  "Newsletter signup and email marketing integration",
+  "Custom landing pages for tournaments",
+  "Online donation and fundraising tools",
+  "Community forum and fan club features"
 ];
