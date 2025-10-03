@@ -1,4 +1,5 @@
-export { viewport } from './viewport';
+
+"use client";
 
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,7 +8,6 @@ import { Button } from '@/components/ui/Button';
 import { useToast } from '../../hooks/use-toast';
 import { Eye, Download } from 'lucide-react';
 
-// ...existing code...
 
 const designs = [
   {
