@@ -8,7 +8,7 @@ export const franchiseServices = [
   "Custom franchisee microsites",
   "Online ordering and booking system integration",
   "Franchise recruitment marketing and landing pages",
-  "Centralized analytics and reporting for all locations",
+  "Centralised analytics and reporting for all locations",
   "Multi-language and internationalization support",
   "Integration with franchise management and POS software",
   "Custom CRM and email marketing integration",
