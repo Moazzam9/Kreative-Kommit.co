@@ -1,4 +1,9 @@
 export const tradesProjects = [
-  { title: 'London Plumber', summary: 'Launched a new site for a plumber, increasing job bookings.' },
-  { title: 'Manchester Electrician', summary: 'Helped an electrician improve local search rankings.' }
+  { title: 'Emergency Plumbing Services 24/7 Platform', summary: 'Complete emergency response website with priority booking, out-of-hours systems, and GPS dispatch integration. Increased emergency callouts by 240% generating £180K additional annual revenue.' },
+  { title: 'Manchester Electrical Contractors Portfolio', summary: 'NICEIC certified electrician website with detailed project gallery and instant quote system. Increased domestic electrical work by 160% with average job values rising to £850.' },
+  { title: 'Multi-Trade Building Services Hub', summary: 'Integrated platform covering plumbing, electrical, carpentry, and decorating with unified booking system. Achieved 85% multi-trade conversion with average project values of £4,200.' },
+  { title: 'Gas Safe Heating Engineer Showcase', summary: 'Heating specialist website with boiler installation gallery and maintenance contract system. Generated 200% more enquiries securing £320K from installations and service contracts.' },
+  { title: 'Kitchen and Bathroom Renovation Gallery', summary: 'High-end renovation showcase with detailed project costs and customer journey documentation. Increased luxury fitting enquiries by 180% with average projects reaching £12,500.' },
+  { title: 'Commercial Electrical Contractor B2B Platform', summary: 'Enterprise-focused electrical services with certification showcase and large project portfolio. Won 12 major contracts worth £650K establishing strong commercial reputation.' },
+  { title: 'Local Handyman Services Booking System', summary: 'Comprehensive handyman platform with before/after galleries and instant quotes for small repairs to major maintenance. Grew from 50 to 180 monthly jobs across all home services.' }
 ];

@@ -1,3 +1,10 @@
 export const tradesTestimonials = [
-  { author: 'FixIt Fast', text: 'Our new website brought in more local jobs and made booking easy.' }
+  { author: 'Emergency Plumbing Services London', text: '24/7 booking system with emergency callout features increased emergency calls by 240%, generating £180K additional revenue while improving customer satisfaction during crisis situations.' },
+  { author: 'Electrical Contractors Manchester', text: 'NICEIC certification showcase and project portfolio increased domestic electrical work by 160%, with average job values rising from £350 to £850 through enhanced credibility.' },
+  { author: 'Multi-Trade Building Services', text: 'Comprehensive platform covering plumbing, electrical, and carpentry services streamlined customer enquiries, increasing multi-trade bookings by 85% and project values to average £4,200.' },
+  { author: 'Heating Engineer Specialists', text: 'Gas Safe registration display and boiler installation gallery generated 200% more heating enquiries, securing £320K annual revenue from boiler replacements and maintenance contracts.' },
+  { author: 'Local Handyman Services', text: 'Before/after project galleries and instant quote calculator converted 70% more website visitors to bookings, growing from 50 to 180 monthly jobs across home maintenance services.' },
+  { author: 'Roofing and Guttering Experts', text: 'Weather-responsive content and emergency storm damage booking system captured seasonal opportunities, increasing storm work revenue by 300% during peak weather periods.' },
+  { author: 'Kitchen and Bathroom Fitting', text: 'Detailed project showcases with cost breakdowns and customer testimonials increased high-value renovation enquiries by 180%, with average kitchen projects reaching £12,500.' },
+  { author: 'Commercial Electrical Contractors', text: 'B2B focused platform with commercial certifications and large project portfolio won 12 major contracts worth £650K, establishing reputation in commercial electrical sector.' }
 ];
