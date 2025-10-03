@@ -1,7 +1,9 @@
+import { fitnessFAQs } from "./faqs";
+
 export const fitnessSEO = {
   title: 'Fitness & Wellness | Kreative Kommit',
   description: 'Grow your gym or studio! We build sites for fitness pros, yoga studios, and trainers that motivate signups and boost local visibility.',
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Fitness & Wellness Web Design Services",
@@ -9,7 +11,7 @@ export const fitnessSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "SportsActivityLocation",
@@ -23,36 +25,26 @@ export const fitnessSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Fitness Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/fitness",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my fitness business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A modern website helps you attract new members, manage bookings, and build your fitness community."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for gyms and fitness studios?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK gyms, personal trainers, and fitness studios."
-        }
+    "mainEntity": fitnessFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

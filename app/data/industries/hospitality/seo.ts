@@ -1,7 +1,9 @@
+import { hospitalityFAQs } from "./faqs";
+
 export const hospitalitySEO = {
   title: 'Hospitality (Hotels, B&Bs) | Kreative Kommit',
   description: 'Fill more rooms! We help hotels and B&Bs get booked with beautiful sites, online booking, and local SEO that attracts travelers.',
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Hotel & B&B Web Design Services",
@@ -9,7 +11,7 @@ export const hospitalitySEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "LodgingBusiness",
@@ -23,36 +25,26 @@ export const hospitalitySEO = {
     "areaServed": "United Kingdom",
     "amenityFeature": "Online Booking"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/hospitality",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my hotel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A modern website with booking integration increases direct bookings and trust."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for hotels?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK hotels and B&Bs."
-        }
+    "mainEntity": hospitalityFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

@@ -1,6 +1,8 @@
+import { cleaningFAQs } from "./faqs";
+
 export const cleaningSEO = {
   description: "Digital marketing and web solutions for cleaning companies, janitorial services, and home care businesses.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Cleaning Services Web Design & Marketing",
@@ -8,7 +10,7 @@ export const cleaningSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "LocalBusiness",
@@ -22,36 +24,26 @@ export const cleaningSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Cleaning Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/cleaning",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my cleaning business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website helps you attract more clients and manage bookings for your cleaning services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for cleaning companies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK cleaning services and commercial cleaners."
-        }
+    "mainEntity": cleaningFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

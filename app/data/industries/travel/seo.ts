@@ -1,6 +1,8 @@
+import { travelFAQs } from "./faqs";
+
 export const travelSEO = {
   description: "Websites and marketing for travel agencies, tour operators, and guides to attract travelers and manage bookings.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Travel & Tourism Web Design Services",
@@ -8,7 +10,7 @@ export const travelSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "TravelAgency",
@@ -22,36 +24,26 @@ export const travelSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Travel Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/travel",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my travel business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your destinations and enables online bookings for your travel services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for travel agencies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK travel agencies, tour operators, and hospitality businesses."
-        }
+    "mainEntity": travelFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

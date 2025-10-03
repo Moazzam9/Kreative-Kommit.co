@@ -1,7 +1,9 @@
+import { eventsFAQs } from "./faqs";
+
 export const eventsSEO = {
   title: 'Events & Wedding Planners | Kreative Kommit',
   description: 'Make every event unforgettable! We help planners showcase services, galleries, and reviews to attract more bookings.',
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Events & Wedding Planning Web Design Services",
@@ -9,7 +11,7 @@ export const eventsSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "EventPlanning",
@@ -23,60 +25,24 @@ export const eventsSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Event Planning"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/events",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my event planning business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your events and helps couples and businesses find and book your services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for event planners?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK wedding planners and event management companies."
-        }
+    "mainEntity": eventsFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "EventPlanning", "name": "Wedding planner websites" },
-      { "@type": "EventPlanning", "name": "Event portfolio galleries" },
-      { "@type": "EventPlanning", "name": "SEO for event planners" },
-      { "@type": "EventPlanning", "name": "Online booking systems" },
-      { "@type": "EventPlanning", "name": "Venue marketing" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "Perfect Weddings" },
-        "reviewBody": "Our new website helps couples discover our services and book their dream wedding."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement
