@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { brandingPages } from '@/app/data/branding';
+import { brandingPages } from '@/app/data/niches/branding';
 
 interface PageProps {
   params: { city: string; area: string };
