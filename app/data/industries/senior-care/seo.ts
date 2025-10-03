@@ -1,6 +1,8 @@
+import { seniorCareFAQs } from './faqs';
+
 export const seniorCareSEO = {
   description: "Web and digital solutions for senior care, assisted living, and home care providers to build trust and attract families.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Senior Care & Assisted Living Web Design Services",
@@ -8,7 +10,7 @@ export const seniorCareSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "MedicalBusiness",
@@ -22,34 +24,26 @@ export const seniorCareSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Senior Care"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/senior-care",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+  get faqSchema() {
+    return {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": seniorCareFAQs.map(faq => ({
         "@type": "Question",
-        "name": "How can a website help my senior care business?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional website builds trust with families and showcases your care services and facilities."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for care homes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK care homes, nursing homes, and senior care facilities."
-        }
-      }
-    ]
+      }))
+    };
   },
   
   // Service offerings schema

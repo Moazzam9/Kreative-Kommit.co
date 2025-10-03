@@ -1,6 +1,8 @@
+import { landscapingFAQs } from "./faqs";
+
 export const landscapingSEO = {
   description: "Websites and marketing for landscapers and gardening businesses to grow their client base and showcase projects.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Landscaping & Garden Design Web Services",
@@ -8,7 +10,7 @@ export const landscapingSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "HomeAndConstructionBusiness",
@@ -22,36 +24,26 @@ export const landscapingSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Landscaping Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/landscaping",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Can you show before-and-after photos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we create interactive galleries for landscaping projects."
-        }
-      },
-      {
-        "@type": "Question", 
-        "name": "Do you help with local SEO?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We specialize in local SEO for gardening and landscaping businesses."
-        }
+    "mainEntity": landscapingFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

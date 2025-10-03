@@ -1,6 +1,8 @@
+import { franchiseFAQs } from "./faqs";
+
 export const franchiseSEO = {
   description: "Web and marketing solutions for franchise businesses to manage brand consistency and drive local leads.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Franchise Web Design & Marketing Services",
@@ -8,7 +10,7 @@ export const franchiseSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "Organization",
@@ -22,36 +24,26 @@ export const franchiseSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Franchise Marketing"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/franchise",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my franchise business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website attracts potential franchisees and provides consistent branding across locations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for franchise businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in multi-location SEO and franchise marketing websites."
-        }
+    "mainEntity": franchiseFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

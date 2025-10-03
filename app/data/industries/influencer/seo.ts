@@ -1,6 +1,8 @@
+import { influencerFAQs } from "./faqs";
+
 export const influencerSEO = {
   description: "Web and branding solutions for influencers, content creators, and personal brands to grow their audience and monetize their content.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Influencer & Content Creator Web Design Services",
@@ -8,7 +10,7 @@ export const influencerSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "Person",
@@ -22,36 +24,26 @@ export const influencerSEO = {
     "areaServed": "United Kingdom",
     "jobTitle": "Content Creator"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/influencer",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my personal brand?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website centralizes your content and helps you monetize your influence across platforms."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for content creators?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in personal brand SEO for UK influencers and content creators."
-        }
+    "mainEntity": influencerFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

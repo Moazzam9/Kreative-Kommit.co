@@ -1,6 +1,8 @@
+import { recruitmentFAQs } from "./faqs";
+
 export const recruitmentSEO = {
   description: "Web and digital solutions for recruitment and staffing agencies to attract employers and job seekers.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Recruitment & Staffing Agency Web Design Services",
@@ -8,7 +10,7 @@ export const recruitmentSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "EmploymentAgency",
@@ -22,36 +24,26 @@ export const recruitmentSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Employment Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/recruitment",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my recruitment business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website attracts both candidates and employers, streamlining your recruitment process."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for recruitment agencies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK recruitment agencies and job boards."
-        }
+    "mainEntity": recruitmentFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

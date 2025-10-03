@@ -1,6 +1,8 @@
+import { sportsFAQs } from "./faqs";
+
 export const sportsSEO = {
   description: "Websites and marketing for sports clubs, teams, and associations to engage fans and manage memberships.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Sports Club & Team Web Design Services",
@@ -8,7 +10,7 @@ export const sportsSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "SportsClub",
@@ -22,36 +24,26 @@ export const sportsSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Sports Marketing"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/sports",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my sports business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website helps you attract members, promote events, and manage bookings for your sports club or facility."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for sports clubs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK sports clubs, gyms, and fitness facilities."
-        }
+    "mainEntity": sportsFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",

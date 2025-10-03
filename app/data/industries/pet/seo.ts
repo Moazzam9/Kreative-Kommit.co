@@ -1,6 +1,8 @@
+import { petFAQs } from "./faqs";
+
 export const petSEO = {
   description: "Web and marketing solutions for pet care, grooming, and veterinary businesses to reach more pet owners.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Pet Services & Veterinary Web Design",
@@ -8,7 +10,7 @@ export const petSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "VeterinaryCare",
@@ -22,36 +24,26 @@ export const petSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Pet Care"
   },
-  
-    // Canonical URL pattern
+
+  // Canonical URL pattern
   canonical: "/industries/pet",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my pet business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website helps pet owners find your services and builds trust for their beloved companions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for pet businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK pet shops, vets, and pet care services."
-        }
+    "mainEntity": petFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
+
   // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",
