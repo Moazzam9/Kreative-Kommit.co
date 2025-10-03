@@ -1,10 +1,8 @@
 'use client';
 
-import type { Metadata } from 'next';
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/badge';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 const contactInfo = [
@@ -140,7 +138,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-primary-900 dark:text-primary-100 mb-6">
-                  Let's Talk
+                  Let&apos;s Talk
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-8">
                   Whether you&#39;re starting from scratch or need to revamp your existing website,
@@ -196,7 +194,7 @@ export default function ContactPage() {
                     Start Your Project
                   </CardTitle>
                   <CardDescription className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-                    Tell us about your project and we'll get back to you with a detailed proposal.
+                    Tell us about your project and we&apos;ll get back to you with a detailed proposal.
                   </CardDescription>
 
                 </CardHeader>

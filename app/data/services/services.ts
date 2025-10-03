@@ -19,7 +19,6 @@ export interface Service {
 }
 
 import { industries } from '../industries';
-import { cityServiceDescriptions, genericServiceDescriptions } from '../cities/serviceDescriptions';
 
 export const services: Service[] = [
   // Website & App Creation

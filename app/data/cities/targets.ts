@@ -958,7 +958,8 @@ export const allRegionsCities: City[] = [
 ];
 
 // TEMP: Export allCities as JSON for script
-if (require.main === module) {
-  const fs = require('fs');
-  fs.writeFileSync('allCities.json', JSON.stringify(allCities, null, 2));
-}
+// Note: Commented out to avoid require() in browser environment
+// if (require.main === module) {
+//   const fs = require('fs');
+//   fs.writeFileSync('allCities.json', JSON.stringify(allCities, null, 2));
+// }

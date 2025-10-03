@@ -129,7 +129,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <section className="mb-10">
           <h2 className="text-2xl font-semibold text-primary mb-3">Featured Projects</h2>
           <ul className="space-y-4">
-            {projects.map((project: any, idx: number) => (
+            {projects.map((project: { title: string; year: string; description: string }, idx: number) => (
               <li key={idx} className="border-l-4 border-primary pl-4 bg-white dark:bg-gray-900 rounded shadow-sm py-2">
                 <div className="font-bold text-lg">{project.title} <span className="text-xs text-gray-500">({project.year})</span></div>
                 <div className="text-gray-700 dark:text-gray-300">{project.description}</div>
@@ -152,7 +152,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <section className="mb-10">
           <h2 className="text-2xl font-semibold text-primary mb-3">Client Testimonials</h2>
           <ul className="space-y-4">
-            {testimonials.map((testimonial: any, idx: number) => (
+            {testimonials.map((testimonial: { client: string; feedback: string }, idx: number) => (
               <li key={idx} className="bg-primary/10 dark:bg-primary/20 rounded px-4 py-3 shadow">
                 <span className="font-semibold text-primary dark:text-primary-300">{testimonial.client}:</span> <span className="italic text-gray-800 dark:text-gray-200">{testimonial.feedback}</span>
               </li>
@@ -165,7 +165,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <section className="mb-10">
           <h2 className="text-2xl font-semibold text-primary mb-3">FAQs</h2>
           <ul className="space-y-4">
-            {faqs.map((faq: any, idx: number) => (
+            {faqs.map((faq: { q: string; a: string }, idx: number) => (
               <li key={idx} className="bg-gray-50 dark:bg-gray-900 rounded px-4 py-3 shadow">
                 <strong>{faq.q}</strong>
                 <div>{faq.a}</div>

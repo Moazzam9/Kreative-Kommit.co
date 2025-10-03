@@ -1,4 +1,5 @@
 import { services } from '@/app/data/services/services';
+import { cityServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -39,12 +40,9 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
       {/* City Descriptions (using cityServiceDescriptions) */}
       {(() => {
         try {
-          // Dynamically import to avoid SSR issues if needed
-          // eslint-disable-next-line @typescript-eslint/no-var-requires
-          const { cityServiceDescriptions } = require('@/app/data/cities/serviceDescriptions');
           const cityDescs = Object.entries(cityServiceDescriptions)
-            .filter(([city, descs]) => (descs as Record<string, string>)[service.slug])
-            .map(([city, descs]) => [city, (descs as Record<string, string>)[service.slug]]);
+            .filter(([_, descs]) => descs[service.slug])
+            .map(([city, descs]) => [city, descs[service.slug]]);
           if (cityDescs.length === 0) return null;
           return (
             <div className="mb-4">
@@ -53,7 +51,7 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
                 {cityDescs.map(([city, desc]) => (
                   <li key={city}>
                     <span className="font-medium text-primary">{city.charAt(0).toUpperCase() + city.slice(1)}:</span>
-                    <span className="text-muted-foreground ml-2">{desc as string}</span>
+                    <span className="text-muted-foreground ml-2">{desc}</span>
                   </li>
                 ))}
               </ul>
