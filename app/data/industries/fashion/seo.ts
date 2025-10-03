@@ -1,3 +1,5 @@
+import { fashionFAQs } from "./faqs";
+
 export const fashionSEO = {
   description: "Websites and digital marketing for fashion brands, boutiques, and apparel designers to grow their audience and sales.",
   
@@ -28,54 +30,18 @@ export const fashionSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my fashion business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your fashion brand and enables online sales to reach more customers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for fashion brands?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK fashion brands, boutiques, and clothing retailers."
-        }
+    "mainEntity": fashionFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "Store", "name": "Fashion brand websites" },
-      { "@type": "Store", "name": "E-commerce platforms" },
-      { "@type": "Store", "name": "SEO for fashion" },
-      { "@type": "Store", "name": "Boutique marketing" },
-      { "@type": "Store", "name": "Fashion photography" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "Chic Boutique" },
-        "reviewBody": "Our new fashion website helped us reach customers nationwide and increased our online sales significantly."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement

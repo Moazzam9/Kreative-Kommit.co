@@ -1,3 +1,5 @@
+import { educationFAQs } from "./faqs";
+
 export const educationSEO = {
   title: 'Education & Tutoring | Kreative Kommit',
   description: 'Make learning visible! We help schools, tutors, and educators connect with students and parents through engaging websites and smart search strategies.',
@@ -29,54 +31,18 @@ export const educationSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my tutoring business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust and helps you attract more students."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for schools?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK schools and tutors."
-        }
+    "mainEntity": educationFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "EducationalOrganization", "name": "School website design" },
-      { "@type": "EducationalOrganization", "name": "SEO for tutors" },
-      { "@type": "EducationalOrganization", "name": "Online course platforms" },
-      { "@type": "EducationalOrganization", "name": "Content marketing for education" },
-      { "@type": "EducationalOrganization", "name": "Parent/student portals" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "Smart Tutors" },
-        "reviewBody": "Our new website brought in more students and made bookings easy."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement

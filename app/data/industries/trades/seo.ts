@@ -1,3 +1,4 @@
+import { tradesFAQs } from "./faqs";
 export const tradesSEO = {
   title: 'Trades | Kreative Kommit',
   description: 'Get found for your skills! Plumbers, electricians, carpenters, and more—our sites and SEO help you win more local jobs.',
@@ -33,24 +34,14 @@ export const tradesSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my trade business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website helps you get found locally and builds trust with potential customers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for tradespeople?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK plumbers, electricians, and other skilled trades."
-        }
+    "mainEntity": tradesFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

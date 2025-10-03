@@ -1,3 +1,4 @@
+import { artsFAQs } from "./faqs";
 export const artsSEO = {
   description: "Web and digital marketing for artists, galleries, and creative agencies to showcase portfolios and attract clients.",
   
@@ -28,54 +29,18 @@ export const artsSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my art business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your artwork and helps you reach collectors and art enthusiasts."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for artists and galleries?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK artists, galleries, and creative agencies."
-        }
+    "mainEntity": artsFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "CreativeWork", "name": "Artist portfolio websites" },
-      { "@type": "CreativeWork", "name": "Gallery websites" },
-      { "@type": "CreativeWork", "name": "SEO for creative agencies" },
-      { "@type": "CreativeWork", "name": "Online art sales platforms" },
-      { "@type": "CreativeWork", "name": "Exhibition marketing" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "Modern Art Gallery" },
-        "reviewBody": "Our new website helped us reach more art collectors and showcase our exhibitions beautifully."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement
