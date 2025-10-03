@@ -25,7 +25,7 @@ const designs = [
     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Complete e-commerce template with payment integration',
     tags: ['Next.js', 'Stripe', 'SEO'],
-    price: '$49',
+    price: '£99',
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const designs = [
     image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Creative portfolio template for designers and developers',
     tags: ['CSS Grid', 'Animations', 'Responsive'],
-    price: '$29',
+    price: '£49',
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const designs = [
     image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'High-converting landing page components',
     tags: ['Conversion', 'A/B Testing', 'Forms'],
-    price: '$39',
+    price: '£69',
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const designs = [
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
     description: 'Professional agency website template',
     tags: ['Multi-page', 'Contact Forms', 'Performance'],
-    price: '$59',
+    price: '£129',
   },
 ];
 
