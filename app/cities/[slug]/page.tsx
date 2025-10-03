@@ -1,5 +1,5 @@
 import { cityFacts } from '@/app/data/cities/facts';
-import { getTitle, getMetaDescription, getIntroParagraph, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
+import { getTitle, getMetaDescription, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
 import { services } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';

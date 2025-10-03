@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: 'KreativeKommit',
     images: [
       {
-        url: '/og-about.jpg',
+        url: 'https://kreativekommit.com/og-about.jpg',
         width: 1200,
         height: 630,
         alt: 'About KreativeKommit Team',

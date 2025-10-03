@@ -9,8 +9,6 @@ import {
   Zap,
   Shield,
   Smartphone,
-  BarChart3,
-  Headphones,
   ArrowRight
 } from 'lucide-react';
 import Link from 'next/link';

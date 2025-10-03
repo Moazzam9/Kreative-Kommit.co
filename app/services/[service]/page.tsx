@@ -1,19 +1,11 @@
 
 import { services } from '@/app/data/services/services';
-import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
+import { cityServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';
 import { cityFacts } from '@/app/data/cities/facts';
 import { serviceFacts } from '@/app/data/services/facts';
-import {
-  getTitle,
-  getMetaDescription,
-  getIntroParagraph,
-  getCTA,
-  getFAQ,
-  getSchemaMarkup,
-  brand
-} from '@/app/data/templates/cities';
-import type { Metadata } from 'next';
+import { brand } from '@/app/data/templates/cities';
+// ...existing code...
 
 export async function generateStaticParams() {
   return services.map((service: typeof services[number]) => ({ service: service.slug }));

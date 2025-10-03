@@ -41,7 +41,7 @@ export default function ServiceDetail({ slug }: ServiceDetailProps) {
       {(() => {
         try {
           const cityDescs = Object.entries(cityServiceDescriptions)
-            .filter(([_, descs]) => descs[service.slug])
+            .filter(([, descs]) => descs[service.slug])
             .map(([city, descs]) => [city, descs[service.slug]]);
           if (cityDescs.length === 0) return null;
           return (
