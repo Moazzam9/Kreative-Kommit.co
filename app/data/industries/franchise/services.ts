@@ -1,7 +1,22 @@
 export const franchiseServices = [
-  "Franchise network websites",
-  "Location finder integration",
-  "SEO for multi-location brands",
-  "Brand consistency tools",
-  "Lead generation landing pages"
+  "Franchise network website design",
+  "Multi-location management dashboards",
+  "Location finder and mapping integration",
+  "SEO for franchise and multi-location brands",
+  "Brand consistency and digital asset management",
+  "Lead generation landing pages and forms",
+  "Custom franchisee microsites",
+  "Online ordering and booking system integration",
+  "Franchise recruitment marketing and landing pages",
+  "Centralized analytics and reporting for all locations",
+  "Multi-language and internationalization support",
+  "Integration with franchise management and POS software",
+  "Custom CRM and email marketing integration",
+  "Reputation management and review aggregation",
+  "Ongoing website maintenance and support",
+  "Mobile-friendly and responsive design",
+  "Secure hosting and data protection",
+  "Social media integration for all locations",
+  "Content management systems for franchise networks",
+  "Custom training and onboarding portals for franchisees"
 ];

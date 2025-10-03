@@ -1,7 +1,22 @@
 export const manufacturingServices = [
-  "Industrial company websites",
-  "Product catalog integration",
-  "SEO for manufacturers",
-  "B2B lead generation",
-  "Branding & design"
+  "Industrial and manufacturing website design",
+  "Product catalog and inventory integration",
+  "SEO for manufacturers and suppliers",
+  "B2B lead generation and landing pages",
+  "Branding, logo, and visual identity design",
+  "ERP, CRM, and inventory system integration",
+  "Technical datasheet and document management",
+  "Custom RFQ (Request for Quote) forms",
+  "Case study and project showcase sections",
+  "Mobile-friendly and responsive design",
+  "Analytics and reporting dashboard setup",
+  "Video tours, product demos, and 3D model embedding",
+  "Multi-language and internationalization support",
+  "Trade show and event promotion landing pages",
+  "Ongoing website maintenance and support",
+  "Content management system setup",
+  "Secure hosting and data protection",
+  "Blog and industry news integration",
+  "Social media and LinkedIn integration",
+  "Newsletter signup and email marketing integration"
 ];

@@ -1,7 +1,22 @@
 export const influencerServices = [
-  "Personal brand websites",
-  "Content portfolio integration",
-  "SEO for influencers",
-  "Monetization tools",
-  "Social media integration"
+  "Personal brand website design",
+  "Content portfolio and gallery integration",
+  "SEO for influencers and creators",
+  "Monetization tools and affiliate integration",
+  "Social media feed and content integration",
+  "Custom media kit page design",
+  "E-commerce and merch store setup",
+  "Newsletter and email marketing integration",
+  "Blog and storytelling platform setup",
+  "Collaboration and sponsorship inquiry forms",
+  "Video and livestream embed solutions",
+  "Analytics and audience tracking setup",
+  "Mobile-first and responsive design",
+  "Copyright protection and watermarking",
+  "Ongoing website maintenance and support",
+  "Branding, logo, and visual identity design",
+  "Custom landing pages for campaigns",
+  "Fan community and membership features",
+  "Podcast and audio content integration",
+  "Press and media coverage showcase"
 ];

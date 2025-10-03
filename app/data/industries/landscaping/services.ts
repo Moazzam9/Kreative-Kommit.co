@@ -1,7 +1,22 @@
 export const landscapingServices = [
-  "Custom landscaping websites",
-  "Project gallery integration",
-  "SEO for local landscapers",
-  "Online quote forms",
-  "Branding & logo design"
+  "Custom landscaping website design",
+  "Project gallery and before-after photo integration",
+  "SEO for local landscapers and gardeners",
+  "Online quote and booking forms",
+  "Branding, logo, and visual identity design",
+  "Seasonal service promotion landing pages",
+  "Google Reviews and testimonial integration",
+  "Blog and gardening tips content setup",
+  "Portfolio and project showcase sections",
+  "Mobile-friendly and responsive design",
+  "Appointment scheduling and calendar integration",
+  "Photo and video optimization for fast loading",
+  "Drone footage and aerial photo embedding",
+  "Social media and Instagram feed integration",
+  "Ongoing website maintenance and support",
+  "Content management system setup",
+  "Local map and service area highlighting",
+  "E-commerce for landscaping products or gift cards",
+  "Newsletter signup and email marketing integration",
+  "Secure hosting and privacy compliance"
 ];
