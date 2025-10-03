@@ -1,3 +1,5 @@
+import { realEstateFAQs } from "./faqs";
+
 export const realEstateSEO = {
   title: 'Real Estate & Estate Agents | Kreative Kommit',
   description: 'Unlock property potential! We help estate agents and real estate pros showcase listings, attract buyers, and close deals with stunning websites and targeted SEO.',
@@ -29,28 +31,18 @@ export const realEstateSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my estate agency?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A modern website attracts more buyers and sellers, and builds trust."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for property listings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for estate agents and property professionals."
-        }
+    "mainEntity": realEstateFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema
