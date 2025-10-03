@@ -1,3 +1,4 @@
+import { childcareFAQs } from "./faqs";
 export const childcareSEO = {
   title: 'Childcare & Nurseries | Kreative Kommit',
   description: 'Care that shows! We help nurseries and childcare providers connect with parents through friendly, informative websites and local SEO.',
@@ -30,28 +31,19 @@ export const childcareSEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+    // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+    faqSchema: {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": childcareFAQs.map(faq => ({
         "@type": "Question",
-        "name": "How can a website help my childcare business?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional website builds trust with parents and showcases your childcare facilities and approach."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for nurseries?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK nurseries, childcare providers, and early years settings."
-        }
-      }
-    ]
-  },
+      }))
+    },
   
   // Service offerings schema
   serviceSchema: {

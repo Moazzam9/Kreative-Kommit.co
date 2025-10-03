@@ -1,3 +1,4 @@
+import { beautyFAQs } from "./faqs";
 export const beautySEO = {
   description: "Expert digital solutions for the beauty industry, helping salons, spas, and brands grow their online presence.",
   
@@ -29,27 +30,18 @@ export const beautySEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my beauty business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your beauty services and allows clients to book appointments online."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for beauty salons?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK beauty salons, spas, and cosmetic businesses."
-        }
+    "mainEntity": beautyFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

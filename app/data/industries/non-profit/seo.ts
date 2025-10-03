@@ -1,3 +1,4 @@
+import { nonProfitFAQs } from "./faqs";
 export const nonProfitSEO = {
   description: "Digital solutions for non-profits and charities to increase awareness, donations, and volunteer engagement.",
   
@@ -29,28 +30,19 @@ export const nonProfitSEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+    // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+    faqSchema: {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": nonProfitFAQs.map(faq => ({
         "@type": "Question",
-        "name": "How can a website help my charity?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional website helps you reach more supporters and streamline donations for your cause."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for charities?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK charities and non-profit organisations."
-        }
-      }
-    ]
-  },
+      }))
+    },
   
   // Service offerings schema
   serviceSchema: {

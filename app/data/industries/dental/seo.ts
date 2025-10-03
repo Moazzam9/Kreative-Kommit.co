@@ -1,6 +1,8 @@
+import { dentalFAQs } from "./faqs";
+
 export const dentalSEO = {
   description: "Websites and digital marketing for dental practices to attract new patients and build trust online.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Dental Practice Web Design & Marketing Services",
@@ -8,7 +10,7 @@ export const dentalSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "DentistClinic",
@@ -22,34 +24,24 @@ export const dentalSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Dental Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/dental",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my dental practice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website helps patients find your practice and book appointments for dental care."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for dentists?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK dental practices and oral health professionals."
-        }
+    "mainEntity": dentalFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

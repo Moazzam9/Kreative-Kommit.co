@@ -1,3 +1,5 @@
+import { constructionFAQs } from "./faqs";
+
 export const constructionSEO = {
   title: "Construction & Building Services | Kreative Kommit",
   description: "Build your online presence! Professional websites for builders, contractors, and construction companies. Generate leads with construction-focused SEO and digital marketing.",
@@ -30,27 +32,18 @@ export const constructionSEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my construction business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust and helps you win more local projects."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for contractors?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK construction companies."
-        }
+    "mainEntity": constructionFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

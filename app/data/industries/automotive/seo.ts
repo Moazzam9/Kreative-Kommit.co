@@ -1,3 +1,4 @@
+import { automotiveFAQs } from "./faqs";
 export const automotiveSEO = {
   title: 'Automotive | Kreative Kommit',
   description: 'Drive more business! We tune up your online presence for dealerships, garages, and car washes with sleek sites and local search power.',
@@ -16,6 +17,7 @@ export const automotiveSEO = {
     "@context": "https://schema.org",
     "name": "Automotive Web Design Services",
     "description": "Professional web design and digital marketing services for car dealerships and automotive businesses",
+
     "provider": {
       "@type": "Organization",
       "name": "Kreative Kommit"
@@ -29,43 +31,19 @@ export const automotiveSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+    // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+    faqSchema: {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": automotiveFAQs.map(faq => ({
         "@type": "Question",
-        "name": "How can a website help my car dealership?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional website showcases your vehicle inventory and helps customers find and book services easily."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for automotive businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK car dealerships, garages, and automotive services."
-        }
-      }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "AutomotiveBusiness", "name": "Car dealership websites" },
-      { "@type": "AutomotiveBusiness", "name": "Vehicle inventory systems" },
-      { "@type": "AutomotiveBusiness", "name": "SEO for automotive" },
-      { "@type": "AutomotiveBusiness", "name": "Online booking systems" },
-      { "@type": "AutomotiveBusiness", "name": "Digital marketing for cars" }
-    ]
-  },
-  
+      }))
+    },
   // Review/testimonial schema
   reviewSchema: {
     "@type": "ItemList",
@@ -162,4 +140,4 @@ export const automotiveSEO = {
     'vehicle inventory management', 'car finance calculators', 'automotive CRM integration', 'vehicle history reports',
     'online car valuation tools', 'automotive lead tracking', 'garage appointment booking', 'vehicle inspection systems'
   ]
-};
+}

@@ -1,6 +1,8 @@
+import { architectureFAQs } from "./faqs";
+
 export const architectureSEO = {
   description: "Web and branding solutions for architects and interior designers to showcase portfolios and attract new clients.",
-  
+
   // OpenGraph metadata for social sharing
   openGraph: {
     title: "Architecture & Interior Design Web Design Services",
@@ -8,7 +10,7 @@ export const architectureSEO = {
     type: "website",
     locale: "en_GB"
   },
-  
+
   // Structured data for rich snippets
   schema: {
     "@type": "ProfessionalService",
@@ -22,34 +24,24 @@ export const architectureSEO = {
     "areaServed": "United Kingdom",
     "serviceType": "Architectural Services"
   },
-  
+
   // Canonical URL pattern
   canonical: "/industries/architecture",
-  
+
   // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my architecture practice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your architectural portfolio and helps you win more design projects."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for architects?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK architects and architectural firms."
-        }
+    "mainEntity": architectureFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

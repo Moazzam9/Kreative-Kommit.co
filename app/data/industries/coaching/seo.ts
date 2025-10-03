@@ -1,3 +1,5 @@
+import { coachingFAQs } from "./faqs";
+
 export const coachingSEO = {
   description: "Websites and digital marketing for personal coaches, consultants, and trainers to attract and convert clients.",
   
@@ -28,28 +30,18 @@ export const coachingSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my coaching business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds credibility and helps you attract coaching clients who need your expertise."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for coaches?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK life coaches, business coaches, and personal trainers."
-        }
+    "mainEntity": coachingFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema

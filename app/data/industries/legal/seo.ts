@@ -1,3 +1,5 @@
+import { legalFAQs } from "./faqs";
+
 export const legalSEO = {
   title: 'Legal | Kreative Kommit',
   description: 'Win your case online! Solicitors, barristers, and legal pros get trust-building sites and SEO that brings in new clients.',
@@ -29,41 +31,18 @@ export const legalSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my law firm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust and helps attract new clients seeking legal services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SRA compliant websites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we ensure all legal websites meet SRA compliance and regulatory requirements."
-        }
+    "mainEntity": legalFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "LegalService", "name": "Law firm website design" },
-      { "@type": "LegalService", "name": "SRA compliant websites" },
-      { "@type": "LegalService", "name": "SEO for solicitors" },
-      { "@type": "LegalService", "name": "Legal content marketing" },
-      { "@type": "LegalService", "name": "Client case management" }
-    ]
+    }))
   },
   
   // Review/testimonial schema
@@ -78,7 +57,7 @@ export const legalSEO = {
       }
     ]
   },
-  
+
   // Local Business schema enhancement
   localBusinessSchema: {
     "@type": "LegalService",
@@ -99,12 +78,23 @@ export const legalSEO = {
       {
         "@type": "ListItem",
         "position": 1,
-        "name": "Home",
         "item": "https://kreativekommit.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
+      faqSchema: {
+        "@type": "FAQPage",
+        "@context": "https://schema.org",
+        "mainEntity": legalFAQs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      },
         "name": "Industries",
         "item": "https://kreativekommit.com/industries"
       },
@@ -128,7 +118,6 @@ export const legalSEO = {
   
   // Advanced meta tags
   metaTags: {
-    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     "googlebot": "index, follow",
     "viewport": "width=device-width, initial-scale=1.0",
     "theme-color": "#1f2937"

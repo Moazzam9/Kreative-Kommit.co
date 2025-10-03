@@ -1,3 +1,5 @@
+import { foodFAQs } from "./faqs";
+
 export const foodSEO = {
   description: "Web and marketing solutions for restaurants, cafes, and food brands to attract more customers online.",
   
@@ -28,28 +30,18 @@ export const foodSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my restaurant?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your menu and enables online reservations and food delivery orders."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for restaurants?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK restaurants, cafes, and food businesses."
-        }
+    "mainEntity": foodFAQs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
   
   // Service offerings schema
@@ -58,6 +50,8 @@ export const foodSEO = {
     "@context": "https://schema.org",
     "itemListElement": [
       { "@type": "Restaurant", "name": "Restaurant websites" },
+
+
       { "@type": "Restaurant", "name": "Online ordering systems" },
       { "@type": "Restaurant", "name": "SEO for restaurants" },
       { "@type": "Restaurant", "name": "Menu management" },
