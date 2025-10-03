@@ -1,3 +1,4 @@
+import { ecommerceFAQs } from "./faqs";
 export const ecommerceSEO = {
   title: 'E-commerce & Online Retail | Kreative Kommit',
   description: 'Sell more online! We build fast, secure, and conversion-focused e-commerce sites with SEO that brings shoppers straight to your store.',
@@ -29,31 +30,19 @@ export const ecommerceSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a new website help my online store?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A modern, fast website increases sales and builds trust."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for e-commerce?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK online retailers."
-        }
+    "mainEntity": ecommerceFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
-  
-  // Service offerings schema
   serviceSchema: {
     "@type": "ItemList",
     "@context": "https://schema.org",

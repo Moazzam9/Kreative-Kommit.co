@@ -1,3 +1,4 @@
+import { transportFAQs } from "./faqs";
 export const transportSEO = {
   description: "Websites and marketing for transportation and logistics companies to attract clients and manage operations online.",
   
@@ -29,28 +30,19 @@ export const transportSEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+    // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+    faqSchema: {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": transportFAQs.map((faq: { q: string; a: string }) => ({
         "@type": "Question",
-        "name": "How can a website help my transport business?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional website helps you attract more clients and manage bookings for your transport services."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for logistics companies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK transport, logistics, and delivery companies."
-        }
-      }
-    ]
-  },
+      }))
+    },
   
   // Service offerings schema
   serviceSchema: {

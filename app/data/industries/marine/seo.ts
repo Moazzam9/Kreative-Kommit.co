@@ -1,3 +1,4 @@
+import { marineFAQs } from "./faqs";
 export const marineSEO = {
   description: "Websites and marketing for marine, boating, and yachting businesses to attract clients and showcase services.",
   
@@ -29,28 +30,19 @@ export const marineSEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+    // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+    faqSchema: {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": marineFAQs.map((faq: { q: string; a: string }) => ({
         "@type": "Question",
-        "name": "How can a website help my marine business?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional website showcases your marine services and helps boat owners find and book your expertise."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for marine businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK marine, boating, and yachting businesses."
-        }
-      }
-    ]
-  },
+      }))
+    },
   
   // Service offerings schema
   serviceSchema: {

@@ -1,3 +1,4 @@
+import { craftFAQs } from "./faqs";
 export const craftSEO = {
   description: "Websites and marketing for craft makers, handmade goods, and artisan businesses to sell products and grow their brand.",
   
@@ -29,28 +30,19 @@ export const craftSEO = {
   // Advanced SEO Phase 3 enhancements
   
   // FAQ Schema for rich snippets
-  faqSchema: {
-    "@type": "FAQPage",
-    "@context": "https://schema.org",
-    "mainEntity": [
-      {
+    // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
+    faqSchema: {
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      "mainEntity": craftFAQs.map((faq: { q: string; a: string }) => ({
         "@type": "Question",
-        "name": "How can a website help my craft business?",
+        "name": faq.q,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A professional e-commerce website helps you sell handmade products online and reach customers nationwide."
+          "text": faq.a
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for craft makers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK craft makers and artisan businesses to increase online sales."
-        }
-      }
-    ]
-  },
+      }))
+    },
   
   // Service offerings schema
   serviceSchema: {
