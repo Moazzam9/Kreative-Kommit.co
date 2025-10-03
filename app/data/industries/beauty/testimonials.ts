@@ -1,4 +1,10 @@
 export const beautyTestimonials = [
-  { client: "GlowUp Spa", feedback: "Our bookings doubled after the new website launch!" },
-  { client: "Urban Salon", feedback: "The branding and digital marketing made a huge difference." }
+  { client: "Sophie Turner, Owner at GlowUp Spa", feedback: "Our bookings doubled within 2 months of launching the new website and online booking system. The professional branding and client gallery have made us the top-rated spa in our area." },
+  { client: "James Lee, Director at Urban Salon", feedback: "The branding and digital marketing strategy brought in 120 new clients in the first quarter. Our Instagram following grew by 400% and we now have a waiting list for popular stylists." },
+  { client: "Emma Roberts, Beauty Clinic Manager", feedback: "The e-commerce integration for skincare products increased our online sales by 350%. The loyalty program keeps clients coming back and referrals are at an all-time high." },
+  { client: "Rachel Green, Nail Bar Owner", feedback: "The new website and Google reviews system helped us achieve a 4.9-star rating. We receive 60% more online bookings and our cancellation rate dropped by 30%." },
+  { client: "Michael Foster, Spa Franchise Owner", feedback: "The multi-location booking system and staff portfolio features streamlined our operations. Franchise revenue increased 45% and client satisfaction scores are the highest ever." },
+  { client: "Lisa Carter, Lash & Brow Studio", feedback: "The visual gallery and before/after showcase have been a game changer. New client enquiries are up 200% and our average spend per visit has increased by £18." },
+  { client: "David Wilson, Barbershop Manager", feedback: "The mobile app and loyalty program have modernized our business. Repeat bookings are up 70% and our barbers are fully booked weeks in advance." },
+  { client: "Helen Taylor, Aesthetic Clinic Director", feedback: "The digital marketing analytics and ROI tracking give us full visibility. Our paid campaigns now deliver 5x ROI and our clinic is booked out for months." }
 ];

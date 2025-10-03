@@ -1,4 +1,14 @@
 export const fitnessFAQs = [
-  { q: 'How can a website help my gym?', a: 'A professional website builds trust and helps you win more local members.' },
-  { q: 'Do you offer SEO for fitness studios?', a: 'Yes, we specialise in SEO for UK gyms and trainers.' }
+  { q: 'How can a professional website help my gym attract more members?', a: 'A modern fitness website with online booking, class schedules, and trainer profiles increases trust and convenience. Gyms with professional websites see 120-200% more new member signups and higher retention rates.' },
+  { q: 'Do you offer SEO for fitness studios and personal trainers?', a: 'Yes, we specialise in SEO for gyms, studios, and trainers. Our strategies target local searches like "gym near me" and "personal trainer [city]", increasing online visibility and lead generation.' },
+  { q: 'Can you integrate online class booking and payment systems?', a: 'Absolutely. We build booking systems for classes, PT sessions, and memberships with automated reminders and secure payment processing. Online booking increases class attendance by 60% and reduces no-shows.' },
+  { q: 'Do you create trainer profile and review systems?', a: 'Yes, we develop trainer portfolios, client testimonials, and review systems. These features boost trainer credibility and help clients choose the right fit, increasing bookings and satisfaction.' },
+  { q: 'How do you handle fitness e-commerce and product sales?', a: 'We integrate online shops for supplements, apparel, and equipment. E-commerce typically generates 20-35% additional revenue for fitness businesses.' },
+  { q: 'What marketing strategies work best for gyms and studios?', a: 'Fitness marketing combines local SEO, social media, referral programs, and seasonal promotions. Successful campaigns increase member retention by 50% and average spend by 30%.' },
+  { q: 'Can you integrate virtual classes and on-demand video?', a: 'Yes, we set up live streaming and on-demand video libraries for classes and workouts. Virtual offerings expand your reach and provide value to remote or busy clients.' },
+  { q: 'How do you ensure compliance with fitness industry regulations?', a: 'We ensure your website meets advertising standards, health and safety requirements, and GDPR compliance for client data.' },
+  { q: 'Do you provide analytics and performance tracking?', a: 'Yes, we integrate analytics dashboards to track bookings, member growth, and marketing ROI. Data-driven insights help you optimize your business.' },
+  { q: 'How do you optimize fitness websites for mobile users?', a: 'All our sites are mobile-optimized for class schedules, bookings, and trainer profiles. 75% of fitness searches and bookings happen on smartphones.' },
+  { q: 'Can you create loyalty and referral programs?', a: 'We develop digital loyalty programs, referral incentives, and automated marketing campaigns. These increase member retention and word-of-mouth growth.' },
+  { q: 'How quickly can fitness businesses expect digital marketing results?', a: 'Website improvements show immediate benefits. Most gyms see increased bookings and enquiries within 2-4 weeks, with significant growth by 2-3 months.' }
 ];
