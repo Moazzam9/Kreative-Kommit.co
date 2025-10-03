@@ -1,6 +1,6 @@
 ---
 title: "Ultimate Guide: How to Dominate Google Local Pack in 2025 for UK Businesses"
-date: "2025-08-08"
+date: "2025-07-20"
 draft: false
 excerpt: "Unlock advanced tactics to rank in the Google Local Pack and attract more UK customers."
 description: "A step-by-step guide for UK businesses to master Google Local Pack rankings in 2025."

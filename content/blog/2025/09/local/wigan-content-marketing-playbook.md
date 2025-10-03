@@ -1,6 +1,6 @@
 ---
 title: "Wigan Content Marketing Playbook: Attracting Local Customers with Smart Blogging"
-date: "2025-08-10"
+date: "2025-09-10"
 draft: false
 excerpt: "Content marketing strategies for Wigan businesses to grow local traffic and leads."
 description: "A playbook for Wigan SMEs to use blogging and content marketing for local SEO and customer acquisition."

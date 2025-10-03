@@ -1,6 +1,6 @@
 ---
 title: "Ultimate Guide: Creating Local Landing Pages That Rank in Google (UK Edition)"
-date: "2025-08-19"
+date: "2025-09-10"
 draft: false
 excerpt: "A step-by-step guide to building local landing pages that dominate Google for UK businesses."
 description: "Learn how to create, optimise, and scale local landing pages for maximum SEO impact."

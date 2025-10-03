@@ -1,6 +1,6 @@
 ---
 title: "Ultimate Guide: Implementing SSR in Next.js for Local SEO (UK Edition)"
-date: "2025-08-20"
+date: "2025-09-18"
 draft: false
 excerpt: "A technical guide to using SSR in Next.js to boost local SEO and search visibility."
 description: "Learn how to set up SSR in Next.js, optimise for local SEO, and improve your site’s rankings."

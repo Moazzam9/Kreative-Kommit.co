@@ -1,6 +1,6 @@
 ---
 title: "Wigan Backlink Outreach: Proven Tactics for Local SEO Success"
-date: "2025-08-10"
+date: "2025-06-10"
 draft: true
 excerpt: "Wigan-specific outreach strategies for earning high-quality local backlinks."
 description: "A guide for Wigan businesses to build authority and improve rankings through local backlink outreach."

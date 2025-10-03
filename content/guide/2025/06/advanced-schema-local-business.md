@@ -1,6 +1,6 @@
 ---
 title: "Advanced Schema Markup for UK Local Businesses: The Complete SEO Guide"
-date: "2025-08-08"
+date: "2025-06-08"
 draft: false
 excerpt: "A comprehensive, step-by-step guide to advanced schema markup for UK local businesses, including automation, rich results, and real-world case studies."
 description: "Learn how to implement, automate, and optimise advanced schema markup for local businesses in the UK. Boost your Google rankings, earn rich results, and drive more local traffic."

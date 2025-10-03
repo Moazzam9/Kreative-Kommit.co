@@ -1,6 +1,6 @@
 ---
 title: "Optimising Your Site for 'Near Me' Searches"
-date: "2025-08-23"
+date: "2025-10-05"
 draft: true
 excerpt: "Learn how to optimise your website for 'near me' searches and attract local customers."
 description: "A guide to boosting your visibility in 'near me' searches with local SEO strategies."

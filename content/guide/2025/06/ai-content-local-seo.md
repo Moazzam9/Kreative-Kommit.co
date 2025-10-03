@@ -1,6 +1,6 @@
 ---
 title: "AI-Powered Content Creation for Local SEO: Tools and Workflows"
-date: "2025-08-08"
+date: "2025-06-12"
 draft: false
 excerpt: "Discover how AI tools can supercharge your local SEO content strategy."
 description: "A guide to using AI-powered tools and workflows for local SEO content creation in the UK."

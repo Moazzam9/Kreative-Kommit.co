@@ -1,6 +1,6 @@
 ---
 title: "Automating Google Reviews and Reputation Management for Local SEO"
-date: "2025-08-08"
+date: "2025-06-18"
 draft: false
 excerpt: "Learn how to automate Google reviews and manage your reputation for better local SEO."
 description: "A technical guide to automating review requests and reputation management for UK businesses."

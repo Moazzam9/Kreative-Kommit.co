@@ -1,6 +1,6 @@
 ---
 title: "Wigan SEO Advantage: Expert Local Strategies for 2025"
-date: "2025-08-16"
+date: "2025-06-16"
 draft: false
 excerpt: "Discover how Wigan businesses can use advanced local SEO, schema, and long-tail keywords to attract more customers."
 description: "The most comprehensive guide to Wigan-specific SEO, Google Local Pack, content marketing, and actionable steps for SMEs."

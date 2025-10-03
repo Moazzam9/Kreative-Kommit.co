@@ -1,6 +1,6 @@
 ---
 title: "Case Study: Wigan Electrician Boosts Local Calls with SEO and GBP Optimisation"
-date: "2025-08-10"
+date: "2025-10-10"
 draft: false
 excerpt: "How a Wigan electrician increased local calls and Google rankings with expert SEO and clever GBP tactics."
 description: "A senior-level case study showing how a Wigan electrician used advanced SEO and Google Business Profile optimisation to grow their business in 2025."
