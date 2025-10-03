@@ -1,3 +1,5 @@
+import { greenEnergyFAQs } from "./faqs";
+
 export const greenEnergySEO = {
   title: 'Green Energy & Sustainability | Kreative Kommit',
   description: 'Digital marketing and web solutions for UK-based solar, wind, EV charging, and eco-friendly businesses. Stand out in the UK green energy market.',
@@ -29,54 +31,19 @@ export const greenEnergySEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  
+  // Service offerings schema
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my renewable energy business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website showcases your green energy solutions and attracts environmentally conscious clients."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for green energy companies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in SEO for UK solar installers, wind energy, and renewable energy businesses."
-        }
+    "mainEntity": greenEnergyFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "Organization", "name": "Solar company websites" },
-      { "@type": "Organization", "name": "Renewable energy platforms" },
-      { "@type": "Organization", "name": "SEO for green energy" },
-      { "@type": "Organization", "name": "Sustainability marketing" },
-      { "@type": "Organization", "name": "Energy calculator tools" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "EcoSolar Solutions" },
-        "reviewBody": "Our new website helped us reach more homeowners interested in solar installations."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement

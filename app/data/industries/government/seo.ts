@@ -1,3 +1,5 @@
+import { governmentFAQs } from "./faqs";
+
 export const governmentSEO = {
   description: "Web and digital solutions for local government, councils, and public sector organisations to improve communication and public engagement.",
   
@@ -28,54 +30,19 @@ export const governmentSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  
+  // Service offerings schema
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help our council?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A modern website improves public engagement and makes council services more accessible to residents."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you ensure WCAG compliance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all our government websites meet WCAG accessibility standards and public sector requirements."
-        }
+    "mainEntity": governmentFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "GovernmentOrganization", "name": "Council websites" },
-      { "@type": "GovernmentOrganization", "name": "WCAG compliant design" },
-      { "@type": "GovernmentOrganization", "name": "Public sector SEO" },
-      { "@type": "GovernmentOrganization", "name": "Citizen engagement platforms" },
-      { "@type": "GovernmentOrganization", "name": "Digital transformation" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "City Council" },
-        "reviewBody": "Our new website improved citizen engagement and made our services much more accessible."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement

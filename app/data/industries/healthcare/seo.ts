@@ -1,3 +1,5 @@
+import { healthcareFAQs } from "./faqs";
+
 export const healthcareSEO = {
   title: 'Healthcare & Medical Clinics | Kreative Kommit',
   description: 'Healthy online presence! We support clinics and healthcare providers with accessible, trustworthy websites and local SEO that brings in new patients.',
@@ -26,58 +28,24 @@ export const healthcareSEO = {
   
   // Canonical URL pattern
   canonical: "/industries/healthcare",
-  
-  // Advanced SEO Phase 3 enhancements
-  
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my clinic?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust and makes it easy for patients to book appointments."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO for healthcare?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we specialise in local SEO for UK clinics and medical practices."
-        }
+    "mainEntity": healthcareFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
+    }))
   },
+  
+  // Advanced SEO Phase 3 enhancements
+  
   
   // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "MedicalBusiness", "name": "Clinic website design" },
-      { "@type": "MedicalBusiness", "name": "Local SEO for healthcare" },
-      { "@type": "MedicalBusiness", "name": "Online appointment booking" },
-      { "@type": "MedicalBusiness", "name": "Content marketing for clinics" },
-      { "@type": "MedicalBusiness", "name": "Patient portal development" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "City Clinic" },
-        "reviewBody": "Our bookings and patient trust soared after our new website launch."
-      }
-    ]
-  },
   
   // Local Business schema enhancement
   localBusinessSchema: {
