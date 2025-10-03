@@ -7,5 +7,6 @@ export const artsFacts = [
   "SEO-optimized artist websites generate 5x more commission enquiries than non-optimized sites, particularly for wedding and portrait photography.",
   "Art businesses with e-commerce capabilities saw 180% revenue growth compared to traditional gallery-only models during the digital transition.",
   "85% of millennials and Gen Z art buyers research artists and artwork online before making purchasing decisions or gallery visits.",
-  "Professional artist portfolios with high-quality images and detailed artwork descriptions convert 45% more viewers into paying clients or collectors."
+  "Professional artist portfolios with high-quality images and detailed artwork descriptions convert 45% more viewers into paying clients or collectors.",
+  "Integrated commission booking and client communication systems increase custom artwork sales by 70% for independent artists and studios."
 ];

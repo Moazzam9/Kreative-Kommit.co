@@ -1,4 +1,14 @@
 export const travelFAQs = [
-  { q: "Can you build a booking system?", a: "Yes, we create online booking and inquiry forms for travel businesses." },
-  { q: "Do you help with tour showcases?", a: "We design custom galleries for tours and travel packages." }
+  { q: 'How can a professional website help my travel agency attract more bookings?', a: 'A modern travel website with online booking, tour showcases, and customer reviews increases trust and conversion rates. Agencies with professional websites see 120-200% more bookings.' },
+  { q: 'Can you build custom booking and inquiry systems?', a: 'Yes, we create online booking engines, inquiry forms, and payment integrations for tours, hotels, and travel packages.' },
+  { q: 'Do you design tour and package showcase galleries?', a: 'We build custom galleries for tours, destinations, and travel packages with high-quality imagery, itineraries, and customer reviews.' },
+  { q: 'How do you handle multi-language and international travel sites?', a: 'We develop multi-language websites with currency conversion, international SEO, and region-specific content for global reach.' },
+  { q: 'Can you integrate with travel APIs and booking platforms?', a: 'Yes, we integrate with platforms like Amadeus, Sabre, Expedia, and Booking.com for real-time availability and booking.' },
+  { q: 'What marketing strategies work best for travel businesses?', a: 'Travel marketing combines SEO, content marketing, social media, and influencer partnerships. Successful campaigns increase bookings by 150% and brand reach by 300%.' },
+  { q: 'Do you provide analytics and performance tracking?', a: 'Yes, we integrate analytics dashboards to track bookings, enquiries, and marketing ROI. Data-driven insights help optimize your business.' },
+  { q: 'How do you optimize travel websites for mobile users?', a: 'All our sites are mobile-optimized for booking, browsing, and itinerary management. 70% of travel searches and bookings happen on smartphones.' },
+  { q: 'Can you create loyalty and referral programs for travelers?', a: 'We develop digital loyalty programs, referral incentives, and automated marketing campaigns to increase repeat bookings and word-of-mouth growth.' },
+  { q: 'Do you ensure compliance with travel industry regulations?', a: 'We ensure your website meets advertising standards, data protection, and travel industry regulations for customer safety and trust.' },
+  { q: 'Can you integrate customer review and testimonial systems?', a: 'Yes, we build review and testimonial systems to showcase customer experiences and build trust with new travelers.' },
+  { q: 'How quickly can travel businesses expect digital marketing results?', a: 'Website improvements show immediate benefits. Most agencies see increased bookings and enquiries within 2-4 weeks, with significant growth by 2-3 months.' }
 ];

@@ -4,5 +4,6 @@ export const artsProjects = [
   { title: "Sculpture Artist Portfolio", year: 2023, description: "3D sculpture viewer with AR capability, commission calculator, and client portal. Increased sculpture commissions by 400% with average project value of £8,500." },
   { title: "Photography Studio Website", year: 2023, description: "Portfolio showcase with client galleries, automated booking system, and contract management. Streamlined workflow resulted in 50% more bookings and 25% time savings." },
   { title: "Art Restoration Business", year: 2023, description: "Specialist restoration portfolio with before/after galleries, authentication services, and museum client portal. Secured contracts with 5 major institutions worth £150K annually." },
-  { title: "Digital Art Academy", year: 2024, description: "Online learning platform with video tutorials, student galleries, and mentorship booking. Enrolled 300+ students with 95% completion rate and £85K revenue in first year." }
+  { title: "Digital Art Academy", year: 2024, description: "Online learning platform with video tutorials, student galleries, and mentorship booking. Enrolled 300+ students with 95% completion rate and £85K revenue in first year." },
+  { title: "Fine Art Print Shop", year: 2025, description: "E-commerce platform for limited edition prints, integrated with artist portfolios and secure payment. Sold 2,000+ prints in the first 6 months, generating £60K in new revenue." }
 ];
