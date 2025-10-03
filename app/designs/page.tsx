@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/Button';
+import { useToast } from '../../hooks/use-toast';
 import { Eye, Download } from 'lucide-react';
 
 // ...existing code...
@@ -66,6 +67,7 @@ const designs = [
 ];
 
 export default function DesignsPage() {
+  const { toast } = useToast();
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -150,6 +152,7 @@ export default function DesignsPage() {
                       <Button
                         size="sm"
                         className="bg-primary-600/80 text-white backdrop-blur-sm hover:bg-primary-700"
+                        onClick={() => toast({ title: 'Coming Soon', description: 'Preview feature is coming soon!' })}
                       >
                         <Eye className="h-4 w-4 mr-1" />
                         Preview
@@ -192,6 +195,7 @@ export default function DesignsPage() {
     dark:text-white 
     dark:hover:bg-primary-700
   "
+                    onClick={() => toast({ title: 'Coming Soon', description: 'This feature will be available soon!' })}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     {design.price === 'Free' ? 'Download Free' : 'Purchase'}
