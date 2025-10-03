@@ -18,7 +18,7 @@ export const fitnessBrandingPages = [
       "Results-driven branding"
     ],
     cta: {
-      heading: "Ready to energize your brand?",
+      heading: "Ready to energise your brand?",
       text: "Contact us to power up your fitness business branding.",
       button: "Book a Fitness Branding Call",
       link: "/contact"
