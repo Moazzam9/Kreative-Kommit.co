@@ -1,3 +1,4 @@
+
 import { greenEnergyFAQs } from "./faqs";
 
 export const greenEnergySEO = {

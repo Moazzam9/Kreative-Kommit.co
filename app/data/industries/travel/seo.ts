@@ -34,7 +34,7 @@ export const travelSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": travelFAQs.map(faq => ({
+    "mainEntity": travelFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

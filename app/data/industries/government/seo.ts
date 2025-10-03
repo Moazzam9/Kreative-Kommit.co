@@ -1,3 +1,4 @@
+
 import { governmentFAQs } from "./faqs";
 
 export const governmentSEO = {

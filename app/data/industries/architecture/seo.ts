@@ -34,7 +34,7 @@ export const architectureSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": architectureFAQs.map(faq => ({
+    "mainEntity": architectureFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {

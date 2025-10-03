@@ -34,7 +34,7 @@ export const dentalSEO = {
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": dentalFAQs.map(faq => ({
+    "mainEntity": dentalFAQs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
