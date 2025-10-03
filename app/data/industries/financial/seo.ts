@@ -1,3 +1,4 @@
+import { financialFAQs } from "./faqs";
 export const financialSEO = {
   title: 'Financial Services | Kreative Kommit',
   description: 'Build trust and grow! We help accountants, insurance brokers, and financial advisors win clients with professional websites and SEO.',
@@ -29,54 +30,18 @@ export const financialSEO = {
   
   // Advanced SEO Phase 3 enhancements
   
-  // FAQ Schema for rich snippets
+  // FAQ Schema for rich snippets (dynamically generated from faqs.ts)
   faqSchema: {
     "@type": "FAQPage",
     "@context": "https://schema.org",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How can a website help my financial services firm?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A professional website builds trust and helps attract new clients in the financial sector."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer FCA compliant websites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we ensure all financial services websites meet FCA compliance requirements."
-        }
+    "mainEntity": financialFAQs.map((faq: { q: string; a: string }) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
       }
-    ]
-  },
-  
-  // Service offerings schema
-  serviceSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      { "@type": "FinancialService", "name": "Financial advisor websites" },
-      { "@type": "FinancialService", "name": "FCA compliant design" },
-      { "@type": "FinancialService", "name": "SEO for financial services" },
-      { "@type": "FinancialService", "name": "Lead generation systems" },
-      { "@type": "FinancialService", "name": "Client portal development" }
-    ]
-  },
-  
-  // Review/testimonial schema
-  reviewSchema: {
-    "@type": "ItemList",
-    "@context": "https://schema.org",
-    "itemListElement": [
-      {
-        "@type": "Review",
-        "author": { "@type": "Organization", "name": "Sterling Finance" },
-        "reviewBody": "Our new website helped us attract more high-value clients and build trust."
-      }
-    ]
+    }))
   },
   
   // Local Business schema enhancement
