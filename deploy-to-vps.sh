@@ -26,6 +26,7 @@ echo "Syncing project files (excluding build, node_modules, .git, etc.)..."
 rsync -avz --delete \
   --exclude="node_modules" \
   --exclude=".next" \
+  --exclude="out" \
   --exclude=".git" \
   --exclude=".DS_Store" \
   --exclude="*.log" \
