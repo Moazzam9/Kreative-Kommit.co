@@ -1,4 +1,10 @@
 export const marineTestimonials = [
-  { client: "Yacht Charter Site", feedback: "Our bookings increased after the new site launch!" },
-  { client: "Marina Marketing", feedback: "Branding and SEO brought in more boaters." }
+  { client: 'Luxury Yacht Charters Mediterranean', feedback: 'Our yacht charter website with 360-degree vessel tours increased high-end bookings by 180%, with average charter values rising from £15K to £28K per week through enhanced presentation.' },
+  { client: 'Solent Marina and Harbour', feedback: 'Online berth booking system and harbor services platform reduced administrative workload by 60% while increasing seasonal berth occupancy from 75% to 95% capacity.' },
+  { client: 'Deep Sea Fishing Charters', feedback: 'Weather-integrated booking system with real-time sea conditions increased customer confidence, reducing cancellations by 40% and improving repeat booking rates to 65%.' },
+  { client: 'Sailing School and RYA Training', feedback: 'Course booking platform with certification tracking attracted international students, growing annual enrollments from 200 to 850 students with 45% coming from online bookings.' },
+  { client: 'Superyacht Management Company', feedback: 'Crew management portal with qualification tracking and availability scheduling improved operational efficiency by 70%, managing 150+ crew members across 25 luxury vessels.' },
+  { client: 'Marine Equipment Chandlery', feedback: 'E-commerce integration with harbor service booking created one-stop marine solution, increasing average transaction value by 85% and customer retention to 78%.' },
+  { client: 'Commercial Boat Hire Fleet', feedback: 'Fleet showcase with online availability and quote calculator streamlined commercial inquiries, increasing B2B contracts by 120% for workboat and survey vessel hire.' },
+  { client: 'Coastal Adventure Tours', feedback: 'Seasonal booking platform with weather alerts and flexible rescheduling increased customer satisfaction to 4.9/5 stars while handling 300% more bookings during peak summer season.' }
 ];

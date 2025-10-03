@@ -1,4 +1,10 @@
 export const craftTestimonials = [
-  { client: "Artisan Shop Launch", feedback: "My new site helped me sell more crafts online!" },
-  { client: "Craft Market Growth", feedback: "Social media brought in more customers to our market." }
+  { client: 'Highland Wool Weavers', feedback: 'Our artisan e-commerce site increased online sales by 340% in the first year, reaching customers across 15 countries. Custom order management streamlined our bespoke textile commissions worth £45K annually.' },
+  { client: 'Pottery Studio Collective', feedback: 'Workshop booking system and online gallery attracted 200% more students to our ceramics classes, with online pottery sales generating £18K quarterly revenue.' },
+  { client: 'Handmade Jewellery Designer', feedback: 'Instagram shopping integration and custom commission portal increased my jewellery sales by 280%, with average order values rising from £35 to £95 per piece.' },
+  { client: 'Artisan Furniture Maker', feedback: 'Bespoke furniture showcase with project timeline tracking attracted high-value clients, securing 12 custom commissions worth £85K total with 6-month advance bookings.' },
+  { client: 'Craft Supply Subscription Box', feedback: 'Monthly craft kit e-commerce platform grew from 50 to 2,500 subscribers in 18 months, generating £75K monthly recurring revenue with 92% retention rate.' },
+  { client: 'Traditional Blacksmith Workshop', feedback: 'Heritage craft documentation and commission portal attracted museum contracts and collectors, increasing traditional metalwork orders by 150% to £30K annually.' },
+  { client: 'Textile Art Gallery', feedback: 'Artist collective platform with individual portfolios and shared marketing increased member sales by 180%, with online gallery visits reaching 15K monthly viewers.' },
+  { client: 'Woodworking Studio Network', feedback: 'Multi-artisan marketplace with skill-matching and collaboration tools helped 25 woodworkers increase collective sales to £120K annually while sharing workshop resources efficiently.' }
 ];

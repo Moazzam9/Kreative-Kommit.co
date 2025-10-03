@@ -1,4 +1,9 @@
 export const marineProjects = [
-  { title: "Yacht Charter Site", year: 2025, description: "A booking and showcase site for a yacht charter company." },
-  { title: "Marina Marketing", year: 2024, description: "SEO and branding for a local marina." }
+  { title: 'Mediterranean Luxury Yacht Charter Platform', year: 2024, description: 'Comprehensive yacht charter website with 360-degree vessel tours, crew profiles, and weather-integrated booking system. Increased high-end charter bookings by 180% with average values rising to £28K per week.' },
+  { title: 'Solent Marina Management System', year: 2024, description: 'Complete harbor management platform with berth reservations, tide information, and integrated marine services. Achieved 95% seasonal occupancy and reduced admin workload by 60%.' },
+  { title: 'RYA Sailing School Certification Portal', year: 2023, description: 'Course booking system with student progress tracking, weather scheduling, and international certification management. Grew from 200 to 850 annual students with global reach.' },
+  { title: 'Superyacht Crew Management Platform', year: 2024, description: 'Professional crew portal with qualification tracking, availability scheduling, and multi-vessel coordination. Manages 150+ crew across 25 luxury vessels with 70% efficiency improvement.' },
+  { title: 'Commercial Marine Equipment Marketplace', year: 2023, description: 'B2B marine equipment platform with harbor service integration and fleet management tools. Increased average transaction values by 85% serving commercial marine operators.' },
+  { title: 'Coastal Adventure Booking System', year: 2024, description: 'Weather-responsive tour booking platform with flexible rescheduling and safety briefing integration. Achieved 4.9/5 customer satisfaction while handling 300% seasonal capacity increase.' },
+  { title: 'Deep Sea Fishing Charter Network', year: 2023, description: 'Multi-boat fishing charter platform with real-time sea conditions, catch reporting, and equipment rental integration. Reduced weather cancellations by 40% and improved repeat bookings to 65%.' }
 ];

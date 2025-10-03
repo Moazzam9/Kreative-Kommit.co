@@ -1,3 +1,10 @@
 export const ecommerceTestimonials = [
-  { author: 'ShopSmart', text: 'Our new site and SEO strategy brought in more customers than ever.' }
+  { author: 'Premium Fashion Boutique', text: 'Our Shopify redesign with mobile optimization increased conversion rates by 85% and mobile sales by 240%. Monthly revenue grew from £15K to £45K within 6 months.' },
+  { author: 'Artisan Home Goods Store', text: 'Multi-channel integration with Amazon and Etsy centralized our inventory management, reducing overselling to zero while increasing total sales by 180% across all platforms.' },
+  { author: 'Electronics E-commerce Giant', text: 'Advanced product recommendation engine and personalization features increased average order value by 35% and customer lifetime value by 60%, generating an additional £2.8M annually.' },
+  { author: 'Subscription Box Service', text: 'Recurring billing platform with customer portal and preference management achieved 94% retention rate and scaled from 500 to 15,000 subscribers, reaching £180K monthly recurring revenue.' },
+  { author: 'International Beauty Brand', text: 'Multi-currency e-commerce platform with localized checkout expanded us to 25 countries, increasing international sales from 15% to 65% of total revenue within 18 months.' },
+  { author: 'Sports Equipment Retailer', text: 'Abandoned cart recovery and email automation recovered 28% of lost sales, adding £85K annual revenue while improving customer engagement by 150%.' },
+  { author: 'Luxury Jewelry E-commerce', text: 'High-end product photography integration and virtual try-on features increased conversion rates by 120% and reduced return rates by 40%, improving profit margins significantly.' },
+  { author: 'Health Supplements Direct', text: 'WooCommerce to Shopify migration with inventory optimization and subscription management doubled monthly sales to £120K while reducing operational overhead by 30%.' }
 ];

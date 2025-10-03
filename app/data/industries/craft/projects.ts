@@ -1,4 +1,9 @@
 export const craftProjects = [
-  { title: "Artisan Shop Launch", year: 2025, description: "A custom e-commerce site for a handmade goods business." },
-  { title: "Craft Market Growth", year: 2024, description: "SEO and social campaigns for a local craft market." }
+  { title: 'Highland Wool Artisan Collective', year: 2024, description: 'Multi-artisan e-commerce platform with individual portfolios, custom order management, and international shipping. Increased collective sales by 340% with 15-country reach and £45K annual custom commissions.' },
+  { title: 'Pottery Studio Workshop System', year: 2024, description: 'Integrated class booking, student management, and online pottery sales platform. Doubled workshop attendance and generated £18K quarterly revenue through online ceramic sales.' },
+  { title: 'Bespoke Jewellery Commission Portal', year: 2023, description: 'Custom jewellery design platform with Instagram integration, 3D preview tools, and commission tracking. Increased sales by 280% with average orders rising from £35 to £95.' },
+  { title: 'Artisan Furniture Showcase', year: 2024, description: 'High-end furniture portfolio with project timeline visualization and client collaboration tools. Secured 12 custom commissions worth £85K with 6-month advance booking system.' },
+  { title: 'Monthly Craft Kit Subscription', year: 2023, description: 'Subscription e-commerce platform with customizable craft boxes and tutorial content. Grew from 50 to 2,500 subscribers generating £75K monthly recurring revenue.' },
+  { title: 'Traditional Blacksmith Heritage Site', year: 2024, description: 'Heritage craft documentation platform with commission portal and educational content. Attracted museum contracts increasing traditional metalwork orders by 150% to £30K annually.' },
+  { title: 'Multi-Woodworker Marketplace', year: 2023, description: 'Collaborative platform for 25 woodworking artisans with shared resources, skill matching, and collective marketing. Achieved £120K annual collective sales with improved workshop efficiency.' }
 ];

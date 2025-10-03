@@ -1,4 +1,9 @@
 export const ecommerceProjects = [
-  { title: 'London Fashion Store', summary: 'Launched a new e-commerce site, increasing sales by 180%.' },
-  { title: 'Manchester Electronics', summary: 'Helped an electronics retailer improve checkout conversion.' }
+  { title: 'Premium Fashion Boutique Shopify Redesign', summary: 'Complete mobile-first e-commerce redesign with advanced product filtering and one-click checkout. Increased conversion rates by 85% and grew monthly revenue from £15K to £45K within 6 months.' },
+  { title: 'Multi-Channel Artisan Marketplace Integration', summary: 'Unified inventory system connecting Shopify store with Amazon, Etsy, and eBay marketplaces. Eliminated overselling issues and increased total sales by 180% across all channels.' },
+  { title: 'Electronics Giant Product Recommendation Engine', summary: 'AI-powered personalization platform with cross-selling and upselling automation. Increased average order value by 35% and generated additional £2.8M annual revenue through smart recommendations.' },
+  { title: 'Health Supplements Subscription Commerce Platform', summary: 'Custom recurring billing system with customer preference management and automated inventory forecasting. Scaled from 500 to 15,000 subscribers reaching £180K monthly recurring revenue.' },
+  { title: 'International Beauty Brand Multi-Currency Store', summary: 'Global e-commerce platform with localized checkout, currency conversion, and regional payment methods. Expanded to 25 countries with international sales growing from 15% to 65% of revenue.' },
+  { title: 'Luxury Jewelry Virtual Try-On Experience', summary: 'High-end product photography with AR try-on features and virtual showroom experience. Increased conversion rates by 120% while reducing returns by 40%.' },
+  { title: 'Sports Equipment WooCommerce to Shopify Migration', summary: 'Complete platform migration with performance optimization, inventory synchronization, and checkout flow improvement. Doubled monthly sales to £120K while reducing operational overhead by 30%.' }
 ];

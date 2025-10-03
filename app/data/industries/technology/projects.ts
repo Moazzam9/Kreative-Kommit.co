@@ -1,4 +1,9 @@
 export const technologyProjects = [
-  { title: 'London SaaS Startup', summary: 'Launched a new site, increasing demo signups.' },
-  { title: 'Manchester IT Firm', summary: 'Helped an IT firm improve B2B lead generation.' }
+  { title: 'CloudScale Enterprise B2B Platform', summary: 'Comprehensive SaaS marketing website with demo booking, case studies, and enterprise sales funnel. Generated £2.4M qualified pipeline and increased enterprise leads by 300% within 8 months.' },
+  { title: 'FinTech API Developer Portal', summary: 'Technical documentation platform with sandbox environment, code examples, and partner onboarding system. Attracted 500+ integration partners and supported £850K seed funding round.' },
+  { title: 'AI Startup Thought Leadership Hub', summary: 'Technical blog and research publication platform with academic paper integration and conference speaking showcase. Positioned company as industry leader, attracting £5M Series A investment.' },
+  { title: 'Cybersecurity Compliance Showcase', summary: 'Enterprise-focused website highlighting security certifications, compliance frameworks, and government case studies. Increased enterprise contracts by 180% across finance and public sectors.' },
+  { title: 'SaaS Analytics Product Platform', summary: 'Interactive product demo website with free trial system, feature comparison tools, and ROI calculators. Achieved £120K monthly recurring revenue and 45% trial conversion rate.' },
+  { title: 'Blockchain Development Portfolio', summary: 'Technical showcase with smart contract examples, DeFi project case studies, and international client testimonials. Expanded to 15 countries with average £75K project values.' },
+  { title: 'Tech Recruitment Employer Brand', summary: 'Developer-focused careers site with coding challenges, team culture content, and technical interview process transparency. Increased quality applications by 250% and reduced hiring time by 40%.' }
 ];

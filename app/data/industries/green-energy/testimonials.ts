@@ -1,6 +1,10 @@
 export const greenEnergyTestimonials = [
-  {
-    author: 'EcoSolar UK',
-    text: 'Kreative Kommit helped us double our leads in Manchester and Liverpool. Their local SEO and content strategy made a real difference.'
-  }
+  { author: 'Solar Solutions Yorkshire', text: 'Interactive solar calculator with government grant integration increased qualified leads by 180%, with average installation values rising from £8,500 to £14,200 through better customer education.' },
+  { author: 'Heat Pump Installation Specialists', text: 'Energy efficiency assessment tools and Boiler Upgrade Scheme integration generated 240% more heat pump enquiries, securing £450K in installations during first year.' },
+  { author: 'Commercial Solar Developers', text: 'B2B renewable energy portal with ROI calculators attracted 15 commercial clients, resulting in £2.8M worth of solar farm and commercial installation projects.' },
+  { author: 'Green Energy Consultancy', text: 'ECO4 eligibility checker and energy audit booking system increased consultation bookings by 160%, helping 800+ households access government funding for energy improvements.' },
+  { author: 'Renewable Energy Cooperative', text: 'Community solar project showcase and investment platform attracted £750K in community funding, enabling 5 local renewable energy installations across rural communities.' },
+  { author: 'Battery Storage Solutions', text: 'Smart meter integration and energy monitoring dashboard increased battery storage sales by 220%, demonstrating real-time savings to customers and improving retention to 94%.' },
+  { author: 'Sustainable Building Services', text: 'Comprehensive sustainability portal covering solar, heat pumps, and insulation increased multi-service bookings by 85%, with average project values reaching £18,500.' },
+  { author: 'Local Authority Energy Team', text: 'Grant application portal and resident energy assessment system processed 2,000+ applications, distributing £5.2M in local green energy grants with 95% application success rate.' }
 ];

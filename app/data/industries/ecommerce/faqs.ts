@@ -1,4 +1,14 @@
 export const ecommerceFAQs = [
-  { q: 'How can a new website help my online store?', a: 'A modern, fast website increases sales and builds trust.' },
-  { q: 'Do you offer SEO for e-commerce?', a: 'Yes, we specialise in SEO for UK online retailers.' }
+  { q: 'How can a professional e-commerce website increase my online sales?', a: 'A well-designed e-commerce site with optimized checkout, product recommendations, and mobile responsiveness increases conversion rates by 35-65% and average order values by 25%.' },
+  { q: 'Do you integrate with popular e-commerce platforms like Shopify and WooCommerce?', a: 'Yes, we work with Shopify, WooCommerce, Magento, BigCommerce, and custom solutions, providing seamless migration, theme customization, and app integration services.' },
+  { q: 'Can you optimize my online store for mobile commerce and app integration?', a: 'We create mobile-first responsive designs with progressive web app features, one-click checkout, and native app integration that captures 70%+ of mobile commerce traffic.' },
+  { q: 'How do you handle payment processing and security for online stores?', a: 'We integrate secure payment gateways like Stripe, PayPal, and Worldpay with PCI DSS compliance, fraud protection, SSL certificates, and GDPR-compliant data handling.' },
+  { q: 'Do you provide inventory management and order fulfillment integration?', a: 'Yes, we connect with inventory systems, dropshipping platforms, Amazon FBA, and courier services for automated stock control, order processing, and shipping management.' },
+  { q: 'Can you implement product recommendation engines and personalization?', a: 'We build AI-powered recommendation systems, personalized product suggestions, abandoned cart recovery, and dynamic pricing tools that increase repeat purchases by 40%.' },
+  { q: 'How do you optimize e-commerce sites for search engines and product discovery?', a: 'Technical SEO including structured data, product schema, site speed optimization, category organization, and integration with Google Shopping and comparison sites.' },
+  { q: 'Do you create multi-channel selling platforms for marketplaces?', a: 'We build unified systems connecting your store with Amazon, eBay, Etsy, Facebook Shop, and other marketplaces with centralized inventory and pricing management.' },
+  { q: 'Can you handle subscription commerce and recurring billing?', a: 'Yes, we implement subscription models, recurring payment systems, customer account management, and retention tools for membership and subscription-based businesses.' },
+  { q: 'What analytics and conversion tracking do you provide for online stores?', a: 'Comprehensive e-commerce analytics including sales funnels, customer lifetime value, product performance, cart abandonment analysis, and ROI tracking with Google Analytics 4.' },
+  { q: 'Do you provide ongoing support for growing e-commerce businesses?', a: 'Yes, including performance monitoring, security updates, conversion rate optimization, seasonal campaign support, and scalability improvements as your business grows.' },
+  { q: 'How do you handle international selling and multi-currency e-commerce?', a: 'We create global e-commerce solutions with currency conversion, international shipping calculators, tax compliance, and localized checkout experiences for worldwide sales.' }
 ];

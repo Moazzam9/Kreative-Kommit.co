@@ -1,4 +1,10 @@
 export const securityTestimonials = [
-  { client: "Security Firm Launch", feedback: "Our new site helped us win more contracts!" },
-  { client: "Law Enforcement Portal", feedback: "The portal improved communication with the public." }
+  { client: 'Enterprise Cybersecurity Consultancy', feedback: 'Our compliance-focused website with ISO 27001 certification display increased enterprise RFP responses by 200% and secured 8 major government contracts worth £2.4M annually.' },
+  { client: 'Managed Security Services Provider', feedback: 'Client portal with real-time threat monitoring dashboards reduced support calls by 70% while increasing client retention from 75% to 96% through improved transparency.' },
+  { client: 'Penetration Testing Specialists', feedback: 'Technical showcase with sanitized penetration test examples and security research publications positioned us as thought leaders, attracting Fortune 500 clients and £150K average project values.' },
+  { client: 'Incident Response Team', feedback: 'Crisis communication platform with automated stakeholder alerts reduced incident response time by 60% and improved client satisfaction during security breaches from 3.2 to 4.8 stars.' },
+  { client: 'Cybersecurity Training Company', feedback: 'Integrated learning management system with phishing simulation tools increased corporate training contracts by 300%, serving 50+ organizations with £500K annual revenue.' },
+  { client: 'Threat Intelligence Firm', feedback: 'Secure research platform with controlled access and intelligence feeds attracted government and financial sector clients, expanding revenue from £200K to £1.2M annually.' },
+  { client: 'Security Assessment Startup', feedback: 'Interactive risk calculator and automated assessment tools converted 45% of website visitors to qualified leads, achieving £750K Series A funding within 12 months.' },
+  { client: 'SOC-as-a-Service Provider', feedback: 'SIEM integration showcase and real-time monitoring demonstrations increased service subscriptions by 180%, growing monthly recurring revenue to £85K with 24/7 monitoring capabilities.' }
 ];

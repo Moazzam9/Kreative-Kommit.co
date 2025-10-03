@@ -1,14 +1,14 @@
 export const greenEnergyFAQs = [
-  {
-    q: 'How can digital marketing help my UK solar business?',
-    a: 'We use local SEO, content marketing, and targeted ads to help you reach more customers in your area.'
-  },
-  {
-    q: 'Do you help with Google My Business for local search?',
-    a: 'Yes, we optimize your Google My Business profile to improve your visibility in local search results.'
-  },
-  {
-    q: 'Can you create content about UK green energy grants?',
-    a: 'Absolutely! We create educational content to help your customers understand and access available grants.'
-  }
+  { q: 'How can a professional website help my renewable energy business win more contracts?', a: 'A specialized green energy website with solar calculators, case studies, and government incentive information increases qualified leads by 120% and builds trust with environmentally-conscious customers.' },
+  { q: 'Do you create solar panel calculators and energy savings estimation tools?', a: 'Yes, we build interactive solar calculators with roof analysis, energy consumption data, payback period estimates, and integration with government grant databases for accurate customer quotes.' },
+  { q: 'Can you showcase our renewable energy installations and sustainability credentials?', a: 'We create compelling project galleries with before/after comparisons, energy production data, carbon savings metrics, and certification displays that demonstrate your environmental impact.' },
+  { q: 'How do you handle government green energy grants and incentive information?', a: 'We integrate current ECO4, Boiler Upgrade Scheme, and local authority grant databases with eligibility checkers and application guidance to help customers access funding.' },
+  { q: 'Do you provide energy audit booking and consultation scheduling systems?', a: 'Yes, we build booking platforms with energy assessment forms, site survey scheduling, EPC integration, and automated follow-up systems for energy efficiency consultations.' },
+  { q: 'Can you integrate with smart meter data and energy monitoring systems?', a: 'We connect with smart meter APIs, solar inverter data, and energy monitoring platforms to provide real-time performance dashboards and customer energy insights.' },
+  { q: 'How do you optimize green energy websites for local environmental searches?', a: 'Local SEO strategies targeting postcode-specific energy costs, regional grant availability, planning permission requirements, and council-specific renewable energy policies.' },
+  { q: 'Do you create commercial and domestic renewable energy portals?', a: 'We build separate user experiences for residential solar customers and commercial energy clients, each with appropriate calculators, case studies, and procurement processes.' },
+  { q: 'Can you handle MCS certification and installer accreditation displays?', a: 'Yes, we showcase MCS registration, RECC membership, TrustMark approval, and other industry certifications with verification links and installer directory integration.' },
+  { q: 'What customer education content do you provide for renewable energy adoption?', a: 'Comprehensive guides covering technology benefits, financial returns, planning permission, maintenance requirements, and environmental impact to support informed decision-making.' },
+  { q: 'Do you integrate with renewable energy financing and loan providers?', a: 'We connect with green energy finance partners, solar loan providers, and payment plan systems to offer customers flexible funding options directly through your website.' },
+  { q: 'How do you support seasonal variations in renewable energy marketing?', a: 'Dynamic content strategies highlighting winter heating solutions, summer solar peak production, seasonal grant deadlines, and weather-responsive energy generation messaging.' }
 ];

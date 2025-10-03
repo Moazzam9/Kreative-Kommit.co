@@ -1,10 +1,9 @@
 export const greenEnergyProjects = [
-  {
-    title: 'Manchester Solar Installer Growth',
-    summary: 'Helped a Manchester-based solar company triple their leads in 12 months with local SEO and a new website.'
-  },
-  {
-    title: 'Liverpool EV Charging Launch',
-    summary: 'Launched a new EV charging business in Liverpool, generating 200+ leads in the first quarter.'
-  }
+  { title: 'Yorkshire Solar Solutions Calculator Platform', summary: 'Interactive solar ROI calculator with government grant integration and real-time energy savings estimation. Increased qualified leads by 180% and average installation values to £14,200.' },
+  { title: 'Heat Pump Specialists Assessment Portal', summary: 'Energy efficiency assessment platform with Boiler Upgrade Scheme integration and smart quotes system. Generated 240% more enquiries and £450K annual installations.' },
+  { title: 'Commercial Solar Development B2B Platform', summary: 'Enterprise renewable energy portal with commercial ROI modeling and procurement management. Secured 15 major clients worth £2.8M in solar installations.' },
+  { title: 'Community Energy Cooperative Investment Hub', summary: 'Community solar project showcase with crowd-funding integration and local investment platform. Attracted £750K funding for 5 rural renewable installations.' },
+  { title: 'Smart Battery Storage Dashboard System', summary: 'Real-time energy monitoring with smart meter integration and battery performance tracking. Increased storage sales by 220% with 94% customer retention.' },
+  { title: 'Local Authority Green Grant Management Portal', summary: 'Comprehensive grant application system with eligibility checking and resident energy assessment tools. Processed 2,000+ applications distributing £5.2M in funding.' },
+  { title: 'Integrated Sustainability Services Platform', summary: 'Multi-service platform covering solar, heat pumps, insulation, and EV charging with unified booking system. Achieved 85% multi-service conversion with £18,500 average projects.' }
 ];

@@ -1,4 +1,9 @@
 export const securityProjects = [
-  { title: "Security Firm Launch", year: 2025, description: "A trust-building site for a security company." },
-  { title: "Law Enforcement Portal", year: 2024, description: "A digital portal for a local law enforcement agency." }
+  { title: 'Enterprise Cybersecurity Compliance Platform', year: 2024, description: 'ISO 27001 certified website with SOC 2 compliance showcase and automated audit documentation. Increased enterprise RFP responses by 200% and secured £2.4M in government contracts.' },
+  { title: 'Managed Security Services Client Portal', year: 2024, description: 'Real-time threat monitoring dashboard with SIEM integration and automated incident reporting. Reduced support calls by 70% and improved client retention to 96%.' },
+  { title: 'Penetration Testing Showcase Platform', year: 2023, description: 'Technical portfolio with sanitized test results, methodology documentation, and security research publications. Attracted Fortune 500 clients with £150K average project values.' },
+  { title: 'Crisis Communication and Incident Response System', year: 2024, description: 'Automated stakeholder notification platform with real-time status updates and secure communication channels. Reduced incident response time by 60% during security breaches.' },
+  { title: 'Cybersecurity Training LMS Integration', year: 2023, description: 'Learning management system with phishing simulation tools and compliance tracking for corporate training programs. Increased training contracts by 300% serving 50+ organizations.' },
+  { title: 'Threat Intelligence Research Platform', year: 2024, description: 'Secure intelligence sharing platform with controlled access and automated threat feed integration. Expanded client base from financial to government sectors, growing revenue to £1.2M annually.' },
+  { title: 'Security Assessment and Risk Calculator Tools', year: 2023, description: 'Interactive vulnerability assessment platform with automated risk scoring and proposal generation. Converted 45% of visitors to leads, securing £750K Series A funding.' }
 ];
