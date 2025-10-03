@@ -2,12 +2,13 @@ import { notFound } from 'next/navigation';
 import { brandingPages } from '@/app/data/niches/branding';
 
 interface PageProps {
-  params: { city: string; area: string };
+  params: Promise<{ city: string; area: string }>;
 }
 
-export default function BrandingDynamicPage({ params }: PageProps) {
+export default async function BrandingDynamicPage({ params }: PageProps) {
+  const awaitedParams = await params;
   const data = brandingPages.find(
-    (p) => p.city === params.city && p.area === params.area
+    (p) => p.city === awaitedParams.city && p.area === awaitedParams.area
   );
   if (!data) return notFound();
 

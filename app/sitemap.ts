@@ -1,7 +1,96 @@
 import { MetadataRoute } from 'next';
+
 import { services } from './data/services/services';
 import { cityFacts } from './data/cities/facts';
 import { industries } from './data/industries/industries';
+
+// Import all niche data files
+import { beautyBrandingPages } from './data/niches/beauty';
+import { constructionBrandingPages } from './data/niches/construction';
+import { realEstateBrandingPages } from './data/niches/realestate';
+import { educationBrandingPages } from './data/niches/education';
+import { legalBrandingPages } from './data/niches/legal';
+import { ecommerceBrandingPages } from './data/niches/ecommerce';
+import { dentalBrandingPages } from './data/niches/dental';
+import { charityBrandingPages } from './data/niches/charity';
+import { restaurantBrandingPages } from './data/niches/restaurant';
+import { medicalBrandingPages } from './data/niches/medical';
+import { financialBrandingPages } from './data/niches/financial';
+import { techBrandingPages } from './data/niches/tech';
+import { hospitalityBrandingPages } from './data/niches/hospitality';
+import { petServicesBrandingPages } from './data/niches/petservices';
+import { tradesBrandingPages } from './data/niches/trades';
+import { healthWellnessBrandingPages } from './data/niches/healthwellness';
+import { childcareBrandingPages } from './data/niches/childcare';
+import { artsCultureBrandingPages } from './data/niches/artsculture';
+import { sportsBrandingPages } from './data/niches/sports';
+import { homeGardenBrandingPages } from './data/niches/homegarden';
+import { automotiveServicesBrandingPages } from './data/niches/automotiveservices';
+import { foodDrinkBrandingPages } from './data/niches/fooddrink';
+import { photographyBrandingPages } from './data/niches/photography';
+import { travelTourismBrandingPages } from './data/niches/traveltourism';
+import { cleaningBrandingPages } from './data/niches/cleaning';
+import { securityBrandingPages } from './data/niches/security';
+import { recruitmentBrandingPages } from './data/niches/recruitment';
+import { plumbersBrandingPages } from './data/niches/plumbers';
+import { roofersBrandingPages } from './data/niches/roofers';
+import { flooringBrandingPages } from './data/niches/flooring';
+import { windowCleanersBrandingPages } from './data/niches/windowcleaners';
+import { paintersBrandingPages } from './data/niches/painters';
+import { vetsBrandingPages } from './data/niches/vets';
+import { fitnessBrandingPages } from './data/niches/fitness';
+import { automotiveBrandingPages } from './data/niches/automotive';
+import { eventsBrandingPages } from './data/niches/events';
+import { brandingPages } from './data/niches/branding';
+
+// Define niche page data type for sitemap
+interface NichePageData {
+  city: string;
+  area?: string;
+  title: string;
+  description: string;
+}
+
+// Aggregate all niche data
+const allNicheData: Record<string, NichePageData[]> = {
+  beauty: beautyBrandingPages,
+  construction: constructionBrandingPages,
+  realestate: realEstateBrandingPages,
+  education: educationBrandingPages,
+  legal: legalBrandingPages,
+  ecommerce: ecommerceBrandingPages,
+  dental: dentalBrandingPages,
+  charity: charityBrandingPages,
+  restaurant: restaurantBrandingPages,
+  medical: medicalBrandingPages,
+  financial: financialBrandingPages,
+  tech: techBrandingPages,
+  hospitality: hospitalityBrandingPages,
+  petservices: petServicesBrandingPages,
+  trades: tradesBrandingPages,
+  healthwellness: healthWellnessBrandingPages,
+  childcare: childcareBrandingPages,
+  artsculture: artsCultureBrandingPages,
+  sports: sportsBrandingPages,
+  homegarden: homeGardenBrandingPages,
+  automotiveservices: automotiveServicesBrandingPages,
+  fooddrink: foodDrinkBrandingPages,
+  photography: photographyBrandingPages,
+  traveltourism: travelTourismBrandingPages,
+  cleaning: cleaningBrandingPages,
+  security: securityBrandingPages,
+  recruitment: recruitmentBrandingPages,
+  plumbers: plumbersBrandingPages,
+  roofers: roofersBrandingPages,
+  flooring: flooringBrandingPages,
+  windowcleaners: windowCleanersBrandingPages,
+  painters: paintersBrandingPages,
+  vets: vetsBrandingPages,
+  fitness: fitnessBrandingPages,
+  automotive: automotiveBrandingPages,
+  events: eventsBrandingPages,
+  branding: brandingPages,
+};
 
 export const dynamic = 'force-static';
 
@@ -49,7 +138,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Dynamic service/city URLs
-
   const serviceCityUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [];
   services.forEach((service: { slug: string }) => {
     cityFacts.forEach((city: { slug: string }) => {
@@ -59,6 +147,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: 0.7,
       });
+    });
+  });
+
+  // Dynamic niche/city/area URLs
+  const nicheCityUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [];
+  Object.entries(allNicheData).forEach(([nicheSlug, pages]) => {
+    pages.forEach((entry) => {
+      if (entry.city && entry.area) {
+        nicheCityUrls.push({
+          url: `${baseUrl}/industries/${nicheSlug}/${entry.city}/${entry.area}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.7,
+        });
+      }
     });
   });
 
@@ -78,5 +181,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticUrls, ...serviceCityUrls, industryListingUrl, ...industryDetailUrls];
+  return [...staticUrls, ...serviceCityUrls, ...nicheCityUrls, industryListingUrl, ...industryDetailUrls];
 }
