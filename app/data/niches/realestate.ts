@@ -7,21 +7,21 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Leeds City Centre",
     description: "Ready to make your agency the hottest property in Leeds? We craft bold, memorable branding and websites for estate agents and developers. Stand out on every listing, wow buyers, and fill your books with dream homes!",
     features: [
-      "Leeds estate agent logo glow-up",
-      "Property websites that sell the lifestyle",
-      "Virtual tours that make jaws drop",
-      "Lead magnets that fill your inbox"
+      "Leeds logos that turn heads on Briggate",
+      "Websites that sell the Yorkshire dream",
+      "Virtual tours that make buyers say ‘wow’",
+      "Lead magnets that fill your inbox faster than a Leeds train"
     ],
     whyChoose: [
-      "We know Leeds property—let’s make your brand the talk of the town!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers alike",
-      "We handle the digital curb appeal—so you can close more deals"
+      "We know Leeds property—let’s make your brand the city’s must-see!",
+      "Designs that make your listings the envy of Headingley",
+      "Branding that brings in buyers, sellers, and a few nosy neighbours",
+      "We handle the digital wow—so you can hand over more keys"
     ],
     cta: {
-      heading: "Let’s make your agency famous!",
-      text: "Book a free branding call and let’s turn your Leeds agency into a property powerhouse.",
-      button: "Make My Brand Unmissable!",
+      heading: "Let’s make Leeds love your brand!",
+      text: "Book a free chat and let’s turn your agency into the talk of the city—no flat cap required.",
+      button: "Make Me Unmissable!",
       link: "/contact"
     }
   },
@@ -32,20 +32,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Central London",
     description: "Want your agency to be the crown jewel of London property? We create luxury branding and websites that make your listings pop and your brand unforgettable. Attract high-rollers, investors, and dream-home hunters alike!",
     features: [
-      "London estate agent logo upgrade",
-      "Luxury property websites",
-      "Virtual tours for penthouses and pads",
-      "Lead gen that keeps your phone buzzing"
+      "London logos that dazzle in Mayfair",
+      "Websites that make Knightsbridge jealous",
+      "Virtual tours for penthouses and palace pads",
+      "Lead gen that keeps your phone buzzing like the Tube at rush hour"
     ],
     whyChoose: [
       "We know London’s property game—let’s make your brand iconic!",
-      "Designs that dazzle buyers and sellers",
-      "Branding that opens doors to new clients",
-      "We handle the digital wow-factor—so you can close the big deals"
+      "Designs that make your listings the talk of the capital",
+      "Branding that opens doors to high-rollers and dreamers",
+      "We handle the digital dazzle—so you can close the big deals"
     ],
     cta: {
-      heading: "Rule the London market!",
-      text: "Book a free branding call and let’s make your agency the talk of the capital.",
+      heading: "Ready to rule London?",
+      text: "Book a free chat and let’s make your agency the crown jewel of the city!",
       button: "Crown My Brand!",
       link: "/contact"
     }
@@ -57,20 +57,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Manchester Spinningfields",
     description: "Ready to turn your Manchester agency into a property powerhouse? We deliver bold branding and digital magic that gets your listings noticed and your phones ringing!",
     features: [
-      "Manchester estate agent logo refresh",
-      "Modern, mobile-first property sites",
-      "Virtual tours that wow",
-      "Lead gen that fills your calendar"
+      "Manchester logos with Northern swagger",
+      "Websites that get Mancs talking",
+      "Virtual tours that wow even United fans",
+      "Lead gen that fills your calendar faster than a tram at rush hour"
     ],
     whyChoose: [
       "We know Manchester’s market—let’s make your brand the city’s go-to!",
-      "Designs that make your listings pop",
-      "Branding that brings in buyers and sellers",
+      "Designs that make your listings the pride of Spinningfields",
+      "Branding that brings in buyers, sellers, and a few footballers",
       "We handle the digital hustle—so you can focus on closing deals"
     ],
     cta: {
-      heading: "Make your mark in Manchester!",
-      text: "Book a free branding call and let’s make your agency the talk of Spinningfields.",
+      heading: "Let’s make Manchester move!",
+      text: "Book a free chat and let’s make your agency the talk of the town—no raincoat needed.",
       button: "Boost My Brand!",
       link: "/contact"
     }
@@ -82,20 +82,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Birmingham Colmore Row",
     description: "Want your agency to stand tall in Birmingham? We create branding and websites that make your listings shine and your brand unforgettable. Attract movers, shakers, and dream-home seekers!",
     features: [
-      "Birmingham estate agent logo glow-up",
-      "Property websites that sell the city",
-      "Virtual tours for every home",
-      "Lead gen that keeps you busy"
+      "Birmingham logos that shine on Colmore Row",
+      "Websites that sell the Brummie dream",
+      "Virtual tours for every home, flat, and penthouse",
+      "Lead gen that keeps you busier than the Bullring"
     ],
     whyChoose: [
       "We know Birmingham’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the envy of the Jewellery Quarter",
+      "Branding that brings in buyers, sellers, and a few curious neighbours",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Birmingham!",
-      text: "Book a free branding call and let’s make your agency the star of Colmore Row.",
+      heading: "Let’s make Birmingham shine!",
+      text: "Book a free chat and let’s make your agency the star of Colmore Row—no hard hat required.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -107,20 +107,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Liverpool Waterfront",
     description: "Make waves in Liverpool’s property market! We create branding and websites that get your agency noticed, your listings shared, and your phones ringing off the hook.",
     features: [
-      "Liverpool estate agent logo refresh",
-      "Waterfront-ready property sites",
-      "Virtual tours that make a splash",
-      "Lead gen that brings in buyers"
+      "Liverpool logos with Mersey sparkle",
+      "Websites that make a splash on the Waterfront",
+      "Virtual tours that get Scousers talking",
+      "Lead gen that brings in buyers faster than a ferry"
     ],
     whyChoose: [
       "We know Liverpool’s market—let’s make your brand the city’s must-see!",
-      "Designs that make your listings stand out",
-      "Branding that brings in buyers and sellers",
+      "Designs that make your listings the talk of the Docks",
+      "Branding that brings in buyers, sellers, and a few Beatles fans",
       "We handle the digital buzz—so you can focus on viewings"
     ],
     cta: {
-      heading: "Make waves in Liverpool!",
-      text: "Book a free branding call and let’s make your agency the talk of the Waterfront.",
+      heading: "Let’s make Liverpool splash!",
+      text: "Book a free chat and let’s make your agency the star of the Mersey—no wellies needed.",
       button: "Make My Brand Splash!",
       link: "/contact"
     }
@@ -332,20 +332,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Salford Media City",
     description: "Want your agency to be the star of Salford? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Salford estate agent logo refresh",
-      "Media City property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Salford logos with Media City magic",
+      "Websites that shine on every device",
+      "Virtual tours that get the BBC talking",
+      "Lead gen that fills your diary faster than a TV schedule"
     ],
     whyChoose: [
       "We know Salford’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of Media City",
+      "Branding that brings in buyers, sellers, and a few TV stars",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Salford!",
-      text: "Book a free branding call and let’s make your agency the star of Media City.",
+      heading: "Let’s make Salford shine!",
+      text: "Book a free chat and let’s make your agency the star of Media City—no green screen required.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -357,20 +357,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Preston Winckley Square",
     description: "Want your agency to be the pride of Preston? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Preston estate agent logo refresh",
-      "Winckley Square property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Preston logos with Winckley Square style",
+      "Websites that make the high street buzz",
+      "Virtual tours that wow the market",
+      "Lead gen that fills your diary faster than a Lancashire brew"
     ],
     whyChoose: [
       "We know Preston’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of the square",
+      "Branding that brings in buyers, sellers, and a few market traders",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Preston!",
-      text: "Book a free branding call and let’s make your agency the star of Winckley Square.",
+      heading: "Let’s make Preston shine!",
+      text: "Book a free chat and let’s make your agency the star of Winckley Square—no umbrella needed.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -382,20 +382,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Blackpool Town Centre",
     description: "Want your agency to be the star of Blackpool? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Blackpool estate agent logo refresh",
-      "Town Centre property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Blackpool logos with Illuminations sparkle",
+      "Websites that dazzle the promenade",
+      "Virtual tours that wow the piers",
+      "Lead gen that fills your diary faster than a stick of rock"
     ],
     whyChoose: [
       "We know Blackpool’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of the promenade",
+      "Branding that brings in buyers, sellers, and a few donkeys",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Blackpool!",
-      text: "Book a free branding call and let’s make your agency the star of Town Centre.",
+      heading: "Let’s make Blackpool shine!",
+      text: "Book a free chat and let’s make your agency the star of the coast—no deckchair required.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -407,20 +407,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Warrington Golden Square",
     description: "Want your agency to be the star of Warrington? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Warrington estate agent logo refresh",
-      "Golden Square property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Warrington logos with Golden Square shine",
+      "Websites that light up the town",
+      "Virtual tours that wow the market",
+      "Lead gen that fills your diary faster than a golden handshake"
     ],
     whyChoose: [
       "We know Warrington’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of the square",
+      "Branding that brings in buyers, sellers, and a few golden retrievers",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Warrington!",
-      text: "Book a free branding call and let’s make your agency the star of Golden Square.",
+      heading: "Let’s make Warrington shine!",
+      text: "Book a free chat and let’s make your agency the star of Golden Square—no golden ticket needed.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -432,20 +432,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Stockport Merseyway",
     description: "Want your agency to be the star of Stockport? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Stockport estate agent logo refresh",
-      "Merseyway property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Stockport logos with Merseyway magic",
+      "Websites that stop the traffic",
+      "Virtual tours that wow the viaduct",
+      "Lead gen that fills your diary faster than a Stockport brew"
     ],
     whyChoose: [
       "We know Stockport’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of Merseyway",
+      "Branding that brings in buyers, sellers, and a few trainspotters",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Stockport!",
-      text: "Book a free branding call and let’s make your agency the star of Merseyway.",
+      heading: "Let’s make Stockport shine!",
+      text: "Book a free chat and let’s make your agency the star of Merseyway—no train ticket needed.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -457,20 +457,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Oldham Town Centre",
     description: "Want your agency to be the star of Oldham? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Oldham estate agent logo refresh",
-      "Town Centre property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Oldham logos with Yorkshire Street energy",
+      "Websites that get the locals talking",
+      "Virtual tours that wow the town",
+      "Lead gen that fills your diary faster than a Lancashire accent"
     ],
     whyChoose: [
       "We know Oldham’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of Yorkshire Street",
+      "Branding that brings in buyers, sellers, and a few market traders",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Oldham!",
-      text: "Book a free branding call and let’s make your agency the star of Town Centre.",
+      heading: "Let’s make Oldham shine!",
+      text: "Book a free chat and let’s make your agency the star of Yorkshire Street—no market stall needed.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -482,20 +482,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Rochdale Town Centre",
     description: "Want your agency to be the star of Rochdale? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Rochdale estate agent logo refresh",
-      "Town Centre property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Rochdale logos with Town Hall flair",
+      "Websites that get a round of applause",
+      "Virtual tours that wow the market",
+      "Lead gen that fills your diary faster than a Rochdale brew"
     ],
     whyChoose: [
       "We know Rochdale’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of the Town Hall",
+      "Branding that brings in buyers, sellers, and a few local legends",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Rochdale!",
-      text: "Book a free branding call and let’s make your agency the star of Town Centre.",
+      heading: "Let’s make Rochdale shine!",
+      text: "Book a free chat and let’s make your agency the star of the Town Hall—no mayor’s chain needed.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -507,20 +507,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in Wigan Grand Arcade",
     description: "Want your agency to be the star of Wigan? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "Wigan estate agent logo refresh",
-      "Grand Arcade property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "Wigan logos with Grand Arcade attitude",
+      "Websites that get a pie-loving cheer",
+      "Virtual tours that wow the rugby crowd",
+      "Lead gen that fills your diary faster than a Wigan pie"
     ],
     whyChoose: [
       "We know Wigan’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of the Grand Arcade",
+      "Branding that brings in buyers, sellers, and a few rugby fans",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in Wigan!",
-      text: "Book a free branding call and let’s make your agency the star of Grand Arcade.",
+      heading: "Let’s make Wigan shine!",
+      text: "Book a free chat and let’s make your agency the star of the Grand Arcade—no pie required.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
@@ -532,20 +532,20 @@ export const realEstateBrandingPages = [
     title: "Real Estate Branding in St Helens Church Square",
     description: "Want your agency to be the star of St Helens? We create bold branding and websites that make your listings shine and your brand unforgettable. Attract buyers, sellers, and property dreamers!",
     features: [
-      "St Helens estate agent logo refresh",
-      "Church Square property sites",
-      "Virtual tours for every home",
-      "Lead gen that fills your diary"
+      "St Helens logos with Church Square charm",
+      "Websites that get the town buzzing",
+      "Virtual tours that wow the locals",
+      "Lead gen that fills your diary faster than a St Helens story"
     ],
     whyChoose: [
       "We know St Helens’s property scene—let’s make your brand the city’s favourite!",
-      "Designs that make your listings irresistible",
-      "Branding that brings in buyers and sellers",
-      "We handle the digital curb appeal—so you can focus on viewings"
+      "Designs that make your listings the talk of Church Square",
+      "Branding that brings in buyers, sellers, and a few Saints fans",
+      "We handle the digital wow—so you can focus on viewings"
     ],
     cta: {
-      heading: "Shine in St Helens!",
-      text: "Book a free branding call and let’s make your agency the star of Church Square.",
+      heading: "Let’s make St Helens shine!",
+      text: "Book a free chat and let’s make your agency the star of Church Square—no rugby boots needed.",
       button: "Shine Up My Brand!",
       link: "/contact"
     }
