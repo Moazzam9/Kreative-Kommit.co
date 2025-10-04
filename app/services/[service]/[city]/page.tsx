@@ -32,7 +32,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const awaitedParams = await params;
-  const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
+  // Normalize slugs to lowercase for consistent lookups
+  const serviceSlug = awaitedParams.service.toLowerCase();
+  const citySlug = awaitedParams.city.toLowerCase();
+  
+  const content = getServiceCityContent(serviceSlug, citySlug);
   if (!content) return {};
   const { service, city, description, schemaMarkup } = content;
   // Extract location-based keywords
@@ -77,29 +81,33 @@ export const viewport = {
 
 export default async function ServiceCityPage({ params }: PageProps) {
   const awaitedParams = await params;
-  const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
+  // Normalize slugs to lowercase for consistent lookups
+  const serviceSlug = awaitedParams.service.toLowerCase();
+  const citySlug = awaitedParams.city.toLowerCase();
+  
+  const content = getServiceCityContent(serviceSlug, citySlug);
   if (!content) return <div>Service or city not found.</div>;
   const { service, city, description, facts, schemaMarkup } = content;
   
   // Get related pages for internal linking
-  const { relatedServices, nearbyCities } = getRelatedPages(awaitedParams.service, awaitedParams.city);
+  const { relatedServices, nearbyCities } = getRelatedPages(serviceSlug, citySlug);
   
   // Generate FAQs for this service×city combination
   const faqs = generateServiceCityFAQs({
     serviceName: service.name,
     cityName: city.name,
-    serviceSlug: awaitedParams.service,
+    serviceSlug: serviceSlug,
   });
   
   // Generate breadcrumb items
   const breadcrumbItems = [
     { name: 'Services', url: '/services' },
-    { name: service.name, url: `/services/${awaitedParams.service}` },
-    { name: city.name, url: `/services/${awaitedParams.service}/${awaitedParams.city}` },
+    { name: service.name, url: `/services/${serviceSlug}` },
+    { name: city.name, url: `/services/${serviceSlug}/${citySlug}` },
   ];
   
   // Get pricing for this service and city
-  const pricing = getServicePricing(awaitedParams.service, awaitedParams.city);
+  const pricing = getServicePricing(serviceSlug, citySlug);
   
   return (
     <>

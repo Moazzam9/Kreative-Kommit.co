@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getGuideContent } from '../../../lib/getGuideContent';
+import { RelatedContent } from '@/components/RelatedContent';
+import { getRelatedGuideContent } from '@/lib/internalLinking';
 
 type Guide = {
   title: string;
@@ -60,6 +62,14 @@ export default async function GuidePostPage({ params }: { params: Promise<{ slug
     return notFound();
   }
   if (!guide || !('title' in guide) || guide.draft) return notFound();
+
+  // Get related content based on guide tags
+  const relatedContent = await getRelatedGuideContent(
+    awaitedParams.slug,
+    guide.tags || [],
+    6
+  );
+
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white font-sans">
       <article className="max-w-2xl mx-auto my-12 rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-10 bg-white dark:bg-gray-900 animate-fade-up">
@@ -71,6 +81,9 @@ export default async function GuidePostPage({ params }: { params: Promise<{ slug
           }}
         />
       </article>
+
+      {/* Internal Linking: Related Guides, Blog Posts, and Services */}
+      <RelatedContent content={relatedContent} />
     </main>
   );
 }

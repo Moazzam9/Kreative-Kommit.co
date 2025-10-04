@@ -4,6 +4,7 @@ import { getTitle, getMetaDescription, getCTA, getFAQ, getSchemaMarkup } from '@
 import { services } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';
+import { RelatedServices } from '@/components/RelatedServices';
 import type { Metadata } from 'next';
 
 
@@ -65,6 +66,16 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
   const cta = getCTA(service, city.name);
   const faqs = getFAQ(service, city.name);
   const schema = getSchemaMarkup(service, city.name);
+
+  // Generate related services for this city
+  const relatedServices = services
+    .filter(s => cityServiceDescriptions[city.slug]?.[s.slug] || genericServiceDescriptions[s.slug])
+    .slice(0, 6) // Limit to 6 services
+    .map(s => ({
+      title: `${s.name} in ${city.name}`,
+      url: `/services/${s.slug}/${city.slug}`,
+      type: 'service' as const,
+    }));
 
   return (
     <main className="min-h-screen bg-background text-foreground font-sans">
@@ -142,6 +153,10 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
           ))}
         </ul>
       </section>
+
+      {/* Internal Linking: Related Services in this City */}
+      <RelatedServices services={relatedServices} cityName={city.name} />
+
       {/* Schema Markup for SEO */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </main>

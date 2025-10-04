@@ -1,6 +1,8 @@
 import { getBlogPosts } from '../../../lib/getBlogPosts';
 import { notFound } from 'next/navigation';
 import { getBlogPostContent } from '../../../lib/getBlogPostContent';
+import { RelatedContent } from '@/components/RelatedContent';
+import { getRelatedBlogContent } from '@/lib/internalLinking';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const awaitedParams = await params;
@@ -43,6 +45,7 @@ type BlogPost = {
   title: string;
   contentHtml: string;
   draft?: boolean;
+  tags?: string[];
 };
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -54,6 +57,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return notFound();
   }
   if (!post || !post.title || post.draft) return notFound();
+
+  // Get related content based on post tags
+  const relatedContent = await getRelatedBlogContent(
+    awaitedParams.slug,
+    post.tags || [],
+    6
+  );
+
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white font-sans">
       <article className="max-w-2xl mx-auto my-12 rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-10 bg-white dark:bg-gray-900 animate-fade-up">
@@ -65,6 +76,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           }}
         />
       </article>
+
+      {/* Internal Linking: Related Blog Posts and Services */}
+      <RelatedContent content={relatedContent} />
     </main>
   );
 }

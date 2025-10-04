@@ -801,17 +801,25 @@ export const cities: City[] = (() => {
   return deduped;
 })();
 
-// Combine all regions
-export const allRegionsCities: City[] = [
-  ...cities,
-  ...walesCities,
-  ...scotlandCities,
-  ...irelandCities
-];
+// Combine all regions with proper deduplication
+// Note: Some cities appear in multiple region files (e.g., Edinburgh in both England and Scotland lists)
+export const allRegionsCities: City[] = (() => {
+  const seen = new Set<string>();
+  const deduped: City[] = [];
+  const allRegions = [
+    ...cities,
+    ...walesCities,
+    ...scotlandCities,
+    ...irelandCities
+  ];
+  
+  for (const city of allRegions) {
+    if (!seen.has(city.slug)) {
+      seen.add(city.slug);
+      deduped.push(city);
+    }
+  }
+  
+  return deduped;
+})();
 
-// TEMP: Export allCities as JSON for script
-// Note: Commented out to avoid require() in browser environment
-// if (require.main === module) {
-//   const fs = require('fs');
-//   fs.writeFileSync('allCities.json', JSON.stringify(allCities, null, 2));
-// }
