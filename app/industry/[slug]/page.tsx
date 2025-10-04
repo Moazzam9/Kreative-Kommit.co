@@ -1,6 +1,6 @@
 // Add static params for Next.js static export
 export async function generateStaticParams() {
-  return industries.map(ind => ({ industry: ind.slug }));
+  return industries.map(ind => ({ slug: ind.slug }));
 }
 
 
@@ -12,9 +12,9 @@ import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/
 import { cityFacts } from '@/app/data/cities/facts';
 
 
-export async function generateMetadata({ params }: { params: Promise<{ industry: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const awaitedParams = await params;
-  const { industry: industrySlug } = awaitedParams;
+  const { slug: industrySlug } = awaitedParams;
   const industry = industries.find(i => i.slug === industrySlug);
   if (!industry) return {};
 
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ industry:
       title: `${industry.name} Industry Services | Kreative Kommit`,
       description: seo.description || '',
       alternates: {
-        canonical: `https://kreativekommit.com/industries/${industry.slug}`
+        canonical: `https://kreativekommit.com/industry/${industry.slug}`
       },
       metadataBase: new URL('https://kreativekommit.com'),
       keywords: seo.keywords || [],
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ industry:
       title: `${industry.name} Industry Services | Kreative Kommit`,
       description: '',
       alternates: {
-        canonical: `https://kreativekommit.com/industries/${industry.slug}`
+        canonical: `https://kreativekommit.com/industry/${industry.slug}`
       },
       metadataBase: new URL('https://kreativekommit.com'),
       keywords: [],
@@ -47,9 +47,9 @@ export async function generateMetadata({ params }: { params: Promise<{ industry:
 
 
 
-export default async function IndustryPage({ params }: { params: Promise<{ industry: string }> }) {
+export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
   const awaitedParams = await params;
-  const { industry: industrySlug } = awaitedParams;
+  const { slug: industrySlug } = awaitedParams;
   const industry = industries.find(i => i.slug === industrySlug) as Industry | undefined;
   if (!industry) return notFound();
 

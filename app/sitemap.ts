@@ -178,7 +178,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // ========== INDUSTRY PAGES (~514 URLs) ==========
-  // Industries index page
+  // Industries index page (niche branding overview)
   const industriesIndex = {
     url: `${baseUrl}/industries`,
     lastModified: new Date(),
@@ -186,9 +186,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   };
 
-  // Individual industry pages (40 URLs)
+  // Individual industry overview pages (40 URLs) - now at /industry/ (singular)
   const industryPages = industries.map((industry: { slug: string }) => ({
-    url: `${baseUrl}/industries/${industry.slug}`,
+    url: `${baseUrl}/industry/${industry.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
