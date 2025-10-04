@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { allCities } from '@/app/data/cities';
+import { allRegionsCities } from '@/app/data/cities/targets';
 import type { City } from '@/app/data/cities';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -43,9 +43,9 @@ function getSortedCounties(grouped: Map<string, City[]>): string[] {
 }
 
 export default function CitiesPage() {
-  const groupedCities = groupCitiesByCounty(allCities);
+  const groupedCities = groupCitiesByCounty(allRegionsCities);
   const sortedCounties = getSortedCounties(groupedCities);
-  const totalCities = allCities.length;
+  const totalCities = allRegionsCities.length;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -53,7 +53,7 @@ export default function CitiesPage() {
     name: 'Cities Served by KreativeKommit',
     description: 'Professional web design and digital marketing services available in cities across the UK and Ireland',
     numberOfItems: totalCities,
-    itemListElement: allCities.slice(0, 20).map((city, index) => ({
+    itemListElement: allRegionsCities.slice(0, 20).map((city, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
