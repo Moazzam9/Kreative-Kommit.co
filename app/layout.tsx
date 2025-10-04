@@ -4,13 +4,15 @@ import { Inter } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
+import { PageViewTracker } from '@/components/PageViewTracker';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kreativekommit.com'),
   title: {
-    default: 'KreativeKommit - Premium Web Agency & Design Studio',
+    default: 'KreativeKommit - Intelligent Web Agency & Design Studio',
     template: '%s | KreativeKommit'
   },
   description: 'KreativeKommit builds fast, SEO-optimised web experiences that drive real results. Expert web design, development, and digital marketing services.',
@@ -113,6 +115,8 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
+        <PageViewTracker />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"           // Sets dark mode as default

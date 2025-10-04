@@ -4,7 +4,6 @@ import { services } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';
 import type { Metadata } from 'next';
-import type { CityFact } from '@/app/data/cities/facts';
 
 
 export async function generateStaticParams() {

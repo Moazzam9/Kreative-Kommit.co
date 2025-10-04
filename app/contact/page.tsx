@@ -69,6 +69,16 @@ export default function ContactPage() {
       });
       if (response.ok) {
         setIsSubmitted(true);
+        
+        // Track conversion in GA4
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'contact_submit', {
+            event_category: 'engagement',
+            event_label: formData.projectType,
+            value: formData.budget || 'not_specified',
+          });
+        }
+        
         setFormData({
           name: '',
           email: '',
