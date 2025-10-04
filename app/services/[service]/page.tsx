@@ -5,13 +5,48 @@ import { industries } from '@/app/data/industries/industries';
 import { cityFacts } from '@/app/data/cities/facts';
 import { serviceFacts } from '@/app/data/services/facts';
 import { brand } from '@/app/data/templates/cities';
+import { Metadata } from 'next';
 // ...existing code...
 
 export async function generateStaticParams() {
   return services.map((service: typeof services[number]) => ({ service: service.slug }));
 }
 
+export async function generateMetadata({ params }: PageProps<'/services/[service]'>): Promise<Metadata> {
+  const awaitedParams = await params;
+  const service = services.find((s: typeof services[number]) => s.slug === awaitedParams.service);
+  
+  if (!service) {
+    return {
+      title: 'Service Not Found | ' + brand,
+      description: 'The requested service could not be found.',
+    };
+  }
 
+  const title = service.name + ' | ' + brand;
+  const metaDescription = service.description;
+  const url = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/services/${service.slug}`;
+
+  return {
+    title,
+    description: metaDescription,
+    keywords: service.keywords ? service.keywords.join(', ') : '',
+    openGraph: {
+      title,
+      description: metaDescription,
+      url,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: metaDescription,
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}
 
 export default async function ServicePage({ params }: PageProps<'/services/[service]'>) {
   const awaitedParams = await params;
@@ -39,23 +74,10 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
 
   return (
     <>
-      <head>
-        <title>{title}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={service.keywords ? service.keywords.join(', ') : ''} />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/services/${service.slug}`} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_BASE_URL || 'https://kreativekommit.com'}/services/${service.slug}`} />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={metaDescription} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-        />
-      </head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
       <main className="min-h-screen bg-background text-foreground font-sans">
         <div className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
