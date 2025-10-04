@@ -5,6 +5,7 @@ import { services } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { industries } from '@/app/data/industries/industries';
 import { RelatedServices } from '@/components/RelatedServices';
+import { getEnhancedCityData, hasEnhancedData } from '@/app/data/cities/enhanced';
 import type { Metadata } from 'next';
 
 
@@ -67,6 +68,10 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
   const faqs = getFAQ(service, city.name);
   const schema = getSchemaMarkup(service, city.name);
 
+  // Get enhanced city data if available (for top 22 cities)
+  const enhancedData = getEnhancedCityData(awaitedParams.slug);
+  const hasEnhanced = hasEnhancedData(awaitedParams.slug);
+
   // Generate related services for this city
   const relatedServices = services
     .filter(s => cityServiceDescriptions[city.slug]?.[s.slug] || genericServiceDescriptions[s.slug])
@@ -91,6 +96,108 @@ export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) 
             <div className="mt-8 text-primary-700 font-semibold">
               {cta}
             </div>
+            
+            {/* Enhanced City Information (Top 22 Cities Only) */}
+            {hasEnhanced && enhancedData && (
+              <section className="mt-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-lg">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Key Stats */}
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      📊 {city.name} at a Glance
+                    </h2>
+                    <div className="space-y-3">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Population:</span>
+                        <span className="text-lg font-bold text-gray-900 dark:text-white">
+                          {enhancedData.population.toLocaleString()}
+                        </span>
+                      </div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Active Businesses:</span>
+                        <span className="text-lg font-bold text-gray-900 dark:text-white">
+                          {enhancedData.demographics.businesses.toLocaleString()}+
+                        </span>
+                      </div>
+                      {enhancedData.demographics.avgIncome && (
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Avg. Income:</span>
+                          <span className="text-lg font-bold text-gray-900 dark:text-white">
+                            £{enhancedData.demographics.avgIncome.toLocaleString()}/year
+                          </span>
+                        </div>
+                      )}
+                      {enhancedData.demographics.economicGrowth && (
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Growth:</span>
+                          <span className="text-lg font-bold text-green-600 dark:text-green-400">
+                            {enhancedData.demographics.economicGrowth}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Key Industries */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                      🏢 Key Industries
+                    </h3>
+                    <ul className="space-y-2">
+                      {enhancedData.keyIndustries.map((industry, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-blue-600 dark:text-blue-400 mt-1">▪</span>
+                          <span className="text-gray-700 dark:text-gray-300 font-medium">{industry}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Business Hub Description */}
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                    💼 Business Hub
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {enhancedData.businessHub}
+                  </p>
+                </div>
+
+                {/* Notable Landmarks */}
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                    🏛️ Notable Landmarks & Areas
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {enhancedData.landmarks.map((landmark, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                      >
+                        {landmark}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Unique Facts */}
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                    ✨ Why {city.name}?
+                  </h3>
+                  <ul className="space-y-2">
+                    {enhancedData.uniqueFacts.map((fact, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="text-xl mt-0.5">💡</span>
+                        <span className="text-gray-700 dark:text-gray-300">{fact}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
+
             {/* Top Industries in this City */}
             <section className="mt-10">
               <h2 className="text-2xl font-semibold text-primary mb-3">Top Industries in {city.name}</h2>
