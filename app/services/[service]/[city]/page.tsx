@@ -2,6 +2,9 @@ import { getServiceCityContent } from '@/app/data/services/getServiceCityContent
 import { services } from '@/app/data/services';
 import { cityFacts } from '@/app/data/cities/facts';
 import { ServiceCitySchema } from '@/components/seo/ServiceCitySchema';
+import { RelatedServices } from '@/components/RelatedServices';
+import { NearbyCities } from '@/components/NearbyCities';
+import { getRelatedPages } from '@/lib/internalLinking';
 import type { Metadata } from 'next';
 // Removed stray return statement causing syntax errors
 export async function generateStaticParams() {
@@ -53,6 +56,10 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
   const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
   if (!content) return <div>Service or city not found.</div>;
   const { service, city, description, facts, schemaMarkup } = content;
+  
+  // Get related pages for internal linking
+  const { relatedServices, nearbyCities } = getRelatedPages(awaitedParams.service, awaitedParams.city);
+  
   return (
     <>
       <ServiceCitySchema
@@ -82,7 +89,10 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
             ))}
           </ul>
         </section>
-        {/* Internal links will be added next */}
+        
+        {/* Internal linking sections */}
+        <RelatedServices services={relatedServices} cityName={city.name} />
+        <NearbyCities cities={nearbyCities} serviceName={service.name} />
       </main>
     </>
   );
