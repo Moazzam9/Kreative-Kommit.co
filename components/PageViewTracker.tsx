@@ -1,29 +1,29 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useGoogleAnalytics } from './GoogleAnalytics';
 
 /**
  * Tracks page views on route changes
  * Must be a client component to use Next.js navigation hooks
  */
-export function PageViewTracker() {
+function PageViewTrackerInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  
-  useGoogleAnalytics();
 
   useEffect(() => {
     if (pathname && typeof window !== 'undefined' && window.gtag) {
       const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+      const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+      
+      if (!measurementId) return;
       
       // Track page view
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '', {
+      window.gtag('config', measurementId, {
         page_path: url,
       });
 
-      // Optional: Also track as a custom event for better visibility
+      // Also track as a custom event for better visibility in GA4
       window.gtag('event', 'page_view', {
         page_location: window.location.href,
         page_path: url,
@@ -33,4 +33,12 @@ export function PageViewTracker() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export function PageViewTracker() {
+  return (
+    <Suspense fallback={null}>
+      <PageViewTrackerInner />
+    </Suspense>
+  );
 }
