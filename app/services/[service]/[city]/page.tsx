@@ -1,6 +1,7 @@
 import { getServiceCityContent } from '@/app/data/services/getServiceCityContent';
 import { services } from '@/app/data/services';
 import { cityFacts } from '@/app/data/cities/facts';
+import { ServiceCitySchema } from '@/components/seo/ServiceCitySchema';
 import type { Metadata } from 'next';
 // Removed stray return statement causing syntax errors
 export async function generateStaticParams() {
@@ -51,30 +52,38 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
   const awaitedParams = await params;
   const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
   if (!content) return <div>Service or city not found.</div>;
-  const { service, city, description, facts } = content;
+  const { service, city, description, facts, schemaMarkup } = content;
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans">
-      <div className="py-20 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
-              {service.name} in {city.name}
-            </h1>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-              {description}
-            </p>
+    <>
+      <ServiceCitySchema
+        serviceName={service.name}
+        cityName={city.name}
+        description={description}
+        url={schemaMarkup.url}
+      />
+      <main className="min-h-screen bg-background text-foreground font-sans">
+        <div className="py-20 bg-white dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-2xl text-center mb-16">
+              <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
+                {service.name} in {city.name}
+              </h1>
+              <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                {description}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <section className="container mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-bold mb-6">Why Choose KreativeKommit for {service.name} in {city.name}?</h2>
-        <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
-          {facts.map((fact, idx) => (
-            <li key={idx}>{fact}</li>
-          ))}
-        </ul>
-      </section>
-      {/* Schema Markup and internal links will be added next */}
-    </main>
+        <section className="container mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold mb-6">Why Choose KreativeKommit for {service.name} in {city.name}?</h2>
+          <ul className="list-disc pl-6 text-base text-gray-700 dark:text-gray-300">
+            {facts.map((fact, idx) => (
+              <li key={idx}>{fact}</li>
+            ))}
+          </ul>
+        </section>
+        {/* Internal links will be added next */}
+      </main>
+    </>
   );
 }
