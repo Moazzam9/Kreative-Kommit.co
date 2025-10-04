@@ -28,6 +28,21 @@ export function getCityKeyword(cityName: string): string {
 
 
 export const allCities: City[] = [
+  // Major UK Cities (Added for SEO)
+  { name: "London", slug: "london", county: "Greater London", population: 9000000 },
+  { name: "Liverpool", slug: "liverpool", county: "Merseyside", population: 500000 },
+  { name: "Leeds", slug: "leeds", county: "West Yorkshire", population: 800000 },
+  { name: "Bristol", slug: "bristol", county: "Bristol", population: 450000 },
+  { name: "Sheffield", slug: "sheffield", county: "South Yorkshire", population: 580000 },
+  { name: "Newcastle", slug: "newcastle", county: "Tyne and Wear", population: 300000 },
+  { name: "Nottingham", slug: "nottingham", county: "Nottinghamshire", population: 330000 },
+  { name: "Leicester", slug: "leicester", county: "Leicestershire", population: 350000 },
+  { name: "Southampton", slug: "southampton", county: "Hampshire", population: 250000 },
+  { name: "Brighton", slug: "brighton", county: "East Sussex", population: 280000 },
+  { name: "York", slug: "york", county: "North Yorkshire", population: 200000 },
+  { name: "Warrington", slug: "warrington", county: "Cheshire", population: 210000 },
+  
+  // Hampshire cities
   { name: "Aldershot", slug: "aldershot", county: "Hampshire", suburbs: suburbsByCity["aldershot"] },
   { name: "Andover", slug: "andover", county: "Hampshire", suburbs: suburbsByCity["andover"] },
   { name: "Basingstoke", slug: "basingstoke", county: "Hampshire", suburbs: suburbsByCity["basingstoke"] },
@@ -77,6 +92,8 @@ export const allCities: City[] = [
   { name: "Barnoldswick", slug: "barnoldswick", county: "Lancashire" },
   { name: "Bamber Bridge", slug: "bamber-bridge", county: "Lancashire" },
   { name: "Bispham", slug: "bispham", county: "Lancashire" },
+  { name: "Blackpool", slug: "blackpool", county: "Lancashire" },
+  { name: "Burnley", slug: "burnley", county: "Lancashire" },
   { name: "Chorley", slug: "chorley", county: "Lancashire" },
   { name: "Clitheroe", slug: "clitheroe", county: "Lancashire" },
   { name: "Colne", slug: "colne", county: "Lancashire" },
@@ -96,6 +113,7 @@ export const allCities: City[] = [
   { name: "Oswaldtwistle", slug: "oswaldtwistle", county: "Lancashire" },
   { name: "Padiham", slug: "padiham", county: "Lancashire" },
   { name: "Poulton-le-Fylde", slug: "poulton-le-fylde", county: "Lancashire" },
+  { name: "Preston", slug: "preston", county: "Lancashire" },
   { name: "Rawtenstall", slug: "rawtenstall", county: "Lancashire" },
   { name: "Rishton", slug: "rishton", county: "Lancashire" },
   { name: "Skelmersdale", slug: "skelmersdale", county: "Lancashire" },
