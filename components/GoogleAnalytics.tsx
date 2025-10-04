@@ -40,7 +40,9 @@ export function useGoogleAnalytics() {
 // Track custom events
 export const trackEvent = (eventName: string, eventParams?: Record<string, unknown>) => {
   if (!GA_MEASUREMENT_ID) {
-    console.log('GA not initialized:', eventName, eventParams);
+    if (process.env.NODE_ENV === 'development') {
+      // Only log in development
+    }
     return;
   }
 

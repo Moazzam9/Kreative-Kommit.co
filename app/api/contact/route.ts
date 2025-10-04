@@ -41,7 +41,10 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json();
     } catch (jsonError) {
-      console.error('JSON parsing error:', jsonError);
+      // In production, use proper error logging service (e.g., Sentry)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('JSON parsing error:', jsonError);
+      }
       return NextResponse.json(
         { error: 'Invalid JSON in request body' },
         { status: 400 }
@@ -91,15 +94,18 @@ export async function POST(request: NextRequest) {
     const safeMessage = sanitize(message);
 
     // For now, we'll just log and return success
-    console.log('New contact form submission:', {
-      name: safeName,
-      email: safeEmail,
-      company: safeCompany,
-      projectType: safeProjectType,
-      budget: safeBudget,
-      message: safeMessage,
-      timestamp: new Date().toISOString(),
-    });
+    // TODO: Integrate with email service (SendGrid, Resend, etc.)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('New contact form submission:', {
+        name: safeName,
+        email: safeEmail,
+        company: safeCompany,
+        projectType: safeProjectType,
+        budget: safeBudget,
+        message: safeMessage,
+        timestamp: new Date().toISOString(),
+      });
+    }
 
     // Simulate email sending delay
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -113,7 +119,10 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('Error processing contact form:', error);
+    // In production, use proper error logging service (e.g., Sentry)
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error processing contact form:', error);
+    }
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

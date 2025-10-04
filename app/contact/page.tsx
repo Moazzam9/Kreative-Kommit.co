@@ -91,7 +91,12 @@ export default function ContactPage() {
         throw new Error('Failed to submit form');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      // In production, use proper error logging service (e.g., Sentry)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error submitting form:', error);
+      }
+      // TODO: Show error message to user
+      alert('Failed to submit form. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
     }

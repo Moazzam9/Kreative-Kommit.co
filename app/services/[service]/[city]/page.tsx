@@ -2,10 +2,22 @@ import { getServiceCityContent } from '@/app/data/services/getServiceCityContent
 import { services } from '@/app/data/services';
 import { allRegionsCities, getCityKeyword } from '@/app/data/cities/targets';
 import { ServiceCitySchema } from '@/components/seo/ServiceCitySchema';
+import { FAQSchema } from '@/components/seo/FAQSchema';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
+import { NavigationBreadcrumb } from '@/components/NavigationBreadcrumb';
 import { RelatedServices } from '@/components/RelatedServices';
 import { NearbyCities } from '@/components/NearbyCities';
+import { PricingTable } from '@/components/PricingTable';
 import { getRelatedPages } from '@/lib/internalLinking';
+import { generateServiceCityFAQs } from '@/lib/seo/generateFAQs';
+import { getServicePricing } from '@/app/data/pricing/pricing';
 import type { Metadata } from 'next';
+
+// Type definition for page props
+type PageProps = {
+  params: Promise<{ service: string; city: string }>;
+};
+
 // Removed stray return statement causing syntax errors
 export async function generateStaticParams() {
   // Generate all service/city combinations
@@ -18,7 +30,7 @@ export async function generateStaticParams() {
   return params;
 }
 
-export async function generateMetadata({ params }: PageProps<'/services/[service]/[city]'>): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const awaitedParams = await params;
   const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
   if (!content) return {};
@@ -63,7 +75,7 @@ export const viewport = {
   maximumScale: 1,
 };
 
-export default async function ServiceCityPage({ params }: PageProps<'/services/[service]/[city]'>) {
+export default async function ServiceCityPage({ params }: PageProps) {
   const awaitedParams = await params;
   const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
   if (!content) return <div>Service or city not found.</div>;
@@ -71,6 +83,23 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
   
   // Get related pages for internal linking
   const { relatedServices, nearbyCities } = getRelatedPages(awaitedParams.service, awaitedParams.city);
+  
+  // Generate FAQs for this service×city combination
+  const faqs = generateServiceCityFAQs({
+    serviceName: service.name,
+    cityName: city.name,
+    serviceSlug: awaitedParams.service,
+  });
+  
+  // Generate breadcrumb items
+  const breadcrumbItems = [
+    { name: 'Services', url: '/services' },
+    { name: service.name, url: `/services/${awaitedParams.service}` },
+    { name: city.name, url: `/services/${awaitedParams.service}/${awaitedParams.city}` },
+  ];
+  
+  // Get pricing for this service and city
+  const pricing = getServicePricing(awaitedParams.service, awaitedParams.city);
   
   return (
     <>
@@ -80,9 +109,12 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
         description={description}
         url={schemaMarkup.url}
       />
+      <FAQSchema faqs={faqs} />
+      <BreadcrumbSchema items={breadcrumbItems} />
       <main className="min-h-screen bg-background text-foreground font-sans">
         <div className="py-20 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
+            <NavigationBreadcrumb items={breadcrumbItems} />
             <div className="mx-auto max-w-2xl text-center mb-16">
               <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
                 {service.name} in {city.name}
@@ -101,6 +133,43 @@ export default async function ServiceCityPage({ params }: PageProps<'/services/[
             ))}
           </ul>
         </section>
+        
+        {/* FAQ Section */}
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+              Frequently Asked Questions
+            </h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              {faqs.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden"
+                >
+                  <summary className="cursor-pointer p-6 font-semibold text-lg text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors list-none flex items-center justify-between">
+                    <span>{faq.question}</span>
+                    <svg
+                      className="w-5 h-5 text-gray-500 transform transition-transform group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Pricing Section */}
+        {pricing && (
+          <PricingTable tiers={pricing.tiers} serviceName={service.name} cityName={city.name} />
+        )}
         
         {/* Internal linking sections */}
         <RelatedServices services={relatedServices} cityName={city.name} />
