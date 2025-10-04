@@ -1,8 +1,9 @@
-import { MetadataRoute } from 'next';
-
+import type { MetadataRoute } from 'next';
 import { services } from './data/services/services';
 import { cityFacts } from './data/cities/facts';
 import { industries } from './data/industries/industries';
+import { getBlogPosts } from '@/lib/getBlogPosts';
+import { getGuides } from '@/lib/getGuides';
 
 // Import all niche data files
 import { beautyBrandingPages } from './data/niches/beauty';
@@ -43,7 +44,6 @@ import { automotiveBrandingPages } from './data/niches/automotive';
 import { eventsBrandingPages } from './data/niches/events';
 import { brandingPages } from './data/niches/branding';
 
-// Define niche page data type for sitemap
 interface NichePageData {
   city: string;
   area?: string;
@@ -51,7 +51,6 @@ interface NichePageData {
   description: string;
 }
 
-// Aggregate all niche data
 const allNicheData: Record<string, NichePageData[]> = {
   beauty: beautyBrandingPages,
   construction: constructionBrandingPages,
@@ -94,34 +93,28 @@ const allNicheData: Record<string, NichePageData[]> = {
 
 export const dynamic = 'force-static';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+/**
+ * Comprehensive sitemap for kreativekommit.com
+ * 
+ * Structure:
+ * - Core static pages (5 URLs)
+ * - Service pages: index + individual + service×city (9,840 URLs)
+ * - City pages (517 URLs)
+ * - Industry pages: index + individual + niche×city×area (514 URLs)
+ * - Content pages: blog + guides (68 URLs)
+ * 
+ * Total: ~10,944 URLs (well under Google's 50,000 limit)
+ */
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://kreativekommit.com';
 
-  // Static URLs
-  const staticUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [
+  // ========== CORE STATIC PAGES (5 URLs) ==========
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
-    },
-    {
-      url: `${baseUrl}/designs`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
@@ -135,51 +128,132 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/designs`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/portfolio`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 
-  // Dynamic service/city URLs
-  const serviceCityUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [];
-  services.forEach((service: { slug: string }) => {
-    cityFacts.forEach((city: { slug: string }) => {
-      serviceCityUrls.push({
-        url: `${baseUrl}/services/${service.slug}/${city.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-      });
-    });
-  });
+  // ========== SERVICE PAGES (~9,840 URLs) ==========
+  // Services index page
+  const servicesIndex = {
+    url: `${baseUrl}/services`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  };
 
-  // Dynamic niche/city/area URLs
-  const nicheCityUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = [];
-  Object.entries(allNicheData).forEach(([nicheSlug, pages]) => {
-    pages.forEach((entry) => {
-      if (entry.city && entry.area) {
-        nicheCityUrls.push({
-          url: `${baseUrl}/industries/${nicheSlug}/${entry.city}/${entry.area}`,
-          lastModified: new Date(),
-          changeFrequency: 'monthly',
-          priority: 0.7,
-        });
-      }
-    });
-  });
+  // Individual service pages (19 URLs)
+  const servicePages = services.map((service: { slug: string }) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
-  // Industry listing page
-  const industryListingUrl = {
+  // Service × City pages (9,820 URLs)
+  const serviceCityPages = services.flatMap((service: { slug: string }) =>
+    cityFacts.map((city: { slug: string }) => ({
+      url: `${baseUrl}/services/${service.slug}/${city.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }))
+  );
+
+  // ========== CITY PAGES (517 URLs) ==========
+  const cityPages = cityFacts.map((city: { slug: string }) => ({
+    url: `${baseUrl}/cities/${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // ========== INDUSTRY PAGES (~514 URLs) ==========
+  // Industries index page
+  const industriesIndex = {
     url: `${baseUrl}/industries`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   };
 
-  // Industry detail pages
-  const industryDetailUrls: Array<{ url: string; lastModified: Date; changeFrequency?: 'monthly' | 'weekly' | 'always' | 'hourly' | 'daily' | 'yearly' | 'never'; priority?: number }> = industries.map((industry: { slug: string }) => ({
+  // Individual industry pages (40 URLs)
+  const industryPages = industries.map((industry: { slug: string }) => ({
     url: `${baseUrl}/industries/${industry.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  return [...staticUrls, ...serviceCityUrls, ...nicheCityUrls, industryListingUrl, ...industryDetailUrls];
+  // Niche × City × Area pages (473 URLs)
+  const nicheCityAreaPages = Object.entries(allNicheData).flatMap(([nicheSlug, pages]) =>
+    pages
+      .filter((entry) => entry.city && entry.area)
+      .map((entry) => ({
+        url: `${baseUrl}/industries/${nicheSlug}/${entry.city}/${entry.area}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      }))
+  );
+
+  // ========== CONTENT PAGES (68 URLs) ==========
+  // Blog index page
+  const blogIndex = {
+    url: `${baseUrl}/blog`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  };
+
+  // Blog posts (43 URLs)
+  const blogPosts = await getBlogPosts();
+  const blogPages = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // Guides index page
+  const guidesIndex = {
+    url: `${baseUrl}/guides`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  };
+
+  // Guide pages (23 URLs)
+  const guides = await getGuides();
+  const guidePages = guides.map((guide) => ({
+    url: `${baseUrl}/guides/${guide.slug}`,
+    lastModified: new Date(guide.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // ========== COMBINE ALL URLS ==========
+  return [
+    ...staticPages,
+    servicesIndex,
+    ...servicePages,
+    ...serviceCityPages,
+    ...cityPages,
+    industriesIndex,
+    ...industryPages,
+    ...nicheCityAreaPages,
+    blogIndex,
+    ...blogPages,
+    guidesIndex,
+    ...guidePages,
+  ];
 }
