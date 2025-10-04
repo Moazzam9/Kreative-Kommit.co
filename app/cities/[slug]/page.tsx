@@ -1,5 +1,5 @@
 import { getCityFacts } from '@/app/data/cities/facts';
-import { allRegionsCities } from '@/app/data/cities/targets';
+import { allRegionsCities, getCityKeyword } from '@/app/data/cities/targets';
 import { getTitle, getMetaDescription, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
 import { services } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
@@ -18,10 +18,22 @@ export async function generateMetadata({ params }: PageProps<'/cities/[slug]'>):
   const city = getCityFacts(cityData.slug, cityData.name);
   // For demo, use 'web design' as the main service. You can make this dynamic.
   const service = 'web design';
+  
+  // Get comprehensive city-specific keywords
+  const cityKeywords = getCityKeyword(city.name)
+    .split(',')
+    .map(k => k.trim().replace('[city]', city.name))
+    .slice(0, 20);
+  
   return {
     title: getTitle(service, city.name),
     description: getMetaDescription(service, city.name),
-    keywords: [city.name, service, 'SEO', 'digital marketing', 'agency', 'KreativeKommit'],
+    keywords: [
+      city.name,
+      service,
+      ...cityKeywords,
+      'KreativeKommit'
+    ],
     alternates: {
       canonical: `https://kreativekommit.com/cities/${city.slug}`
     },

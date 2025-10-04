@@ -5,10 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { MapPin } from 'lucide-react';
 
+import { baseKeywords } from '@/app/data/keywords/services';
+
 export const metadata = {
   title: 'Cities We Serve | Web Design & Digital Marketing | KreativeKommit',
   description: 'Professional web design, SEO, and digital marketing services across the UK and Ireland. Find your city and discover how we can help your business grow online.',
-  keywords: 'web design cities UK, SEO services locations, digital marketing areas, local web development',
+  keywords: `web design cities UK, SEO services locations, digital marketing areas, local web development, ${baseKeywords.slice(0, 15).join(', ')}`,
   openGraph: {
     title: 'Cities We Serve | KreativeKommit',
     description: 'Professional web design, SEO, and digital marketing services across the UK and Ireland.',

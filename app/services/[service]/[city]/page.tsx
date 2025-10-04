@@ -1,6 +1,6 @@
 import { getServiceCityContent } from '@/app/data/services/getServiceCityContent';
 import { services } from '@/app/data/services';
-import { cityFacts } from '@/app/data/cities/facts';
+import { allRegionsCities, getCityKeyword } from '@/app/data/cities/targets';
 import { ServiceCitySchema } from '@/components/seo/ServiceCitySchema';
 import { RelatedServices } from '@/components/RelatedServices';
 import { NearbyCities } from '@/components/NearbyCities';
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   // Generate all service/city combinations
   const params: { service: string; city: string }[] = [];
   services.forEach(service => {
-    cityFacts.forEach(city => {
+    allRegionsCities.forEach(city => {
       params.push({ service: service.slug, city: city.slug });
     });
   });
@@ -23,10 +23,22 @@ export async function generateMetadata({ params }: PageProps<'/services/[service
   const content = getServiceCityContent(awaitedParams.service, awaitedParams.city);
   if (!content) return {};
   const { service, city, description, schemaMarkup } = content;
+  // Extract location-based keywords
+  const cityKeywords = getCityKeyword(city.name)
+    .split(',')
+    .map(k => k.trim().replace('[city]', city.name))
+    .slice(0, 15); // Limit to top 15 relevant keywords
+
   return {
     title: `${service.name} in ${city.name} | KreativeKommit`,
     description,
-    keywords: [service.name, city.name, ...(service.keywords || []), 'web design', 'SEO', 'digital marketing', 'KreativeKommit'],
+    keywords: [
+      service.name,
+      city.name,
+      ...(service.keywords || []),
+      ...cityKeywords,
+      'KreativeKommit'
+    ],
     alternates: {
       canonical: schemaMarkup.url
     },
