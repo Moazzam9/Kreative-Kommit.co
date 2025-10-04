@@ -183,14 +183,6 @@ export const services: Service[] = [
     templateSlug: "training-workshops"
   },
   {
-    name: "SEO Optimisation",
-    slug: "seo-optimisation",
-  description: "Climb to the top of Google and stay there! Our SEO optimisation services use proven strategies, keyword research, and technical expertise to drive organic traffic and real results. Dominate your niche, attract local customers, and grow your business with search engine optimisation that works.",
-    industries: industries.map(i => i.slug),
-    keywords: ["SEO", "SEO optimisation [city]", "search engine optimisation", "Google ranking", "organic traffic", "local SEO"],
-    templateSlug: "seo-optimisation"
-  },
-  {
     name: "Content Marketing",
     slug: "content-marketing",
     description: "Supercharge your brand with content that connects, converts, and climbs the search rankings! From blog posts to guides and social media, we create compelling, SEO-rich content that tells your story and drives results. Ready to become the go-to authority in your industry? Let’s get writing!",
