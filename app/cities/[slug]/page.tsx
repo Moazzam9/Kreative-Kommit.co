@@ -1,4 +1,5 @@
-import { cityFacts } from '@/app/data/cities/facts';
+import { getCityFacts } from '@/app/data/cities/facts';
+import { cities } from '@/app/data/cities/targets';
 import { getTitle, getMetaDescription, getCTA, getFAQ, getSchemaMarkup } from '@/app/data/templates/cities';
 import { services } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
@@ -7,13 +8,14 @@ import type { Metadata } from 'next';
 
 
 export async function generateStaticParams() {
-  return cityFacts.map(city => ({ slug: city.slug }));
+  return cities.map(city => ({ slug: city.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps<'/cities/[slug]'>): Promise<Metadata> {
   const awaitedParams = await params;
-  const city = cityFacts.find(c => c.slug === awaitedParams.slug);
-  if (!city) return {};
+  const cityData = cities.find(c => c.slug === awaitedParams.slug);
+  if (!cityData) return {};
+  const city = getCityFacts(cityData.slug, cityData.name);
   // For demo, use 'web design' as the main service. You can make this dynamic.
   const service = 'web design';
   return {
@@ -40,8 +42,9 @@ export async function generateMetadata({ params }: PageProps<'/cities/[slug]'>):
 
 export default async function CityPage({ params }: PageProps<'/cities/[slug]'>) {
   const awaitedParams = await params;
-  const city = cityFacts.find(c => c.slug === awaitedParams.slug);
-  if (!city) return <div>City not found.</div>;
+  const cityData = cities.find(c => c.slug === awaitedParams.slug);
+  if (!cityData) return <div>City not found.</div>;
+  const city = getCityFacts(cityData.slug, cityData.name);
 
   const service = 'web-design'; // You can make this dynamic based on route or user selection
   // Get city-specific or fallback service description

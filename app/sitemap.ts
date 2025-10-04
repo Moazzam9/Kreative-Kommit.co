@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { services } from './data/services/services';
-import { cityFacts } from './data/cities/facts';
+import { cities } from './data/cities/targets';
 import { industries } from './data/industries/industries';
 import { getBlogPosts } from '@/lib/getBlogPosts';
 import { getGuides } from '@/lib/getGuides';
@@ -161,7 +161,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Service × City pages (9,820 URLs)
   const serviceCityPages = services.flatMap((service: { slug: string }) =>
-    cityFacts.map((city: { slug: string }) => ({
+    cities.map((city: { slug: string }) => ({
       url: `${baseUrl}/services/${service.slug}/${city.slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -169,8 +169,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  // ========== CITY PAGES (517 URLs) ==========
-  const cityPages = cityFacts.map((city: { slug: string }) => ({
+  // ========== CITY PAGES (836 URLs) ==========
+  const cityPages = cities.map((city: { slug: string }) => ({
     url: `${baseUrl}/cities/${city.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

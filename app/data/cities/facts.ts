@@ -5,6 +5,35 @@ export interface CityFact {
   facts: string[];
 }
 
+// Default/fallback facts generator for cities not yet in the database
+export function getDefaultCityFacts(cityName: string): string[] {
+  return [
+    `${cityName} is home to a vibrant business community with growing opportunities in digital innovation.`,
+    `Local businesses in ${cityName} benefit from targeted digital marketing and web design solutions.`,
+    `${cityName}'s entrepreneurs are embracing SEO and online presence to reach new customers.`,
+    `Web development in ${cityName} helps local brands stand out in competitive markets.`,
+    `Digital agencies in ${cityName} provide expert services in web design, SEO, and e-commerce.`,
+    `${cityName} businesses are discovering the power of professional online marketing.`,
+    `The business landscape in ${cityName} is evolving with modern web technologies.`,
+    `SEO services in ${cityName} help local companies dominate search results.`,
+    `${cityName}'s digital transformation is creating new opportunities for growth.`
+  ];
+}
+
+// Helper function to get city facts with fallback
+export function getCityFacts(slug: string, name: string): CityFact {
+  const existingCity = cityFacts.find(c => c.slug === slug);
+  if (existingCity) {
+    return existingCity;
+  }
+  // Return default facts if city not found
+  return {
+    slug,
+    name,
+    facts: getDefaultCityFacts(name)
+  };
+}
+
 export const cityFacts: CityFact[] = [
   {
     slug: "manchester",
@@ -664,4 +693,19 @@ export const cityFacts: CityFact[] = [
   { slug: "earley", name: "Earley", facts: ["Earley’s businesses thrive on local charm and creativity.", "SEO in Earley helps you reach Berkshire and beyond.", "Web design here is inspired by nature."] },
   { slug: "finchampstead", name: "Finchampstead", facts: ["Finchampstead is a Berkshire gem with a lively market and creative businesses.", "Web design in Finchampstead is as fresh as the countryside.", "SEO here helps your brand stand out in Berkshire."] },
   { slug: "woodley", name: "Woodley", facts: ["Woodley is known for its parks and entrepreneurial spirit.", "Digital marketing in Woodley is as welcoming as the town itself.", "Web development here is built for success."] },
+  { 
+    slug: "leeds", 
+    name: "Leeds", 
+    facts: [
+      "Leeds is a major financial and business hub in the North of England with a thriving tech sector.",
+      "The city is home to world-class universities, producing top talent in technology and digital innovation.",
+      "Leeds hosts major events including the Leeds International Film Festival and vibrant music scene.",
+      "Victorian architecture and modern developments make Leeds a dynamic place for business growth.",
+      "Leeds digital agencies are known for cutting-edge web design and SEO expertise.",
+      "Local businesses in Leeds benefit from targeted digital marketing and e-commerce solutions.",
+      "The tech sector in Leeds is booming, with numerous startups and scale-ups calling it home.",
+      "Web development in Leeds combines creativity with technical excellence.",
+      "SEO services in Leeds help businesses dominate local and national search results."
+    ]
+  },
 ];
