@@ -180,10 +180,10 @@ export default function CitiesPage() {
             <Card className="max-w-3xl mx-auto bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 border-primary/20">
               <CardHeader>
                 <CardTitle className="text-2xl text-black dark:text-white">
-                  Don't See Your City?
+                  Don&apos;t See Your City?
                 </CardTitle>
                 <CardDescription className="text-base text-gray-600 dark:text-gray-400">
-                  We work with businesses across the UK and Ireland. If your city isn't listed, get in touch – we'd love to help your business grow.
+                  We work with businesses across the UK and Ireland. If your city isn&apos;t listed, get in touch – we&apos;d love to help your business grow.
                 </CardDescription>
               </CardHeader>
               <CardContent>

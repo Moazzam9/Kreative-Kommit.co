@@ -55,7 +55,6 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
 
   // Use generic (non-city) content for service landing page
   const title = service.name + ' | ' + brand;
-  const metaDescription = service.description;
   const intro = `Discover our ${service.name} services.`;
   const cta = `Ready to get started with ${service.name}? Contact us today!`;
   const faq: { q: string; a: string }[] = [
