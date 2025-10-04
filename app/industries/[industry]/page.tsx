@@ -1,6 +1,6 @@
 // Add static params for Next.js static export
 export async function generateStaticParams() {
-  return industries.map(industry => ({ slug: industry.slug }));
+  return industries.map(ind => ({ industry: ind.slug }));
 }
 
 
@@ -12,15 +12,15 @@ import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/
 import { cityFacts } from '@/app/data/cities/facts';
 
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ industry: string }> }): Promise<Metadata> {
   const awaitedParams = await params;
-  const { slug } = awaitedParams;
-  const industry = industries.find(i => i.slug === slug);
+  const { industry: industrySlug } = awaitedParams;
+  const industry = industries.find(i => i.slug === industrySlug);
   if (!industry) return {};
 
   // Try to dynamically import SEO data for the industry
   try {
-    const seoModule = await import(`@/app/data/industries/${slug}/seo`);
+    const seoModule = await import(`@/app/data/industries/${industrySlug}/seo`);
     const seo = seoModule[Object.keys(seoModule)[0]];
     return {
       title: `${industry.name} Industry Services | Kreative Kommit`,
@@ -47,36 +47,36 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 
 
-export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function IndustryPage({ params }: { params: Promise<{ industry: string }> }) {
   const awaitedParams = await params;
-  const { slug } = awaitedParams;
-  const industry = industries.find(i => i.slug === slug) as Industry | undefined;
+  const { industry: industrySlug } = awaitedParams;
+  const industry = industries.find(i => i.slug === industrySlug) as Industry | undefined;
   if (!industry) return notFound();
 
   // Try to dynamically import all modular data for the industry
   let seo = null, services = null, projects = null, facts = null, testimonials = null, faqs = null;
   try {
-    const seoModule = await import(`@/app/data/industries/${slug}/seo`);
+    const seoModule = await import(`@/app/data/industries/${industrySlug}/seo`);
     seo = seoModule[Object.keys(seoModule)[0]];
   } catch {}
   try {
-    const servicesModule = await import(`@/app/data/industries/${slug}/services`);
+    const servicesModule = await import(`@/app/data/industries/${industrySlug}/services`);
     services = servicesModule[Object.keys(servicesModule)[0]];
   } catch {}
   try {
-    const projectsModule = await import(`@/app/data/industries/${slug}/projects`);
+    const projectsModule = await import(`@/app/data/industries/${industrySlug}/projects`);
     projects = projectsModule[Object.keys(projectsModule)[0]];
   } catch {}
   try {
-    const factsModule = await import(`@/app/data/industries/${slug}/facts`);
+    const factsModule = await import(`@/app/data/industries/${industrySlug}/facts`);
     facts = factsModule[Object.keys(factsModule)[0]];
   } catch {}
   try {
-    const testimonialsModule = await import(`@/app/data/industries/${slug}/testimonials`);
+    const testimonialsModule = await import(`@/app/data/industries/${industrySlug}/testimonials`);
     testimonials = testimonialsModule[Object.keys(testimonialsModule)[0]];
   } catch {}
   try {
-    const faqsModule = await import(`@/app/data/industries/${slug}/faqs`);
+    const faqsModule = await import(`@/app/data/industries/${industrySlug}/faqs`);
     faqs = faqsModule[Object.keys(faqsModule)[0]];
   } catch {}
 
