@@ -164,7 +164,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Our {industry.name} Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relevantServices.map((service: Service) => (
-                <a
+                <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
                   className="group p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 hover:border-primary"
@@ -173,7 +173,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                     {service.name}
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">{service.description}</p>
-                </a>
+                </Link>
               ))}
             </div>
           </section>
@@ -187,13 +187,13 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                   service.industries?.includes(industry.slug) && (cityServiceDescriptions[city.slug]?.[service.slug] || genericServiceDescriptions[service.slug])
                 )
               ).slice(0, 16).map(city => (
-                <a
+                <Link
                   key={city.slug}
                   href={`/cities/${city.slug}`}
                   className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-all border border-gray-200 dark:border-gray-700 hover:border-primary text-center"
                 >
                   <span className="text-primary font-medium">{city.name}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </section>

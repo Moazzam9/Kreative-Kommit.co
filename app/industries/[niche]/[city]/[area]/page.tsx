@@ -304,7 +304,7 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {nearbyAreas.map((nearby) => (
-                <a
+                <Link
                   key={nearby.area}
                   href={`/industries/${niche}/${nearby.city}/${nearby.area}`}
                   className="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary hover:shadow-md transition-all text-center"
@@ -312,7 +312,7 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
                   <span className="text-primary-600 dark:text-primary-400 font-medium capitalize">
                     {nearby.area?.replace(/-/g, ' ')}
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -325,12 +325,12 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 animate-fade-up">
             {data.cta.text}
           </p>
-          <a
+          <Link
             href={data.cta.link}
             className="inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-primary-700 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors animate-fade-up"
           >
             {data.cta.button}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ import { cityFacts } from '@/app/data/cities/facts';
 import { serviceFacts } from '@/app/data/services/facts';
 import { brand } from '@/app/data/templates/cities';
 import { Metadata } from 'next';
+import Link from 'next/link';
 // ...existing code...
 
 export async function generateStaticParams() {
