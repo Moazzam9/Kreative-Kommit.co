@@ -162,17 +162,118 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
   const data = pages.find((p) => p.city === city && p.area === area);
   if (!data) return notFound();
 
+  // Get niche display name
+  const nicheDisplayName = niche.charAt(0).toUpperCase() + niche.slice(1).replace(/([A-Z])/g, ' $1').trim();
+  const cityDisplayName = city.charAt(0).toUpperCase() + city.replace(/-/g, ' ').slice(1);
+  const areaDisplayName = area.charAt(0).toUpperCase() + area.replace(/-/g, ' ').slice(1);
+
+  // Get nearby areas in the same city
+  const nearbyAreas = pages
+    .filter((p) => p.city === city && p.area !== area)
+    .slice(0, 4);
+
+  // LocalBusiness Schema
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `Kreative Kommit - ${nicheDisplayName} in ${areaDisplayName}`,
+    description: data.description,
+    url: `https://kreativekommit.com/industries/${niche}/${city}/${area}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: cityDisplayName,
+      addressRegion: areaDisplayName,
+      addressCountry: 'GB',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: cityDisplayName,
+    },
+    serviceType: nicheDisplayName,
+    priceRange: '££-£££',
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://kreativekommit.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: nicheDisplayName,
+        item: `https://kreativekommit.com/${niche}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: cityDisplayName,
+        item: `https://kreativekommit.com/cities/${city}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: areaDisplayName,
+        item: `https://kreativekommit.com/industries/${niche}/${city}/${area}`,
+      },
+    ],
+  };
+
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 animate-fade-in">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight text-black dark:text-primary-100 mb-4 animate-fade-up">
-            {data.title}
-          </h1>
-          <p className="mt-4 text-lg text-primary-600 dark:text-primary-400 animate-fade-up">
-            {data.description}
-          </p>
-        </div>
+    <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <section className="py-20 bg-white dark:bg-gray-900 animate-fade-in">
+        <div className="container mx-auto px-4">
+          {/* Breadcrumbs */}
+          <nav className="flex mb-8 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-3">
+              <li className="inline-flex items-center">
+                <a href="/" className="hover:text-primary">Home</a>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  <span className="mx-2">/</span>
+                  <a href={`/${niche}`} className="hover:text-primary">{nicheDisplayName}</a>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  <span className="mx-2">/</span>
+                  <a href={`/cities/${city}`} className="hover:text-primary">{cityDisplayName}</a>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div className="flex items-center">
+                  <span className="mx-2">/</span>
+                  <span className="text-gray-500 dark:text-gray-500">{areaDisplayName}</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <h1 className="text-4xl font-bold tracking-tight text-black dark:text-primary-100 mb-4 animate-fade-up">
+              {data.title}
+            </h1>
+            <p className="mt-4 text-lg text-primary-600 dark:text-primary-400 animate-fade-up">
+              {data.description}
+            </p>
+          </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {data.features.map((feature, idx) => (
             <div key={feature} className="flex items-start gap-4 p-6 bg-primary-50 dark:bg-primary-950 rounded-xl shadow animate-fade-up" style={{ animationDelay: `${idx * 0.05}s` }}>
@@ -194,6 +295,28 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
             ))}
           </ul>
         </div>
+        {/* Nearby Areas Section */}
+        {nearbyAreas.length > 0 && (
+          <div className="mt-16 mb-12">
+            <h2 className="text-2xl font-bold text-primary-900 dark:text-primary-100 mb-6 text-center">
+              Also Serving Nearby Areas in {cityDisplayName}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {nearbyAreas.map((nearby) => (
+                <a
+                  key={nearby.area}
+                  href={`/industries/${niche}/${nearby.city}/${nearby.area}`}
+                  className="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary hover:shadow-md transition-all text-center"
+                >
+                  <span className="text-primary-600 dark:text-primary-400 font-medium capitalize">
+                    {nearby.area?.replace(/-/g, ' ')}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="text-center mt-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-primary-900 dark:text-primary-100 mb-4 animate-fade-up">
             {data.cta.heading}
@@ -210,5 +333,6 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
         </div>
       </div>
     </section>
+    </>
   );
 }

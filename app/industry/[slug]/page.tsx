@@ -52,6 +52,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   const industry = industries.find(i => i.slug === industrySlug) as Industry | undefined;
   if (!industry) return notFound();
 
+  // Get relevant services for this industry
+  const relevantServices = allServices.filter((service: Service) => service.industries?.includes(industry.slug));
+
   // Try to dynamically import all modular data for the industry
   let seo = null, services = null, projects = null, facts = null, testimonials = null, faqs = null;
   try {
@@ -79,39 +82,120 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
     faqs = faqsModule[Object.keys(faqsModule)[0]];
   } catch {}
 
+  // Organization Schema
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Kreative Kommit',
+    description: `${industry.name} Industry Services`,
+    url: `https://kreativekommit.com/industry/${industry.slug}`,
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://kreativekommit.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Industries',
+        item: 'https://kreativekommit.com/industries',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: industry.name,
+        item: `https://kreativekommit.com/industry/${industry.slug}`,
+      },
+    ],
+  };
+
   return (
-    <main className="px-4 py-8 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-4">{industry.name} Industry Services</h1>
-      <p className="mt-2 text-lg text-gray-700 dark:text-gray-300 mb-8">{seo?.description || ''}</p>
+    <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-      {/* Relevant Services Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-primary mb-3">Relevant Services</h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {allServices.filter((service: Service) => service.industries?.includes(industry.slug)).map((service: Service) => (
-            <li key={service.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
-              <a href={`/services/${service.slug}`} className="hover:underline text-primary font-medium">{service.name}</a>
-              <div className="text-xs text-gray-600 dark:text-gray-400">{service.description}</div>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <main className="min-h-screen bg-background px-4 py-16">
+        <div className="container mx-auto max-w-6xl">
+          {/* Breadcrumbs */}
+          <nav className="flex mb-8 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-3">
+              <li className="inline-flex items-center">
+                <a href="/" className="hover:text-primary">Home</a>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  <span className="mx-2">/</span>
+                  <a href="/industries" className="hover:text-primary">Industries</a>
+                </div>
+              </li>
+              <li aria-current="page">
+                <div className="flex items-center">
+                  <span className="mx-2">/</span>
+                  <span className="text-gray-500 dark:text-gray-500">{industry.name}</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
 
-      {/* Active Cities Section */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-primary mb-3">Active Cities</h2>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {cityFacts.filter(city =>
-            allServices.some(service =>
-              service.industries?.includes(industry.slug) && (cityServiceDescriptions[city.slug]?.[service.slug] || genericServiceDescriptions[service.slug])
-            )
-          ).map(city => (
-            <li key={city.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
-              <a href={`/cities/${city.slug}`} className="hover:underline text-primary font-medium">{city.name}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
+          {/* Hero Section */}
+          <div className="text-center mb-16">
+            <h1 className="text-5xl font-bold tracking-tight text-black dark:text-white mb-4">{industry.name} Industry Services</h1>
+            <p className="mt-4 text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">{seo?.description || `Comprehensive digital solutions tailored for the ${industry.name.toLowerCase()} industry.`}</p>
+          </div>
+
+          {/* Relevant Services Section */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Our {industry.name} Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relevantServices.map((service: Service) => (
+                <a
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="group p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 hover:border-primary"
+                >
+                  <h3 className="text-xl font-bold text-primary group-hover:text-primary-600 dark:group-hover:text-primary-400 mb-2">
+                    {service.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{service.description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {/* Active Cities Section */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-8">Cities We Serve</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {cityFacts.filter(city =>
+                allServices.some(service =>
+                  service.industries?.includes(industry.slug) && (cityServiceDescriptions[city.slug]?.[service.slug] || genericServiceDescriptions[service.slug])
+                )
+              ).slice(0, 16).map(city => (
+                <a
+                  key={city.slug}
+                  href={`/cities/${city.slug}`}
+                  className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-all border border-gray-200 dark:border-gray-700 hover:border-primary text-center"
+                >
+                  <span className="text-primary font-medium">{city.name}</span>
+                </a>
+              ))}
+            </div>
+          </section>
 
       {services && (
         <section className="mb-10">
@@ -160,21 +244,37 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </section>
       )}
 
-      {faqs && (
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold text-primary mb-3">FAQs</h2>
-          <ul className="space-y-4">
-            {faqs.map((faq: { q: string; a: string }, idx: number) => (
-              <li key={idx} className="bg-gray-50 dark:bg-gray-900 rounded px-4 py-3 shadow">
-                <strong>{faq.q}</strong>
-                <div>{faq.a}</div>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+          {faqs && (
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold text-center text-black dark:text-white mb-8">FAQs</h2>
+              <div className="max-w-3xl mx-auto space-y-4">
+                {faqs.map((faq: { q: string; a: string }, idx: number) => (
+                  <div key={idx} className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+                    <h3 className="font-bold text-lg text-black dark:text-white mb-2">{faq.q}</h3>
+                    <p className="text-gray-600 dark:text-gray-400">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
-      {/* Add more content, service links, case studies, testimonials, and internal links for SEO */}
-    </main>
+          {/* CTA Section */}
+          <section className="max-w-3xl mx-auto text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-8 mb-16">
+            <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
+              Ready to Transform Your {industry.name} Business?
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+              Get a free consultation and discover how our specialized {industry.name.toLowerCase()} solutions can help you grow online.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition font-semibold text-lg"
+            >
+              Get Your Free Consultation
+            </a>
+          </section>
+        </div>
+      </main>
+    </>
   );
 }

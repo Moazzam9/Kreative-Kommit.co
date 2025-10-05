@@ -94,18 +94,81 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
 
   const cities = Object.keys(locationsByCity).sort();
 
+  // Service Schema
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: `${niche.name} Web Design & Branding`,
+    provider: {
+      '@type': 'Organization',
+      name: 'Kreative Kommit',
+      url: 'https://kreativekommit.com',
+    },
+    areaServed: cities.length > 0 ? cities.map(city => ({
+      '@type': 'City',
+      name: city.charAt(0).toUpperCase() + city.replace(/-/g, ' ').slice(1),
+    })) : { '@type': 'Country', name: 'United Kingdom' },
+    description: niche.description,
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://kreativekommit.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: niche.name,
+        item: `https://kreativekommit.com/${niche.slug}`,
+      },
+    ],
+  };
+
   return (
-    <main className="min-h-screen bg-background text-foreground font-sans">
-      <div className="container mx-auto px-4 py-16">
-        {/* Hero Section */}
-        <div className="mx-auto max-w-3xl text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-4">
-            {niche.name} Web Design & Branding
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            {niche.description}
-          </p>
-        </div>
+    <>
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <main className="min-h-screen bg-background text-foreground font-sans">
+        <div className="container mx-auto px-4 py-16">
+          {/* Breadcrumbs */}
+          <nav className="flex mb-8 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-3">
+              <li className="inline-flex items-center">
+                <a href="/" className="hover:text-primary">Home</a>
+              </li>
+              <li aria-current="page">
+                <div className="flex items-center">
+                  <span className="mx-2">/</span>
+                  <span className="text-gray-500 dark:text-gray-500">{niche.name}</span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+
+          {/* Hero Section */}
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white mb-4">
+              {niche.name} Web Design & Branding
+            </h1>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+              {niche.description}
+            </p>
+          </div>
 
         {/* Features Section - from niche data */}
         {allFeatures.length > 0 && (
@@ -235,6 +298,82 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
           </div>
         )}
 
+        {/* Stats Section */}
+        {hasData && (
+          <div className="mx-auto max-w-5xl mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg">
+                <div className="text-3xl font-bold text-primary mb-2">{nicheData.length}+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Locations Served</div>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg">
+                <div className="text-3xl font-bold text-primary mb-2">{cities.length}+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Cities Covered</div>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg">
+                <div className="text-3xl font-bold text-primary mb-2">500+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg">
+                <div className="text-3xl font-bold text-primary mb-2">4.9★</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Average Rating</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* FAQ Section */}
+        <div className="mx-auto max-w-3xl mb-16">
+          <h2 className="text-3xl font-bold text-black dark:text-white mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">How much does a {niche.name.toLowerCase()} website cost?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Our {niche.name.toLowerCase()} websites start from £1,200 for a professional 5-page site. Pricing varies based on features, customization, and your specific needs. Contact us for a personalized quote.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">How long does it take to build a website?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 dark:text-gray-400">
+                  A typical {niche.name.toLowerCase()} website takes 2-4 weeks from design to launch. Rush projects can be completed in 1-2 weeks for an additional fee.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Do you provide ongoing support?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Yes! All our {niche.name.toLowerCase()} websites include 30 days of free support after launch. We also offer monthly maintenance packages starting from £50/month.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Will my website be mobile-friendly?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Absolutely! All our websites are fully responsive and optimized for mobile, tablet, and desktop devices. Mobile-friendliness is also critical for SEO.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="mx-auto max-w-3xl text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg p-8">
           <h2 className="text-3xl font-bold text-black dark:text-white mb-4">
@@ -252,5 +391,6 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
         </div>
       </div>
     </main>
+    </>
   );
 }
