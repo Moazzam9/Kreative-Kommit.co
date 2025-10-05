@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { services } from './data/services/services';
 import { allRegionsCities } from './data/cities/targets';
 import { industries } from './data/industries/industries';
+import { niches } from './data/niches/nichesList';
 import { getBlogPosts } from '@/lib/getBlogPosts';
 import { getGuides } from '@/lib/getGuides';
 
@@ -116,17 +117,17 @@ export const dynamic = 'force-static';
  * ========== COMPREHENSIVE SITEMAP FOR KREATIVEKOMMIT.COM ==========
  * 
  * CURRENT STATUS (October 2025):
- * ✅ Total URLs: ~20,000 (40% of Google's 50,000 limit)
+ * ✅ Total URLs: ~20,240 (40% of Google's 50,000 limit)
  * ✅ File Size: ~3.5 MB (7% of 50 MB limit)
- * ✅ Structure: Single sitemap (no splitting needed yet)
+ * ✅ Structure: 5 split sitemaps for better crawl efficiency
  * 
  * URL BREAKDOWN:
  * - Core static pages:           5 URLs
  * - Services index + pages:      20 URLs  
- * - Service × City pages:        15,420 URLs (20 services × 771 cities)
- * - City pages:                  771 URLs (UK + Wales + Scotland + Ireland)
- * - Industries + niche pages:    ~514 URLs
- * - Blog + Guides:               ~100 URLs
+ * - Service × City pages:        18,601 URLs (19 services × 979 cities)
+ * - City pages:                  979 URLs (UK + Wales + Scotland + Ireland)
+ * - Industries + niche pages:    ~590 URLs (40 industry pages + 40 niche pages + 514 niche×city×area)
+ * - Blog + Guides:               ~68 URLs
  * 
  * PRIORITY STRUCTURE:
  * - 1.0: Homepage
@@ -266,7 +267,7 @@ export default async function sitemap({
     return cityPages;
   }
 
-  // ========== INDUSTRY PAGES (~550 URLs) ==========
+  // ========== INDUSTRY PAGES (~590 URLs) ==========
   if (id === 'industries') {
     const industriesIndex = {
       url: `${baseUrl}/industries`,
@@ -282,18 +283,26 @@ export default async function sitemap({
       priority: 0.7,
     }));
 
+    // NEW: Niche overview pages (40 URLs)
+    const nichePages = niches.map((niche) => ({
+      url: `${baseUrl}/${niche.slug}`,
+      lastModified: new Date('2025-10-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75, // Higher priority than generic pages
+    }));
+
     const nicheCityAreaPages = Object.entries(allNicheData).flatMap(([nicheSlug, pages]) =>
       pages
         .filter((entry) => entry.city && entry.area)
         .map((entry) => ({
           url: `${baseUrl}/industries/${nicheSlug}/${entry.city}/${entry.area}`,
-          lastModified: new Date(),
+          lastModified: new Date('2025-10-05'), // Updated with new features
           changeFrequency: 'monthly' as const,
           priority: 0.7,
         }))
     );
 
-    return [industriesIndex, ...industryPages, ...nicheCityAreaPages];
+    return [industriesIndex, ...industryPages, ...nichePages, ...nicheCityAreaPages];
   }
 
   // ========== CONTENT PAGES (68 URLs) ==========
