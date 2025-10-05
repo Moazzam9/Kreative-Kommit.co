@@ -7,7 +7,6 @@ import { serviceFacts } from '@/app/data/services/facts';
 import { brand } from '@/app/data/templates/cities';
 import { Metadata } from 'next';
 import Link from 'next/link';
-// ...existing code...
 
 export async function generateStaticParams() {
   return services.map((service: typeof services[number]) => ({ service: service.slug }));
@@ -104,7 +103,7 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
               if (!industry) return null;
               return (
                 <li key={industry.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
-                  <a href={`/industries/${industry.slug}`} className="hover:underline text-primary font-medium">{industry.name}</a>
+                  <Link href={`/industries/${industry.slug}`} className="hover:underline text-primary font-medium">{industry.name}</Link>
                 </li>
               );
             })}
@@ -117,7 +116,7 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {cityFacts.filter(city => cityServiceDescriptions[city.slug]?.[service.slug]).map(city => (
               <li key={city.slug} className="bg-gray-100 dark:bg-gray-800 rounded px-4 py-2 shadow-sm text-gray-900 dark:text-gray-100">
-                <a href={`/cities/${city.slug}`} className="hover:underline text-primary font-medium">{city.name}</a>
+                <Link href={`/cities/${city.slug}`} className="hover:underline text-primary font-medium">{city.name}</Link>
               </li>
             ))}
           </ul>
@@ -132,7 +131,7 @@ export default async function ServicePage({ params }: PageProps<'/services/[serv
           <div className="bg-primary/10 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-semibold mb-2">Ready to get started?</h3>
             <p className="mb-2">{cta}</p>
-            <a href="/contact" className="inline-block px-6 py-2 bg-primary text-white rounded hover:bg-primary/80 transition">Contact Us</a>
+            <Link href="/contact" className="inline-block px-6 py-2 bg-primary text-white rounded hover:bg-primary/80 transition">Contact Us</Link>
           </div>
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Frequently Asked Questions</h3>
