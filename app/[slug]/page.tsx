@@ -107,6 +107,27 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
           </p>
         </div>
 
+        {/* Features Section - from niche data */}
+        {allFeatures.length > 0 && (
+          <div className="mx-auto max-w-4xl mb-16">
+            <h2 className="text-3xl font-bold text-black dark:text-white mb-8 text-center">
+              What We Offer {niche.name}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {allFeatures.map((feature, idx) => (
+                <Card key={idx}>
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary text-xl">✓</span>
+                      <p className="text-gray-700 dark:text-gray-300">{feature}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Services Section */}
         <div className="mx-auto max-w-4xl mb-16">
           <h2 className="text-3xl font-bold text-black dark:text-white mb-8 text-center">
@@ -147,6 +168,27 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
             </Card>
           </div>
         </div>
+
+        {/* Why Choose Us Section - from niche data */}
+        {allWhyChoose.length > 0 && (
+          <div className="mx-auto max-w-4xl mb-16">
+            <h2 className="text-3xl font-bold text-black dark:text-white mb-8 text-center">
+              Why Choose Us for {niche.name}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {allWhyChoose.map((reason, idx) => (
+                <Card key={idx} className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+                  <CardContent className="pt-6">
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary text-xl">★</span>
+                      <p className="text-gray-700 dark:text-gray-300">{reason}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Locations Section */}
         {hasData && cities.length > 0 && (
