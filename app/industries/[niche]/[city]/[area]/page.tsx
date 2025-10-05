@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 // Import all niche data files
 import { beautyBrandingPages } from '@/app/data/niches/beauty';
@@ -243,18 +244,18 @@ export default async function NicheCityAreaPage({ params }: PageProps) {
           <nav className="flex mb-8 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
               <li className="inline-flex items-center">
-                <a href="/" className="hover:text-primary">Home</a>
+                <Link href="/" className="hover:text-primary">Home</Link>
               </li>
               <li>
                 <div className="flex items-center">
                   <span className="mx-2">/</span>
-                  <a href={`/${niche}`} className="hover:text-primary">{nicheDisplayName}</a>
+                  <Link href={`/${niche}`} className="hover:text-primary">{nicheDisplayName}</Link>
                 </div>
               </li>
               <li>
                 <div className="flex items-center">
                   <span className="mx-2">/</span>
-                  <a href={`/cities/${city}`} className="hover:text-primary">{cityDisplayName}</a>
+                  <Link href={`/cities/${city}`} className="hover:text-primary">{cityDisplayName}</Link>
                 </div>
               </li>
               <li aria-current="page">

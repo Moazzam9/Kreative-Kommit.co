@@ -1,6 +1,7 @@
 import { industries, Industry } from '@/app/data/industries/industries';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { services as allServices, Service } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { cityFacts } from '@/app/data/cities/facts';
@@ -135,12 +136,12 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           <nav className="flex mb-8 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
               <li className="inline-flex items-center">
-                <a href="/" className="hover:text-primary">Home</a>
+                <Link href="/" className="hover:text-primary">Home</Link>
               </li>
               <li>
                 <div className="flex items-center">
                   <span className="mx-2">/</span>
-                  <a href="/industries" className="hover:text-primary">Industries</a>
+                  <Link href="/industries" className="hover:text-primary">Industries</Link>
                 </div>
               </li>
               <li aria-current="page">
@@ -266,12 +267,12 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
               Get a free consultation and discover how our specialized {industry.name.toLowerCase()} solutions can help you grow online.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-block px-8 py-4 bg-primary text-white rounded-lg hover:bg-primary/90 transition font-semibold text-lg"
             >
               Get Your Free Consultation
-            </a>
+            </Link>
           </section>
         </div>
       </main>

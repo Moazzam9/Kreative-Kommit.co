@@ -78,7 +78,7 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
     
     allFeatures = Array.from(featuresSet).slice(0, 6);
     allWhyChoose = Array.from(whyChooseSet).slice(0, 4);
-  } catch (error) {
+  } catch {
     // No data file exists for this niche
     hasData = false;
   }
@@ -149,7 +149,7 @@ export default async function NichePage({ params }: { params: Promise<{ slug: st
           <nav className="flex mb-8 text-sm text-gray-600 dark:text-gray-400" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
               <li className="inline-flex items-center">
-                <a href="/" className="hover:text-primary">Home</a>
+                <Link href="/" className="hover:text-primary">Home</Link>
               </li>
               <li aria-current="page">
                 <div className="flex items-center">
