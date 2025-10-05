@@ -1,15 +1,14 @@
-// Add static params for Next.js static export
-export async function generateStaticParams() {
-  return industries.map(ind => ({ slug: ind.slug }));
-}
-
-
 import { industries, Industry } from '@/app/data/industries/industries';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { services as allServices, Service } from '@/app/data/services/services';
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 import { cityFacts } from '@/app/data/cities/facts';
+
+// Add static params for Next.js static export
+export async function generateStaticParams() {
+  return industries.map(ind => ({ slug: ind.slug }));
+}
 
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
