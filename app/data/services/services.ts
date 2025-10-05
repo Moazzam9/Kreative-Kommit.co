@@ -9,6 +9,7 @@ export interface IndustryData {
 export interface Service {
   name: string;
   slug: string;
+  slugAliases?: string[]; // Alternative slugs that redirect to the primary slug
   description: string;
   industries?: string[];
   industryData?: IndustryData[];
@@ -59,6 +60,7 @@ export const services: Service[] = [
   {
     name: "SEO Optimisation",
     slug: "seo-optimisation",
+    slugAliases: ["seo-services", "seo"], // Support common variations
     description: "Climb to the top of Google and stay there! Our SEO optimisation services use proven strategies, keyword research, and technical expertise to drive organic traffic and real results. Dominate your niche, attract local customers, and grow your business with search engine optimisation that works.",
     industries: industries.map(i => i.slug),
     keywords: ["SEO", "SEO optimisation [city]", "search engine optimisation", "Google ranking", "organic traffic", "local SEO"],

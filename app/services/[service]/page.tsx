@@ -9,12 +9,25 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
-  return services.map((service: typeof services[number]) => ({ service: service.slug }));
+  const params: { service: string }[] = [];
+  services.forEach((service: typeof services[number]) => {
+    // Add primary slug
+    params.push({ service: service.slug });
+    // Add all aliases
+    if (service.slugAliases) {
+      service.slugAliases.forEach(alias => {
+        params.push({ service: alias });
+      });
+    }
+  });
+  return params;
 }
 
 export async function generateMetadata({ params }: PageProps<'/services/[service]'>): Promise<Metadata> {
   const awaitedParams = await params;
-  const service = services.find((s: typeof services[number]) => s.slug === awaitedParams.service);
+  const service = services.find((s: typeof services[number]) => 
+    s.slug === awaitedParams.service || s.slugAliases?.includes(awaitedParams.service)
+  );
   
   if (!service) {
     return {
@@ -50,7 +63,9 @@ export async function generateMetadata({ params }: PageProps<'/services/[service
 
 export default async function ServicePage({ params }: PageProps<'/services/[service]'>) {
   const awaitedParams = await params;
-  const service = services.find((s: typeof services[number]) => s.slug === awaitedParams.service);
+  const service = services.find((s: typeof services[number]) => 
+    s.slug === awaitedParams.service || s.slugAliases?.includes(awaitedParams.service)
+  );
   if (!service) return <div>Service not found.</div>;
 
   // Use generic (non-city) content for service landing page

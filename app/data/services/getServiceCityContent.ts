@@ -5,7 +5,10 @@ import { getCityDescription, getCityKeyword, allRegionsCities } from '@/app/data
 import { cityServiceDescriptions, genericServiceDescriptions } from '@/app/data/cities/serviceDescriptions';
 
 export function getServiceCityContent(serviceSlug: string, citySlug: string) {
-  const service = services.find(s => s.slug === serviceSlug);
+  // Find service by primary slug or alias
+  const service = services.find(s => 
+    s.slug === serviceSlug || s.slugAliases?.includes(serviceSlug)
+  );
   const cityData = allRegionsCities.find(c => c.slug === citySlug);
   if (!service || !cityData) return null;
   

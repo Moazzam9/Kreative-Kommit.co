@@ -20,11 +20,18 @@ type PageProps = {
 
 // Removed stray return statement causing syntax errors
 export async function generateStaticParams() {
-  // Generate all service/city combinations
+  // Generate all service/city combinations including aliases
   const params: { service: string; city: string }[] = [];
   services.forEach(service => {
     allRegionsCities.forEach(city => {
+      // Add primary slug
       params.push({ service: service.slug, city: city.slug });
+      // Add all aliases
+      if (service.slugAliases) {
+        service.slugAliases.forEach(alias => {
+          params.push({ service: alias, city: city.slug });
+        });
+      }
     });
   });
   return params;
