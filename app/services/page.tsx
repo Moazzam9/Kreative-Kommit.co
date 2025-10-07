@@ -9,6 +9,19 @@ import {
   Zap,
   Shield,
   Smartphone,
+  ShoppingCart,
+  AppWindow,
+  LayoutDashboard,
+  MapPin,
+  FileText,
+  Mail,
+  TrendingUp,
+  BadgeCheck,
+  Eye,
+  Server,
+  ClipboardCheck,
+  BarChart3,
+  GraduationCap,
   ArrowRight
 } from 'lucide-react';
 import Link from 'next/link';
@@ -20,11 +33,24 @@ import { services } from '@/app/data/services';
 
 const serviceIcons = {
   'web-design': Palette,
+  'ecommerce-development': ShoppingCart,
+  'custom-web-apps': AppWindow,
+  'ux-ui-design': LayoutDashboard,
   'seo-optimisation': Search,
+  'local-seo-google-profile': MapPin,
   'content-marketing': Code,
+  'blog-writing': FileText,
   'social-media-management': Smartphone,
   'ppc-advertising': Zap,
+  'email-marketing': Mail,
+  'conversion-rate-optimisation': TrendingUp,
+  'branding-identity': BadgeCheck,
   'security-maintenance': Shield,
+  'accessibility-audits': Eye,
+  'hosting-domain-management': Server,
+  'website-audits': ClipboardCheck,
+  'analytics-reporting': BarChart3,
+  'training-workshops': GraduationCap,
 };
 
 const processSteps = [
